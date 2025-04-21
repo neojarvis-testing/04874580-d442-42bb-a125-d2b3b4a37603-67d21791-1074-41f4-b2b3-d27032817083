@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
+import pages.NykaaKurtas;
 import pages.NykaaNewLaunches;
 import pages.NykaaSearchForPillow;
 import utils.Base;
@@ -48,7 +49,7 @@ public class TestNykaa extends Base{
       Parameter: None
       Return Type: void
      */
-    @Test
+    @Test(enabled = false)
     public void NykaaSearchForPillow_Test(){
       test = report.createTest("NykaaSearchForPillow_Test");
       NykaaSearchForPillow nykaaSearchForPillow = new NykaaSearchForPillow(test);
@@ -62,11 +63,25 @@ public class TestNykaa extends Base{
       Parameter: None
       Return Type: void
      */
-    @Test
+    @Test(enabled = false)
     public void NykaaNewLaunches_Test(){
       test = report.createTest("NykaaNewLaunches_Test");
       NykaaNewLaunches nykaaNewLaunches = new NykaaNewLaunches(test);
       nykaaNewLaunches.NykaaNewLaunches_Case(); 
+    }
+
+    
+    /*Method Name: NykaaKurtas_Test
+      Author Name: Group 07
+      Description: It automates the process of searching for kurtas on Nykaa and logs the test execution..
+      Parameter: None
+      Return Type: void
+     */
+    @Test
+    public void NykaaKurtas_Test(){
+      test = report.createTest("NykaaKurtas_Test");
+      NykaaKurtas nykaasKurtas = new NykaaKurtas(test);
+      nykaasKurtas.NykaaKurtas_Case(); 
     }
 
     /*Method Name: close
