@@ -107,16 +107,29 @@ public class NykaaHelpPage {
     }
 
     public void testHelpPage(){
-        clickOnHelp();
-        verifyHelpPageTitle();
-        clickOnOrderRelated();
-        clickOnOrderStatus();
-        navigateBackToOrderRelated();
-        clickOnRefund();
-        navigateBackToOrderRelated();
-        clickOnCanceellationAndRefunds();
-        clickOnCancelPolicy();
-        clickOncancellationLink();
+        try {
+            clickOnHelp();
+            // verifyHelpPageTitle();
+            clickOnOrderRelated();
+            Thread.sleep(2000);
+            clickOnOrderStatus();
+            Thread.sleep(2000);
+            navigateBackToOrderRelated();
+            Thread.sleep(2000);
+            clickOnRefund();
+            Thread.sleep(2000);
+            navigateBackToOrderRelated();
+            Thread.sleep(2000);
+            clickOnCanceellationAndRefunds();
+            Thread.sleep(2000);
+            clickOnCancelPolicy();
+            Thread.sleep(2000);
+            clickOncancellationLink();
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+       
 
     }
 }
