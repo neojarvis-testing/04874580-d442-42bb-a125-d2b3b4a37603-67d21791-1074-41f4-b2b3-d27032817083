@@ -43,7 +43,7 @@ public class WebDriverHelper {
 		*/
 	public void doClick(By locator){
 		try {
-			driver.findElement(locator);
+			driver.findElement(locator).click();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
