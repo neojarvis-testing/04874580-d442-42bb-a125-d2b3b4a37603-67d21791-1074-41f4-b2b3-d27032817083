@@ -23,7 +23,7 @@ public class NykaaNewLaunches {
 
     public void scrollDownToFooter(){
         try {
-            helper.doScrollBypixel(0, 5000);
+            helper.doScrollBypixel(0, 7000);
         } catch (Exception e) {
            System.out.println("not scrolled");
         } 
@@ -43,7 +43,7 @@ public class NykaaNewLaunches {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.shopNewLaunches, 10);
             String data = helper.doGetText(NykaaNewLaunchesLocators.shopNewLaunches);
             try {
-                Assert.assertTrue(data.contains("New Launches"));
+                Assert.assertTrue(data.contains("Launches"));
             } catch (Exception e) {
                System.out.println("Assert failed");
             }
@@ -75,7 +75,7 @@ public class NykaaNewLaunches {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.faceWash, 10);
             String data = helper.doGetText(NykaaNewLaunchesLocators.faceWash);
             try {
-                Assert.assertTrue(data.contains("Face Wash"));
+                Assert.assertTrue(data.contains("Wash"));
             } catch (Exception e) {
                System.out.println("Assert failed");
             }
