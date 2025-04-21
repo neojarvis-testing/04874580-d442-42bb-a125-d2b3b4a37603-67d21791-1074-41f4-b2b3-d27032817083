@@ -26,7 +26,7 @@ public class Report {
      * Return Type: ExtentReports - Returns the configured ExtentReports instance.
      */
     public static ExtentReports generateExtenteReports(String reportName){
-        ExtentSparkReporter sparkReporter= new ExtentSparkReporter(System.getProperty("user.dir")+"report/reports"+reportName+".html");
+        ExtentSparkReporter sparkReporter= new ExtentSparkReporter(System.getProperty("user.dir")+"/reports/"+reportName+".html");
         reports= new ExtentReports();
         reports.attachReporter(sparkReporter);
         return reports;
