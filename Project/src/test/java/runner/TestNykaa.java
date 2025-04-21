@@ -12,6 +12,7 @@ import com.aventstack.extentreports.ExtentTest;
 import pages.NykaaKurtas;
 import pages.NykaaNewLaunches;
 import pages.NykaaSearchForPillow;
+import pages.NykaaLuxeHomePage;
 import utils.Base;
 import utils.Report;
 
@@ -90,6 +91,12 @@ public class TestNykaa extends Base{
       Parameter: None
       Return Type: void
      */
+    @Test
+    public void nykaaaLuxe(){
+      test=report.createTest("Luxe");
+      NykaaLuxeHomePage nykaaLuxeHomePage=new NykaaLuxeHomePage(test);
+      nykaaLuxeHomePage.nykaaLuxeCase();
+    }
     @AfterMethod
     public void close(){
         driver.quit();
