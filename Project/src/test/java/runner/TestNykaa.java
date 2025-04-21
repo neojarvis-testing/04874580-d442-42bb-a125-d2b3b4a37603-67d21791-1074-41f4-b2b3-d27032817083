@@ -48,7 +48,7 @@ public class TestNykaa extends Base{
       Parameter: None
       Return Type: void
      */
-    @Test(enabled = false)
+    @Test
     public void NykaaSearchForPillow_Test(){
       test = report.createTest("NykaaSearchForPillow_Test");
       NykaaSearchForPillow nykaaSearchForPillow = new NykaaSearchForPillow(test);
