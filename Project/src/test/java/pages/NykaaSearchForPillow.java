@@ -6,6 +6,8 @@ import org.testng.Assert;
 import uistore.NykaaSearchForPillowLocators;
 import utils.Base;
 import utils.ExcelReader;
+import utils.LoggerHandler;
+import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class NykaaSearchForPillow {
@@ -100,5 +102,70 @@ public class NykaaSearchForPillow {
         }
     }
 
+    public void clickAverageOption(){
+        try {
+            helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.fourStarRating, 10);
+            helper.doClick(NykaaSearchForPillowLocators.fourStarRating);
+        } catch (Exception e) {
+            System.out.println("Option not clicked");
+        }
+    }
+
+    public void verifyFilter(){
+        try {
+            helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.filtersApplied, 10);
+            String data = helper.doGetText(NykaaSearchForPillowLocators.filtersApplied);
+            try {
+                Assert.assertTrue(data.contains("Filters"));
+            } catch (Exception e) {
+               System.out.println("Assert failed");
+            }
+        } catch (Exception e) {
+            System.out.println("Not Verified");
+        }
+    }
+
+    public void clickFirstProduct(){
+        try {
+            helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.firstProduct, 10);
+            helper.doClickandswitch(NykaaSearchForPillowLocators.firstProduct);
+        } catch (Exception e) {
+            System.out.println("product not clicked");
+        }
+    }
+
+    public void clickAddtoBag(){
+        try {
+            helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.addToBag, 10);
+            helper.doClick(NykaaSearchForPillowLocators.addToBag);
+        } catch (Exception e) {
+            System.out.println("add to bag not clicked");
+        }
+    }
+
+    public void clickCart(){
+        try {
+            helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.cart, 10);
+            helper.doClick(NykaaSearchForPillowLocators.cart);
+        } catch (Exception e) {
+            System.out.println("cart not clicked");
+        }
+    }
+
+    public void verifyBag(){
+        try {
+            helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.bag, 10);
+            String data = helper.doGetText(NykaaSearchForPillowLocators.bag);
+            try {
+                Assert.assertTrue(data.contains("Filters"));
+                Screenshot.captureFullScreenshot("TestCase1");
+                LoggerHandler.info(data);
+            } catch (Exception e) {
+               System.out.println("Assert failed");
+            }
+        } catch (Exception e) {
+            System.out.println("Not Verified");
+        }
+    }
 
 }
