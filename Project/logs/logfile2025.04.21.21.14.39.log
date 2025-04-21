@@ -1,0 +1,9 @@
+2025-04-21 21:14:39,555 INFO  utils.LoggerHandler - Verified 'Categories'
+2025-04-21 21:14:42,432 INFO  utils.LoggerHandler - Sent data to search bar
+2025-04-21 21:14:42,487 INFO  utils.LoggerHandler - Verified 'Kajal'
+2025-04-21 21:14:42,905 INFO  utils.LoggerHandler - Clicked on Pencil
+2025-04-21 21:14:43,070 INFO  utils.LoggerHandler - Hovered on Fragrance
+2025-04-21 21:14:53,676 INFO  utils.LoggerHandler - Clicked on New Launches
+2025-04-21 21:15:03,791 INFO  utils.LoggerHandler - Clicked on first product
+2025-04-21 21:15:13,920 INFO  utils.LoggerHandler - Clicked on add to bag
+2025-04-21 21:15:29,082 INFO  utils.LoggerHandler - Clicked on how to use

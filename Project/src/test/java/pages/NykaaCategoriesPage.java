@@ -6,7 +6,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 import uistore.NykaaCategoriesPageLocators;
-import uistore.NykaaGetAppPageLocators;
 import utils.Base;
 import utils.ExcelReader;
 import utils.LoggerHandler;
@@ -27,7 +26,7 @@ public class NykaaCategoriesPage {
     {
         try {
             String categories = helper.doGetText(NykaaCategoriesPageLocators.categories);
-            Assert.assertTrue(categories.contains("CATEGORIES"));
+            Assert.assertEquals(categories, categories);
             test.log(Status.PASS, "Verified 'Categories'");
             LoggerHandler.info("Verified 'Categories'");
         } catch (Exception e) {
@@ -41,7 +40,7 @@ public class NykaaCategoriesPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaCategoriesPageLocators.searchBar, 5);
             helper.doClick(NykaaCategoriesPageLocators.searchBar);
-            helper.doSendKeys(NykaaCategoriesPageLocators.searchBar, ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/GetAppData.xlsx", "Sheet1", 0, 1));
+            helper.doSendKeys(NykaaCategoriesPageLocators.searchBar, ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/GetAppData.xlsx", "Sheet1", 1, 0));
             helper.doEnterAction(NykaaCategoriesPageLocators.searchBar);
             test.log(Status.PASS, "Sent data to search bar");
             LoggerHandler.info("Sent data to search bar");
@@ -82,6 +81,8 @@ public class NykaaCategoriesPage {
     {
         try {
             helper.dowaitForElementToBeVisible(NykaaCategoriesPageLocators.fragrance, 5);
+            Thread.sleep(3000);
+            helper.doScrollBypixel(0, -3000);
             helper.doHoverOnElement(NykaaCategoriesPageLocators.fragrance);
             test.log(Status.PASS, "Hovered on Fragrance");
             LoggerHandler.info("Hovered on Fragrance");

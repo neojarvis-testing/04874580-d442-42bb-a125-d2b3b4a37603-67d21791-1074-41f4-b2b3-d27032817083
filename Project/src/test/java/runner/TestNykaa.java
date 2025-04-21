@@ -43,20 +43,20 @@ public class TestNykaa extends Base{
         driver.navigate().refresh();
     }
 
-    @Test
-    public void NykaaGetAppTestCase()
-    {
-      test = report.createTest("NykaaGetApp_TestCase");
-      NykaaGetAppPage getApp = new NykaaGetAppPage(test);
-      getApp.execute();
-    }
     // @Test
-    // public void NykaaCategoriesTestCase()
+    // public void NykaaGetAppTestCase()
     // {
-    //   test = report.createTest("NykaaCategories_TestCase");
-    //   NykaaCategoriesPage categories = new NykaaCategoriesPage(test);
-    //   categories.execute();
+    //   test = report.createTest("NykaaGetApp_TestCase");
+    //   NykaaGetAppPage getApp = new NykaaGetAppPage(test);
+    //   getApp.execute();
     // }
+    @Test
+    public void NykaaCategoriesTestCase()
+    {
+      test = report.createTest("NykaaCategories_TestCase");
+      NykaaCategoriesPage categories = new NykaaCategoriesPage(test);
+      categories.execute();
+    }
     // @Test
     // public void NykaaManPageTestCase()
     // {

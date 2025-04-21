@@ -1,0 +1,18 @@
+2025-04-21 21:18:12,777 INFO  utils.LoggerHandler - Verified 'Categories'
+2025-04-21 21:18:15,445 INFO  utils.LoggerHandler - Sent data to search bar
+2025-04-21 21:18:15,588 INFO  utils.LoggerHandler - Verified 'Kajal'
+2025-04-21 21:18:16,258 INFO  utils.LoggerHandler - Clicked on Pencil
+2025-04-21 21:18:19,391 INFO  utils.LoggerHandler - Hovered on Fragrance
+2025-04-21 21:18:29,837 INFO  utils.LoggerHandler - Clicked on New Launches
+2025-04-21 21:18:40,031 INFO  utils.LoggerHandler - Clicked on first product
+2025-04-21 21:18:50,127 INFO  utils.LoggerHandler - Clicked on add to bag
+2025-04-21 21:19:05,276 INFO  utils.LoggerHandler - Clicked on how to use
+2025-04-21 21:19:10,337 ERROR utils.LoggerHandler - no such element: Unable to locate element: {"method":"css selector","selector":".css-zpu9mn .css-1jg8woj"}
+  (Session info: chrome=135.0.7049.84)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.1.123+', java.version: '11.0.26'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [454ff2fbb0946b58511c4f93f2462156, findElement {using=css selector, value=.css-zpu9mn .css-1jg8woj}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.84, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:33633}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://10.80.20.6:4444/sessio..., se:cdpVersion: 135.0.7049.84, se:containerName: efcbadbddefbbefdcbecddfbbd-0, se:noVncPort: 7900, se:vnc: ws://10.80.20.6:4444/sessio..., se:vncEnabled: true, se:vncLocalAddress: ws://10.80.20.6:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 454ff2fbb0946b58511c4f93f2462156
