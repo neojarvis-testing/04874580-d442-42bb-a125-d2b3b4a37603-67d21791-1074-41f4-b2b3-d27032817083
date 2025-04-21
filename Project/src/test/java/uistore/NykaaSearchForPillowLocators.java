@@ -16,4 +16,5 @@ public class NykaaSearchForPillowLocators {
     public static By addToBag = By.cssSelector("div[class='css-vp18r8']>button[type='button']");
     public static By cart = By.cssSelector("button[id='header-bag-icon']");
     public static By bag = By.cssSelector("p[class='css-1v1x2g9 e171rb9k0']");
+    public static By iframe = By.cssSelector("iframe[src='/mobileCartIframe?ptype=customIframeCart']");
 }

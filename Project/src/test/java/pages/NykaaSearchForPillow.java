@@ -159,6 +159,7 @@ public class NykaaSearchForPillow {
 
     public void verifyBag(){
         try {
+            helper.doSwitchToIframe(NykaaSearchForPillowLocators.iframe);
             helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.bag, 10);
             String data = helper.doGetText(NykaaSearchForPillowLocators.bag);
             try {
