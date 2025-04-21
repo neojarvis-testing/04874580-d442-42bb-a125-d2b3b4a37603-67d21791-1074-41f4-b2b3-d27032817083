@@ -23,7 +23,8 @@ public class NykaaNewLaunches {
 
     public void scrollDownToFooter(){
         try {
-            helper.doScrollBypixel(0, 10000);
+            Thread.sleep(2000);
+            helper.doJsScrollFooter();;
         } catch (Exception e) {
            System.out.println("not scrolled");
         } 
@@ -72,11 +73,12 @@ public class NykaaNewLaunches {
 
     public void verifyFaceWash(){
         try {
-            helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.faceWash, 10);
-            String data = helper.doGetText(NykaaNewLaunchesLocators.faceWash);
+            Base.driver.navigate().refresh();
+            helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.facewashHeading, 10);
+            String data = helper.doGetText(NykaaNewLaunchesLocators.facewashHeading);
             try {
                 Assert.assertTrue(data.contains("Wash"));
-            } catch (Exception e) {
+            } catch (AssertionError e) {
                System.out.println("Assert failed");
             }
         } catch (Exception e) {

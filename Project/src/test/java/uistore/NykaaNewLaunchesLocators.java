@@ -10,7 +10,7 @@ public class NykaaNewLaunchesLocators {
     public static By facewashHeading = By.cssSelector("h1[class='css-c0pzm0']");
     public static By price = By.xpath("(//div[@class='filter-open css-1gdff5r'])[2]");
     public static By priceRange = By.cssSelector("label[for='checkbox_Rs. 1000 - Rs. 1999_1000-1999']");
-    public static By firstProduct = By.cssSelector("a[href='/indulgeo-essentials-sal-cleanse-activs-salicylic-acid-ph-4-40-foaming-face-wash/p/10755785?productId=10755785&pps=1']");
+    public static By firstProduct = By.xpath("//a[@href='/lotus-botanicals-vitamin-c-day-night-combo/p/2690647?productId=2690647&pps=1']");
     public static By delivery = By.cssSelector("input[name='pin code']");
     public static By check = By.cssSelector("button[class='css-1ivth7r']");
     public static By addtoBag = By.xpath("(//button[@class=' css-13zjqg6'])[1]");

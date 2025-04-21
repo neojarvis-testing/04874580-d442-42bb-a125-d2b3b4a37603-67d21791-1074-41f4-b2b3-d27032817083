@@ -85,12 +85,16 @@ public class WebDriverHelper {
 		*/
 	public void doClickandswitch(By locator){
 		try {
-			String parent=driver.getWindowHandle();
 			doClick(locator);
 			Set<String> set=driver.getWindowHandles();
 			for(String child:set) {
-			if(!child.equals(parent)) {
+			if(!child.isEmpty()) {
 				driver.switchTo().window(child);
+				System.out.println(child);
+			}
+			else
+			{
+				throw new Exception("Cant retrieve window");
 			}
 		}
 		}catch(Exception e){
