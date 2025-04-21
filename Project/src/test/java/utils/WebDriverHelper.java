@@ -43,7 +43,7 @@ public class WebDriverHelper {
 		*/
 	public void doClick(By locator){
 		try {
-			driver.findElement(locator);
+			driver.findElement(locator).click();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -85,13 +85,16 @@ public class WebDriverHelper {
 		*/
 	public void doClickandswitch(By locator){
 		try {
-			String parent=driver.getWindowHandle();
 			doClick(locator);
 			Set<String> set=driver.getWindowHandles();
 			for(String child:set) {
-			if(!child.equals(parent)) {
+			if(!child.isEmpty()) {
 				driver.switchTo().window(child);
-				break;
+				System.out.println(child);
+			}
+			else
+			{
+				throw new Exception("Cant retrieve window");
 			}
 		}
 		}catch(Exception e){
@@ -237,5 +240,28 @@ public class WebDriverHelper {
 		*/
 	public void doNavigate(){
 		driver.navigate().back();
+	}
+
+	/*
+		* a.Method Name:doSwitchToIframe
+		* b.Author Name:Group 07
+		* c.Description: The method helps driver to switch to Iframe
+		* d.Parameters:None
+		* e.Return type:void
+		*/
+	public void doSwitchToIframe(By locator){
+		WebElement element = driver.findElement(locator);
+		driver.switchTo().frame(element);
+	}
+
+	/*
+		* a.Method Name:doSwitchToIframe
+		* b.Author Name:Group 07
+		* c.Description: The method helps driver to switch back to window 
+		* d.Parameters:None
+		* e.Return type:void
+		*/
+	public void doswitchOutfromIframe(){
+		driver.switchTo().defaultContent();
 	}
 }
