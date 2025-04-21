@@ -36,6 +36,7 @@ public class TestNykaa extends Base{
     @BeforeMethod
     public void open(){
         openBrowser();
+        driver.navigate().refresh();
     }
 
     /*Method Name: close

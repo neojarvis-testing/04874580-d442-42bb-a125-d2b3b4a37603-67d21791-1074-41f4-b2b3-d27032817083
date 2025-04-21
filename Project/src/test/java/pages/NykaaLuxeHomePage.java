@@ -24,6 +24,7 @@ public class NykaaLuxeHomePage {
         helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.Luxe, 10);
         helper.doClickandswitch(NykaaLuxeHomeLocators.Luxe);
     } catch (Exception e) {
+        e.printStackTrace();
     }
    }
    public void verifyLuxe(){
@@ -31,7 +32,31 @@ public class NykaaLuxeHomePage {
         String luxe=helper.doGetText(NykaaLuxeHomeLocators.NykaaLuxe);
         Assert.assertTrue(luxe.contains("Luxe"));
     } catch (AssertionError e) {
-       
+       e.printStackTrace();
+    }
+   }
+   public void clickOnSortByPopularity(){
+    try {
+        helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.popularity, 10);
+        helper.doClick(NykaaLuxeHomeLocators.popularity);
+    } catch (Exception e) {
+        e.printStackTrace();
+    } 
+   }
+   public void clickOnCustomerToprated(){
+    try {
+        helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.CustomerRated, 10);
+        helper.doClick(NykaaLuxeHomeLocators.CustomerRated); 
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+   }
+   public void clickOnGender(){
+    try {
+        helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.Gender, 10);
+        helper.doClick(NykaaLuxeHomeLocators.Gender);
+    } catch (Exception e) {
+        e.printStackTrace();
     }
    }
    
