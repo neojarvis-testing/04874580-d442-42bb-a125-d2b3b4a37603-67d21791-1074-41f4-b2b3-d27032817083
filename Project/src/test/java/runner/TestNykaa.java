@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
+import pages.NykaaGetAppPage;
 import utils.Base;
 
 public class TestNykaa extends Base{
@@ -37,6 +38,14 @@ public class TestNykaa extends Base{
     public void open(){
         openBrowser();
         driver.navigate().refresh();
+    }
+
+    @Test
+    public void GetAppTestCase()
+    {
+      test = report.createTest("Get App Test Case");
+      NykaaGetAppPage getApp = new NykaaGetAppPage(test);
+      getApp.execute();
     }
 
     /*Method Name: close
