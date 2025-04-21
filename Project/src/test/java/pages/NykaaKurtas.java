@@ -33,7 +33,7 @@ public class NykaaKurtas {
     public void inputKurtas(){
         try {
             helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.searchBar, 10);
-            helper.doSendKeys(NykaaSearchForPillowLocators.searchBar,ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/ExcelData.xlsx", "Rahul", 3, 0));
+            helper.doSendKeys(NykaaSearchForPillowLocators.searchBar,ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/ExcelRahul.xlsx", "Rahul", 3, 0));
         } catch (Exception e) {
             System.out.println("Value not entered");
         }
