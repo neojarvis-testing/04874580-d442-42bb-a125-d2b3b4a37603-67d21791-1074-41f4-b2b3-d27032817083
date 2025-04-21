@@ -21,7 +21,7 @@ public class ExcelReader {
 
     /*
      * A. Method Name: readdata
-     * B. Author Name: Tanu Shree Das
+     * B. Author Name: Group 07
      * C. Description: This method is used for reading data from Excel files and return data from a specific cell in the spreadsheet.
      * D. Parameters: path(String), sheetname(String), rowNumber(int), colNumber(int)
      * E. Return Type: String  
@@ -50,7 +50,7 @@ public class ExcelReader {
 
     /*
      * A. Method Name: readExcelData
-     * B. Author Name: Tanu Shree Das
+     * B. Author Name: Group 07
      * C. Description: This method is used for reading data from Excel files using Object 2D Data Array and return data from a specific cell in the spreadsheet.
      * D. Parameters: path(String), sheetname(String)
      * E. Return Type: Object Array 

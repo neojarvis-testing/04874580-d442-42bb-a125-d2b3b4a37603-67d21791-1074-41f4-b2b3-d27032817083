@@ -9,11 +9,14 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
+
 import pages.NykaaHelpPage;
 import pages.NykaaNewLaunches;
 import pages.NykaaSearchForPillow;
 import pages.NykaaSearchLipstick;
 import pages.NykaaTonerPage;
+import pages.NykaaKurtas;
+import pages.NykaaLuxeHomePage;
 import utils.Base;
 import utils.Report;
 
@@ -51,7 +54,7 @@ public class TestNykaa extends Base{
       Parameter: None
       Return Type: void
      */
-    @Test(enabled = false)
+    @Test
     public void NykaaSearchForPillow_Test(){
       test = report.createTest("NykaaSearchForPillow_Test");
       NykaaSearchForPillow nykaaSearchForPillow = new NykaaSearchForPillow(test);
@@ -92,6 +95,19 @@ public class TestNykaa extends Base{
       NykaaSearchLipstick searchLipstick=new NykaaSearchLipstick(test);
       searchLipstick.testNykaaLipsticks();
     }
+    
+    /*Method Name: NykaaKurtas_Test
+      Author Name: Group 07
+      Description: It automates the process of searching for kurtas on Nykaa and logs the test execution..
+      Parameter: None
+      Return Type: void
+     */
+    @Test
+    public void NykaaKurtas_Test(){
+      test = report.createTest("NykaaKurtas_Test");
+      NykaaKurtas nykaasKurtas = new NykaaKurtas(test);
+      nykaasKurtas.NykaaKurtas_Case(); 
+    }
 
     /*Method Name: close
       Author Name: Group 07
@@ -99,6 +115,12 @@ public class TestNykaa extends Base{
       Parameter: None
       Return Type: void
      */
+    @Test
+    public void nykaaaLuxe(){
+      test=report.createTest("Luxe");
+      NykaaLuxeHomePage nykaaLuxeHomePage=new NykaaLuxeHomePage(test);
+      nykaaLuxeHomePage.nykaaLuxeCase();
+    }
     @AfterMethod
     public void close(){
         driver.quit();
@@ -115,4 +137,6 @@ public class TestNykaa extends Base{
     public void flush(){
         report.flush();
     }
-}
+  }
+
+

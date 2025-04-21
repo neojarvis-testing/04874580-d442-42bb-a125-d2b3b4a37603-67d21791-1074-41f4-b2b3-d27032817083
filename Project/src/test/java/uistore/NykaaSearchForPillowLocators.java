@@ -3,7 +3,7 @@ package uistore;
 import org.openqa.selenium.By;
 
 public class NykaaSearchForPillowLocators {
-    public static By searchBar = By.cssSelector("input[name='search-suggestions-nykaa']");
+    public static By searchBar = By.xpath("//input[@name='search-suggestions-nykaa']");
     public static By pillowHeading = By.cssSelector("div > h1");
     public static By price = By.xpath("(//div[@class='css-w2222k']//div[@class='filter-open css-1gdff5r'])[2]");
     public static By priceRange = By.xpath("//div[@class='control-value']/span[text()='Rs. 1000 - Rs. 1999']");

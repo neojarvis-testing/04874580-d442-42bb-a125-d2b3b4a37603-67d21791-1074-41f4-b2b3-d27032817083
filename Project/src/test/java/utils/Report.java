@@ -56,5 +56,5 @@ public class Report {
             e.printStackTrace();
             test.fail("Failed to capture screenshot: " + e.getMessage());
         }
-}
+    }
 }
