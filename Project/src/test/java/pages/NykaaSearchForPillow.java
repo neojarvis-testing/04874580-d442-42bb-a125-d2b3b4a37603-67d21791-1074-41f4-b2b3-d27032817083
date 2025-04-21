@@ -3,6 +3,9 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 import uistore.NykaaSearchForPillowLocators;
 import utils.Base;
 import utils.ExcelReader;
@@ -12,8 +15,10 @@ import utils.WebDriverHelper;
 
 public class NykaaSearchForPillow {
     public static WebDriverHelper helper;
-    public NykaaSearchForPillow(){
+    public static ExtentTest test;
+    public NykaaSearchForPillow(ExtentTest test){
         helper = new WebDriverHelper(Base.driver);
+        this.test=test;
     }
 
     public void clickSearchBar(){
@@ -160,12 +165,31 @@ public class NykaaSearchForPillow {
                 Assert.assertTrue(data.contains("Filters"));
                 Screenshot.captureFullScreenshot("TestCase1");
                 LoggerHandler.info(data);
+                test.log(Status.PASS, data);
             } catch (Exception e) {
                System.out.println("Assert failed");
             }
         } catch (Exception e) {
             System.out.println("Not Verified");
         }
+    }
+
+    public void NykaaSearchForPillow_Case(){
+        clickSearchBar();
+        inputPillow();
+        hitEnter();
+        verifyPillow();
+        clickPrice();
+        clickPriceRange();
+        clickDiscount();
+        clickDiscountRange();
+        clickAverageRating();
+        clickAverageOption();
+        verifyFilter();
+        clickFirstProduct();
+        clickAddtoBag();
+        clickCart();
+        verifyBag();
     }
 
 }
