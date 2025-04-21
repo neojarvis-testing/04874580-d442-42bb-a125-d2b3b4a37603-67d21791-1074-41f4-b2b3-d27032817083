@@ -24,7 +24,7 @@ public class LoggerHandler {
 
     /*
      * A. Method Name: trace
-     * B. Author Name: Tanu Shree Das
+     * B. Author Name: Group 07
      * C. Description: This method is used for logging a trace-level message. The input message is captured and logged at the TRACE level using a logger.
      * D. Parameters: message(String)
      * E. Return Type: void
@@ -36,7 +36,7 @@ public class LoggerHandler {
 
     /*
      * A. Method Name: debug
-     * B. Author Name: Tanu Shree Das
+     * B. Author Name: Group 07
      * C. Description: This method is used for logging a debug-level message. The input message is captured and logged at the DEBUG level using a logger.
      * D. Parameters: message(String)
      * E. Return Type: void
@@ -48,7 +48,7 @@ public class LoggerHandler {
 
     /*
      * A. Method Name: info
-     * B. Author Name: Tanu Shree Das
+     * B. Author Name: Group 07
      * C. Description: This method is used for logging a info-level message. The input message is captured and logged at the INFO level using a logger.
      * D. Parameters: message(String)
      * E. Return Type: void
@@ -60,7 +60,7 @@ public class LoggerHandler {
 
     /*
      * A. Method Name: warn
-     * B. Author Name: Tanu Shree Das
+     * B. Author Name: Group 07
      * C. Description: This method is used for logging a warn-level message. The input message is captured and logged at the WARN level using a logger.
      * D. Parameters: message(String)
      * E. Return Type: void
@@ -72,7 +72,7 @@ public class LoggerHandler {
 
     /*
      * A. Method Name: error
-     * B. Author Name: Tanu Shree Das
+     * B. Author Name: Group 07
      * C. Description: This method is used for logging a error-level message. The input message is captured and logged at the ERROR level using a logger.
      * D. Parameters: message(String)
      * E. Return Type: void
@@ -84,7 +84,7 @@ public class LoggerHandler {
 
     /*
      * A. Method Name: fatal
-     * B. Author Name: Tanu Shree Das
+     * B. Author Name: Group 07
      * C. Description: This method is used for logging a fatal-level message. The input message is captured and logged at the FATAL level using a logger.
      * D. Parameters: message(String)
      * E. Return Type: void
@@ -96,7 +96,7 @@ public class LoggerHandler {
 
     /*
      * A. Method Name: createLog
-     * B. Author Name: Tanu Shree Das
+     * B. Author Name: Group 07
      * C. Description: This method is a placeholder for creating a logger instance with the specified name. It currently throws an UnsupportedOperationException, indicating that the functionality has not yet been implemented.
      * D. Parameters: name(String)
      * E. Return Type: Logger
