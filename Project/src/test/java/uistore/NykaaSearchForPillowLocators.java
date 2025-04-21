@@ -15,5 +15,5 @@ public class NykaaSearchForPillowLocators {
     public static By firstProduct = By.cssSelector("a[href='/sleepsia-full-body-pillow-ultra-soft-fiber-bed-pillows-for-side-and-back-sleepers/p/7745834?productId=7745834&pps=1']");
     public static By addToBag = By.cssSelector("div[class='css-vp18r8']>button[type='button']");
     public static By cart = By.cssSelector("button[id='header-bag-icon']");
-    public static By bag = By.cssSelector("div[class='header-layout css-z4s1v9 e13w5ra50']");
+    public static By bag = By.cssSelector("div[class='mob-header-layout css-e2nzen esabwed0']");
 }

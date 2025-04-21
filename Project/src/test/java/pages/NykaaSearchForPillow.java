@@ -162,6 +162,7 @@ public class NykaaSearchForPillow {
             helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.bag, 10);
             String data = helper.doGetText(NykaaSearchForPillowLocators.bag);
             try {
+                System.out.println(data);
                 Assert.assertTrue(data.contains("Filters"));
                 Screenshot.captureFullScreenshot("TestCase1");
                 LoggerHandler.info(data);
