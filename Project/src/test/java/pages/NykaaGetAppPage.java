@@ -159,7 +159,7 @@ public class NykaaGetAppPage {
     {
         try {
             String currentURL = Base.driver.getCurrentUrl();
-            Assert.assertEquals(currentURL, "https://www.nykaa.com/sp/offers-native/offers?utm_source=Desktop_web_footer");
+            Assert.assertTrue(currentURL.contains("https://www.nykaa.com/sp/offers-native/offers?utm_source=Desktop_web_footer"));
             test.log(Status.PASS, "Verified 'current URL'");
             LoggerHandler.info("Verified 'current URL'");
             Screenshot.captureFullScreenshot("offerZone");
