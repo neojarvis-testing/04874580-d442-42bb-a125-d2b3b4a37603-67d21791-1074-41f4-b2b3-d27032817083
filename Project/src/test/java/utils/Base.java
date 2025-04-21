@@ -37,7 +37,6 @@ public class Base {
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-
         }
     }
 
