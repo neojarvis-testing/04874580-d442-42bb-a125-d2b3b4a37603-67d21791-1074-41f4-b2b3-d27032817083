@@ -28,7 +28,7 @@ public class TestNykaa extends Base{
      */
     @BeforeClass
     public void report(){
-        
+        report = Report.generateExtenteReports("Nykaa_Report");
     }
 
     /*Method Name: open

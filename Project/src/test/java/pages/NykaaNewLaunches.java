@@ -23,8 +23,8 @@ public class NykaaNewLaunches {
 
     public void scrollDownToFooter(){
         try {
-            // Thread.sleep(2000);
-            helper.doJsScrollFooter();;
+            Thread.sleep(4000);
+            helper.doJsScrollFooter();
         } catch (Exception e) {
            System.out.println("not scrolled");
         } 
