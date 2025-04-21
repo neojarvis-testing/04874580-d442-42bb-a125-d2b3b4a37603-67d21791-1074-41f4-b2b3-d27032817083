@@ -51,7 +51,7 @@ public class NykaaGetAppPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaGetAppPageLocators.mobileInputField, 5);
             helper.doClick(NykaaGetAppPageLocators.mobileInputField);
-            helper.doSendKeys(NykaaGetAppPageLocators.mobileInputField, ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/ExcelData.xlsx", "Tanu Shree", 0, 0));
+            helper.doSendKeys(NykaaGetAppPageLocators.mobileInputField, ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/GetAppData.xlsx", "Sheet1", 0, 0));
             helper.doEnterAction(NykaaGetAppPageLocators.mobileInputField);
             test.log(Status.INFO, "Entered mobile number.");
             LoggerHandler.info("Entered mobile number.");
