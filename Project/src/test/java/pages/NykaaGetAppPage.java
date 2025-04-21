@@ -36,7 +36,7 @@ public class NykaaGetAppPage {
     public void verifyBeautyToGo()
     {
         try {
-            helper.dowaitForElementToBeVisible(NykaaGetAppPageLocators.mainHeading, 5);
+            helper.dowaitForElementToBeVisible(NykaaGetAppPageLocators.mainHeading, 10);
             String mainHeading = helper.doGetText(NykaaGetAppPageLocators.mainHeading);
             Assert.assertTrue(mainHeading.contains("BEAUTY TO GO"));
             test.log(Status.PASS, "Verified 'Beauty to go'");

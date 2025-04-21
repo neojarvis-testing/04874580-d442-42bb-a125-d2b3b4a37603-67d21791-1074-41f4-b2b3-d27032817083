@@ -11,6 +11,7 @@ import com.aventstack.extentreports.ExtentTest;
 
 import pages.NykaaGetAppPage;
 import utils.Base;
+import utils.Report;
 
 public class TestNykaa extends Base{
     public static ExtentReports report;
@@ -25,7 +26,7 @@ public class TestNykaa extends Base{
      */
     @BeforeClass
     public void report(){
-        
+        report = Report.generateExtenteReports("NYKAA_Report");
     }
 
     /*Method Name: open

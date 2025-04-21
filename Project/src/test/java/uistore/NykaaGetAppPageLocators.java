@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 
 public class NykaaGetAppPageLocators {
     public static By getApp = By.xpath("//span[text() = 'Get App']");
-    public static By mainHeading = By.className("main-heading");
+    public static By mainHeading = By.xpath("//h1[@class = 'main-heading']");
     public static By mobileInputField = By.id("mob");
     public static By termsConditions = By.cssSelector("[href='/policy#terms-conditions']");
     public static By termsConditionsHeading = By.xpath("//div[@id = 'terms-conditions']/div[@class = 'doc-heading title-large']");
