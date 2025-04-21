@@ -22,6 +22,12 @@ public class Base {
     public static FileInputStream file;
     public static Properties prop;
 
+    /*Method Name: loadProperties
+     Author Name: Group 07
+     Description: This method loads properties from the configuration file, making them accessible for use in the application
+     Parameter: None
+     Return Type: void
+    */
     public void loadProperties() throws IOException {
         String propertiesPath = System.getProperty("user.dir") + "/config/config.properties";
         try {
@@ -34,6 +40,12 @@ public class Base {
         }
     }
 
+     /*Method Name: openBrowser
+      Author Name: Group 07
+      Description: This method initializes the WebDriver, opens the specified browser, navigates to the configured URL, and applies necessary settings for execution.
+      Parameter: None
+      Return Type: void
+     */
     public void openBrowser() {
 
         try {
