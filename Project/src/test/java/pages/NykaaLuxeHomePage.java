@@ -257,7 +257,7 @@ public class NykaaLuxeHomePage {
 	 */
    public void clickOnGroomingAdvice(){
     try {
-        helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.Gromming, 10);
+        helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.Gromming, 5);
         helper.doClick(NykaaLuxeHomeLocators.Gromming);
         test.log(Status.PASS,"clicked on Gromming Advice");
         LoggerHandler.info("clicked on Gromming Advice");
