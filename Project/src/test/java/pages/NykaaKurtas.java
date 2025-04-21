@@ -25,6 +25,8 @@ public class NykaaKurtas {
         try {
             helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.searchBar, 10);
             helper.doClick(NykaaSearchForPillowLocators.searchBar);
+            test.log(Status.INFO, "Clicked on SearchBar");
+            LoggerHandler.info("Clicked on SearchBar");
         } catch (Exception e) {
             System.out.println("not clicked");
         }
@@ -34,6 +36,8 @@ public class NykaaKurtas {
         try {
             helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.searchBar, 10);
             helper.doSendKeys(NykaaSearchForPillowLocators.searchBar,"Kurtas");
+            test.log(Status.INFO, "Value Entered");
+            LoggerHandler.info("Value Entered");
         } catch (Exception e) {
             System.out.println("Value not entered");
         }
@@ -43,6 +47,8 @@ public class NykaaKurtas {
         try {
             helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.searchBar, 10);
             helper.doEnterAction(NykaaSearchForPillowLocators.searchBar);
+            test.log(Status.INFO, "Enter action performed");
+            LoggerHandler.info("Enter action performed");
         } catch (Exception e) {
             System.out.println("Enter not performed");
         }
@@ -54,6 +60,8 @@ public class NykaaKurtas {
             String data = helper.doGetText(NykaaKurtasLocators.verifyKurtas);
             try {
                 Assert.assertTrue(data.contains("Kurta"));
+                test.log(Status.INFO, "Kurta verified");
+                LoggerHandler.info("Kurta verified");
             } catch (Exception e) {
                System.out.println("Assert failed");
             }
@@ -66,6 +74,8 @@ public class NykaaKurtas {
         try {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.sortBy, 10);
             helper.doHoverOnElement(NykaaKurtasLocators.sortBy);
+            test.log(Status.INFO, "Hovered on sort");
+            LoggerHandler.info("Hovered On sort");
         } catch (Exception e) {
             System.out.println("Sort hover not performed");
         }
