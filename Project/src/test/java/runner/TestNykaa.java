@@ -12,6 +12,7 @@ import com.aventstack.extentreports.ExtentTest;
 import pages.NykaaHelpPage;
 import pages.NykaaNewLaunches;
 import pages.NykaaSearchForPillow;
+import pages.NykaaSearchLipstick;
 import pages.NykaaTonerPage;
 import utils.Base;
 import utils.Report;
@@ -78,11 +79,18 @@ public class TestNykaa extends Base{
       nykaaTonerPage.testTonerPage();
     }
 
-    @Test
+    @Test(enabled = false)
     public void nykaaHelpTest(){
       test=report.createTest("NykaaHelpPage");
       NykaaHelpPage helpPage=new NykaaHelpPage(test);
       helpPage.testHelpPage();
+    }
+
+    @Test
+    public void nykaaLipsticksTest(){
+      test=report.createTest("NykaaLipsticks");
+      NykaaSearchLipstick searchLipstick=new NykaaSearchLipstick(test);
+      searchLipstick.testNykaaLipsticks();
     }
 
     /*Method Name: close
