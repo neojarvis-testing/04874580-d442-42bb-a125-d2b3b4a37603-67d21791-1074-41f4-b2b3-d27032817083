@@ -1,0 +1,11 @@
+2025-04-21 16:51:58,823 INFO  utils.LoggerHandler - Clicked on Luxe
+2025-04-21 16:52:00,599 INFO  utils.LoggerHandler - Verified the text  Luxe
+2025-04-21 16:52:00,799 INFO  utils.LoggerHandler - Clicked on popularity
+2025-04-21 16:52:01,009 INFO  utils.LoggerHandler - Clicked on Customer Top Rated
+2025-04-21 16:52:03,166 INFO  utils.LoggerHandler - Clicked on Gender
+2025-04-21 16:52:05,344 INFO  utils.LoggerHandler - Clicked on Unisex
+2025-04-21 16:52:07,392 INFO  utils.LoggerHandler - Verified the text Unisex
+2025-04-21 16:52:07,572 INFO  utils.LoggerHandler - clicked on Occasion
+2025-04-21 16:52:07,746 INFO  utils.LoggerHandler - clicked on Day wear
+2025-04-21 16:52:09,316 INFO  utils.LoggerHandler - clicked on NykaaMan
+2025-04-21 16:52:25,049 INFO  utils.LoggerHandler - clicked on Gromming Advice

@@ -1,0 +1,6 @@
+2025-04-21 17:17:43,044 INFO  utils.LoggerHandler - Clicked on Luxe
+2025-04-21 17:17:43,338 ERROR utils.LoggerHandler - Cannot Verifiy the text  Luxe
+2025-04-21 17:17:54,029 INFO  utils.LoggerHandler - Clicked on popularity
+2025-04-21 17:17:54,096 INFO  utils.LoggerHandler - Clicked on Customer Top Rated
+2025-04-21 17:17:56,127 INFO  utils.LoggerHandler - Clicked on Gender
+2025-04-21 17:17:58,149 INFO  utils.LoggerHandler - Clicked on Unisex
