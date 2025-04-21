@@ -1,0 +1,11 @@
+2025-04-21 21:06:11,875 INFO  utils.LoggerHandler - Clicked and Switched to Get App Tab
+2025-04-21 21:06:16,692 INFO  utils.LoggerHandler - Verified 'Beauty to go'
+2025-04-21 21:06:17,445 INFO  utils.LoggerHandler - Entered mobile number.
+2025-04-21 21:06:17,888 INFO  utils.LoggerHandler - Clicked and switched tab to Terms and Conditions
+2025-04-21 21:06:19,170 INFO  utils.LoggerHandler - Verified 'Terms & Conditions'
+2025-04-21 21:06:19,329 INFO  utils.LoggerHandler - Clicked to Shipping Policy.
+2025-04-21 21:06:19,413 INFO  utils.LoggerHandler - Verified 'How does the delivery process work?'
+2025-04-21 21:06:19,555 INFO  utils.LoggerHandler - Clicked to Privacy Policy.
+2025-04-21 21:06:19,652 INFO  utils.LoggerHandler - Verified 'Privacy Policy'
+2025-04-21 21:06:40,064 INFO  utils.LoggerHandler - Clicked and switched tab to Offer Zone
+2025-04-21 21:06:42,225 INFO  utils.LoggerHandler - Verified 'current URL'

@@ -11,6 +11,7 @@ import com.aventstack.extentreports.ExtentTest;
 
 import pages.NykaaCategoriesPage;
 import pages.NykaaGetAppPage;
+import pages.NykaaManPage;
 import utils.Base;
 import utils.Report;
 
@@ -49,13 +50,20 @@ public class TestNykaa extends Base{
       NykaaGetAppPage getApp = new NykaaGetAppPage(test);
       getApp.execute();
     }
-    @Test
-    public void NykaaCategoriesTestCase()
-    {
-      test = report.createTest("NykaaCategories_TestCase");
-      NykaaCategoriesPage categories = new NykaaCategoriesPage(test);
-      categories.execute();
-    }
+    // @Test
+    // public void NykaaCategoriesTestCase()
+    // {
+    //   test = report.createTest("NykaaCategories_TestCase");
+    //   NykaaCategoriesPage categories = new NykaaCategoriesPage(test);
+    //   categories.execute();
+    // }
+    // @Test
+    // public void NykaaManPageTestCase()
+    // {
+    //   test = report.createTest("NykaaManPage_TestCase");
+    //   NykaaManPage manPage = new NykaaManPage(test);
+    //   manPage.execute();
+    // }
 
     /*Method Name: close
       Author Name: Group 07

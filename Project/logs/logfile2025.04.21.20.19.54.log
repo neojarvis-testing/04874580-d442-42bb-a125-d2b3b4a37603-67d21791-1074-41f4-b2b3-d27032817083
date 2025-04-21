@@ -1,0 +1,14 @@
+2025-04-21 20:19:54,474 INFO  utils.LoggerHandler - Clicked and Switched to Get App Tab
+2025-04-21 20:19:57,566 INFO  utils.LoggerHandler - Verified 'Beauty to go'
+2025-04-21 20:19:58,384 INFO  utils.LoggerHandler - Entered mobile number.
+2025-04-21 20:19:58,942 INFO  utils.LoggerHandler - Clicked and switched tab to Terms and Conditions
+2025-04-21 20:19:59,885 INFO  utils.LoggerHandler - Verified 'Terms & Conditions'
+2025-04-21 20:20:00,265 INFO  utils.LoggerHandler - Clicked to Shipping Policy.
+2025-04-21 20:20:00,366 INFO  utils.LoggerHandler - Verified 'How does the delivery process work?'
+2025-04-21 20:20:00,527 INFO  utils.LoggerHandler - Clicked to Privacy Policy.
+2025-04-21 20:20:00,662 INFO  utils.LoggerHandler - Verified 'Privacy Policy'
+2025-04-21 20:20:15,967 INFO  utils.LoggerHandler - Clicked and switched tab to Offer Zone
+2025-04-21 20:20:15,978 ERROR utils.LoggerHandler - expected [true] but found [false]
+2025-04-21 20:20:34,187 INFO  utils.LoggerHandler - scroll down to footer
+2025-04-21 20:20:44,256 INFO  utils.LoggerHandler - hovered on health and nutrition.
+2025-04-21 20:20:54,347 INFO  utils.LoggerHandler - switch to new window

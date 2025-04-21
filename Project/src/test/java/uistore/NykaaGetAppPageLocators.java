@@ -10,7 +10,7 @@ public class NykaaGetAppPageLocators {
     public static By termsConditionsHeading = By.xpath("//div[@id = 'terms-conditions']/div[@class = 'doc-heading title-large']");
     public static By shippingPolicy = By.cssSelector("[href='#shipping-policy']");
     public static By deliveryProcessQues = By.xpath("(//div[@id = 'shipping-policy']/div/div[@class = 'doc-title title-medium'])[1]");
-    public static By privacyPolicy = By.xpath("[href='#privacy-policy']");
+    public static By privacyPolicy = By.xpath("//a[text() = 'Privacy Policy']");
     public static By privacyPolicyHeading = By.xpath("//div[@id = 'privacy-policy']/div[@class = 'doc-heading title-large']");
-    public static By offerZone = By.xpath("//a[text() = 'Offer Zone']");
+    public static By offerZone = By.cssSelector(".css-1a55w8c a[href='/sp/offers-native/offers?utm_source=Desktop_web_footer']");
 }
