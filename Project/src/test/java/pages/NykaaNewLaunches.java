@@ -23,7 +23,7 @@ public class NykaaNewLaunches {
 
     public void scrollDownToFooter(){
         try {
-            helper.doScrollBypixel(0, 7000);
+            helper.doScrollBypixel(0, 10000);
         } catch (Exception e) {
            System.out.println("not scrolled");
         } 
