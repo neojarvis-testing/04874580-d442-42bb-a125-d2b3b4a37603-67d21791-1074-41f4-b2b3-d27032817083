@@ -164,7 +164,7 @@ public class NykaaSearchForPillow {
             String data = helper.doGetText(NykaaSearchForPillowLocators.bag);
             try {
                 System.out.println(data);
-                Assert.assertTrue(data.contains("Filters"));
+                Assert.assertTrue(data.contains("Bag"));
                 Screenshot.captureFullScreenshot("TestCase1");
                 LoggerHandler.info(data);
                 test.log(Status.PASS, data);
