@@ -9,6 +9,8 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
+import pages.NykaaLuxeHomePage;
+
 import utils.Base;
 import utils.Report;
 
@@ -46,6 +48,12 @@ public class TestNykaa extends Base{
       Parameter: None
       Return Type: void
      */
+    @Test
+    public void nykaaaLuxe(){
+      test=report.createTest("Luxe");
+      NykaaLuxeHomePage nykaaLuxeHomePage=new NykaaLuxeHomePage(test);
+      nykaaLuxeHomePage.nykaaLuxeCase();
+    }
     @AfterMethod
     public void close(){
         driver.quit();
