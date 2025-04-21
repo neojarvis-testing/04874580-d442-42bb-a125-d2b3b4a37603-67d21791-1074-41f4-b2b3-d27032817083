@@ -9,7 +9,6 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
-import pages.NykaaLuxeHomePage;
 import utils.Base;
 import utils.Report;
 
@@ -25,8 +24,7 @@ public class TestNykaa extends Base{
       Return Type: void
      */
     @BeforeClass
-    public void reporte(){
-      report=Report.generateExtenteReports("vamshi");
+    public void report(){
         
     }
 
@@ -41,6 +39,7 @@ public class TestNykaa extends Base{
         openBrowser();
         driver.navigate().refresh();
     }
+
     /*Method Name: close
       Author Name: Group 07
       Description: This method terminates the WebDriver session, effectively closing the VNC connection.
