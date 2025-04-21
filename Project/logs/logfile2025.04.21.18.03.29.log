@@ -1,0 +1,10 @@
+2025-04-21 18:03:29,108 INFO  utils.LoggerHandler - Toner Entered in search Bar
+2025-04-21 18:03:30,861 INFO  utils.LoggerHandler - Performed enter action succesfully
+2025-04-21 18:03:31,021 INFO  utils.LoggerHandler - Clicked on sortby sucessfully
+2025-04-21 18:03:31,170 INFO  utils.LoggerHandler - Selected new Arrivals successfully
+2025-04-21 18:03:41,318 INFO  utils.LoggerHandler - Clicked on Avg Customer Rating sucessfully
+2025-04-21 18:03:51,433 INFO  utils.LoggerHandler - Selected rating successfully
+2025-04-21 18:03:51,671 INFO  utils.LoggerHandler - Clicked on First Product sucessfully
+2025-04-21 18:03:53,252 INFO  utils.LoggerHandler - Clicked on add to bag successfully
+2025-04-21 18:03:54,258 INFO  utils.LoggerHandler - Clicked on ingredients successfully
+2025-04-21 18:03:55,515 INFO  utils.LoggerHandler - Clicked on ingredients successfully

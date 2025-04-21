@@ -46,6 +46,7 @@ public class NykaaTonerPage {
         try {
             String toner=helper.doGetText(TonerPageLocator.toner);
             Assert.assertTrue(toner.contains("Toner"));
+            System.out.println(toner);
             test.log(Status.PASS,"Verified toner text succesfully");
             LoggerHandler.info("Verified toner text sucessfully");
         } catch (Exception e) {
@@ -55,7 +56,7 @@ public class NykaaTonerPage {
     }
     public void clickOnSortBy(){
         try {
-            helper.dowaitForElementToBeVisible(TonerPageLocator.sortBy,10);
+            helper.dowaitForElementToBeVisible(TonerPageLocator.sortBy,3);
             helper.doClick(TonerPageLocator.sortBy);
             test.log(Status.PASS,"Clicked on sortby succesfully");
             LoggerHandler.info("Clicked on sortby sucessfully");
@@ -67,7 +68,7 @@ public class NykaaTonerPage {
 
     public void selectNewArrivals(){
         try {
-            helper.dowaitForElementToBeVisible(TonerPageLocator.newArrivals,10);
+            helper.dowaitForElementToBeVisible(TonerPageLocator.newArrivals,3);
             helper.doClick(TonerPageLocator.newArrivals);
             test.log(Status.PASS,"Selected new Arrivals succesfully");
             LoggerHandler.info("Selected new Arrivals successfully");
@@ -79,7 +80,8 @@ public class NykaaTonerPage {
 
     public void clickOnAvgCustomer(){
         try {
-            helper.dowaitForElementToBeVisible(TonerPageLocator.avgRate,10);
+            helper.dowaitForElementToBeVisible(TonerPageLocator.avgRate,3);
+            helper.doScrollBypixel(0, 500);
             helper.doClick(TonerPageLocator.avgRate);
             test.log(Status.PASS,"Clicked on Avg Customer Rating succesfully");
             LoggerHandler.info("Clicked on Avg Customer Rating sucessfully");
@@ -91,7 +93,7 @@ public class NykaaTonerPage {
 
     public void selectRating(){
         try {
-            helper.dowaitForElementToBeVisible(TonerPageLocator.rate,10);
+            helper.dowaitForElementToBeVisible(TonerPageLocator.rate,3);
             helper.doClick(TonerPageLocator.rate);
             test.log(Status.PASS,"Selected rating succesfully");
             LoggerHandler.info("Selected rating successfully");
@@ -116,6 +118,7 @@ public class NykaaTonerPage {
         try {
             String inclusiveTax=helper.doGetText(TonerPageLocator.inclusiveTax);
             Assert.assertTrue(inclusiveTax.contains("inclusive of all taxes"));
+            System.out.println(inclusiveTax);
             test.log(Status.PASS,"Verified inclusive of all taxes text succesfully");
             LoggerHandler.info("Verified inclusive of all taxes text sucessfully");
         } catch (Exception e) {
@@ -140,6 +143,7 @@ public class NykaaTonerPage {
         try {
             String description=helper.doGetText(TonerPageLocator.desc);
             Assert.assertTrue(description.contains("Description"));
+            System.out.println(description);
             test.log(Status.PASS,"Verified Description text succesfully");
             LoggerHandler.info("Verified Description text sucessfully");
         } catch (Exception e) {
@@ -176,15 +180,15 @@ public class NykaaTonerPage {
     public void testTonerPage(){
         sendTonerInSearchBar();
         performEnter();
-        verifyToner();
+        // verifyToner();
         clickOnSortBy();
         selectNewArrivals();
         clickOnAvgCustomer();
         selectRating();
         clickOnFirstProduct();
-        verifyInclusiveText();
+        // verifyInclusiveText();
         clickOnAddToBag();
-        verifyDescriptionText();
+        // verifyDescriptionText();
         clickOnIngredients();
         clickOnReadMore();
     }

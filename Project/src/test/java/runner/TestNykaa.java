@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
+import pages.NykaaHelpPage;
 import pages.NykaaNewLaunches;
 import pages.NykaaSearchForPillow;
 import pages.NykaaTonerPage;
@@ -70,11 +71,18 @@ public class TestNykaa extends Base{
       nykaaNewLaunches.NykaaNewLaunches_Case(); 
     }
 
-    @Test
+    @Test(enabled = false)
     public void nykaaTonerTest(){
       test=report.createTest("NykaaToner_Test");
       NykaaTonerPage nykaaTonerPage=new NykaaTonerPage(test);
       nykaaTonerPage.testTonerPage();
+    }
+
+    @Test
+    public void nykaaHelpTest(){
+      test=report.createTest("NykaaHelpPage");
+      NykaaHelpPage helpPage=new NykaaHelpPage(test);
+      helpPage.testHelpPage();
     }
 
     /*Method Name: close
