@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
+import pages.NykaaNewLaunches;
 import pages.NykaaSearchForPillow;
 import utils.Base;
 import utils.Report;
@@ -43,15 +44,29 @@ public class TestNykaa extends Base{
 
     /*Method Name: NykaaSearchForPillow_Test
       Author Name: Group 07
-      Description: it automates the process of searching for a pillow on Nykaa and logs the test execution..
+      Description: It automates the process of searching for a pillow on Nykaa and logs the test execution..
       Parameter: None
       Return Type: void
      */
-    @Test
+    @Test(enabled = false)
     public void NykaaSearchForPillow_Test(){
       test = report.createTest("NykaaSearchForPillow_Test");
       NykaaSearchForPillow nykaaSearchForPillow = new NykaaSearchForPillow(test);
       nykaaSearchForPillow.NykaaSearchForPillow_Case(); 
+    }
+
+
+    /*Method Name: NykaaNewLaunches_Test
+      Author Name: Group 07
+      Description: It automates the process of searching for new launches on Nykaa and logs the test execution..
+      Parameter: None
+      Return Type: void
+     */
+    @Test
+    public void NykaaNewLaunches_Test(){
+      test = report.createTest("NykaaNewLaunches_Test");
+      NykaaNewLaunches nykaaNewLaunches = new NykaaNewLaunches(test);
+      nykaaNewLaunches.NykaaNewLaunches_Case(); 
     }
 
     /*Method Name: close

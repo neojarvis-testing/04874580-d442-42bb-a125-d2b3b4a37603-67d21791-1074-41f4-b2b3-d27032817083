@@ -91,7 +91,6 @@ public class WebDriverHelper {
 			for(String child:set) {
 			if(!child.equals(parent)) {
 				driver.switchTo().window(child);
-				break;
 			}
 		}
 		}catch(Exception e){
