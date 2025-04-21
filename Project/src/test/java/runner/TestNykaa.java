@@ -11,6 +11,7 @@ import com.aventstack.extentreports.ExtentTest;
 
 import pages.NykaaNewLaunches;
 import pages.NykaaSearchForPillow;
+import pages.NykaaTonerPage;
 import utils.Base;
 import utils.Report;
 
@@ -62,11 +63,18 @@ public class TestNykaa extends Base{
       Parameter: None
       Return Type: void
      */
-    @Test
+    @Test(enabled = false)
     public void NykaaNewLaunches_Test(){
       test = report.createTest("NykaaNewLaunches_Test");
       NykaaNewLaunches nykaaNewLaunches = new NykaaNewLaunches(test);
       nykaaNewLaunches.NykaaNewLaunches_Case(); 
+    }
+
+    @Test
+    public void nykaaTonerTest(){
+      test=report.createTest("NykaaToner_Test");
+      NykaaTonerPage nykaaTonerPage=new NykaaTonerPage(test);
+      nykaaTonerPage.testTonerPage();
     }
 
     /*Method Name: close

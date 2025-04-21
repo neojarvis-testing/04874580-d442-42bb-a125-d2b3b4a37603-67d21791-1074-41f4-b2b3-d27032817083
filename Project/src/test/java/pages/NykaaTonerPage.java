@@ -10,18 +10,19 @@ import uistore.TonerPageLocator;
 import utils.Base;
 import utils.ExcelReader;
 import utils.LoggerHandler;
+import utils.Screenshot;
 import utils.WebDriverHelper;
 
-public class TonerPage {
+public class NykaaTonerPage {
     public static WebDriverHelper helper;
     public ExtentTest test;
-    public TonerPage(ExtentTest test){
+    public NykaaTonerPage(ExtentTest test){
         helper=new WebDriverHelper(Base.driver);
         this.test=test;
     }
     public void sendTonerInSearchBar(){
         try {
-            helper.doSendKeys(TonerPageLocator.searchBar,ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/ExcelData.xlsx", "Likitha", 0, 0));
+            helper.doSendKeys(TonerPageLocator.searchBar,ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/TonerExcel.xlsx", "Likitha", 0, 0));
             test.log(Status.PASS,"Toner Entered in serach Bar.");
             LoggerHandler.info("Toner Entered in search Bar");
         } catch (Exception e) {
@@ -165,10 +166,27 @@ public class TonerPage {
             helper.doClick(TonerPageLocator.readMore);
             test.log(Status.PASS,"Clicked on ingredients successfully");
             LoggerHandler.info("Clicked on ingredients successfully");
+            Screenshot.captureFullScreenshot("Read More Ingredients");
         } catch (Exception e) {
             test.log(Status.FAIL,"Failed to ingredients to bag");
             LoggerHandler.info("Failed to ingredients to bag");
         }
+    }
+
+    public void testTonerPage(){
+        sendTonerInSearchBar();
+        performEnter();
+        verifyToner();
+        clickOnSortBy();
+        selectNewArrivals();
+        clickOnAvgCustomer();
+        selectRating();
+        clickOnFirstProduct();
+        verifyInclusiveText();
+        clickOnAddToBag();
+        verifyDescriptionText();
+        clickOnIngredients();
+        clickOnReadMore();
     }
 
 }
