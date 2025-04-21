@@ -180,7 +180,7 @@ public class NykaaTonerPage {
     public void testTonerPage(){
         sendTonerInSearchBar();
         performEnter();
-        // verifyToner();
+        verifyToner();
         clickOnSortBy();
         selectNewArrivals();
         clickOnAvgCustomer();
@@ -188,7 +188,7 @@ public class NykaaTonerPage {
         clickOnFirstProduct();
         // verifyInclusiveText();
         clickOnAddToBag();
-        // verifyDescriptionText();
+        verifyDescriptionText();
         clickOnIngredients();
         clickOnReadMore();
     }

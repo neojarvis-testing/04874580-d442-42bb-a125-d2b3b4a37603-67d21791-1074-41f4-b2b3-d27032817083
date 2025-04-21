@@ -72,7 +72,7 @@ public class TestNykaa extends Base{
       nykaaNewLaunches.NykaaNewLaunches_Case(); 
     }
 
-    @Test(enabled = false)
+    @Test
     public void nykaaTonerTest(){
       test=report.createTest("NykaaToner_Test");
       NykaaTonerPage nykaaTonerPage=new NykaaTonerPage(test);
@@ -86,7 +86,7 @@ public class TestNykaa extends Base{
       helpPage.testHelpPage();
     }
 
-    @Test
+    @Test(enabled = false)
     public void nykaaLipsticksTest(){
       test=report.createTest("NykaaLipsticks");
       NykaaSearchLipstick searchLipstick=new NykaaSearchLipstick(test);

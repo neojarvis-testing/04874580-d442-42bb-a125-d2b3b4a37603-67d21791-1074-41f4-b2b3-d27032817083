@@ -8,7 +8,7 @@ public class TonerPageLocator {
     public static By sortBy=By.className("css-1aucgde");
     public static By newArrivals=By.xpath("//span[text()='new arrivals']");
     public static By rate=By.xpath("//span[text()='4 stars & above']");
-    public static By avgRate=By.cssSelector("span[class='title active']");
+    public static By avgRate=By.xpath("//span[text()='Avg Customer Rating']");
     public static By firstProduct=By.xpath("//div[text()='Biodance Collagen Gel Toner Pad']");
     public static By inclusiveTax=By.cssSelector(".css-1c4feqy");
     public static By addToBag=By.cssSelector(".css-vp18r8 .css-13zjqg6");

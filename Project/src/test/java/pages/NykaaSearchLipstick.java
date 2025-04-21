@@ -1,5 +1,7 @@
 package pages;
 
+import org.testng.Assert;
+
 import com.aventstack.extentreports.ExtentTest;
 
 import uistore.NykaaSearchLipstickPageLocator;
@@ -25,8 +27,9 @@ public class NykaaSearchLipstick {
 
     public void clickOnLiquidLipstickSuggestion(){
         try {
-            helper.dowaitForElementToBeVisible(NykaaSearchLipstickPageLocator.lipstickSuggestion, 5);
-            helper.doClick(NykaaSearchLipstickPageLocator.lipstickSuggestion);
+            // helper.dowaitForElementToBeVisible(NykaaSearchLipstickPageLocator.lipstickSuggestion, 5);
+            // helper.doClick(NykaaSearchLipstickPageLocator.lipstickSuggestion);
+            helper.doEnterAction(NykaaSearchLipstickPageLocator.searchBar);
 
         } catch (Exception e) {
             // TODO: handle exception
@@ -109,18 +112,37 @@ public class NykaaSearchLipstick {
         }
     }
 
+    public static void verifyWasHelpful(){
+        try {
+            String wasHelpful=helper.doGetText(NykaaSearchLipstickPageLocator.wasHelpful);
+            Assert.assertTrue(wasHelpful.contains("Was this helpful ?"));
+        } catch (Exception e) {
+        }
+    }
     public void testNykaaLipsticks(){
-        sendLipstickInsearchBar();
-        clickOnLiquidLipstickSuggestion();
-        clickOnPriviewShades();
-        clickOnViewDetails();
-        clickOnArrow();
-        selectThirdOption();
-        scrollToFooter();
-        clickOnContactUs();
-        clickOnNykaaAccount();
-        clickOnMyWishlist();
-        clickAddItems();
+        
+        try {
+            sendLipstickInsearchBar();
+            clickOnLiquidLipstickSuggestion();
+            hoverOnFirstProduct();
+            clickOnPriviewShades();
+            clickOnViewDetails();
+            clickOnArrow();
+            selectThirdOption();
+            scrollToFooter();
+            clickOnContactUs();
+            Thread.sleep(2000);
+            clickOnNykaaAccount();
+            Thread.sleep(2000);
+            clickOnMyWishlist();
+            Thread.sleep(2000);
+            clickAddItems();
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
     }
 
 }

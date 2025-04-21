@@ -1,0 +1,8 @@
+2025-04-21 20:27:00,277 INFO  utils.LoggerHandler - Toner Entered in search Bar
+2025-04-21 20:27:01,602 INFO  utils.LoggerHandler - Performed enter action succesfully
+2025-04-21 20:27:06,715 INFO  utils.LoggerHandler - Failed to verify toner text
+2025-04-21 20:27:06,984 INFO  utils.LoggerHandler - Clicked on sortby sucessfully
+2025-04-21 20:27:07,212 INFO  utils.LoggerHandler - Selected new Arrivals successfully
+2025-04-21 20:27:07,980 INFO  utils.LoggerHandler - Clicked on Avg Customer Rating sucessfully
+2025-04-21 20:27:08,183 INFO  utils.LoggerHandler - Selected rating successfully
+2025-04-21 20:27:09,492 INFO  utils.LoggerHandler - Clicked on First Product sucessfully
