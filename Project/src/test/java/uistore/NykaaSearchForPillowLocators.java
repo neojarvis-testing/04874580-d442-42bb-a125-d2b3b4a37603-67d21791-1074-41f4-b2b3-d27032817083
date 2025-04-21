@@ -2,7 +2,7 @@ package uistore;
 
 import org.openqa.selenium.By;
 
-public class SearchForPillowLocators {
+public class NykaaSearchForPillowLocators {
     public static By searchBar = By.cssSelector("input[name='search-suggestions-nykaa']");
     public static By pillowHeading = By.cssSelector("div > h1");
     public static By price = By.xpath("(//div[@class='css-w2222k']//div[@class='filter-open css-1gdff5r'])[2]");
@@ -15,6 +15,6 @@ public class SearchForPillowLocators {
     public static By firstProduct = By.cssSelector("a[href='/sleepsia-full-body-pillow-ultra-soft-fiber-bed-pillows-for-side-and-back-sleepers/p/7745834?productId=7745834&pps=1']");
     public static By addToBag = By.cssSelector("div[class='css-vp18r8']>button[type='button']");
     public static By cart = By.cssSelector("button[id='header-bag-icon']");
-    public static By bag = By.xpath("//p[text()='Bag']");
-    
+    public static By bag = By.cssSelector("p[class='css-1v1x2g9 e171rb9k0']");
+    public static By iframe = By.cssSelector("iframe[src='/mobileCartIframe?ptype=customIframeCart']");
 }
