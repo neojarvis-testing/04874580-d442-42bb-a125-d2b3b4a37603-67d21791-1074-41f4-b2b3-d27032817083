@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
+import pages.NykaaLuxeHomePage;
 import utils.Base;
 import utils.Report;
 
@@ -25,7 +26,7 @@ public class TestNykaa extends Base{
      */
     @BeforeClass
     public void report(){
-        
+        report=Report.generateExtenteReports("vamshi");
     }
 
     /*Method Name: open
