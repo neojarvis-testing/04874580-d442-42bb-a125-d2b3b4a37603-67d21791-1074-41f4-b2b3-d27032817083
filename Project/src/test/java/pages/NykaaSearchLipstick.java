@@ -116,6 +116,7 @@ public class NykaaSearchLipstick {
         try {
             helper.doClickandswitch(NykaaSearchLipstickPageLocator.viewDetails);
             test.log(Status.PASS,"clicked on view details");
+            test.log(Status.INFO,"Switched to new tab of view details");
             LoggerHandler.info("clicked on view details");
         } catch (Exception e) {
             test.log(Status.FAIL,"Failed to click on view details.");
@@ -152,11 +153,12 @@ public class NykaaSearchLipstick {
         try {
             helper.dowaitForElementToBeVisible(NykaaSearchLipstickPageLocator.dropdwon, 5);
             helper.doSelectfromDropdown(NykaaSearchLipstickPageLocator.dropdwon,"120 Major Crush");
-            test.log(Status.PASS,"selected third option");
-            LoggerHandler.info("selected third option");
+            test.log(Status.INFO,"Select third option from dropdown of shades");
+            test.log(Status.PASS,"selected third option from dropdown of shades");
+            LoggerHandler.info("selected third option from dropdown of shades");
         } catch (Exception e) {
-            test.log(Status.FAIL,"Failed to select third option.");
-            LoggerHandler.info("Failed to select third option.");
+            test.log(Status.FAIL,"Failed to select third option from dropdown of shades.");
+            LoggerHandler.info("Failed to select third option from dropdown of shades.");
         }
     }
     /*
@@ -169,6 +171,7 @@ public class NykaaSearchLipstick {
     public void scrollToFooter(){
         try {
             helper.doScrollBypixel(0,2000);
+            test.log(Status.INFO, "Scroll to footer");
             test.log(Status.PASS,"scrolled to footer");
             LoggerHandler.info("scrolled to footer");
         } catch (Exception e) {
@@ -188,10 +191,30 @@ public class NykaaSearchLipstick {
             helper.dowaitForElementToBeVisible(NykaaSearchLipstickPageLocator.contactUs, 5);
             helper.doClickandswitch(NykaaSearchLipstickPageLocator.contactUs);
             test.log(Status.PASS,"clicked on contactus");
+            test.info("Switched to new tab of contact us");
             LoggerHandler.info("clicked on contactus");
         } catch (Exception e) {
             test.log(Status.FAIL,"Failed to click on contact us.");
             LoggerHandler.info("Failed to click on contact us.");
+        }
+    }
+    /*
+     * a.Method Name:verifyBrowseTopics
+     * b.Author Name:Group 07
+     * c.Description:This method verifies if the text "Browse Topics" is present on the Nykaa website.
+     * d.Parameters:None
+     * e.Return Type:void
+     */
+    public void verifyBrowseTopics(){
+        try {
+            String browseTopics=helper.doGetText(NykaaSearchLipstickPageLocator.browseTopics);
+            Assert.assertTrue(browseTopics.contains("Browse Topics"));
+            test.log(Status.PASS, "Verified Browse Topics text successfully");
+            LoggerHandler.info("Verified Browse Topics successfully");
+
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Failed to verify text Browse Topics");
+            LoggerHandler.error("Failed to verify Browse Topics text");
         }
     }
     /*
@@ -288,11 +311,14 @@ public class NykaaSearchLipstick {
             scrollToFooter();
             clickOnContactUs();
             Thread.sleep(2000);
+            verifyBrowseTopics();
             clickOnNykaaAccount();
             Thread.sleep(2000);
             clickOnMyWishlist();
             Thread.sleep(2000);
             clickAddItems();
+            Thread.sleep(2000);
+            verifyWasHelpful();
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();

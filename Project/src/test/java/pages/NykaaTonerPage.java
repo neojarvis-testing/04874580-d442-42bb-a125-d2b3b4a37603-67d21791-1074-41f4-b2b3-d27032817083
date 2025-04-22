@@ -56,6 +56,7 @@ public class NykaaTonerPage {
     public void performEnter() {
         try {
             helper.doEnterAction(TonerPageLocator.searchBar);
+            test.log(Status.INFO,"Press enter in the keyboard");
             test.log(Status.PASS, "Performed enter action succesfully");
             LoggerHandler.info("Performed enter action succesfully");
         } catch (Exception e) {
@@ -121,6 +122,7 @@ public class NykaaTonerPage {
         try {
             helper.dowaitForElementToBeVisible(TonerPageLocator.newArrivals, 3);
             helper.doClick(TonerPageLocator.newArrivals);
+            test.log(Status.INFO,"Filter products based on new arrivals");
             test.log(Status.PASS, "Selected new Arrivals succesfully");
             LoggerHandler.info("Selected new Arrivals successfully");
         } catch (Exception e) {
@@ -144,6 +146,7 @@ public class NykaaTonerPage {
         try {
             helper.dowaitForElementToBeVisible(TonerPageLocator.avgRate, 3);
             helper.doScrollBypixel(0, 500);
+            test.log(Status.INFO, "Scrolled to click on Avg Customer Rating");
             helper.doClick(TonerPageLocator.avgRate);
             test.log(Status.PASS, "Clicked on Avg Customer Rating succesfully");
             LoggerHandler.info("Clicked on Avg Customer Rating sucessfully");
@@ -187,6 +190,7 @@ public class NykaaTonerPage {
         try {
             helper.dowaitForElementToBeVisible(TonerPageLocator.firstProduct, 10);
             helper.doClickandswitch(TonerPageLocator.firstProduct);
+            test.log(Status.INFO, "Switch to new tab of the product");
             test.log(Status.PASS, "Clicked on First product succesfully");
             LoggerHandler.info("Clicked on First Product sucessfully");
         } catch (Exception e) {
@@ -301,8 +305,6 @@ public class NykaaTonerPage {
             Screenshot.captureFullScreenshot("Read More Ingredients");
 
             Report.addScreenshotToReport(test, Base.driver,"Screenshot_Ingredients");
-
-            Report.addScreenshotToReport(test, Base.driver, "clicked on read more");
 
         } catch (Exception e) {
             test.log(Status.FAIL, "Failed to ingredients to bag");
