@@ -149,7 +149,7 @@ public class TestNykaa extends Base{
      * D. Parameters: None
      * E. Return Type: void
      */
-    @Test
+    @Test(enabled = true, priority = 7)
     public void NykaaGetAppTestCase()
     {
       test = report.createTest("NykaaGetApp_TestCase");
@@ -164,7 +164,7 @@ public class TestNykaa extends Base{
      * D. Parameters: None
      * E. Return Type: void
      */
-    @Test
+    @Test(enabled = true, priority = 8)
     public void NykaaCategoriesTestCase()
     {
       test = report.createTest("NykaaCategories_TestCase");
@@ -180,7 +180,7 @@ public class TestNykaa extends Base{
      * D. Parameters: None
      * E. Return Type: void
      */
-    @Test
+    @Test(enabled = true, priority = 10)
     public void NykaaManPageTestCase()
     {
       test = report.createTest("NykaaManPage_TestCase");
