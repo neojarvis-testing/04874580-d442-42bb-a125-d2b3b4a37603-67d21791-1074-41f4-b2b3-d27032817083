@@ -37,8 +37,8 @@ public class NykaaLuxeHomePage {
 	 */
    public void clickOnLuxe(){
     try{
-        helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.Luxe, 10);
-        helper.doClickandswitch(NykaaLuxeHomeLocators.Luxe);
+        helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.luxe, 10);
+        helper.doClickandswitch(NykaaLuxeHomeLocators.luxe);
         test.log(Status.PASS,"Clicked on Luxe");
         LoggerHandler.info("Clicked on Luxe");
     } catch (Exception e) {
@@ -55,7 +55,7 @@ public class NykaaLuxeHomePage {
 	 */
    public void verifyLuxe(){
     try {
-        String luxe=helper.doGetText(NykaaLuxeHomeLocators.NykaaLuxe);
+        String luxe=helper.doGetText(NykaaLuxeHomeLocators.nykaaLuxe);
         Assert.assertTrue(luxe.contains("Luxe"));
         test.log(Status.PASS,"Verified the text  Luxe");
         LoggerHandler.info("Verified the text  Luxe");
