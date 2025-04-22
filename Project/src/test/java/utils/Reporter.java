@@ -17,7 +17,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.google.common.io.Files;
  
-public class Report {
+public class Reporter {
 	public static FileInputStream fip;
     public static ExtentReports report;
     public static ExtentTest test;
