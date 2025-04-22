@@ -97,7 +97,8 @@ public class NykaaSearchLipstick {
     public void verifySelectAShade(){
         try {
             String selectShade=helper.doGetText(NykaaSearchLipstickPageLocator.selectShade);
-            Assert.assertTrue(selectShade.contains("Select A Shade"));
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 8, 0);
+            Assert.assertTrue(selectShade.contains(expected));
             test.log(Status.PASS,"Verified Select A Shade");
             LoggerHandler.info("Verified Select A Shade");
         } catch (Exception e) {
@@ -208,7 +209,8 @@ public class NykaaSearchLipstick {
     public void verifyBrowseTopics(){
         try {
             String browseTopics=helper.doGetText(NykaaSearchLipstickPageLocator.browseTopics);
-            Assert.assertTrue(browseTopics.contains("Browse Topics"));
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 9, 0);
+            Assert.assertTrue(browseTopics.contains(expected));
             test.log(Status.PASS, "Verified Browse Topics text successfully");
             LoggerHandler.info("Verified Browse Topics successfully");
 
@@ -287,7 +289,8 @@ public class NykaaSearchLipstick {
     public void verifyWasHelpful(){
         try {
             String wasHelpful=helper.doGetText(NykaaSearchLipstickPageLocator.wasHelpful);
-            Assert.assertTrue(wasHelpful.contains("Was this helpful ?"));
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 10, 0);
+            Assert.assertTrue(wasHelpful.contains(expected));
             test.log(Status.PASS,"Verified Was this helpful");
             LoggerHandler.info("Verified Was this helpful");
             Screenshot.captureFullScreenshot("Nykaa Account Screenshot");

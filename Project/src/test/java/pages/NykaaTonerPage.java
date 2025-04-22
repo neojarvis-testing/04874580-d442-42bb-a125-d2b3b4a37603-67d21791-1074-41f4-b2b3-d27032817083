@@ -78,7 +78,8 @@ public class NykaaTonerPage {
     public void verifyToner() {
         try {
             String toner = helper.doGetText(TonerPageLocator.toner);
-            Assert.assertTrue(toner.contains("Toner"));
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 0, 1);
+            Assert.assertTrue(toner.contains(expected));
             System.out.println(toner);
             test.log(Status.PASS, "Verified toner text succesfully");
             LoggerHandler.info("Verified toner text sucessfully");
@@ -212,7 +213,8 @@ public class NykaaTonerPage {
     public void verifyInclusiveText() {
         try {
             String inclusiveTax = helper.doGetText(TonerPageLocator.inclusiveTax);
-            Assert.assertTrue(inclusiveTax.contains("inclusive of all taxes"));
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 1, 1);
+            Assert.assertTrue(inclusiveTax.contains(expected));
             System.out.println(inclusiveTax);
             test.log(Status.PASS, "Verified inclusive of all taxes text succesfully");
             LoggerHandler.info("Verified inclusive of all taxes text sucessfully");
@@ -256,7 +258,8 @@ public class NykaaTonerPage {
     public void verifyDescriptionText() {
         try {
             String description = helper.doGetText(TonerPageLocator.desc);
-            Assert.assertTrue(description.contains("Description"));
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 2, 1);
+            Assert.assertTrue(description.contains(expected));
             System.out.println(description);
             test.log(Status.PASS, "Verified Description text succesfully");
             LoggerHandler.info("Verified Description text sucessfully");
