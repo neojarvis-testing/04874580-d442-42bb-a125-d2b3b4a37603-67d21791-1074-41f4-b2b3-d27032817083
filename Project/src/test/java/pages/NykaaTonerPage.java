@@ -21,6 +21,16 @@ public class NykaaTonerPage {
         helper=new WebDriverHelper(Base.driver);
         this.test=test;
     }
+
+    /*
+    * a. Method Name: sendTonerInSearchBar
+    * b. Description:
+    *    - Retrieves the toner name from an Excel sheet and inputs it into the search bar.
+    *    - Logs success or failure messages accordingly
+    * c.Parameters:None
+    * d. return type : void
+    */
+
     public void sendTonerInSearchBar(){
         try {
             helper.doSendKeys(TonerPageLocator.searchBar,ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/TonerExcel.xlsx", "Likitha", 0, 0));
@@ -31,6 +41,15 @@ public class NykaaTonerPage {
             LoggerHandler.info("Failed to enter Toner in search bar");
         }
     }
+
+    /*
+    * a. Method Name: performEnter
+    * b. Description:
+    *       -Executes the enter action on the search bar element using the helper method.
+    *       -Logs success or failure using test reporting and logger.
+    * c.Parameters:None
+    * d. return type : void
+    */
     
     public void performEnter(){
         try {
@@ -42,6 +61,14 @@ public class NykaaTonerPage {
             LoggerHandler.info("Failed to perform enter action");
         } 
     }
+
+    /*
+    * a. Method Name: verifyToner
+    * b. Description:
+    *       -Retrieves the text from the toner element and asserts if it contains "Toner".
+    * c.Parameters:None
+    * d. return type : void
+    */
 
     public void verifyToner(){
         try {
@@ -55,6 +82,14 @@ public class NykaaTonerPage {
             LoggerHandler.info("Failed to verify toner text");
         }
     }
+
+    /*
+    * a. Method Name: clickOnSortBy
+    * b. Description:
+    *       -Waits for the Sort By element to be visible and then performs a click action.
+    * c.Parameters:None
+    * d. return type : void
+    */
     public void clickOnSortBy(){
         try {
             helper.dowaitForElementToBeVisible(TonerPageLocator.sortBy,3);
@@ -66,7 +101,13 @@ public class NykaaTonerPage {
             LoggerHandler.info("Failed to click on sortby");
         }
     }
-
+     /*
+    * a. Method Name: selectNewArrivals
+    * b. Description:
+    *       -Waits for the "New Arrivals" element to be visible and then performs a click action.
+    * c.Parameters:None
+    * d. return type : void
+    */
     public void selectNewArrivals(){
         try {
             helper.dowaitForElementToBeVisible(TonerPageLocator.newArrivals,3);
@@ -78,6 +119,15 @@ public class NykaaTonerPage {
             LoggerHandler.info("Failed to select new Arrivals");
         }
     }
+
+    /*
+   * a. Method Name: clickOnAvgCustomer
+   * b. Description:
+   *       -Waits until the "Average Customer Rating" filter is visible, scrolls the page to ensure it’s within view,
+   *           and then clicks on the element. Logs success or failure using test reporting and a logger.
+   * c.Parameters:None
+   * d. return type : void
+   */
 
     public void clickOnAvgCustomer(){
         try {
@@ -92,6 +142,14 @@ public class NykaaTonerPage {
         }
     }
 
+    /*
+   * a. Method Name: selectRating
+   * b. Description:
+   *       -Waits for visibility, then clicks the rating filter.
+   *            Logs success or failure for tracking.
+   * c.Parameters:None
+   * d. return type : void
+   */
     public void selectRating(){
         try {
             helper.dowaitForElementToBeVisible(TonerPageLocator.rate,3);
@@ -103,6 +161,15 @@ public class NykaaTonerPage {
             LoggerHandler.info("Failed to select Rating");
         }
     }
+
+    /*
+   * a. Method Name: clickOnFirstProduct
+   * b. Description:
+   *       -Ensures visibility before clicking and switching context.
+   *         Logs success or failure for tracking.
+   * c.Parameters:None
+   * d. return type : void
+   */
     public void clickOnFirstProduct(){
         try {
             helper.dowaitForElementToBeVisible(TonerPageLocator.firstProduct,10);
