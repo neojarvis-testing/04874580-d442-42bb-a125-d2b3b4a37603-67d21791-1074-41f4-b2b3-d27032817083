@@ -12,7 +12,7 @@ import com.aventstack.extentreports.ExtentTest;
 import pages.NykaaCategoriesPage;
 import pages.NykaaGetAppPage;
 import pages.NykaaHelpPage;
-import pages.NykaaKurtas;
+import pages.NykaaKurtasPage;
 import pages.NykaaLuxeHomePage;
 import pages.NykaaManPage;
 import pages.NykaaNewLaunches;
