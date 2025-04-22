@@ -6,7 +6,7 @@ import org.testng.Assert;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
-import uistore.NykaaSearchForPillowLocators;
+import uistore.NykaaPillowLocators;
 import utils.Base;
 import utils.ExcelReader;
 import utils.LoggerHandler;
@@ -21,10 +21,17 @@ public class NykaaPillowPage {
         this.test=test;
     }
 
+    /*
+     * A. Method Name: clickSearchBar
+     * B. Author Name: Group 07
+     * C. Description: Clicks on the search bar element on the Nykaa page.
+     * D. Parameter: None
+     * E. Return type: void
+     */
     public void clickSearchBar(){
         try {
-            helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.searchBar, 10);
-            helper.doClick(NykaaSearchForPillowLocators.searchBar);
+            helper.dowaitForElementToBeVisible(NykaaPillowLocators.searchBar, 10);
+            helper.doClick(NykaaPillowLocators.searchBar);
             test.log(Status.PASS, "clicked on search bar");
             LoggerHandler.info("clicked on search bar");
         } catch (Exception e) {
@@ -33,10 +40,17 @@ public class NykaaPillowPage {
         }
     }
 
+    /*
+     * A. Method Name: inputPillow
+     * B. Author Name: Group 07
+     * C. Description: Enters the word "Pillow" in the search bar.
+     * D. Parameter: None
+     * E. Return type: void
+     */
     public void inputPillow(){
         try {
-            helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.searchBar, 10);
-            helper.doSendKeys(NykaaSearchForPillowLocators.searchBar,"Pillow");
+            helper.dowaitForElementToBeVisible(NykaaPillowLocators.searchBar, 10);
+            helper.doSendKeys(NykaaPillowLocators.searchBar,"Pillow");
             test.log(Status.PASS, "pillow entered");
             LoggerHandler.info("pillow entered");
         } catch (Exception e) {
@@ -45,10 +59,17 @@ public class NykaaPillowPage {
         }
     }
 
+    /*
+     * A. Method Name: hitEnter
+     * B. Author Name: Group 07
+     * C. Description: Simulates an Enter key press on the search bar.
+     * D. Parameter: None
+     * E. Return type: void
+     */
     public void hitEnter(){
         try {
-            helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.searchBar, 10);
-            helper.doEnterAction(NykaaSearchForPillowLocators.searchBar);
+            helper.dowaitForElementToBeVisible(NykaaPillowLocators.searchBar, 10);
+            helper.doEnterAction(NykaaPillowLocators.searchBar);
             test.log(Status.PASS, "Hit action performed");
             LoggerHandler.info("Hit action performed");
         } catch (Exception e) {
@@ -57,10 +78,17 @@ public class NykaaPillowPage {
         }
     }
 
+    /*
+     * A. Method Name: verifyPillow
+     * B. Author Name: Group 07
+     * C. Description: Verifies that the search result contains "Pillow".
+     * D. Parameter: None
+     * E. Return type: void
+     */
     public void verifyPillow(){
         try {
-            helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.pillowHeading, 10);
-            String data = helper.doGetText(NykaaSearchForPillowLocators.pillowHeading);
+            helper.dowaitForElementToBeVisible(NykaaPillowLocators.pillowHeading, 10);
+            String data = helper.doGetText(NykaaPillowLocators.pillowHeading);
             Assert.assertTrue(data.contains("Pillow"));
             test.log(Status.PASS, "Text pillow verified");
             LoggerHandler.info("Text pillow verified");
@@ -70,10 +98,17 @@ public class NykaaPillowPage {
         }
     }
 
+    /*
+    * A. Method Name: clickPrice
+    * B. Author Name: Group 07
+    * C. Description: Clicks on the price filter option.
+    * D. Parameter: None
+    * E. Return type: void
+    */
     public void clickPrice(){
         try {
-            helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.price, 10);
-            helper.doClick(NykaaSearchForPillowLocators.price);
+            helper.dowaitForElementToBeVisible(NykaaPillowLocators.price, 10);
+            helper.doClick(NykaaPillowLocators.price);
             test.log(Status.PASS, "clicked on price");
             LoggerHandler.info("clicked on price");
         } catch (Exception e) {
@@ -82,10 +117,17 @@ public class NykaaPillowPage {
         }
     }
 
+    /*
+    * A. Method Name: clickPriceRange
+    * B. Author Name: Group 07
+    * C. Description: Selects a specific price range filter.
+    * D. Parameter: None
+    * E. Return type: void
+    */
     public void clickPriceRange(){
         try {
-            helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.priceRange, 10);
-            helper.doClick(NykaaSearchForPillowLocators.priceRange);
+            helper.dowaitForElementToBeVisible(NykaaPillowLocators.priceRange, 10);
+            helper.doClick(NykaaPillowLocators.priceRange);
             test.log(Status.PASS, "clicked on price range");
             LoggerHandler.info("clicked on price range");
         } catch (Exception e) {
@@ -94,10 +136,17 @@ public class NykaaPillowPage {
         }
     }
 
+    /*
+    * A. Method Name: clickDiscount
+    * B. Author Name: Group 07
+    * C. Description: Clicks on the discount filter option.
+    * D. Parameter: None
+    * E. Return type: void
+    */
     public void clickDiscount(){
         try {
-            helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.discount, 10);
-            helper.doClick(NykaaSearchForPillowLocators.discount);
+            helper.dowaitForElementToBeVisible(NykaaPillowLocators.discount, 10);
+            helper.doClick(NykaaPillowLocators.discount);
             test.log(Status.PASS, "clicked on discount");
             LoggerHandler.info("clicked on discount");
         } catch (Exception e) {
@@ -106,10 +155,17 @@ public class NykaaPillowPage {
         }
     }
 
+    /*
+    * A. Method Name: clickDiscountRange
+    * B. Author Name: Group 07
+    * C. Description: Selects a specific discount range filter.
+    * D. Parameter: None
+    * E. Return type: void
+    */
     public void clickDiscountRange(){
         try {
-            helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.discountRange, 10);
-            helper.doClick(NykaaSearchForPillowLocators.discountRange);
+            helper.dowaitForElementToBeVisible(NykaaPillowLocators.discountRange, 10);
+            helper.doClick(NykaaPillowLocators.discountRange);
             test.log(Status.PASS, "clicked on discount range");
             LoggerHandler.info("clicked on discount range");
         } catch (Exception e) {
@@ -118,10 +174,17 @@ public class NykaaPillowPage {
         }
     }
 
+    /*
+    * A. Method Name: clickAverageRating
+    * B. Author Name: Group 07
+    * C. Description: Clicks on the average customer rating filter option.
+    * D. Parameter: None
+    * E. Return type: void
+    */
     public void clickAverageRating(){
         try {
-            helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.averageCustomerRating, 10);
-            helper.doClick(NykaaSearchForPillowLocators.averageCustomerRating);
+            helper.dowaitForElementToBeVisible(NykaaPillowLocators.averageCustomerRating, 10);
+            helper.doClick(NykaaPillowLocators.averageCustomerRating);
             test.log(Status.PASS, "clicked on average customer rating");
             LoggerHandler.info("clicked on average customer rating");
         } catch (Exception e) {
@@ -130,10 +193,17 @@ public class NykaaPillowPage {
         }
     }
 
+    /*
+    * A. Method Name: clickAverageOption
+    * B. Author Name: Group 07
+    * C. Description: Selects a four-star rating filter option.
+    * D. Parameter: None
+    * E. Return type: void
+    */
     public void clickAverageOption(){
         try {
-            helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.fourStarRating, 10);
-            helper.doClick(NykaaSearchForPillowLocators.fourStarRating);
+            helper.dowaitForElementToBeVisible(NykaaPillowLocators.fourStarRating, 10);
+            helper.doClick(NykaaPillowLocators.fourStarRating);
             test.log(Status.PASS, "clicked on average options");
             LoggerHandler.info("clicked on average options");
         } catch (Exception e) {
@@ -142,10 +212,17 @@ public class NykaaPillowPage {
         }
     }
 
+    /*
+    * A. Method Name: verifyFilter
+    * B. Author Name: Group 07
+    * C. Description: Verifies that the applied filters are displayed correctly.
+    * D. Parameter: None
+    * E. Return type: void
+    */
     public void verifyFilter(){
         try {
-            helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.filtersApplied, 10);
-            String data = helper.doGetText(NykaaSearchForPillowLocators.filtersApplied);
+            helper.dowaitForElementToBeVisible(NykaaPillowLocators.filtersApplied, 10);
+            String data = helper.doGetText(NykaaPillowLocators.filtersApplied);
             test.log(Status.PASS, "Filter text verified");
             LoggerHandler.info("Filter text verified");
         }catch (Exception e) {
@@ -154,10 +231,17 @@ public class NykaaPillowPage {
         }
     }
 
+    /*
+    * A. Method Name: clickFirstProduct
+    * B. Author Name: Group 07
+    * C. Description: Clicks on the first product in the search results and switches to its page.
+    * D. Parameter: None
+    * E. Return type: void
+    */
     public void clickFirstProduct(){
         try {
-            helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.firstProduct, 10);
-            helper.doClickandswitch(NykaaSearchForPillowLocators.firstProduct);
+            helper.dowaitForElementToBeVisible(NykaaPillowLocators.firstProduct, 10);
+            helper.doClickandswitch(NykaaPillowLocators.firstProduct);
             test.log(Status.PASS, "clicked on first product");
             LoggerHandler.info("clicked on first product");
         } catch (Exception e) {
@@ -166,10 +250,17 @@ public class NykaaPillowPage {
         }
     }
 
+    /*
+    * A. Method Name: clickAddtoBag
+    * B. Author Name: Group 07
+    * C. Description: Clicks on the "Add to Bag" button to add the selected product to the cart.
+    * D. Parameter: None
+    * E. Return type: void
+    */
     public void clickAddtoBag(){
         try {
-            helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.addToBag, 10);
-            helper.doClick(NykaaSearchForPillowLocators.addToBag);
+            helper.dowaitForElementToBeVisible(NykaaPillowLocators.addToBag, 10);
+            helper.doClick(NykaaPillowLocators.addToBag);
             test.log(Status.PASS,"clicked on Add to bag");
             LoggerHandler.info("clicked on Add to bag");
         } catch (Exception e) {
@@ -178,10 +269,17 @@ public class NykaaPillowPage {
         }
     }
 
+    /*
+    * A. Method Name: clickCart
+    * B. Author Name: Group 07
+    * C. Description: Clicks on the cart icon to view the added product.
+    * D. Parameter: None
+    * E. Return type: void
+    */
     public void clickCart(){
         try {
-            helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.cart, 10);
-            helper.doClick(NykaaSearchForPillowLocators.cart);
+            helper.dowaitForElementToBeVisible(NykaaPillowLocators.cart, 10);
+            helper.doClick(NykaaPillowLocators.cart);
             test.log(Status.PASS,"clicked on cart");
             LoggerHandler.info("clicked on cart");
         } catch (Exception e) {
@@ -190,11 +288,18 @@ public class NykaaPillowPage {
         }
     }
 
+    /*
+    * A. Method Name: verifyBag
+    * B. Author Name: Group 07
+    * C. Description: Verifies that the bag contains the expected product.
+    * D. Parameter: None
+    * E. Return type: void
+    */
     public void verifyBag(){
         try {
-            helper.doSwitchToIframe(NykaaSearchForPillowLocators.iframe);
-            helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.bag, 10);
-            String data = helper.doGetText(NykaaSearchForPillowLocators.bag);
+            helper.doSwitchToIframe(NykaaPillowLocators.iframe);
+            helper.dowaitForElementToBeVisible(NykaaPillowLocators.bag, 10);
+            String data = helper.doGetText(NykaaPillowLocators.bag);
             System.out.println(data);
             Assert.assertTrue(data.contains("Bag"));
             Screenshot.captureFullScreenshot("TestCase1");
@@ -206,6 +311,13 @@ public class NykaaPillowPage {
         }
     }
 
+    /*
+    * A. Method Name: NykaaSearchForPillow_Case
+    * B. Author Name: Group 07
+    * C. Description: Executes the complete test case for searching and filtering a pillow on Nykaa.
+    * D. Parameter: None
+    * E. Return type: void
+    */
     public void NykaaSearchForPillow_Case(){
         clickSearchBar();
         inputPillow();
