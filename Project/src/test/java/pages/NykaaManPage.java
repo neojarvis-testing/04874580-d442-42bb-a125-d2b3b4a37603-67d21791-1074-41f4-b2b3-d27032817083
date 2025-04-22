@@ -11,6 +11,7 @@ import utils.ExcelReader;
 import utils.LoggerHandler;
 import utils.Screenshot;
 import utils.WebDriverHelper;
+import utils.Report;
 
 public class NykaaManPage {
     public static WebDriverHelper helper;
@@ -258,7 +259,7 @@ public class NykaaManPage {
             helper.dowaitForElementToBeVisible(NykaaManPageLocators.signIn, 10);
             String signIn = helper.doGetText(NykaaManPageLocators.signIn);
             Screenshot.captureFullScreenshot("nykaa");
-            utils.Report.addScreenshotToReport(test, Base.driver, "nykaa");
+            Report.addScreenshotToReport(test, Base.driver, "nykaa");
             Assert.assertTrue(signIn.contains("Sign in"));
             test.log(Status.PASS, "Verified Sign In Text");
             LoggerHandler.info("Verified Sign In Text");
