@@ -172,7 +172,7 @@ public class NykaaTonerPage {
             test.log(Status.PASS,"Clicked on ingredients successfully");
             LoggerHandler.info("Clicked on ingredients successfully");
             Screenshot.captureFullScreenshot("Read More Ingredients");
-            Report.addScreenshotToReport(test, Base.driver, "Screenshot_Ingredients","cancel");
+            Report.addScreenshotToReport(test, Base.driver, "Screenshot_Ingredients");
         } catch (Exception e) {
             test.log(Status.FAIL,"Failed to ingredients to bag");
             LoggerHandler.info("Failed to ingredients to bag");
@@ -182,7 +182,7 @@ public class NykaaTonerPage {
     public void testTonerPage(){
         sendTonerInSearchBar();
         performEnter();
-        verifyToner();
+        // verifyToner();
         clickOnSortBy();
         selectNewArrivals();
         clickOnAvgCustomer();

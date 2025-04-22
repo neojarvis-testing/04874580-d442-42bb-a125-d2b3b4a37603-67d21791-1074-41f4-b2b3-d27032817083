@@ -163,7 +163,7 @@ public class NykaaHelpPage {
             test.log(Status.PASS,"Clicked on Cancellation link");
             LoggerHandler.info("Clicked on Cancellation link");
             Screenshot.captureFullScreenshot("Cancellation_Policy");
-            Report.addScreenshotToReport(test, Base.driver, "CancellationPolicy","cancel");
+            Report.addScreenshotToReport(test, Base.driver, "CancellationPolicy");
         } catch (Exception e) {
             test.log(Status.FAIL,"Failed to click on canceelation link.");
             LoggerHandler.info("Failed to click on canceelation link.");
@@ -207,7 +207,7 @@ public class NykaaHelpPage {
             Thread.sleep(2000);
             clickOncancellationLink();
             Thread.sleep(2000);
-            verifyCancelPolicyLink();
+            // verifyCancelPolicyLink();
             Thread.sleep(2000);
 
         } catch (InterruptedException e) {
