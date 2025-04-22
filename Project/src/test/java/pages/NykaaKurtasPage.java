@@ -13,10 +13,10 @@ import utils.LoggerHandler;
 import utils.Screenshot;
 import utils.WebDriverHelper;
 
-public class NykaaKurtas {
+public class NykaaKurtasPage {
     public static WebDriverHelper helper;
     public static ExtentTest test;
-    public NykaaKurtas(ExtentTest test){
+    public NykaaKurtasPage(ExtentTest test){
         helper = new WebDriverHelper(Base.driver);
         this.test=test;
     }
