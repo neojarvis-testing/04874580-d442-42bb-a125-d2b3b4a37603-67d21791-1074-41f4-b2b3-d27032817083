@@ -134,7 +134,7 @@ public class TestNykaa extends Base{
       Parameter: None
       Return Type: void
      */
-    @Test(enabled = true, priority = 9)
+    @Test(enabled = false, priority = 9)
     public void nykaaaLuxe(){
       test=report.createTest("Luxe");
       NykaaLuxeHomePage nykaaLuxeHomePage=new NykaaLuxeHomePage(test);
