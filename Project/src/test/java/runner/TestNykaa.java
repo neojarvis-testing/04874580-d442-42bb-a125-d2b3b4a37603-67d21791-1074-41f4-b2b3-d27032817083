@@ -43,13 +43,13 @@ public class TestNykaa extends Base{
         driver.navigate().refresh();
     }
 
-    // @Test
-    // public void NykaaGetAppTestCase()
-    // {
-    //   test = report.createTest("NykaaGetApp_TestCase");
-    //   NykaaGetAppPage getApp = new NykaaGetAppPage(test);
-    //   getApp.execute();
-    // }
+    @Test
+    public void NykaaGetAppTestCase()
+    {
+      test = report.createTest("NykaaGetApp_TestCase");
+      NykaaGetAppPage getApp = new NykaaGetAppPage(test);
+      getApp.execute();
+    }
     @Test
     public void NykaaCategoriesTestCase()
     {
@@ -57,13 +57,13 @@ public class TestNykaa extends Base{
       NykaaCategoriesPage categories = new NykaaCategoriesPage(test);
       categories.execute();
     }
-    // @Test
-    // public void NykaaManPageTestCase()
-    // {
-    //   test = report.createTest("NykaaManPage_TestCase");
-    //   NykaaManPage manPage = new NykaaManPage(test);
-    //   manPage.execute();
-    // }
+    @Test
+    public void NykaaManPageTestCase()
+    {
+      test = report.createTest("NykaaManPage_TestCase");
+      NykaaManPage manPage = new NykaaManPage(test);
+      manPage.execute();
+    }
 
     /*Method Name: close
       Author Name: Group 07

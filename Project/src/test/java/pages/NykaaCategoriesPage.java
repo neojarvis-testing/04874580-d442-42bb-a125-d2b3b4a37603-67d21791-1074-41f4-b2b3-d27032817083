@@ -16,14 +16,20 @@ public class NykaaCategoriesPage {
     public static WebDriverHelper helper;
     public ExtentTest test;
 
-    public NykaaCategoriesPage(ExtentTest test)
-    {
+    public NykaaCategoriesPage(ExtentTest test) {
         helper = new WebDriverHelper(Base.driver);
         this.test = test;
     }
 
-    public void verifyCategories()
-    {
+    /*
+     * A. Method Name: verifyCategories
+     * B. Author Name: Group 07
+     * C. Description: This method retrieves and verifies the text of 'Categories' from the UI.
+     * D. Parameters: None
+     * E. Return Type: void
+     */
+
+    public void verifyCategories() {
         try {
             String categories = helper.doGetText(NykaaCategoriesPageLocators.categories);
             Assert.assertEquals(categories, categories);
@@ -35,12 +41,19 @@ public class NykaaCategoriesPage {
         }
     }
 
-    public void sendDataToSearchBar()
-    {
+    /*
+     * A. Method Name: sendDataToSearchBar
+     * B. Author Name: Group 07
+     * C. Description: This method waits for the search bar to be visible, clicks on it, sends data from an Excel sheet, and performs an enter action.
+     * D. Parameters: None
+     * E. Return Type: void
+     */
+    public void sendDataToSearchBar() {
         try {
             helper.dowaitForElementToBeVisible(NykaaCategoriesPageLocators.searchBar, 5);
             helper.doClick(NykaaCategoriesPageLocators.searchBar);
-            helper.doSendKeys(NykaaCategoriesPageLocators.searchBar, ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/GetAppData.xlsx", "Sheet1", 1, 0));
+            helper.doSendKeys(NykaaCategoriesPageLocators.searchBar,
+                    ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", "Sheet1", 1, 0));
             helper.doEnterAction(NykaaCategoriesPageLocators.searchBar);
             test.log(Status.PASS, "Sent data to search bar");
             LoggerHandler.info("Sent data to search bar");
@@ -50,8 +63,12 @@ public class NykaaCategoriesPage {
         }
     }
 
-    public void verifyKajal()
-    {
+    // A. Method Name: verifyKajal
+    // B. Author Name: Group 07
+    // C. Description: This method retrieves and verifies that the text contains 'Kajal' from the UI.
+    // D. Parameters: None
+    // E. Return Type: void
+    public void verifyKajal() {
         try {
             String kajal = helper.doGetText(NykaaCategoriesPageLocators.kajal);
             Assert.assertTrue(kajal.contains("Kajal"));
@@ -63,8 +80,12 @@ public class NykaaCategoriesPage {
         }
     }
 
-    public void clickOnPencil()
-    {
+    // A. Method Name: clickOnPencil
+    // B. Author Name: Group 07
+    // C. Description: This method waits for the formulation element to be visible clicks on it, and then clicks on the Pencil element.
+    // D. Parameters: None
+    // E. Return Type: void
+    public void clickOnPencil() {
         try {
             helper.dowaitForElementToBeVisible(NykaaCategoriesPageLocators.formulation, 5);
             helper.doClick(NykaaCategoriesPageLocators.formulation);
@@ -77,10 +98,13 @@ public class NykaaCategoriesPage {
         }
     }
 
-    public void hoverFragrance()
-    {
+    // A. Method Name: hoverFragrance
+    // B. Author Name: Group 07
+    // C. Description: This method scrolls up by a certain pixel value, waits for a brief moment, and hovers over the Fragrance element.
+    // D. Parameters: None
+    // E. Return Type: void
+    public void hoverFragrance() {
         try {
-            helper.dowaitForElementToBeVisible(NykaaCategoriesPageLocators.fragrance, 5);
             Thread.sleep(3000);
             helper.doScrollBypixel(0, -3000);
             helper.doHoverOnElement(NykaaCategoriesPageLocators.fragrance);
@@ -91,8 +115,13 @@ public class NykaaCategoriesPage {
             LoggerHandler.error(e.getMessage());
         }
     }
-    public void clickNewLaunches()
-    {
+
+    // A. Method Name: clickNewLaunches
+    // B. Author Name: Group 07
+    // C. Description: This method waits for the New Launches element to be visible, clicks on it, and switches the tab.
+    // D. Parameters: None
+    // E. Return Type: void
+    public void clickNewLaunches() {
         try {
             helper.dowaitForElementToBeVisible(NykaaCategoriesPageLocators.launches, 5);
             helper.doClickandswitch(NykaaCategoriesPageLocators.launches);
@@ -103,10 +132,14 @@ public class NykaaCategoriesPage {
             LoggerHandler.error(e.getMessage());
         }
     }
-    public void clickFirstProduct()
-    {
+
+    // A. Method Name: clickFirstProduct
+    // B. Author Name: Group 07
+    // C. Description: This method clicks on the first product and switches the tab.
+    // D. Parameters: None
+    // E. Return Type: void
+    public void clickFirstProduct() {
         try {
-            helper.dowaitForElementToBeVisible(NykaaCategoriesPageLocators.firstProduct, 5);
             helper.doClickandswitch(NykaaCategoriesPageLocators.firstProduct);
             test.log(Status.PASS, "Clicked on first product");
             LoggerHandler.info("Clicked on first product");
@@ -115,8 +148,13 @@ public class NykaaCategoriesPage {
             LoggerHandler.error(e.getMessage());
         }
     }
-    public void clickAddToBag()
-    {
+
+    // A. Method Name: clickAddToBag
+    // B. Author Name: Group 07
+    // C. Description: This method waits for the first product element to be visible and then clicks on the "Add to Bag" button.
+    // D. Parameters: None
+    // E. Return Type: void
+    public void clickAddToBag() {
         try {
             helper.dowaitForElementToBeVisible(NykaaCategoriesPageLocators.firstProduct, 5);
             helper.doClick(NykaaCategoriesPageLocators.addToBag);
@@ -127,11 +165,16 @@ public class NykaaCategoriesPage {
             LoggerHandler.error(e.getMessage());
         }
     }
-    public void clickHowtoUse()
-    {
+
+    // A. Method Name: clickHowtoUse
+    // B. Author Name: Group 07
+    // C. Description: This method scrolls down, waits for a few seconds, and then clicks on the "How to Use" section.
+    // D. Parameters: None
+    // E. Return Type: void
+    public void clickHowtoUse() {
         try {
-            helper.dowaitForElementToBeVisible(NykaaCategoriesPageLocators.howToUse, 5);
-            helper.doJsscrollIntoView(NykaaCategoriesPageLocators.howToUse);
+            helper.doScrollBypixel(0, 4000);
+            Thread.sleep(3000);
             helper.doClick(NykaaCategoriesPageLocators.howToUse);
             test.log(Status.PASS, "Clicked on how to use");
             LoggerHandler.info("Clicked on how to use");
@@ -141,8 +184,12 @@ public class NykaaCategoriesPage {
         }
     }
 
-    public void verifyText()
-    {
+    // A. Method Name: verifyText
+    // B. Author Name: Group 07
+    // C. Description: This method retrieves and verifies that the "Customers also Viewed" text is present.
+    // D. Parameters: None
+    // E. Return Type: void
+    public void verifyText() {
         try {
             String text = helper.doGetText(NykaaCategoriesPageLocators.customerViewed);
             Assert.assertTrue(text.contains("Customers also Viewed"));
@@ -155,8 +202,12 @@ public class NykaaCategoriesPage {
         }
     }
 
-    public void execute()
-    {
+    // A. Method Name: execute
+    // B. Author Name: Group 07
+    // C. Description: This method calls all the defined functions sequentially to execute a full flow of actions.
+    // D. Parameters: None
+    // E. Return Type: void
+    public void execute() {
         verifyCategories();
         sendDataToSearchBar();
         verifyKajal();

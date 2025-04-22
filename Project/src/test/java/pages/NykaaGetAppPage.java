@@ -15,8 +15,7 @@ public class NykaaGetAppPage {
     public static WebDriverHelper helper;
     public ExtentTest test;
 
-    public NykaaGetAppPage(ExtentTest test)
-    {
+    public NykaaGetAppPage(ExtentTest test) {
         helper = new WebDriverHelper(Base.driver);
         this.test = test;
     }
@@ -24,12 +23,12 @@ public class NykaaGetAppPage {
     /**
      * A. Method Name: clickOnGetApp
      * B. Author name: Group 07
-     * C. Description: Clicks on the "Get App" button and switches to the corresponding tab.
+     * C. Description: Clicks on the "Get App" button and switches to the
+     * corresponding tab.
      * D. Parameters: None
      * E. Return Type: void
      */
-    public void clickOnGetApp()
-    {
+    public void clickOnGetApp() {
         try {
             helper.dowaitForElementToBeVisible(NykaaGetAppPageLocators.getApp, 5);
             helper.doClickandswitch(NykaaGetAppPageLocators.getApp);
@@ -40,6 +39,7 @@ public class NykaaGetAppPage {
             LoggerHandler.error(e.getMessage());
         }
     }
+
     /**
      * A. Method Name: verifyBeautyToGo
      * B. Author name: Group 07
@@ -47,8 +47,7 @@ public class NykaaGetAppPage {
      * D. Parameters: None
      * E. Return Type: void
      */
-    public void verifyBeautyToGo()
-    {
+    public void verifyBeautyToGo() {
         try {
             helper.dowaitForElementToBeVisible(NykaaGetAppPageLocators.mainHeading, 10);
             String mainHeading = helper.doGetText(NykaaGetAppPageLocators.mainHeading);
@@ -60,19 +59,21 @@ public class NykaaGetAppPage {
             LoggerHandler.error(e.getMessage());
         }
     }
+
     /**
      * A. Method Name: enterMobileNumberData
      * B. Author name: Group 07
-     * C. Description: Enters mobile number data into the input field from an Excel file.
+     * C. Description: Enters mobile number data into the input field from an Excel
+     * file.
      * D. Parameters: None
      * E. Return Type: void
      */
-    public void enterMobileNumberData()
-    {
+    public void enterMobileNumberData() {
         try {
             helper.dowaitForElementToBeVisible(NykaaGetAppPageLocators.mobileInputField, 5);
             helper.doClick(NykaaGetAppPageLocators.mobileInputField);
-            helper.doSendKeys(NykaaGetAppPageLocators.mobileInputField, ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/GetAppData.xlsx", "Sheet1", 0, 0));
+            helper.doSendKeys(NykaaGetAppPageLocators.mobileInputField,
+                    ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", "Sheet1", 0, 0));
             helper.doEnterAction(NykaaGetAppPageLocators.mobileInputField);
             test.log(Status.PASS, "Entered mobile number.");
             LoggerHandler.info("Entered mobile number.");
@@ -81,15 +82,16 @@ public class NykaaGetAppPage {
             LoggerHandler.error(e.getMessage());
         }
     }
+
     /**
      * A. Method Name: clickOnTermsConditions
      * B. Author name: Group 07
-     * C. Description: Clicks on the "Terms & Conditions" link and switches to the corresponding tab.
+     * C. Description: Clicks on the "Terms & Conditions" link and switches to the
+     * corresponding tab.
      * D. Parameters: None
      * E. Return Type: void
      */
-    public void clickOnTermsConditions()
-    {
+    public void clickOnTermsConditions() {
         try {
             helper.dowaitForElementToBeVisible(NykaaGetAppPageLocators.mobileInputField, 5);
             helper.doJsscrollIntoView(NykaaGetAppPageLocators.termsConditions);
@@ -109,8 +111,7 @@ public class NykaaGetAppPage {
      * D. Parameters: None
      * E. Return Type: void
      */
-    public void verifyTermsConditions()
-    {
+    public void verifyTermsConditions() {
         try {
             helper.dowaitForElementToBeVisible(NykaaGetAppPageLocators.termsConditionsHeading, 5);
             String tCHeading = helper.doGetText(NykaaGetAppPageLocators.termsConditionsHeading);
@@ -130,8 +131,7 @@ public class NykaaGetAppPage {
      * D. Parameters: None
      * E. Return Type: void
      */
-    public void clickOnShippingPolicy()
-    {
+    public void clickOnShippingPolicy() {
         try {
             helper.dowaitForElementToBeVisible(NykaaGetAppPageLocators.shippingPolicy, 5);
             helper.doClick(NykaaGetAppPageLocators.shippingPolicy);
@@ -143,15 +143,14 @@ public class NykaaGetAppPage {
         }
     }
 
-     /**
+    /**
      * A. Method Name: verifyDeliveryProcessQues
      * B. Author name: Group 07
      * C. Description: Verifies the text of the delivery process question.
      * D. Parameters: None
      * E. Return Type: void
      */
-    public void verifyDeliveryProcessQues()
-    {
+    public void verifyDeliveryProcessQues() {
         try {
             helper.dowaitForElementToBeVisible(NykaaGetAppPageLocators.deliveryProcessQues, 5);
             String deliveryQues = helper.doGetText(NykaaGetAppPageLocators.deliveryProcessQues);
@@ -163,6 +162,7 @@ public class NykaaGetAppPage {
             LoggerHandler.error(e.getMessage());
         }
     }
+
     /**
      * A. Method Name: clickOnPrivacyPolicy
      * B. Author name: Group 07
@@ -170,8 +170,7 @@ public class NykaaGetAppPage {
      * D. Parameters: None
      * E. Return Type: void
      */
-    public void clickOnPrivacyPolicy()
-    {
+    public void clickOnPrivacyPolicy() {
         try {
             helper.dowaitForElementToBeVisible(NykaaGetAppPageLocators.privacyPolicy, 5);
             helper.doClick(NykaaGetAppPageLocators.privacyPolicy);
@@ -184,14 +183,14 @@ public class NykaaGetAppPage {
     }
 
     /**
- * A. Method Name: verifyPrivacyPolicy
- * B. Author name: Group 07
- * C. Description: Verifies that the Privacy Policy heading text contains "Privacy Policy".
- * D. Parameters: None
- * E. Return Type: void
- */
-    public void verifyPrivacyPolicy()
-    {
+     * A. Method Name: verifyPrivacyPolicy
+     * B. Author name: Group 07
+     * C. Description: Verifies that the Privacy Policy heading text contains
+     * "Privacy Policy".
+     * D. Parameters: None
+     * E. Return Type: void
+     */
+    public void verifyPrivacyPolicy() {
         try {
             helper.dowaitForElementToBeVisible(NykaaGetAppPageLocators.privacyPolicyHeading, 5);
             String deliveryQues = helper.doGetText(NykaaGetAppPageLocators.privacyPolicyHeading);
@@ -205,16 +204,16 @@ public class NykaaGetAppPage {
     }
 
     /**
- * A. Method Name: clickOnOfferZone
- * B. Author name: Group 07
- * C. Description: Clicks on the "Offer Zone" link, scrolling down the page multiple times if needed, and switches to the corresponding tab.
- * D. Parameters: None
- * E. Return Type: void
- */
-    public void clickOnOfferZone()
-    {
+     * A. Method Name: clickOnOfferZone
+     * B. Author name: Group 07
+     * C. Description: Clicks on the "Offer Zone" link, scrolling down the page
+     * multiple times if needed, and switches to the corresponding tab.
+     * D. Parameters: None
+     * E. Return Type: void
+     */
+    public void clickOnOfferZone() {
         try {
-            //helper.dowaitForElementToBeVisible(NykaaGetAppPageLocators.offerZone, 5);
+            // helper.dowaitForElementToBeVisible(NykaaGetAppPageLocators.offerZone, 5);
             try {
                 helper.doScrollBypixel(0, 4000);
                 Thread.sleep(5000);
@@ -237,18 +236,19 @@ public class NykaaGetAppPage {
         }
     }
 
-    /**
- * A. Method Name: verifyURL
- * B. Author name: Group 07
- * C. Description: Verifies that the current URL matches the expected Offer Zone URL and captures a screenshot.
- * D. Parameters: None
- * E. Return Type: void
- */
-    public void verifyURL()
-    {
+    /*
+     * A. Method Name: verifyURL
+     * B. Author name: Group 07
+     * C. Description: Verifies that the current URL matches the expected Offer Zone
+     * URL and captures a screenshot.
+     * D. Parameters: None
+     * E. Return Type: void
+     */
+    public void verifyURL() {
         try {
             String currentURL = Base.driver.getCurrentUrl();
-            Assert.assertEquals(currentURL, "https://www.nykaa.com/sp/offers-native/offers?utm_source=Desktop_web_footer");
+            Assert.assertEquals(currentURL,
+                    "https://www.nykaa.com/sp/offers-native/offers?utm_source=Desktop_web_footer");
             test.log(Status.PASS, "Verified 'current URL'");
             LoggerHandler.info("Verified 'current URL'");
             Screenshot.captureFullScreenshot("offerZone");
@@ -258,16 +258,15 @@ public class NykaaGetAppPage {
         }
     }
 
-
-/**
- * A. Method Name: execute
- * B. Author name: Group 07
- * C. Description: Executes all defined steps in sequence for verifying the Nykaa Get App page functionality.
- * D. Parameters: None
- * E. Return Type: void
- */
-    public void execute()
-    {
+    /*
+     * A. Method Name: execute
+     * B. Author name: Group 07
+     * C. Description: Executes all defined steps in sequence for verifying the
+     * Nykaa Get App page functionality.
+     * D. Parameters: None
+     * E. Return Type: void
+     */
+    public void execute() {
         clickOnGetApp();
         verifyBeautyToGo();
         enterMobileNumberData();
@@ -281,4 +280,3 @@ public class NykaaGetAppPage {
         verifyURL();
     }
 }
-

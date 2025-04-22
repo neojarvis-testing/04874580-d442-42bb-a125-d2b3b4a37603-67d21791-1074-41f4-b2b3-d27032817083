@@ -5,28 +5,39 @@ import org.testng.Assert;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
-import uistore.NykaaGetAppPageLocators;
 import uistore.NykaaManPageLocators;
 import utils.Base;
 import utils.ExcelReader;
 import utils.LoggerHandler;
+import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class NykaaManPage {
     public static WebDriverHelper helper;
     public ExtentTest test;
 
-    public NykaaManPage(ExtentTest test)
-    {
+    public NykaaManPage(ExtentTest test) {
         helper = new WebDriverHelper(Base.driver);
         this.test = test;
     }
 
-    public void clickOnGetApp()
-    {
+    /*
+     * A. Method Name: clickOnNykaaMan
+     * B. Author Name: Group 07
+     * C. Description: This method performs multiple scrolls and pauses before clicking on the Nykaa Man section and switching contexts.
+     * D. Parameters: None
+     * E. Return Type: void
+     */
+
+    public void clickOnNykaaMan() {
         try {
-            helper.dowaitForElementToBeVisible(NykaaManPageLocators.nykaaMan, 5);
-            helper.doJsscrollIntoView(NykaaManPageLocators.nykaaMan);
+            helper.doHoverOnElement(NykaaManPageLocators.healthandWellness);
+            helper.doScrollBypixel(0, 4000);
+            Thread.sleep(3000);
+            helper.doScrollBypixel(0, 4000);
+            Thread.sleep(3000);
+            helper.doScrollBypixel(0, 4000);
+            Thread.sleep(3000);
             helper.doClickandswitch(NykaaManPageLocators.nykaaMan);
             test.log(Status.PASS, "scroll down to footer");
             LoggerHandler.info("scroll down to footer");
@@ -35,8 +46,16 @@ public class NykaaManPage {
             LoggerHandler.error(e.getMessage());
         }
     }
-    public void hoverHealthNutrition()
-    {
+
+    /*
+     * A. Method Name: hoverHealthNutrition
+     * B. Author Name: Group 07
+     * C. Description: This method waits for the Health & Nutrition section to be visible and then hovers over it.
+     * D. Parameters: None
+     * E. Return Type: void
+     */
+
+    public void hoverHealthNutrition() {
         try {
             helper.dowaitForElementToBeVisible(NykaaManPageLocators.healthNutrition, 5);
             helper.doHoverOnElement(NykaaManPageLocators.healthNutrition);
@@ -47,8 +66,15 @@ public class NykaaManPage {
             LoggerHandler.error(e.getMessage());
         }
     }
-    public void clickOnWheyProtein()
-    {
+
+    /*
+     * A. Method Name: clickOnWheyProtein
+     * B. Author Name: Group 07
+     * C. Description: This method waits for the Whey Protein section to be visible, clicks on it, and switches to a new window.
+     * D. Parameters: None
+     * E. Return Type: void
+     */
+    public void clickOnWheyProtein() {
         try {
             helper.dowaitForElementToBeVisible(NykaaManPageLocators.wheyProtein, 5);
             helper.doClickandswitch(NykaaManPageLocators.wheyProtein);
@@ -60,8 +86,14 @@ public class NykaaManPage {
         }
     }
 
-    public void verifyWheyProtein()
-    {
+    /*
+     * A. Method Name: verifyWheyProtein
+     * B. Author Name: Group 07
+     * C. Description: This method waits for the Whey Protein heading to be visible, verifies its text, and logs the result.
+     * D. Parameters: None
+     * E. Return Type: void
+     */
+    public void verifyWheyProtein() {
         try {
             helper.dowaitForElementToBeVisible(NykaaManPageLocators.wheyProteinText, 10);
             String mainHeading = helper.doGetText(NykaaManPageLocators.wheyProteinText);
@@ -73,8 +105,15 @@ public class NykaaManPage {
             LoggerHandler.error(e.getMessage());
         }
     }
-    public void verifyThreePagination()
-    {
+
+    /*
+     * A. Method Name: verifyThreePagination
+     * B. Author Name: Group 07
+     * C. Description: This method waits for the pagination element displaying "3" to be visible and verifies its presence.
+     * D. Parameters: None
+     * E. Return Type: void
+     */
+    public void verifyThreePagination() {
         try {
             helper.dowaitForElementToBeVisible(NykaaManPageLocators.three, 10);
             String mainHeading = helper.doGetText(NykaaManPageLocators.three);
@@ -86,8 +125,15 @@ public class NykaaManPage {
             LoggerHandler.error(e.getMessage());
         }
     }
-    public void clickTwoPagination()
-    {
+
+    /*
+     * A. Method Name: clickTwoPagination
+     * B. Author Name: Group 07
+     * C. Description: This method waits for the pagination element displaying "2" to be visible and clicks on it.
+     * D. Parameters: None
+     * E. Return Type: void
+     */
+    public void clickTwoPagination() {
         try {
             helper.dowaitForElementToBeVisible(NykaaManPageLocators.two, 10);
             helper.doClick(NykaaManPageLocators.two);
@@ -98,8 +144,15 @@ public class NykaaManPage {
             LoggerHandler.error(e.getMessage());
         }
     }
-    public void clickFirstProduct()
-    {
+
+    /*
+     * A. Method Name: clickFirstProduct
+     * B. Author Name: Group 07
+     * C. Description: This method waits for the first product to be visible, clicks on it, and switches to a new window.
+     * D. Parameters: None
+     * E. Return Type: void
+     */
+    public void clickFirstProduct() {
         try {
             helper.dowaitForElementToBeVisible(NykaaManPageLocators.firstProduct, 10);
             helper.doClickandswitch(NykaaManPageLocators.firstProduct);
@@ -111,12 +164,19 @@ public class NykaaManPage {
         }
     }
 
-    public void enterPincodeData()
-    {
+    /*
+     * A. Method Name: enterPincodeData
+     * B. Author Name: Group 07
+     * C. Description: This method waits for the pincode input field to be visible, clicks on it, and enters data from an Excel sheet.
+     * D. Parameters: None
+     * E. Return Type: void
+     */
+    public void enterPincodeData() {
         try {
             helper.dowaitForElementToBeVisible(NykaaManPageLocators.pincode, 5);
             helper.doClick(NykaaManPageLocators.pincode);
-            helper.doSendKeys(NykaaManPageLocators.pincode, ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/GetAppData.xlsx", "Sheet1", 0, 2));
+            helper.doSendKeys(NykaaManPageLocators.pincode,
+                    ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", "Sheet1", 2, 0));
             test.log(Status.PASS, "Entered pincode.");
             LoggerHandler.info("Entered pincode.");
         } catch (AssertionError e) {
@@ -125,8 +185,14 @@ public class NykaaManPage {
         }
     }
 
-    public void clickCheck()
-    {
+    /*
+     * A. Method Name: clickCheck
+     * B. Author Name: Group 07
+     * C. Description: This method waits for the check button to be visible and clicks on it.
+     * D. Parameters: None
+     * E. Return Type: void
+     */
+    public void clickCheck() {
         try {
             helper.dowaitForElementToBeVisible(NykaaManPageLocators.checkBtn, 10);
             helper.doClick(NykaaManPageLocators.checkBtn);
@@ -138,8 +204,15 @@ public class NykaaManPage {
         }
     }
 
-    public void verifyChennai()
-    {
+    /*
+     * A. Method Name: verifyChennai
+     * B. Author Name: Group 07
+     * C. Description: This method waits for the Chennai text element to be visible and verifies its presence.
+     * D. Parameters: None
+     * E. Return Type: void
+     */
+
+    public void verifyChennai() {
         try {
             helper.dowaitForElementToBeVisible(NykaaManPageLocators.chennaiText, 10);
             String chennai = helper.doGetText(NykaaManPageLocators.chennaiText);
@@ -152,25 +225,40 @@ public class NykaaManPage {
         }
     }
 
-    public void scrollToWriteReview()
-    {
+    /*
+     * A. Method Name: scrollToWriteReview
+     * B. Author Name: Group 07
+     * C. Description: This method scrolls down to the write review section and clicks on it.
+     * D. Parameters: None
+     * E. Return Type: void
+     */
+    public void scrollToWriteReview() {
         try {
-            helper.dowaitForElementToBeVisible(NykaaManPageLocators.writeReview, 10);
-            helper.doJsscrollIntoView(NykaaManPageLocators.writeReview);
+            helper.doScrollBypixel(0, 2000);
+            Thread.sleep(3000);
             helper.doClick(NykaaManPageLocators.writeReview);
             test.log(Status.PASS, "Clicked on write review");
             LoggerHandler.info("Clicked on write review");
-        } catch (AssertionError e) {
+        } catch (AssertionError | InterruptedException e) {
             test.log(Status.FAIL, e.getMessage());
             LoggerHandler.error(e.getMessage());
         }
     }
 
-    public void verifySignIn()
-    {
+    /*
+     * A. Method Name: verifySignIn
+     * B. Author Name: Group 07
+     * C. Description: This method waits for the sign-in text element to be visible, verifies its presence, and captures a screenshot.
+     * D. Parameters: None
+     * E. Return Type: void
+     */
+
+    public void verifySignIn() {
         try {
             helper.dowaitForElementToBeVisible(NykaaManPageLocators.signIn, 10);
             String signIn = helper.doGetText(NykaaManPageLocators.signIn);
+            Screenshot.captureFullScreenshot("nykaa");
+            utils.Report.addScreenshotToReport(test, Base.driver, "nykaa");
             Assert.assertTrue(signIn.contains("Sign in"));
             test.log(Status.PASS, "Verified Sign In Text");
             LoggerHandler.info("Verified Sign In Text");
@@ -180,17 +268,26 @@ public class NykaaManPage {
         }
     }
 
-    public void execute()
-    {
-        clickOnGetApp();
+    /*
+     * A. Method Name: execute
+     * B. Author Name: Group 07
+     * C. Description: This method executes all the defined functions sequentially.
+     * D. Parameters: None
+     * E. Return Type: void
+     */
+
+    public void execute() {
+        clickOnNykaaMan();
         hoverHealthNutrition();
         clickOnWheyProtein();
         verifyWheyProtein();
         verifyThreePagination();
         clickTwoPagination();
+        clickFirstProduct();
         enterPincodeData();
         clickCheck();
         verifyChennai();
         scrollToWriteReview();
+        verifySignIn();
     }
 }
