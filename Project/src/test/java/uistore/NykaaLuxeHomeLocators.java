@@ -14,6 +14,7 @@ public class NykaaLuxeHomeLocators {
     public static By daypuWear=By.xpath("//span[text()='Day Wear']");
     public static By firstProduct=By.xpath("//div[text()='Forest Essentials Body Mist Oudh & Green Tea - Long Lasting ...']");
     public static By nykaaman=By.xpath("//a[text()='Nykaa Man']");
-    public static By gromming=By.xpath("//a[text()='grooming advice']");
-    public static By shaving=By.xpath("(//span[text()='Shaving & Beard Care'])[1]");
+    public static By gromming=By.xpath("//a[@href='/grooming-advice']");
+    public static By shaving=By.cssSelector("#navbarNavAltMarkup > ul > li:nth-child(5) > a");
+    public static By shavingandbeard=By.xpath("//div[text()='Shaving & Beard Care']");
 }
