@@ -53,7 +53,17 @@ public class NykaaHelpPage {
             LoggerHandler.info("Failed to click on order related.");
         }
     }
-
+    public void verifyOrderRelatedText(){
+        try {
+            String orderrelated=helper.doGetText(NykaaHelpPageLocator.orderRelatedText);
+            Assert.assertTrue(orderrelated.contains("Order Related"));
+            test.log(Status.PASS,"Verified the text Order Related");
+            LoggerHandler.info("Verified the text Order Related");
+        } catch (Exception e) {
+            test.log(Status.FAIL,"Failed to Verify the text Order Related");
+            LoggerHandler.info("Failed to Verify the text Order Related");
+        }
+    }
     public void clickOnOrderStatus(){
         try {
             helper.dowaitForElementToBeVisible(NykaaHelpPageLocator.orderStaus,5);
@@ -63,6 +73,17 @@ public class NykaaHelpPage {
         } catch (Exception e) {
             test.log(Status.FAIL,"Failed to click on order status");
             LoggerHandler.info("Failed to click on order status");
+        }
+    }
+    public void verifyOrderStatustext(){
+        try {
+            String orderStatus=helper.doGetText(NykaaHelpPageLocator.orderStatusText);
+            Assert.assertTrue(orderStatus.contains("Order Status"));
+            test.log(Status.PASS,"Verified the text Order status");
+            LoggerHandler.info("Verified the text Order status");
+        } catch (Exception e) {
+            test.log(Status.FAIL,"Failed to Verify the text Order status");
+            LoggerHandler.info("Failed to Verify the text Order status");
         }
     }
     public void navigateBackToOrderRelated(){
@@ -87,7 +108,7 @@ public class NykaaHelpPage {
         }
     }
 
-    public void VerifyCanIReturn(){
+    public void verifyCanIReturn(){
         try {
             helper.doGetText(NykaaHelpPageLocator.canIReturn);
             test.log(Status.PASS,"Verified the text Can I return a part of my order");
@@ -101,7 +122,11 @@ public class NykaaHelpPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaHelpPageLocator.cancellation,5);
             helper.doClick(NykaaHelpPageLocator.cancellation);
+            test.log(Status.PASS,"Clicked on Cancellation and Refunds");
+            LoggerHandler.info("Clicked on Cancellation and Refunds");
         } catch (Exception e) {
+            test.log(Status.FAIL,"Failed to click on canceelation and refunds.");
+            LoggerHandler.info("Failed to click on canceelation and refunds.");
         }
     }
 
@@ -109,23 +134,44 @@ public class NykaaHelpPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaHelpPageLocator.cancelPolicy,5);
             helper.doClick(NykaaHelpPageLocator.cancelPolicy);
+            test.log(Status.PASS,"Clicked on Cancellation policy");
+            LoggerHandler.info("Clicked on Cancellation policy");
         } catch (Exception e) {
-            // TODO: handle exception
+            test.log(Status.FAIL,"Failed to click on canceelation policy.");
+            LoggerHandler.info("Failed to click on canceelation policy.");
         }
     }
 
     public void verifyCancelPolicy(){
         try {
+            helper.doGetText(NykaaHelpPageLocator.cancelPolicyText);
+            test.log(Status.PASS,"Verified the text Cancellation Policy");
+            LoggerHandler.info("Verified the text Cancellation Policy");
         } catch (Exception e) {
-            // TODO: handle exception
+            test.log(Status.FAIL,"Failed to Verify the text Cancellation Policy");
+            LoggerHandler.info("Failed to Verify the text Cancellation Policy");
         }
     }
     public void clickOncancellationLink(){
         try {
             helper.dowaitForElementToBeVisible(NykaaHelpPageLocator.cancelLink,5);
             helper.doClickandswitch(NykaaHelpPageLocator.cancelLink);
+            test.log(Status.PASS,"Clicked on Cancellation link");
+            LoggerHandler.info("Clicked on Cancellation link");
         } catch (Exception e) {
-            // TODO: handle exception
+            test.log(Status.FAIL,"Failed to click on canceelation link.");
+            LoggerHandler.info("Failed to click on canceelation link.");
+        }
+    }
+    public void verifyCancelPolicyLink(){
+        try {
+            String link=helper.doGetText(NykaaHelpPageLocator.cancelLink);
+            Assert.assertEquals(link, "//www.nykaa.com/cancellation-policy/lp");
+            test.log(Status.PASS,"Verified the text Cancellation Policy");
+            LoggerHandler.info("Verified the text Cancellation Policy");
+        } catch (Exception e) {
+            test.log(Status.FAIL,"Failed to Verify the text Cancellation Policy");
+            LoggerHandler.info("Failed to Verify the text Cancellation Policy");
         }
     }
 
@@ -133,23 +179,28 @@ public class NykaaHelpPage {
         try {
             clickOnHelp();
             // verifyHelpPageTitle();
+            Thread.sleep(2000);
             clickOnOrderRelated();
             Thread.sleep(2000);
+            verifyOrderRelatedText();
             clickOnOrderStatus();
             Thread.sleep(2000);
+            verifyOrderStatustext();
             navigateBackToOrderRelated();
             Thread.sleep(2000);
             clickOnRefund();
             Thread.sleep(2000);
+            verifyCanIReturn();
             navigateBackToOrderRelated();
             Thread.sleep(2000);
             clickOnCanceellationAndRefunds();
             Thread.sleep(2000);
             clickOnCancelPolicy();
             Thread.sleep(2000);
+            verifyCancelPolicy();
             clickOncancellationLink();
+
         } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
        

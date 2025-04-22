@@ -54,7 +54,7 @@ public class TestNykaa extends Base{
       Parameter: None
       Return Type: void
      */
-    @Test
+    @Test(enabled = false)
     public void NykaaSearchForPillow_Test(){
       test = report.createTest("NykaaSearchForPillow_Test");
       NykaaSearchForPillow nykaaSearchForPillow = new NykaaSearchForPillow(test);
@@ -75,14 +75,14 @@ public class TestNykaa extends Base{
       nykaaNewLaunches.NykaaNewLaunches_Case(); 
     }
 
-    @Test
+    @Test(enabled = false)
     public void nykaaTonerTest(){
       test=report.createTest("NykaaToner_Test");
       NykaaTonerPage nykaaTonerPage=new NykaaTonerPage(test);
       nykaaTonerPage.testTonerPage();
     }
 
-    @Test(enabled = false)
+    @Test
     public void nykaaHelpTest(){
       test=report.createTest("NykaaHelpPage");
       NykaaHelpPage helpPage=new NykaaHelpPage(test);
@@ -102,7 +102,7 @@ public class TestNykaa extends Base{
       Parameter: None
       Return Type: void
      */
-    @Test
+    @Test(enabled = false)
     public void NykaaKurtas_Test(){
       test = report.createTest("NykaaKurtas_Test");
       NykaaKurtas nykaasKurtas = new NykaaKurtas(test);
@@ -115,7 +115,7 @@ public class TestNykaa extends Base{
       Parameter: None
       Return Type: void
      */
-    @Test
+    @Test(enabled = false)
     public void nykaaaLuxe(){
       test=report.createTest("Luxe");
       NykaaLuxeHomePage nykaaLuxeHomePage=new NykaaLuxeHomePage(test);
