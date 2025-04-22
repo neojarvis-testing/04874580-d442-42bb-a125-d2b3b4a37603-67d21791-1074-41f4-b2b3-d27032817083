@@ -104,6 +104,8 @@ public class NykaaNewLaunches {
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.faceWash, 10);
             helper.doClickandswitch(NykaaNewLaunchesLocators.faceWash);
+            String data= helper.doGetText(NykaaNewLaunchesLocators.natural);
+            Assert.assertTrue(data.contains("Natural"));
             test.log(Status.PASS,"clicked on facewash");
             LoggerHandler.info("clicked on facewash");
         } catch (Exception e) {
@@ -160,6 +162,8 @@ public class NykaaNewLaunches {
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.priceRange, 10);
             helper.doClick(NykaaNewLaunchesLocators.priceRange);
+            String data= helper.doGetText(NykaaNewLaunchesLocators.price);
+            Assert.assertTrue(data.contains("Price"));
             test.log(Status.PASS,"clicked on Price range");
             LoggerHandler.info("clicked on Price range");
         } catch (Exception e) {

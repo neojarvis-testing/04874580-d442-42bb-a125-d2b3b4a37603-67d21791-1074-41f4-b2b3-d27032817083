@@ -123,6 +123,8 @@ public class NykaaKurtasPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.bestSeller, 10);
             helper.doClick(NykaaKurtasLocators.bestSeller);
+            String data = helper.doGetText(NykaaKurtasLocators.sortBy);
+            Assert.assertTrue(data.contains("Sort"));
             test.log(Status.PASS, "Clicked on Bestseller");
             LoggerHandler.info("Clicked on Bestseller");
         } catch (Exception e) {
@@ -141,6 +143,8 @@ public class NykaaKurtasPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.secondProduct, 10);
             helper.doClickandswitch(NykaaKurtasLocators.secondProduct);
+            String data = helper.doGetText(NykaaKurtasLocators.bestSeller);
+            Assert.assertTrue(data.contains("Bestseller"));
             test.log(Status.PASS, "Clicked on Second Product");
             LoggerHandler.info("Clicked on Second Product");
         } catch (Exception e) {
@@ -254,6 +258,8 @@ public class NykaaKurtasPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.helpful, 10);
             helper.doClick(NykaaKurtasLocators.helpful);
+            String data = helper.doGetText(NykaaKurtasLocators.helpful);
+            Assert.assertTrue(data.contains("Helpful"));
             test.log(Status.PASS, "Clicked on helpful");
             LoggerHandler.info("Clicked on helpful");
         } catch (Exception e) {
