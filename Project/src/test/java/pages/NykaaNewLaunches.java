@@ -23,8 +23,8 @@ public class NykaaNewLaunches {
 
     public void scrollDownToFooter(){
         try {
-            Thread.sleep(2000);
-            helper.doJsScrollFooter();;
+            Thread.sleep(4000);
+            helper.doJsScrollFooter();
         } catch (Exception e) {
            System.out.println("not scrolled");
         } 
@@ -125,7 +125,7 @@ public class NykaaNewLaunches {
     public void inputPinCode(){
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.delivery, 10);
-            helper.doSendKeys(NykaaNewLaunchesLocators.delivery,ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/ExcelData.xlsx", "Rahul", 1, 0));
+            helper.doSendKeys(NykaaNewLaunchesLocators.delivery,"620001");
         } catch (Exception e) {
            System.out.println("input not given");
         } 

@@ -242,7 +242,7 @@ public class WebDriverHelper {
 		driver.navigate().back();
 	}
 
-	/*
+	   /*
 		* a.Method Name:doSwitchToIframe
 		* b.Author Name:Group 07
 		* c.Description: The method helps driver to switch to Iframe
@@ -254,7 +254,7 @@ public class WebDriverHelper {
 		driver.switchTo().frame(element);
 	}
 
-	/*
+	   /*
 		* a.Method Name:doSwitchToIframe
 		* b.Author Name:Group 07
 		* c.Description: The method helps driver to switch back to window 
