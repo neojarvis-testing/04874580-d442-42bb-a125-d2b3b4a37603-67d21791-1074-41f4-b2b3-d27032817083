@@ -35,7 +35,7 @@ public class TestNykaa extends Base{
      */
     @BeforeClass
     public void report(){
-        report = Report.generateExtenteReports("Nykaa_Report");
+        report = Report.generateReport("Nykaa_report");
     }
  
     /*Method Name: open
@@ -56,7 +56,7 @@ public class TestNykaa extends Base{
       Parameter: None
       Return Type: void
      */
-   // @Test(enabled = true, priority = 1 )
+  //  @Test(enabled = true, priority = 1 )
     public void NykaaSearchForPillow_Test(){
       test = report.createTest("NykaaSearchForPillow_Test");
       NykaaPillowPage nykaaSearchForPillow = new NykaaPillowPage(test);
@@ -121,7 +121,7 @@ public class TestNykaa extends Base{
       Parameter: None
       Return Type: void
      */
-    //@Test(enabled = true, priority = 6)
+    @Test(enabled = true, priority = 6)
     public void nykaaLipsticksTest(){
       test=report.createTest("NykaaLipsticks");
       NykaaSearchLipstick searchLipstick=new NykaaSearchLipstick(test);
@@ -134,7 +134,7 @@ public class TestNykaa extends Base{
       Parameter: None
       Return Type: void
      */
-    @Test(enabled = true, priority = 9)
+    // @Test(enabled = true, priority = 9)
     public void nykaaaLuxe(){
       test=report.createTest("Luxe");
       NykaaLuxeHomePage nykaaLuxeHomePage=new NykaaLuxeHomePage(test);

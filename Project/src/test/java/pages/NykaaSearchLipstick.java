@@ -9,6 +9,8 @@ import uistore.NykaaSearchLipstickPageLocator;
 import utils.Base;
 import utils.ExcelReader;
 import utils.LoggerHandler;
+import utils.Report;
+import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class NykaaSearchLipstick {
@@ -91,6 +93,18 @@ public class NykaaSearchLipstick {
             LoggerHandler.info("Failed to click on priview shades.");
         }
     }
+
+    public void verifySelectAShade(){
+        try {
+            String selectShade=helper.doGetText(NykaaSearchLipstickPageLocator.selectShade);
+            Assert.assertTrue(selectShade.contains("Select A Shade"));
+            test.log(Status.PASS,"Verified Select A Shade");
+            LoggerHandler.info("Verified Select A Shade");
+        } catch (Exception e) {
+            test.log(Status.FAIL,"Failed to verify Select A Shade");
+            LoggerHandler.info("Failed to verify Select A Shade");
+        }
+    }
     /*
      * a.Method Name:clickOnViewDetails
      * b.Author Name:Group 07
@@ -106,7 +120,7 @@ public class NykaaSearchLipstick {
         } catch (Exception e) {
             test.log(Status.FAIL,"Failed to click on view details.");
             LoggerHandler.info("Failed to click on view details.");
-            
+
         }
     }
     /*
@@ -193,6 +207,8 @@ public class NykaaSearchLipstick {
             helper.doClick(NykaaSearchLipstickPageLocator.nykaaAcc);
             test.log(Status.PASS,"clicked on nykaa account");
             LoggerHandler.info("clicked on nykaa account");
+            // Screenshot.captureFullScreenshot("Nykaa Account Screenshot");
+            // Report.attachScreenshotToReport(test,Base.driver,"Screenshot");
         }catch(Exception e){
             test.log(Status.FAIL,"Failed to click on nykaa account.");
             LoggerHandler.info("Failed to click on nykaa account.");
@@ -211,6 +227,8 @@ public class NykaaSearchLipstick {
             helper.doClick(NykaaSearchLipstickPageLocator.myWishList);
             test.log(Status.PASS,"clicked on My Wishlist");
             LoggerHandler.info("clicked on My Wishlist");
+            Screenshot.captureFullScreenshot("Nykaa Account Screenshot");
+            Report.attachScreenshotToReport("Screenshot",test,"ss");
         } catch (Exception e) {
             test.log(Status.FAIL,"Failed to click on My wishlist.");
             LoggerHandler.info("Failed to click on My wishlist.");
@@ -229,6 +247,8 @@ public class NykaaSearchLipstick {
             helper.doClick(NykaaSearchLipstickPageLocator.addItems);
             test.log(Status.PASS,"clicked on My Wishlist");
             LoggerHandler.info("clicked on My Wishlist");
+            // Screenshot.captureFullScreenshot("Nykaa Account Screenshot");
+            // Report.attachScreenshotToReport(test,Base.driver,"Screenshot");
         } catch (Exception e) {
             test.log(Status.FAIL,"Failed to click on How do I add items to my wishlist.");
             LoggerHandler.info("Failed to click on How do I add items to my wishlist.");
@@ -247,6 +267,8 @@ public class NykaaSearchLipstick {
             Assert.assertTrue(wasHelpful.contains("Was this helpful ?"));
             test.log(Status.PASS,"Verified Was this helpful");
             LoggerHandler.info("Verified Was this helpful");
+            Screenshot.captureFullScreenshot("Nykaa Account Screenshot");
+            Report.attachScreenshotToReport("Screenshot",test,"Screenshot");
         } catch (Exception e) {
             test.log(Status.FAIL,"Failed to verify was this helpful?.");
             LoggerHandler.info("Failed to verify was this helpful?.");
@@ -259,6 +281,7 @@ public class NykaaSearchLipstick {
             clickOnLiquidLipstickSuggestion();
             hoverOnFirstProduct();
             clickOnPriviewShades();
+            verifySelectAShade();
             clickOnViewDetails();
             clickOnArrow();
             selectThirdOption();
