@@ -24,6 +24,9 @@ public class Screenshot extends Base {
         TakesScreenshot ts = (TakesScreenshot) driver;
         File file = ts.getScreenshotAs(OutputType.FILE);
         File screenshotsDir = new File(System.getProperty("user.dir") + "/screenshots");
+        if (!screenshotsDir.exists()) {
+            screenshotsDir.mkdirs();
+        }
         File target = new File(screenshotsDir, name);
         try {
             Files.copy(file, target);
@@ -43,17 +46,22 @@ public class Screenshot extends Base {
     	WebElement element = driver.findElement(xpath);
         String timestamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
         String name = filename + timestamp + ".png";
+        // To Highlight the element
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].style.border='3px solid red'", element);
         TakesScreenshot ts = (TakesScreenshot) driver;
         File file = ts.getScreenshotAs(OutputType.FILE);
         File screenshotsDir = new File(System.getProperty("user.dir") + "/screenshots");
+        if (!screenshotsDir.exists()) {
+            screenshotsDir.mkdirs();
+        }
         File target = new File(screenshotsDir, name);
         try {
             Files.copy(file, target);
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
+            // To Remove the highlight
             js.executeScript("arguments[0].style.border=''", element);
         }
     }
@@ -71,6 +79,9 @@ public class Screenshot extends Base {
         String name = filename + timestamp + ".png";
         File file = element.getScreenshotAs(OutputType.FILE);
         File screenshotsDir = new File(System.getProperty("user.dir") + "/screenshots");
+        if (!screenshotsDir.exists()) {
+            screenshotsDir.mkdirs();
+        }
         File target = new File(screenshotsDir, name);
         try {
             Files.copy(file, target);

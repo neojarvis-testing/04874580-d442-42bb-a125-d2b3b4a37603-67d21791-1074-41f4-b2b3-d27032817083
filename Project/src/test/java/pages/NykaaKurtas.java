@@ -25,10 +25,11 @@ public class NykaaKurtas {
         try {
             helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.searchBar, 10);
             helper.doClick(NykaaSearchForPillowLocators.searchBar);
-            test.log(Status.INFO, "Clicked on SearchBar");
+            test.log(Status.PASS, "Clicked on SearchBar");
             LoggerHandler.info("Clicked on SearchBar");
         } catch (Exception e) {
-            System.out.println("not clicked");
+            test.log(Status.FAIL, "Searchbar not clicked");
+            LoggerHandler.error("Searchbar not clicked");
         }
     }
 
@@ -36,10 +37,11 @@ public class NykaaKurtas {
         try {
             helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.searchBar, 10);
             helper.doSendKeys(NykaaSearchForPillowLocators.searchBar,"Kurtas");
-            test.log(Status.INFO, "Value Entered");
+            test.log(Status.PASS, "Value Entered");
             LoggerHandler.info("Value Entered");
         } catch (Exception e) {
-            System.out.println("Value not entered");
+            test.log(Status.FAIL, "Value not entered");
+            LoggerHandler.error("Value not entered");
         }
     }
 
@@ -47,26 +49,23 @@ public class NykaaKurtas {
         try {
             helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.searchBar, 10);
             helper.doEnterAction(NykaaSearchForPillowLocators.searchBar);
-            test.log(Status.INFO, "Enter action performed");
+            test.log(Status.PASS, "Enter action performed");
             LoggerHandler.info("Enter action performed");
         } catch (Exception e) {
-            System.out.println("Enter not performed");
-        }
+            test.log(Status.FAIL, "Enter action not performed");
+            LoggerHandler.error("Enter action not performed");        }
     }
 
     public void verifyKurta(){
         try {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.verifyKurtas, 10);
             String data = helper.doGetText(NykaaKurtasLocators.verifyKurtas);
-            try {
-                Assert.assertTrue(data.contains("Kurta"));
-                test.log(Status.INFO, "Kurta verified");
-                LoggerHandler.info("Kurta verified");
-            } catch (Exception e) {
-               System.out.println("Assert failed");
-            }
+            Assert.assertTrue(data.contains("Kurta"));
+            test.log(Status.PASS, "Kurta verified");
+            LoggerHandler.info("Kurta verified");
         } catch (Exception e) {
-            System.out.println("Not Verified");
+            test.log(Status.FAIL, "Kurta not verified");
+            LoggerHandler.error("Kurta not verified");
         }
     }
 
@@ -74,10 +73,11 @@ public class NykaaKurtas {
         try {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.sortBy, 10);
             helper.doHoverOnElement(NykaaKurtasLocators.sortBy);
-            test.log(Status.INFO, "Hovered on sort");
+            test.log(Status.PASS, "Hovered on sort");
             LoggerHandler.info("Hovered On sort");
         } catch (Exception e) {
-            System.out.println("Sort hover not performed");
+            test.log(Status.FAIL, "Not hovered on sort");
+            LoggerHandler.error("Not hovered on sort");
         }
     }
 
@@ -85,8 +85,11 @@ public class NykaaKurtas {
         try {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.bestSeller, 10);
             helper.doClick(NykaaKurtasLocators.bestSeller);
+            test.log(Status.PASS, "Clicked on Bestseller");
+            LoggerHandler.info("Clicked on Bestseller");
         } catch (Exception e) {
-            System.out.println("BestSeller not clicked");
+            test.log(Status.FAIL, "BestSeller is not clicked");
+            LoggerHandler.error("BestSeller is not clicked");
         }
     }
 
@@ -94,8 +97,11 @@ public class NykaaKurtas {
         try {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.secondProduct, 10);
             helper.doClickandswitch(NykaaKurtasLocators.secondProduct);
+            test.log(Status.PASS, "Clicked on Second Product");
+            LoggerHandler.info("Clicked on Second Product");
         } catch (Exception e) {
-            System.out.println("BestSeller not clicked");
+            test.log(Status.FAIL, "Not clicked on second product");
+            LoggerHandler.error("Not clicked on second product");
         }
     }
 
@@ -104,8 +110,11 @@ public class NykaaKurtas {
             Thread.sleep(3000);
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.sizeGuide, 10);
             helper.doClick(NykaaKurtasLocators.sizeGuide);
+            test.log(Status.PASS, "Clicked on Size guide");
+            LoggerHandler.info("Clicked on SearchBar");
         } catch (Exception e) {
-            System.out.println("Size Guide not clicked");
+            test.log(Status.FAIL, "Not clicked on size guide");
+            LoggerHandler.error("Not clicked on size guide");
         }
     }
 
@@ -114,13 +123,12 @@ public class NykaaKurtas {
             Thread.sleep(3000);
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.verifySizeGuide, 10);
             String data = helper.doGetText(NykaaKurtasLocators.verifySizeGuide);
-            try {
-                Assert.assertTrue(data.contains("SIZE"));
-            } catch (Exception e) {
-               System.out.println("Assert failed");
-            }
+            Assert.assertTrue(data.contains("SIZE"));
+            test.log(Status.PASS, "Verification of size guide is done");
+            LoggerHandler.info("Verification of size guide is done");    
         } catch (Exception e) {
-            System.out.println("Not Verified");
+            test.log(Status.FAIL, "Verification of size guide is not done");
+            LoggerHandler.error("Verification of size guide is not done");
         }
     }
 
@@ -129,8 +137,11 @@ public class NykaaKurtas {
             Thread.sleep(2000);
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.crossMark, 10);
             helper.doClick(NykaaKurtasLocators.crossMark);
+            test.log(Status.PASS, "Clicked on Cross bar");
+            LoggerHandler.info("Clicked on Cross bar");
         } catch (Exception e) {
-            System.out.println("Cross Mark not clicked");
+            test.log(Status.FAIL, "Not clicked on cross bar");
+            LoggerHandler.error("Not clicked on cross bar");
         }
     }
 
@@ -138,8 +149,11 @@ public class NykaaKurtas {
         try {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.readAllReviews, 10);
             helper.doClick(NykaaKurtasLocators.readAllReviews);
+            test.log(Status.PASS, "Clicked on Read all reviews");
+            LoggerHandler.info("Clicked on Read all reviews");
         } catch (Exception e) {
-            System.out.println(" Real All not clicked");
+            test.log(Status.FAIL, "Not clicked on read all");
+            LoggerHandler.error("Not clicked on read all");
         }
     }
 
@@ -147,13 +161,12 @@ public class NykaaKurtas {
         try {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.allReviews, 10);
             String data = helper.doGetText(NykaaKurtasLocators.allReviews);
-            try {
-                Assert.assertTrue(data.contains("All"));
-            } catch (Exception e) {
-               System.out.println("Assert failed");
-            }
+            Assert.assertTrue(data.contains("All"));
+            test.log(Status.PASS, "Verification of all reviews is done");
+            LoggerHandler.info("Verification of all reviews is done");
         } catch (Exception e) {
-            System.out.println("Not Verified");
+            test.log(Status.FAIL, "Verification of all reviews is not done");
+            LoggerHandler.error("Verification of all reviews is not done");
         }
     }
 
@@ -161,8 +174,11 @@ public class NykaaKurtas {
         try {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.helpful, 10);
             helper.doClick(NykaaKurtasLocators.helpful);
+            test.log(Status.PASS, "Clicked on helpful");
+            LoggerHandler.info("Clicked on helpful");
         } catch (Exception e) {
-            System.out.println(" Helpful not clicked");
+            test.log(Status.FAIL, "Not clicked on helpful");
+            LoggerHandler.error("Not clicked on helpful");
         }
     }
 
@@ -170,8 +186,11 @@ public class NykaaKurtas {
         try {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.numberInput, 10);
             helper.doClick(NykaaKurtasLocators.numberInput);
+            test.log(Status.PASS, "clicked on mobile input");
+            LoggerHandler.info("clicked on mobile input");
         } catch (Exception e) {
-            System.out.println("Mobile input not clicked");
+            test.log(Status.FAIL, "Unable to click on input field");
+            LoggerHandler.error("Unable to click on input field");
         }
     }
 
@@ -180,9 +199,11 @@ public class NykaaKurtas {
 
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.numberInput, 10);
             helper.doSendKeys(NykaaKurtasLocators.numberInput,"9876543210");
-            LoggerHandler.info("Mobile input done");
+            LoggerHandler.info("Mobile number entered");
+            test.log(Status.PASS, "Mobile number entered");
         } catch (Exception e) {
-            System.out.println("Mobile number not entered");
+            test.log(Status.FAIL, "number not entered");
+            LoggerHandler.error("number not entered");
         }
     }
 
@@ -191,10 +212,11 @@ public class NykaaKurtas {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.submit, 10);
             helper.doClick(NykaaKurtasLocators.submit);
             Screenshot.captureFullScreenshot("Submit Button");
-            test.log(Status.PASS,"Submit Button");
-            LoggerHandler.info("Submit Button");
+            test.log(Status.PASS,"clicked on submit Button");
+            LoggerHandler.info("clicked on submit Button");
         } catch (Exception e) {
-            System.out.println("Submit input not clicked");
+            test.log(Status.FAIL, "not clicked on submit Button");
+            LoggerHandler.error("not clicked on submit Button");
         }
     }
 
@@ -206,9 +228,6 @@ public class NykaaKurtas {
         hoverOnSort();
         clickOnBestSeller();
         clickSecondProduct();
-        // clickSizeGuide();
-        // verifySizeGuideheading();
-        // clickCross();
         clickReadAllReviews();
         verifyAllReviews();
         clickHelpful();
