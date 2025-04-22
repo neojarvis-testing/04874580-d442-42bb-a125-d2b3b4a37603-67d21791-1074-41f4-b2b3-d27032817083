@@ -3,7 +3,7 @@ package uistore;
 import org.openqa.selenium.By;
 
 public class NykaaLuxeHomeLocators {
-    public static By luxe=By.xpath("(//a[text()='Luxe'])[3]");
+    public static By luxe=By.xpath("//a[@class='css-184rvtn' and text()='Luxe']");
     public static By nykaaLuxe=By.cssSelector("h1");
     public static By popularity=By.cssSelector("button[class=' css-1aucgde']");
     public static By customerRated=By.cssSelector("label[for='radio_customer top rated_undefined']");

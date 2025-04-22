@@ -50,7 +50,7 @@ public class NykaaPillowPage {
     public void inputPillow(){
         try {
             helper.dowaitForElementToBeVisible(NykaaPillowLocators.searchBar, 10);
-            helper.doSendKeys(NykaaPillowLocators.searchBar,"Pillow");
+            helper.doSendKeys(NykaaPillowLocators.searchBar,ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx", "Sheet1", 0, 0));
             test.log(Status.PASS, "pillow entered");
             LoggerHandler.info("pillow entered");
         } catch (Exception e) {
