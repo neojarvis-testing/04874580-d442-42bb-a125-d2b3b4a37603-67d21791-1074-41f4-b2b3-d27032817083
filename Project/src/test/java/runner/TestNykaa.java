@@ -35,7 +35,7 @@ public class TestNykaa extends Base{
      */
     @BeforeClass
     public void report(){
-        report = Report.generateReport("Nykaa_report");
+        report = Report.generateExtenteReports("Nykaa_Report");
     }
  
     /*Method Name: open
@@ -56,12 +56,8 @@ public class TestNykaa extends Base{
       Parameter: None
       Return Type: void
      */
-<<<<<<< HEAD
 
-    @Test(enabled = true, priority = 1 )
-=======
    @Test(enabled = true, priority = 1 )
->>>>>>> 20bb6a3e4be446ca0a55279a732fd56f7aa91c62
     public void NykaaSearchForPillow_Test(){
       test = report.createTest("NykaaSearchForPillow_Test");
       NykaaPillowPage nykaaSearchForPillow = new NykaaPillowPage(test);
@@ -139,18 +135,14 @@ public class TestNykaa extends Base{
       Parameter: None
       Return Type: void
      */
-<<<<<<< HEAD
-    // @Test(enabled = true, priority = 9)
-=======
+
     @Test(enabled = true, priority = 1)
->>>>>>> 20bb6a3e4be446ca0a55279a732fd56f7aa91c62
     public void nykaaaLuxe(){
       test=report.createTest("Luxe");
       NykaaLuxeHomePage nykaaLuxeHomePage=new NykaaLuxeHomePage(test);
       nykaaLuxeHomePage.nykaaLuxeCase();
     }
  
-   
      /*
      * A. Method Name: NykaaGetAppTestCase
      * B. Author Name: Group 07

@@ -228,7 +228,7 @@ public class NykaaSearchLipstick {
             test.log(Status.PASS,"clicked on My Wishlist");
             LoggerHandler.info("clicked on My Wishlist");
             Screenshot.captureFullScreenshot("Nykaa Account Screenshot");
-            Report.attachScreenshotToReport("Screenshot",test,"ss");
+            Report.addScreenshotToReport(test,Base.driver,"Screenshot");
         } catch (Exception e) {
             test.log(Status.FAIL,"Failed to click on My wishlist.");
             LoggerHandler.info("Failed to click on My wishlist.");
@@ -268,7 +268,7 @@ public class NykaaSearchLipstick {
             test.log(Status.PASS,"Verified Was this helpful");
             LoggerHandler.info("Verified Was this helpful");
             Screenshot.captureFullScreenshot("Nykaa Account Screenshot");
-            Report.attachScreenshotToReport("Screenshot",test,"Screenshot");
+            Report.addScreenshotToReport(test,Base.driver,"Screenshot");
         } catch (Exception e) {
             test.log(Status.FAIL,"Failed to verify was this helpful?.");
             LoggerHandler.info("Failed to verify was this helpful?.");
