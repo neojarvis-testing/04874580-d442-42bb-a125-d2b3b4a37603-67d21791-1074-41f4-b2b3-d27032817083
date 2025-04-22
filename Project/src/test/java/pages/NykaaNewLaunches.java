@@ -20,7 +20,13 @@ public class NykaaNewLaunches {
         helper = new WebDriverHelper(Base.driver);
         this.test=test;
     }
-
+    /*
+     * a.Method Name:scrollDownToFooter
+     * b.Author Name:Group 07
+     * c.Description:This method scrolls down to the footer of the page using JavaScript.
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void scrollDownToFooter(){
         try {
             Thread.sleep(4000);
@@ -32,7 +38,13 @@ public class NykaaNewLaunches {
             LoggerHandler.error("Unable to scroll");
         } 
     }
-
+    /*
+     * a.Method Name:clickNewlaunches
+     * b.Author Name:Group 07
+     * c.Description:This method clicks on the Newlaunches element on the Nykaa website..
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void clickNewlaunches(){
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.newLaunches, 10);
@@ -44,7 +56,13 @@ public class NykaaNewLaunches {
             LoggerHandler.error("Unable to click");
         } 
     }
-
+    /*
+     * a.Method Name:verifyShopNewLaunches
+     * b.Author Name:Group 07
+     * c.Description:This method verifies if the text "Launches" is present on the Nykaa website.
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void verifyShopNewLaunches(){
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.shopNewLaunches, 10);
@@ -57,7 +75,13 @@ public class NykaaNewLaunches {
             LoggerHandler.error("New launches not verified");
         }
     }
-
+    /*
+     * a.Method Name:hoverOnNatural
+     * b.Author Name:Group 07
+     * c.Description:This method waits for the "natural" element to be visible and then hovers over it.
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void hoverOnNatural(){
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.natural, 10);
@@ -69,7 +93,13 @@ public class NykaaNewLaunches {
             LoggerHandler.error("Unable to hover on natural");       
         } 
     }
-    
+    /*
+     * a.Method Name:clickFaceWah
+     * b.Author Name:Group 07
+     * c.Description:This method clicks on the FaceWash element on the Nykaa website..
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void clickFaceWah(){
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.faceWash, 10);
@@ -81,7 +111,13 @@ public class NykaaNewLaunches {
             LoggerHandler.error("Facewash not clicked");        
         } 
     }
-
+    /*
+     * a.Method Name:verifyFaceWash
+     * b.Author Name:Group 07
+     * c.Description:This method verifies if the text "Wash" is present on the Nykaa website.
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void verifyFaceWash(){
         try {
             Base.driver.navigate().refresh();
@@ -95,7 +131,13 @@ public class NykaaNewLaunches {
             LoggerHandler.error("Facewash not verified");
         }
     }
-
+    /*
+     * a.Method Name:clickPrices
+     * b.Author Name:Group 07
+     * c.Description:This method clicks on the price element on the Nykaa website..
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void clickPrices(){
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.price, 10);
@@ -107,7 +149,13 @@ public class NykaaNewLaunches {
             LoggerHandler.error("Prices not clicked");
         } 
     }
-
+    /*
+     * a.Method Name:clickPriceRange
+     * b.Author Name:Group 07
+     * c.Description:This method clicks on the priceRange element on the Nykaa website..
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void clickPriceRange(){
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.priceRange, 10);
@@ -119,7 +167,13 @@ public class NykaaNewLaunches {
             LoggerHandler.error("Price range not selected");
         } 
     }
-
+    /*
+     * a.Method Name:clickFirstProductLink
+     * b.Author Name:Group 07
+     * c.Description:This method clicks on the FirstProductLink element on the Nykaa website..
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void clickFirstProductLink(){
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.firstProduct, 10);
@@ -131,7 +185,13 @@ public class NykaaNewLaunches {
             LoggerHandler.error("First product not clicked");
         } 
     }
-
+    /*
+     * a.Method Name:clickPinCode
+     * b.Author Name:Group 07
+     * c.Description:This method clicks on the Pincode element on the Nykaa website..
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void clickPinCode(){
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.delivery, 10);
@@ -143,7 +203,13 @@ public class NykaaNewLaunches {
             LoggerHandler.error("Unable to click on pincode");
         } 
     }
-
+    /*
+     * a.Method Name:inputPinCode
+     * b.Author Name:Group 07
+     * c.Description:This method clicks on the inputPincode element on the Nykaa website..
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void inputPinCode(){
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.delivery, 10);
@@ -155,7 +221,13 @@ public class NykaaNewLaunches {
            LoggerHandler.error("Unable to input pincode");
         } 
     }
-
+    /*
+     * a.Method Name:clickCheck
+     * b.Author Name:Group 07
+     * c.Description:This method clicks on the check element on the Nykaa website..
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void clickCheck(){
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.check, 10);
@@ -167,7 +239,13 @@ public class NykaaNewLaunches {
             LoggerHandler.error("Not able to click on check");
         } 
     }
-
+    /*
+     * a.Method Name:clickAddtoBag
+     * b.Author Name:Group 07
+     * c.Description:This method clicks on the Add to bag element on the Nykaa website..
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void clickAddtoBag(){
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.addtoBag, 10);
@@ -179,7 +257,13 @@ public class NykaaNewLaunches {
             LoggerHandler.error("Not clicked on add to bag");
         } 
     }
-
+     /*
+     * a.Method Name:clickCart
+     * b.Author Name:Group 07
+     * c.Description:This method clicks on the cart element on the Nykaa website..
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void clickCart(){
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.cart, 10);
@@ -191,7 +275,13 @@ public class NykaaNewLaunches {
             LoggerHandler.error("Not clicked on cart");
         }
     }
-
+    /*
+     * a.Method Name:verifyBag
+     * b.Author Name:Group 07
+     * c.Description:This method verifies if the text "Bag" is present on the Nykaa website.
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void verifyBag(){
         try {
             helper.doSwitchToIframe(NykaaNewLaunchesLocators.iframe);
@@ -207,7 +297,13 @@ public class NykaaNewLaunches {
             LoggerHandler.error("Text bag not verified");
         }
     }
-
+    /*
+     * a.Method Name:NykaaNewLaunches_Case
+     * b.Author Name:Group 07
+     * c.Description:This method excutes all  the test cases.
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void NykaaNewLaunches_Case(){
         scrollDownToFooter();
         clickNewlaunches();

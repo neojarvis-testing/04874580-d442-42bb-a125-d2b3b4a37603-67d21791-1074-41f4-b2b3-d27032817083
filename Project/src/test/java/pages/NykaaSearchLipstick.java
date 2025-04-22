@@ -18,7 +18,13 @@ public class NykaaSearchLipstick {
         helper=new WebDriverHelper(Base.driver);
         this.test=test;
     }
-
+    /*
+     * a.Method Name:sendLipstickInsearchBar
+     * b.Author Name:Group 07
+     * c.Description:This method sends the text "liquid lipstick" to the search bar on the Nykaa website
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void sendLipstickInsearchBar(){
         try {
             helper.doSendKeys(NykaaSearchLipstickPageLocator.searchBar,ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/TonerExcel.xlsx", "Likitha", 1, 0));
@@ -29,7 +35,13 @@ public class NykaaSearchLipstick {
             LoggerHandler.info("Failed to enter liquid lipstick in search bar");
         }
     }
-
+    /*
+     * a.Method Name:clickOnLiquidLipstickSuggestion
+     * b.Author Name:Group 07
+     * c.Description:This method sends the text "liquid lipstick" to the search bar on the Nykaa website and performs an Enter action
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void clickOnLiquidLipstickSuggestion(){
         try {
             // helper.dowaitForElementToBeVisible(NykaaSearchLipstickPageLocator.lipstickSuggestion, 5);
@@ -43,6 +55,13 @@ public class NykaaSearchLipstick {
             LoggerHandler.info("Failed to perform enter action");
         }
     }
+    /*
+     * a.Method Name:hoverOnFirstProduct
+     * b.Author Name:Group 07
+     * c.Description:This method enters the text "liquid lipstick" to the search bar and hover on the first product
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void hoverOnFirstProduct(){
         try {
             helper.dowaitForElementToBeVisible(NykaaSearchLipstickPageLocator.firstProduct,5);
@@ -55,7 +74,13 @@ public class NykaaSearchLipstick {
             LoggerHandler.info("Failed to hover on first product");
         }
     }
-
+    /*
+     * a.Method Name:clickOnPriviewShades
+     * b.Author Name:Group 07
+     * c.Description:This method clicks on the preview shades element on the Nykaa website.
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void clickOnPriviewShades(){
         try {
             helper.doClick(NykaaSearchLipstickPageLocator.priviewShades);
@@ -66,6 +91,13 @@ public class NykaaSearchLipstick {
             LoggerHandler.info("Failed to click on priview shades.");
         }
     }
+    /*
+     * a.Method Name:clickOnViewDetails
+     * b.Author Name:Group 07
+     * c.Description:This method clicks on the View details element on the Nykaa website.
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void clickOnViewDetails(){
         try {
             helper.doClickandswitch(NykaaSearchLipstickPageLocator.viewDetails);
@@ -77,7 +109,13 @@ public class NykaaSearchLipstick {
             
         }
     }
-    
+    /*
+     * a.Method Name:clickOnArrow
+     * b.Author Name:Group 07
+     * c.Description:This method clicks on the Arrow element on the Nykaa website.
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void clickOnArrow(){
         try {
             helper.doClick(NykaaSearchLipstickPageLocator.dropdwon);
@@ -89,6 +127,13 @@ public class NykaaSearchLipstick {
             
         }
     }
+    /*
+     * a.Method Name:selectThirdOption
+     * b.Author Name:Group 07
+     * c.Description:This method selects the third option from the dropdown in the  Nykaa website.
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void selectThirdOption(){
         try {
             helper.dowaitForElementToBeVisible(NykaaSearchLipstickPageLocator.dropdwon, 5);
@@ -100,7 +145,13 @@ public class NykaaSearchLipstick {
             LoggerHandler.info("Failed to select third option.");
         }
     }
-
+    /*
+     * a.Method Name:scrollToFooter
+     * b.Author Name:Group 07
+     * c.Description:The method scrolls the page to the footer section by pixels.
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void scrollToFooter(){
         try {
             helper.doScrollBypixel(0,2000);
@@ -111,7 +162,13 @@ public class NykaaSearchLipstick {
             LoggerHandler.info("Failed to scroll to footer.");
         }
     }
-    
+    /*
+     * a.Method Name:clickOnContactUs
+     * b.Author Name:Group 07
+     * c.Description:This method clicks on the Contact us element on the Nykaa website.
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void clickOnContactUs(){
         try {
             helper.dowaitForElementToBeVisible(NykaaSearchLipstickPageLocator.contactUs, 5);
@@ -123,6 +180,13 @@ public class NykaaSearchLipstick {
             LoggerHandler.info("Failed to click on contact us.");
         }
     }
+    /*
+     * a.Method Name:clickOnNykaaAccount
+     * b.Author Name:Group 07
+     * c.Description:This method clicks on the Nykaa Account element on the Nykaa website.
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void clickOnNykaaAccount(){
         try{
             helper.dowaitForElementToBeVisible(NykaaSearchLipstickPageLocator.nykaaAcc, 5);
@@ -134,6 +198,13 @@ public class NykaaSearchLipstick {
             LoggerHandler.info("Failed to click on nykaa account.");
         }
     }
+    /*
+     * a.Method Name:clickOnMyWishlist
+     * b.Author Name:Group 07
+     * c.Description:This method clicks on the MyWishlist element on the Nykaa website.
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void clickOnMyWishlist(){
         try {
             helper.dowaitForElementToBeVisible(NykaaSearchLipstickPageLocator.myWishList, 5);
@@ -145,6 +216,13 @@ public class NykaaSearchLipstick {
             LoggerHandler.info("Failed to click on My wishlist.");
         }
     }
+    /*
+     * a.Method Name:clickAddItems
+     * b.Author Name:Group 07
+     * c.Description:This method clicks on the AddItems element on the Nykaa website.
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void clickAddItems(){
         try {
             helper.dowaitForElementToBeVisible(NykaaSearchLipstickPageLocator.addItems, 5);
@@ -156,7 +234,13 @@ public class NykaaSearchLipstick {
             LoggerHandler.info("Failed to click on How do I add items to my wishlist.");
         }
     }
-
+    /*
+     * a.Method Name:verifyWasHelpful
+     * b.Author Name:Group 07
+     * c.Description:This method verifies if the text "Was this helpful?" is present on the Nykaa website.
+     * d.Parameters:None
+     * e.Return Type:void
+     */
     public void verifyWasHelpful(){
         try {
             String wasHelpful=helper.doGetText(NykaaSearchLipstickPageLocator.wasHelpful);

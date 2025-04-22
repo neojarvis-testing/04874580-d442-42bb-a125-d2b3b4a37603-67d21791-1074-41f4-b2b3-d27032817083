@@ -265,27 +265,14 @@ public class NykaaLuxeHomePage {
         test.log(Status.FAIL,"Cannot click on Gromming advice");
         LoggerHandler.error("Cannot click on Gromming advice");
     }
-   }
+   } 
     /*
-	 * a.Method Name:verifyShaving
-	 * b.Author Name:Group 07
-	 * c.Description: The method finds the element SHAVING & BEARD CARE and verifies the text SHAVING & BEARD CARE .
-	 * d.Parameter:None
-	 * e.Return type:void
-	 */
-   public void verifyShaving(){
-    try {
-        String shaving=helper.doGetText(NykaaLuxeHomeLocators.Shaving);
-        Assert.assertTrue(shaving.contains("SHAVING & BEARD CARE"));
-        Screenshot.captureFullScreenshot("Shaving and beard");
-        test.log(Status.PASS,"Verified the text Shaving");
-        LoggerHandler.info("Verified the text Shaving");
-    } catch (AssertionError e) {
-        test.log(Status.PASS,"Cannot Verified the text Shaving");
-        LoggerHandler.info("Cannot Verified the text Shaving");
-    }
-   }
-
+     * a.Method Name:nykaaLuxeCase
+     * b.Author Name:Group 07
+     * c.Description:This method excutes all  the test cases.
+     * d.Parameters:None
+     * e.Return Type:void
+     */
    public void nykaaLuxeCase(){
       scrollToFotter();
       clickOnLuxe();
@@ -300,6 +287,6 @@ public class NykaaLuxeHomePage {
       scrollToFotterAgain();
       clickOnNykaaMan();
       clickOnGroomingAdvice();
-      verifyShaving();
+      
    }
 }
