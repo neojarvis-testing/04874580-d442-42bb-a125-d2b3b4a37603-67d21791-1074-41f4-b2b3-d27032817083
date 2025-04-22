@@ -7,7 +7,7 @@ public class NykaaKurtasLocators {
     public static By verifyKurtas = By.cssSelector("h1[class='css-h8pwvr']");
     public static By sortBy = By.xpath("//button[@class='css-drjr1k']");
     public static By bestSeller = By.cssSelector("div[title='Bestseller']");
-    public static By secondProduct = By.xpath("(//img[@class=' css-kwk7lt'])[2]");
+    public static By secondProduct = By.xpath("//div[@class='css-zzdc8z']//div[@id='aria-label-13735962-1']");
     public static By sizeGuide = By.cssSelector("button[class='css-roouj2']");
     public static By verifySizeGuide = By.cssSelector("div[class='title css-9qof20']");
     public static By crossMark = By.xpath("(//div[@class='css-1sg2lsz'])[3]");

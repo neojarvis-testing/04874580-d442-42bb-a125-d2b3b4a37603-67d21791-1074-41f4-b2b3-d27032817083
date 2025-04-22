@@ -6,7 +6,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 import uistore.NykaaNewLaunchesLocators;
-import uistore.NykaaSearchForPillowLocators;
+import uistore.NykaaPillowLocators;
 import utils.Base;
 import utils.ExcelReader;
 import utils.LoggerHandler;

@@ -6,7 +6,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 import uistore.NykaaKurtasLocators;
-import uistore.NykaaSearchForPillowLocators;
+import uistore.NykaaPillowLocators;
 import utils.Base;
 import utils.ExcelReader;
 import utils.LoggerHandler;
@@ -30,8 +30,8 @@ public class NykaaKurtasPage {
     */
     public void clickSearchBar(){
         try {
-            helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.searchBar, 10);
-            helper.doClick(NykaaSearchForPillowLocators.searchBar);
+            helper.dowaitForElementToBeVisible(NykaaPillowLocators.searchBar, 10);
+            helper.doClick(NykaaPillowLocators.searchBar);
             test.log(Status.PASS, "Clicked on SearchBar");
             LoggerHandler.info("Clicked on SearchBar");
         } catch (Exception e) {
@@ -48,8 +48,8 @@ public class NykaaKurtasPage {
     */
     public void inputKurtas(){
         try {
-            helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.searchBar, 10);
-            helper.doSendKeys(NykaaSearchForPillowLocators.searchBar,"Kurtas");
+            helper.dowaitForElementToBeVisible(NykaaPillowLocators.searchBar, 10);
+            helper.doSendKeys(NykaaPillowLocators.searchBar,"Kurtas");
             test.log(Status.PASS, "Value Entered");
             LoggerHandler.info("Value Entered");
         } catch (Exception e) {
@@ -66,8 +66,8 @@ public class NykaaKurtasPage {
     */
     public void hitEnter(){
         try {
-            helper.dowaitForElementToBeVisible(NykaaSearchForPillowLocators.searchBar, 10);
-            helper.doEnterAction(NykaaSearchForPillowLocators.searchBar);
+            helper.dowaitForElementToBeVisible(NykaaPillowLocators.searchBar, 10);
+            helper.doEnterAction(NykaaPillowLocators.searchBar);
             test.log(Status.PASS, "Enter action performed");
             LoggerHandler.info("Enter action performed");
         } catch (Exception e) {
