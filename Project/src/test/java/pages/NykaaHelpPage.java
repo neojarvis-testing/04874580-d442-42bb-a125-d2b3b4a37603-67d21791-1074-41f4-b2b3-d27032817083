@@ -276,7 +276,11 @@ public class NykaaHelpPage {
             test.log(Status.PASS, "Clicked on Cancellation link");
             LoggerHandler.info("Clicked on Cancellation link");
             Screenshot.captureFullScreenshot("Cancellation_Policy");
+<<<<<<< HEAD
             Report.attachScreenshotToReport("Cancellation",test, "CancellationPolicy");
+=======
+            Report.addScreenshotToReport(test, Base.driver,"CancellationPolicy");
+>>>>>>> 20bb6a3e4be446ca0a55279a732fd56f7aa91c62
         } catch (Exception e) {
             test.log(Status.FAIL, "Failed to click on canceelation link.");
             LoggerHandler.info("Failed to click on canceelation link.");
