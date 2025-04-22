@@ -205,10 +205,12 @@ public class NykaaHelpPage {
             Thread.sleep(2000);
             verifyCancelPolicy();
             Thread.sleep(2000);
+            verifyCancelPolicyLink();
+            Thread.sleep(2000);
             clickOncancellationLink();
             Thread.sleep(2000);
-            // verifyCancelPolicyLink();
-            Thread.sleep(2000);
+            
+            
 
         } catch (InterruptedException e) {
             e.printStackTrace();
