@@ -8,11 +8,10 @@ import com.aventstack.extentreports.Status;
 import uistore.NykaaLuxeHomeLocators;
 import utils.Base;
 import utils.LoggerHandler;
-import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class NykaaLuxeHomePage {
-   public static ExtentTest test;
+   public ExtentTest test;
    public static WebDriverHelper helper;
    public NykaaLuxeHomePage(ExtentTest test){
     helper=new WebDriverHelper(Base.driver);
