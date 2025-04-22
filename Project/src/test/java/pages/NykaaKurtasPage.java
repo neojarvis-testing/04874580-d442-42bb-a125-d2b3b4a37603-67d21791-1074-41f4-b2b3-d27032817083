@@ -86,7 +86,7 @@ public class NykaaKurtasPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.verifyKurtas, 10);
             String data = helper.doGetText(NykaaKurtasLocators.verifyKurtas);
-            Assert.assertTrue(data.contains("Kurta"));
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx","Sheet1",4,0)));
             test.log(Status.PASS, "Kurta verified");
             LoggerHandler.info("Kurta verified");
         } catch (Exception e) {
@@ -179,7 +179,7 @@ public class NykaaKurtasPage {
             Thread.sleep(3000);
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.verifySizeGuide, 10);
             String data = helper.doGetText(NykaaKurtasLocators.verifySizeGuide);
-            Assert.assertTrue(data.contains("SIZE"));
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx","Sheet1",5,0)));
             test.log(Status.PASS, "Verification of size guide is done");
             LoggerHandler.info("Verification of size guide is done");    
         } catch (Exception e) {
@@ -235,7 +235,7 @@ public class NykaaKurtasPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.allReviews, 10);
             String data = helper.doGetText(NykaaKurtasLocators.allReviews);
-            Assert.assertTrue(data.contains("All"));
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx","Sheet1",6,0)));
             test.log(Status.PASS, "Verification of all reviews is done");
             LoggerHandler.info("Verification of all reviews is done");
         } catch (Exception e) {
