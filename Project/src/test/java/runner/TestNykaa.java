@@ -207,7 +207,7 @@ public class TestNykaa extends Base{
       Return Type: void
      */
     @AfterClass
-    public void flush(){
+    public void flushReports(){
         report.flush();
     }
 }
