@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 public class NykaaKurtasLocators {
     
     public static By verifyKurtas = By.cssSelector("h1[class='css-h8pwvr']");
-    public static By sortBy = By.cssSelector("button[class='css-drjr1k']");
+    public static By sortBy = By.xpath("//button[@class='css-drjr1k']");
     public static By bestSeller = By.cssSelector("div[title='Bestseller']");
     public static By secondProduct = By.xpath("(//img[@class=' css-kwk7lt'])[2]");
     public static By sizeGuide = By.cssSelector("button[class='css-roouj2']");

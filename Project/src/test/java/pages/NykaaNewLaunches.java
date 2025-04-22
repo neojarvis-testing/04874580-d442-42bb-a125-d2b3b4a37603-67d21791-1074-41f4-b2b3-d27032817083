@@ -25,8 +25,11 @@ public class NykaaNewLaunches {
         try {
             Thread.sleep(4000);
             helper.doJsScrollFooter();
+            test.log(Status.PASS,"Scrolled down");
+            LoggerHandler.info("Scrolled down");
         } catch (Exception e) {
-           System.out.println("not scrolled");
+            test.log(Status.FAIL, "Unable to scroll");
+            LoggerHandler.error("Unable to scroll");
         } 
     }
 
@@ -34,8 +37,11 @@ public class NykaaNewLaunches {
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.newLaunches, 10);
             helper.doClickandswitch(NykaaNewLaunchesLocators.newLaunches);
+            test.log(Status.PASS,"clicked on new launches");
+            LoggerHandler.info("Clicked on new launches");
         } catch (Exception e) {
-           System.out.println("new launches not clicked");
+            test.log(Status.FAIL, "Unable to click");
+            LoggerHandler.error("Unable to click");
         } 
     }
 
@@ -43,13 +49,12 @@ public class NykaaNewLaunches {
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.shopNewLaunches, 10);
             String data = helper.doGetText(NykaaNewLaunchesLocators.shopNewLaunches);
-            try {
-                Assert.assertTrue(data.contains("Launches"));
-            } catch (Exception e) {
-               System.out.println("Assert failed");
-            }
-        } catch (Exception e) {
-            System.out.println("Not Verified");
+            Assert.assertTrue(data.contains("Launches"));
+            test.log(Status.PASS,"New launches verified");
+            LoggerHandler.info("New launches verified");
+        }catch (Exception e) {
+            test.log(Status.FAIL, "New launches not verified");
+            LoggerHandler.error("New launches not verified");
         }
     }
 
@@ -57,8 +62,11 @@ public class NykaaNewLaunches {
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.natural, 10);
             helper.doHoverOnElement(NykaaNewLaunchesLocators.natural);
+            test.log(Status.PASS,"Hovered on natural");
+            LoggerHandler.info("Hovered on natural");
         } catch (Exception e) {
-           System.out.println("unable to hover");
+            test.log(Status.FAIL, "Unable to hover on natural");
+            LoggerHandler.error("Unable to hover on natural");       
         } 
     }
     
@@ -66,8 +74,11 @@ public class NykaaNewLaunches {
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.faceWash, 10);
             helper.doClickandswitch(NykaaNewLaunchesLocators.faceWash);
+            test.log(Status.PASS,"clicked on facewash");
+            LoggerHandler.info("clicked on facewash");
         } catch (Exception e) {
-           System.out.println("face wash not clicked");
+            test.log(Status.FAIL, "Facewash not clicked");
+            LoggerHandler.error("Facewash not clicked");        
         } 
     }
 
@@ -76,13 +87,12 @@ public class NykaaNewLaunches {
             Base.driver.navigate().refresh();
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.facewashHeading, 10);
             String data = helper.doGetText(NykaaNewLaunchesLocators.facewashHeading);
-            try {
-                Assert.assertTrue(data.contains("Wash"));
-            } catch (AssertionError e) {
-               System.out.println("Assert failed");
-            }
+            Assert.assertTrue(data.contains("Wash"));
+            test.log(Status.PASS,"Face wash verified");
+            LoggerHandler.info("Face wash verified");
         } catch (Exception e) {
-            System.out.println("Not Verified");
+            test.log(Status.FAIL, "Facewash not verified");
+            LoggerHandler.error("Facewash not verified");
         }
     }
 
@@ -90,8 +100,11 @@ public class NykaaNewLaunches {
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.price, 10);
             helper.doClick(NykaaNewLaunchesLocators.price);
+            test.log(Status.PASS,"clicked on Prices");
+            LoggerHandler.info("clicked on prices");
         } catch (Exception e) {
-           System.out.println("price not clicked");
+            test.log(Status.FAIL, "Prices not clicked");
+            LoggerHandler.error("Prices not clicked");
         } 
     }
 
@@ -99,8 +112,11 @@ public class NykaaNewLaunches {
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.priceRange, 10);
             helper.doClick(NykaaNewLaunchesLocators.priceRange);
+            test.log(Status.PASS,"clicked on Price range");
+            LoggerHandler.info("clicked on Price range");
         } catch (Exception e) {
-           System.out.println("price Range not clicked");
+            test.log(Status.FAIL, "Price range not selected");
+            LoggerHandler.error("Price range not selected");
         } 
     }
 
@@ -108,8 +124,11 @@ public class NykaaNewLaunches {
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.firstProduct, 10);
             helper.doClickandswitch(NykaaNewLaunchesLocators.firstProduct);
+            test.log(Status.PASS,"clicked on first product");
+            LoggerHandler.info("clicked on first product");
         } catch (Exception e) {
-           System.out.println("First product not clicked");
+            test.log(Status.FAIL, "First product not clicked");
+            LoggerHandler.error("First product not clicked");
         } 
     }
 
@@ -117,8 +136,11 @@ public class NykaaNewLaunches {
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.delivery, 10);
             helper.doClick(NykaaNewLaunchesLocators.delivery);
+            test.log(Status.PASS,"clicked on pin code");
+            LoggerHandler.info("clicked on pin code");
         } catch (Exception e) {
-           System.out.println("delivery not clicked");
+            test.log(Status.FAIL, "Unable to click on pincode");
+            LoggerHandler.error("Unable to click on pincode");
         } 
     }
 
@@ -126,8 +148,11 @@ public class NykaaNewLaunches {
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.delivery, 10);
             helper.doSendKeys(NykaaNewLaunchesLocators.delivery,"620001");
+            test.log(Status.PASS,"Pincode entered");
+            LoggerHandler.info("Pincode entered");
         } catch (Exception e) {
-           System.out.println("input not given");
+           test.log(Status.FAIL, "Unable to input pincode");
+           LoggerHandler.error("Unable to input pincode");
         } 
     }
 
@@ -135,8 +160,11 @@ public class NykaaNewLaunches {
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.check, 10);
             helper.doClick(NykaaNewLaunchesLocators.check);
+            test.log(Status.PASS,"clicked on Checked");
+            LoggerHandler.info("clicked on Checked");
         } catch (Exception e) {
-           System.out.println("check not clicked");
+            test.log(Status.FAIL, "Not able to click on check");
+            LoggerHandler.error("Not able to click on check");
         } 
     }
 
@@ -144,8 +172,11 @@ public class NykaaNewLaunches {
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.addtoBag, 10);
             helper.doClick(NykaaNewLaunchesLocators.addtoBag);
+            test.log(Status.PASS,"clicked on Add to bag");
+            LoggerHandler.info("clicked on Add to bag");
         } catch (Exception e) {
-           System.out.println("add to bag not clicked");
+            test.log(Status.FAIL, "Not clicked on add to bag");
+            LoggerHandler.error("Not clicked on add to bag");
         } 
     }
 
@@ -153,8 +184,11 @@ public class NykaaNewLaunches {
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.cart, 10);
             helper.doClick(NykaaNewLaunchesLocators.cart);
+            test.log(Status.PASS,"clicked on cart");
+            LoggerHandler.info("clicked on cart");
         } catch (Exception e) {
-            System.out.println("cart not clicked");
+            test.log(Status.FAIL, "Not clicked on cart");
+            LoggerHandler.error("Not clicked on cart");
         }
     }
 
@@ -163,17 +197,14 @@ public class NykaaNewLaunches {
             helper.doSwitchToIframe(NykaaNewLaunchesLocators.iframe);
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.bag, 10);
             String data = helper.doGetText(NykaaNewLaunchesLocators.bag);
-            try {
-                System.out.println(data);
-                Assert.assertTrue(data.contains("Bag"));
-                Screenshot.captureFullScreenshot("TestCase2");
-                LoggerHandler.info(data);
-                test.log(Status.PASS, data);
-            } catch (Exception e) {
-               System.out.println("Assert failed");
-            }
+            System.out.println(data);
+            Assert.assertTrue(data.contains("Bag"));
+            Screenshot.captureFullScreenshot("TestCase2");
+            LoggerHandler.info("Bag verified");
+            test.log(Status.PASS, "Bag verified");
         } catch (Exception e) {
-            System.out.println("Not Verified");
+            test.log(Status.FAIL, "Text bag not verified");
+            LoggerHandler.error("Text bag not verified");
         }
     }
 
