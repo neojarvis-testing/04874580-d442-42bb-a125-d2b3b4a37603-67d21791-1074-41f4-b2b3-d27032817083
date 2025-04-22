@@ -259,7 +259,7 @@ public class NykaaManPage {
             helper.dowaitForElementToBeVisible(NykaaManPageLocators.signIn, 10);
             String signIn = helper.doGetText(NykaaManPageLocators.signIn);
             Screenshot.captureFullScreenshot("nykaa");
-            Report.attachScreenshotToReport("Nykaa",test, "nykaa");
+            Report.addScreenshotToReport(test,Base.driver,"nykaa");
             Assert.assertTrue(signIn.contains("Sign in"));
             test.log(Status.PASS, "Verified Sign In Text");
             LoggerHandler.info("Verified Sign In Text");
