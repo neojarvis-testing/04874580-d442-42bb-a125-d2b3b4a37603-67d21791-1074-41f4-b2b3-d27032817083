@@ -75,7 +75,7 @@ public class NykaaKurtasPage {
             LoggerHandler.error("Enter action not performed");        
         }
     }
-
+    
     /*Method Name: verifyKurta
     Author Name: Group 07
     Description: Verifies if the search results contain "Kurta".
