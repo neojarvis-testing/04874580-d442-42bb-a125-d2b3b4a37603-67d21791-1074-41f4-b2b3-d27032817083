@@ -1,14 +1,14 @@
 package runner;
- 
+
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
- 
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
- 
+
 import pages.NykaaCategoriesPage;
 import pages.NykaaGetAppPage;
 import pages.NykaaHelpPage;
@@ -21,12 +21,12 @@ import pages.NykaaSearchLipstick;
 import pages.NykaaTonerPage;
 import utils.Base;
 import utils.Report;
- 
+
 public class TestNykaa extends Base{
     public static ExtentReports report;
     public static ExtentTest test;
- 
- 
+
+
     /*Method Name: report
       Author Name: Group 07
       Description: This method opens the browser and navigate to the URL
@@ -37,7 +37,7 @@ public class TestNykaa extends Base{
     public void report(){
         report = Report.generateExtenteReports("Nykaa_Report");
     }
- 
+
     /*Method Name: open
       Author Name: Group 07
       Description: This method opens the browser and navigate to the URL
@@ -49,7 +49,7 @@ public class TestNykaa extends Base{
         openBrowser();
         driver.navigate().refresh();
     }
- 
+
     /*Method Name: NykaaSearchForPillow_Test
       Author Name: Group 07
       Description: It automates the process of searching for a pillow on Nykaa and logs the test execution..
@@ -60,9 +60,9 @@ public class TestNykaa extends Base{
     public void NykaaSearchForPillow_Test(){
       test = report.createTest("NykaaSearchForPillow_Test");
       NykaaPillowPage nykaaSearchForPillow = new NykaaPillowPage(test);
-      nykaaSearchForPillow.NykaaSearchForPillow_Case();
+      nykaaSearchForPillow.NykaaSearchForPillow_Case(); 
     }
- 
+
     /*Method Name: NykaaKurtas_Test
       Author Name: Group 07
       Description: It automates the process of searching for kurtas on Nykaa and logs the test execution..
@@ -73,9 +73,9 @@ public class TestNykaa extends Base{
     public void NykaaKurtas_Test(){
       test = report.createTest("NykaaKurtas_Test");
       NykaaKurtasPage nykaasKurtas = new NykaaKurtasPage(test);
-      nykaasKurtas.NykaaKurtas_Case();
+      nykaasKurtas.NykaaKurtas_Case(); 
     }
- 
+
     /*Method Name: NykaaNewLaunches_Test
       Author Name: Group 07
       Description: It automates the process of searching for new launches on Nykaa and logs the test execution..
@@ -86,9 +86,9 @@ public class TestNykaa extends Base{
     public void NykaaNewLaunches_Test(){
       test = report.createTest("NykaaNewLaunches_Test");
       NykaaNewLaunches nykaaNewLaunches = new NykaaNewLaunches(test);
-      nykaaNewLaunches.NykaaNewLaunches_Case();
+      nykaaNewLaunches.NykaaNewLaunches_Case(); 
     }
- 
+
      /*Method Name: nykaaTonerTest
       Author Name: Group 07
       Description: It automates the process of searching for toners on Nykaa and logs the test execution..
@@ -101,7 +101,7 @@ public class TestNykaa extends Base{
       NykaaTonerPage nykaaTonerPage=new NykaaTonerPage(test);
       nykaaTonerPage.testTonerPage();
     }
- 
+
      /*Method Name: nykaaHelpTest
       Author Name: Group 07
       Description: It automates the process of searching for queries and answers using get help page  on Nykaa and logs the test execution..
@@ -114,7 +114,7 @@ public class TestNykaa extends Base{
       NykaaHelpPage helpPage=new NykaaHelpPage(test);
       helpPage.testHelpPage();
     }
- 
+
      /*Method Name: nykaaLipsticksTest
       Author Name: Group 07
       Description: It automates the process of searching for lipsticks on Nykaa and logs the test execution..
@@ -127,7 +127,7 @@ public class TestNykaa extends Base{
       NykaaSearchLipstick searchLipstick=new NykaaSearchLipstick(test);
       searchLipstick.testNykaaLipsticks();
     }
- 
+
     /*Method Name: close
       Author Name: Group 07
       Description: This method terminates the WebDriver session, effectively closing the VNC connection.
@@ -140,8 +140,8 @@ public class TestNykaa extends Base{
       NykaaLuxeHomePage nykaaLuxeHomePage=new NykaaLuxeHomePage(test);
       nykaaLuxeHomePage.nykaaLuxeCase();
     }
- 
-   
+
+    
      /*
      * A. Method Name: NykaaGetAppTestCase
      * B. Author Name: Group 07
@@ -171,7 +171,7 @@ public class TestNykaa extends Base{
       NykaaCategoriesPage categories = new NykaaCategoriesPage(test);
       categories.execute();
     }
-   
+    
  
     /*
      * A. Method Name: NykaaManPageTestCase
@@ -198,8 +198,8 @@ public class TestNykaa extends Base{
     public void close(){
         driver.quit();
     }
- 
- 
+
+
     /*Method Name: flush
       Author Name: Group 07
       Description: This method ensures the test report is flushed and finalized after all test methods in the class have executed.
