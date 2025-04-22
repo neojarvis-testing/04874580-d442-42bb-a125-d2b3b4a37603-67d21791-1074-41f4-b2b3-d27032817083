@@ -43,6 +43,13 @@ public class TestTanushree extends Base{
         driver.navigate().refresh();
     }
 
+    /*
+     * A. Method Name: NykaaGetAppTestCase
+     * B. Author Name: Group 07
+     * C. Description: This method displays the functionality of the Nykaa GetApp Page.
+     * D. Parameters: None
+     * E. Return Type: void
+     */
     @Test
     public void NykaaGetAppTestCase()
     {
@@ -50,6 +57,14 @@ public class TestTanushree extends Base{
       NykaaGetAppPage getApp = new NykaaGetAppPage(test);
       getApp.execute();
     }
+
+    /*
+     * A. Method Name: NykaaCategoriesTestCase
+     * B. Author Name: Group 07
+     * C. Description: This method displays the functionality of the Nykaa Categories Page.
+     * D. Parameters: None
+     * E. Return Type: void
+     */
     @Test
     public void NykaaCategoriesTestCase()
     {
@@ -58,6 +73,14 @@ public class TestTanushree extends Base{
       categories.execute();
     }
     @Test
+
+    /*
+     * A. Method Name: NykaaManPageTestCase
+     * B. Author Name: Group 07
+     * C. Description: This method displays the functionality of the Nykaa Man Page.
+     * D. Parameters: None
+     * E. Return Type: void
+     */
     public void NykaaManPageTestCase()
     {
       test = report.createTest("NykaaManPage_TestCase");
