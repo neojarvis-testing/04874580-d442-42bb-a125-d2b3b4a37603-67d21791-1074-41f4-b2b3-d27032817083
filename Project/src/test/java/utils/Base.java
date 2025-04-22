@@ -104,5 +104,4 @@ public class Base {
         driver = new EventFiringDecorator<>(listener).decorate(driver);
 
     }
-
 }
