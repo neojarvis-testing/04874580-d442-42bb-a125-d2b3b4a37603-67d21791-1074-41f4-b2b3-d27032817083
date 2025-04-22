@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 public class NykaaNewLaunchesLocators {
     public static By newLaunches = By.cssSelector("a[href='/shop-new-launches/c/53665?utm_source=Desktop_web_footer']");
     public static By shopNewLaunches = By.cssSelector("h1[class='css-c0pzm0']");
-    public static By natural = By.cssSelector("a[href='https://www.nykaa.com/sp/natural-native/natural?root=nav_1']");
+    public static By natural = By.xpath("//a[text()='Natural']");
     public static By faceWash = By.cssSelector("a[href='/natural/skin/face-wash/c/9566?root=nav_3&dir=desc&order=popularity']");
     public static By facewashHeading = By.cssSelector("h1[class='css-c0pzm0']");
     public static By price = By.xpath("(//div[@class='filter-open css-1gdff5r'])[2]");
