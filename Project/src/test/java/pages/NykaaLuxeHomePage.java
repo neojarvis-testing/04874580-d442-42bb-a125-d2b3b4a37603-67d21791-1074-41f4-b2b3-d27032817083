@@ -8,11 +8,10 @@ import com.aventstack.extentreports.Status;
 import uistore.NykaaLuxeHomeLocators;
 import utils.Base;
 import utils.LoggerHandler;
-import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class NykaaLuxeHomePage {
-   public static ExtentTest test;
+   public ExtentTest test;
    public static WebDriverHelper helper;
    public NykaaLuxeHomePage(ExtentTest test){
     helper=new WebDriverHelper(Base.driver);
@@ -37,8 +36,8 @@ public class NykaaLuxeHomePage {
 	 */
    public void clickOnLuxe(){
     try{
-        helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.Luxe, 10);
-        helper.doClickandswitch(NykaaLuxeHomeLocators.Luxe);
+        helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.luxe, 10);
+        helper.doClickandswitch(NykaaLuxeHomeLocators.luxe);
         test.log(Status.PASS,"Clicked on Luxe");
         LoggerHandler.info("Clicked on Luxe");
     } catch (Exception e) {
@@ -55,7 +54,7 @@ public class NykaaLuxeHomePage {
 	 */
    public void verifyLuxe(){
     try {
-        String luxe=helper.doGetText(NykaaLuxeHomeLocators.NykaaLuxe);
+        String luxe=helper.doGetText(NykaaLuxeHomeLocators.nykaaLuxe);
         Assert.assertTrue(luxe.contains("Luxe"));
         test.log(Status.PASS,"Verified the text  Luxe");
         LoggerHandler.info("Verified the text  Luxe");
@@ -92,8 +91,8 @@ public class NykaaLuxeHomePage {
 	 */
    public void clickOnCustomerToprated(){
     try {
-        helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.CustomerRated, 10);
-        helper.doClick(NykaaLuxeHomeLocators.CustomerRated);
+        helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.customerRated, 10);
+        helper.doClick(NykaaLuxeHomeLocators.customerRated);
         test.log(Status.PASS,"Clicked on Customer Top Rated");
         LoggerHandler.info("Clicked on Customer Top Rated"); 
         Thread.sleep(2000);
@@ -111,8 +110,8 @@ public class NykaaLuxeHomePage {
 	 */
    public void clickOnGender(){
     try {
-        helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.Gender, 10);
-        helper.doClick(NykaaLuxeHomeLocators.Gender);
+        helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.gender, 10);
+        helper.doClick(NykaaLuxeHomeLocators.gender);
         test.log(Status.PASS,"Clicked on Gender");
         LoggerHandler.info("Clicked on Gender"); 
         Thread.sleep(2000);
@@ -131,8 +130,8 @@ public class NykaaLuxeHomePage {
 	 */
    public void clickOnUnisex(){
     try {
-        helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.Unisex, 10);
-        helper.doClick(NykaaLuxeHomeLocators.Unisex);
+        helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.unisex, 10);
+        helper.doClick(NykaaLuxeHomeLocators.unisex);
         test.log(Status.PASS,"Clicked on Unisex");
         LoggerHandler.info("Clicked on Unisex");
         Thread.sleep(2000);
@@ -150,7 +149,7 @@ public class NykaaLuxeHomePage {
 	 */
    public void verifyUnisex(){
     try {
-        String unisex=helper.doGetText(NykaaLuxeHomeLocators.UnisexText);
+        String unisex=helper.doGetText(NykaaLuxeHomeLocators.unisexText);
         Assert.assertTrue(unisex.contains("Unisex"));
         test.log(Status.PASS,"Verified the text Unisex");
         LoggerHandler.info("Verified the text Unisex");
@@ -169,8 +168,8 @@ public class NykaaLuxeHomePage {
    public void clickOnOccasion(){
     try {
         helper.doScrollBypixel(0, 300);
-        helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.Occasion, 10);
-        helper.doClick(NykaaLuxeHomeLocators.Occasion);
+        helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.occasion, 10);
+        helper.doClick(NykaaLuxeHomeLocators.occasion);
         Thread.sleep(2000);
         test.log(Status.PASS,"clicked on Occasion");
         LoggerHandler.info("clicked on Occasion");
@@ -189,8 +188,8 @@ public class NykaaLuxeHomePage {
    public void clickOnDaywear(){
     try {
         
-        helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.DaypuWear, 10);
-        helper.doClick(NykaaLuxeHomeLocators.DaypuWear);
+        helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.daypuWear, 10);
+        helper.doClick(NykaaLuxeHomeLocators.daypuWear);
         Thread.sleep(2000);
         test.log(Status.PASS,"clicked on Day wear");
         LoggerHandler.info("clicked on Day wear");
@@ -208,8 +207,8 @@ public class NykaaLuxeHomePage {
 	 */
    public void clickOnFirstProduct(){
     try {
-        helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.FirstProduct, 10);
-        helper.doClickandswitch(NykaaLuxeHomeLocators.FirstProduct);
+        helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.firstProduct, 10);
+        helper.doClickandswitch(NykaaLuxeHomeLocators.firstProduct);
         Base.driver.navigate().refresh();
         test.log(Status.PASS,"clicked on First Product");
         LoggerHandler.info("clicked on First Product");
@@ -238,8 +237,8 @@ public class NykaaLuxeHomePage {
 	 */
    public void clickOnNykaaMan(){
     try {
-        helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.Nykaaman, 10);
-        helper.doClickandswitch(NykaaLuxeHomeLocators.Nykaaman);
+        helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.nykaaman, 10);
+        helper.doClickandswitch(NykaaLuxeHomeLocators.nykaaman);
         Base.driver.navigate().refresh();
         test.log(Status.PASS,"clicked on NykaaMan");
         LoggerHandler.info("clicked on NykaaMan");
@@ -257,8 +256,8 @@ public class NykaaLuxeHomePage {
 	 */
    public void clickOnGroomingAdvice(){
     try {
-        helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.Gromming, 5);
-        helper.doClick(NykaaLuxeHomeLocators.Gromming);
+        helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.gromming, 5);
+        helper.doClick(NykaaLuxeHomeLocators.gromming);
         test.log(Status.PASS,"clicked on Gromming Advice");
         LoggerHandler.info("clicked on Gromming Advice");
     } catch (Exception e) {
