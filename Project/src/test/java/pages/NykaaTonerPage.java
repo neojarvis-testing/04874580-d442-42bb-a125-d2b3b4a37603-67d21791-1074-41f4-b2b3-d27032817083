@@ -182,6 +182,14 @@ public class NykaaTonerPage {
         }
     }
 
+    /*
+   * a. Method Name: verifyInclusiveText
+   * b. Description:
+   *       -Retrieves the text from the inclusive tax element and asserts its correctness.
+   *            Logs success or failure using test reporting and a logger.
+   * c.Parameters:None
+   * d. return type : void
+   */
     public void verifyInclusiveText(){
         try {
             String inclusiveTax=helper.doGetText(TonerPageLocator.inclusiveTax);
@@ -195,18 +203,34 @@ public class NykaaTonerPage {
         }
     }
 
-    public void clickOnAddToBag(){
-        try {
-            helper.dowaitForElementToBeVisible(TonerPageLocator.addToBag,10);
-            helper.doClick(TonerPageLocator.addToBag);
-            test.log(Status.PASS,"Clicked on add to bag successfully");
-            LoggerHandler.info("Clicked on add to bag successfully");
+    /*
+   * a. Method Name: clickOnAddToBag
+   * b. Description:
+   *       -Waits for the "Add to Bag" button to be visible before performing the click action.
+   *              Logs success or failure using test reporting and a logger.
+   * c.Parameters:None
+   * d. return type : void
+   */
+  public void clickOnAddToBag(){
+      try {
+          helper.dowaitForElementToBeVisible(TonerPageLocator.addToBag,10);
+          helper.doClick(TonerPageLocator.addToBag);
+          test.log(Status.PASS,"Clicked on add to bag successfully");
+          LoggerHandler.info("Clicked on add to bag successfully");
         } catch (Exception e) {
             test.log(Status.FAIL,"Failed to click on add to bag");
             LoggerHandler.info("Failed to click on add to bag");
         }
     }
-
+    
+    /*
+   * a. Method Name: verifyDescriptionText
+   * b. Description:
+   *       -Verifies if the retrieved text from a specific web element contains 
+   *            the word "Description" and logs the result.
+   * c.Parameters:None
+   * d. return type : void
+   */
     public void verifyDescriptionText(){
         try {
             String description=helper.doGetText(TonerPageLocator.desc);
