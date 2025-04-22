@@ -49,7 +49,7 @@ public class NykaaKurtasPage {
     public void inputKurtas(){
         try {
             helper.dowaitForElementToBeVisible(NykaaPillowLocators.searchBar, 10);
-            helper.doSendKeys(NykaaPillowLocators.searchBar,"Kurtas");
+            helper.doSendKeys(NykaaPillowLocators.searchBar,ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx", "Sheet1", 2, 0));
             test.log(Status.PASS, "Value Entered");
             LoggerHandler.info("Value Entered");
         } catch (Exception e) {
@@ -75,7 +75,7 @@ public class NykaaKurtasPage {
             LoggerHandler.error("Enter action not performed");        
         }
     }
-
+    
     /*Method Name: verifyKurta
     Author Name: Group 07
     Description: Verifies if the search results contain "Kurta".
@@ -290,7 +290,7 @@ public class NykaaKurtasPage {
         try {
 
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.numberInput, 10);
-            helper.doSendKeys(NykaaKurtasLocators.numberInput,"9876543210");
+            helper.doSendKeys(NykaaKurtasLocators.numberInput,ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx", "Sheet1", 3, 0));
             LoggerHandler.info("Mobile number entered");
             test.log(Status.PASS, "Mobile number entered");
         } catch (Exception e) {
