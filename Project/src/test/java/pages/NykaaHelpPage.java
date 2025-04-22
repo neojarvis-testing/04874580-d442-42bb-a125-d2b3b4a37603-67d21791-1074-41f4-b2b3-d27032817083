@@ -8,6 +8,8 @@ import com.aventstack.extentreports.Status;
 import uistore.NykaaHelpPageLocator;
 import utils.Base;
 import utils.LoggerHandler;
+import utils.Report;
+import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class NykaaHelpPage {
@@ -110,7 +112,8 @@ public class NykaaHelpPage {
 
     public void verifyCanIReturn(){
         try {
-            helper.doGetText(NykaaHelpPageLocator.canIReturn);
+            String canIReturn=helper.doGetText(NykaaHelpPageLocator.canIReturn);
+            Assert.assertTrue(canIReturn.contains("Can I return part of my order?"));
             test.log(Status.PASS,"Verified the text Can I return a part of my order");
             LoggerHandler.info("Verified the text Can I return a part of my order");
         } catch (Exception e) {
@@ -144,7 +147,8 @@ public class NykaaHelpPage {
 
     public void verifyCancelPolicy(){
         try {
-            helper.doGetText(NykaaHelpPageLocator.cancelPolicyText);
+            String cancellationPolicy=helper.doGetText(NykaaHelpPageLocator.cancelPolicyText);
+            Assert.assertTrue(cancellationPolicy.contains("Cancellation Policy"));
             test.log(Status.PASS,"Verified the text Cancellation Policy");
             LoggerHandler.info("Verified the text Cancellation Policy");
         } catch (Exception e) {
@@ -158,6 +162,8 @@ public class NykaaHelpPage {
             helper.doClickandswitch(NykaaHelpPageLocator.cancelLink);
             test.log(Status.PASS,"Clicked on Cancellation link");
             LoggerHandler.info("Clicked on Cancellation link");
+            Screenshot.captureFullScreenshot("Cancellation_Policy");
+            Report.addScreenshotToReport(test, Base.driver, "CancellationPolicy","cancel");
         } catch (Exception e) {
             test.log(Status.FAIL,"Failed to click on canceelation link.");
             LoggerHandler.info("Failed to click on canceelation link.");
@@ -198,7 +204,11 @@ public class NykaaHelpPage {
             clickOnCancelPolicy();
             Thread.sleep(2000);
             verifyCancelPolicy();
+            Thread.sleep(2000);
             clickOncancellationLink();
+            Thread.sleep(2000);
+            verifyCancelPolicyLink();
+            Thread.sleep(2000);
 
         } catch (InterruptedException e) {
             e.printStackTrace();

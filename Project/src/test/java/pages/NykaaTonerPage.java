@@ -10,6 +10,7 @@ import uistore.TonerPageLocator;
 import utils.Base;
 import utils.ExcelReader;
 import utils.LoggerHandler;
+import utils.Report;
 import utils.Screenshot;
 import utils.WebDriverHelper;
 
@@ -171,6 +172,7 @@ public class NykaaTonerPage {
             test.log(Status.PASS,"Clicked on ingredients successfully");
             LoggerHandler.info("Clicked on ingredients successfully");
             Screenshot.captureFullScreenshot("Read More Ingredients");
+            Report.addScreenshotToReport(test, Base.driver, "Screenshot_Ingredients","cancel");
         } catch (Exception e) {
             test.log(Status.FAIL,"Failed to ingredients to bag");
             LoggerHandler.info("Failed to ingredients to bag");
