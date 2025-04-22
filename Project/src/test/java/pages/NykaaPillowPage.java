@@ -13,10 +13,10 @@ import utils.LoggerHandler;
 import utils.Screenshot;
 import utils.WebDriverHelper;
 
-public class NykaaSearchForPillow {
+public class NykaaPillowPage {
     public static WebDriverHelper helper;
     public static ExtentTest test;
-    public NykaaSearchForPillow(ExtentTest test){
+    public NykaaPillowPage(ExtentTest test){
         helper = new WebDriverHelper(Base.driver);
         this.test=test;
     }
