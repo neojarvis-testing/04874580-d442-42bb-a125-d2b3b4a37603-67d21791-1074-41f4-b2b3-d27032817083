@@ -72,7 +72,8 @@ public class NykaaKurtasPage {
             LoggerHandler.info("Enter action performed");
         } catch (Exception e) {
             test.log(Status.FAIL, "Enter action not performed");
-            LoggerHandler.error("Enter action not performed");        }
+            LoggerHandler.error("Enter action not performed");        
+        }
     }
 
     /*Method Name: verifyKurta
