@@ -56,6 +56,7 @@ public class TestNykaa extends Base{
       Parameter: None
       Return Type: void
      */
+
    @Test(enabled = true, priority = 1 )
     public void NykaaSearchForPillow_Test(){
       test = report.createTest("NykaaSearchForPillow_Test");
@@ -134,6 +135,7 @@ public class TestNykaa extends Base{
       Parameter: None
       Return Type: void
      */
+
     @Test(enabled = true, priority = 1)
     public void nykaaaLuxe(){
       test=report.createTest("Luxe");
@@ -141,7 +143,6 @@ public class TestNykaa extends Base{
       nykaaLuxeHomePage.nykaaLuxeCase();
     }
  
-   
      /*
      * A. Method Name: NykaaGetAppTestCase
      * B. Author Name: Group 07

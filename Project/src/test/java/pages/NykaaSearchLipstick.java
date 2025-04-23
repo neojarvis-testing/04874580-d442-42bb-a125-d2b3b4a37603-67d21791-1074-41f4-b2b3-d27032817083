@@ -9,6 +9,8 @@ import uistore.NykaaSearchLipstickPageLocator;
 import utils.Base;
 import utils.ExcelReader;
 import utils.LoggerHandler;
+import utils.Report;
+import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class NykaaSearchLipstick {
@@ -91,6 +93,19 @@ public class NykaaSearchLipstick {
             LoggerHandler.info("Failed to click on priview shades.");
         }
     }
+
+    public void verifySelectAShade(){
+        try {
+            String selectShade=helper.doGetText(NykaaSearchLipstickPageLocator.selectShade);
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 8, 0);
+            Assert.assertTrue(selectShade.contains(expected));
+            test.log(Status.PASS,"Verified Select A Shade");
+            LoggerHandler.info("Verified Select A Shade");
+        } catch (Exception e) {
+            test.log(Status.FAIL,"Failed to verify Select A Shade");
+            LoggerHandler.info("Failed to verify Select A Shade");
+        }
+    }
     /*
      * a.Method Name:clickOnViewDetails
      * b.Author Name:Group 07
@@ -102,11 +117,12 @@ public class NykaaSearchLipstick {
         try {
             helper.doClickandswitch(NykaaSearchLipstickPageLocator.viewDetails);
             test.log(Status.PASS,"clicked on view details");
+            test.log(Status.INFO,"Switched to new tab of view details");
             LoggerHandler.info("clicked on view details");
         } catch (Exception e) {
             test.log(Status.FAIL,"Failed to click on view details.");
             LoggerHandler.info("Failed to click on view details.");
-            
+
         }
     }
     /*
@@ -137,12 +153,14 @@ public class NykaaSearchLipstick {
     public void selectThirdOption(){
         try {
             helper.dowaitForElementToBeVisible(NykaaSearchLipstickPageLocator.dropdwon, 5);
-            helper.doSelectfromDropdown(NykaaSearchLipstickPageLocator.dropdwon,"120 Major Crush");
-            test.log(Status.PASS,"selected third option");
-            LoggerHandler.info("selected third option");
+            // helper.doSelectfromDropdown(NykaaSearchLipstickPageLocator.dropdwon,"120 Major Crush");
+            helper.doSelectfromDropdownByIndex(NykaaSearchLipstickPageLocator.dropdwon,2);
+            test.log(Status.INFO,"Select third option from dropdown of shades");
+            test.log(Status.PASS,"selected third option from dropdown of shades");
+            LoggerHandler.info("selected third option from dropdown of shades");
         } catch (Exception e) {
-            test.log(Status.FAIL,"Failed to select third option.");
-            LoggerHandler.info("Failed to select third option.");
+            test.log(Status.FAIL,"Failed to select third option from dropdown of shades.");
+            LoggerHandler.info("Failed to select third option from dropdown of shades.");
         }
     }
     /*
@@ -155,6 +173,7 @@ public class NykaaSearchLipstick {
     public void scrollToFooter(){
         try {
             helper.doScrollBypixel(0,2000);
+            test.log(Status.INFO, "Scroll to footer");
             test.log(Status.PASS,"scrolled to footer");
             LoggerHandler.info("scrolled to footer");
         } catch (Exception e) {
@@ -174,10 +193,31 @@ public class NykaaSearchLipstick {
             helper.dowaitForElementToBeVisible(NykaaSearchLipstickPageLocator.contactUs, 5);
             helper.doClickandswitch(NykaaSearchLipstickPageLocator.contactUs);
             test.log(Status.PASS,"clicked on contactus");
+            test.info("Switched to new tab of contact us");
             LoggerHandler.info("clicked on contactus");
         } catch (Exception e) {
             test.log(Status.FAIL,"Failed to click on contact us.");
             LoggerHandler.info("Failed to click on contact us.");
+        }
+    }
+    /*
+     * a.Method Name:verifyBrowseTopics
+     * b.Author Name:Group 07
+     * c.Description:This method verifies if the text "Browse Topics" is present on the Nykaa website.
+     * d.Parameters:None
+     * e.Return Type:void
+     */
+    public void verifyBrowseTopics(){
+        try {
+            String browseTopics=helper.doGetText(NykaaSearchLipstickPageLocator.browseTopics);
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 9, 0);
+            Assert.assertTrue(browseTopics.contains(expected));
+            test.log(Status.PASS, "Verified Browse Topics text successfully");
+            LoggerHandler.info("Verified Browse Topics successfully");
+
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Failed to verify text Browse Topics");
+            LoggerHandler.error("Failed to verify Browse Topics text");
         }
     }
     /*
@@ -193,6 +233,8 @@ public class NykaaSearchLipstick {
             helper.doClick(NykaaSearchLipstickPageLocator.nykaaAcc);
             test.log(Status.PASS,"clicked on nykaa account");
             LoggerHandler.info("clicked on nykaa account");
+            // Screenshot.captureFullScreenshot("Nykaa Account Screenshot");
+            // Report.attachScreenshotToReport(test,Base.driver,"Screenshot");
         }catch(Exception e){
             test.log(Status.FAIL,"Failed to click on nykaa account.");
             LoggerHandler.info("Failed to click on nykaa account.");
@@ -211,6 +253,8 @@ public class NykaaSearchLipstick {
             helper.doClick(NykaaSearchLipstickPageLocator.myWishList);
             test.log(Status.PASS,"clicked on My Wishlist");
             LoggerHandler.info("clicked on My Wishlist");
+            Screenshot.captureFullScreenshot("Nykaa Account Screenshot");
+            Report.addScreenshotToReport("Wishlist",test,Base.driver,"Screenshot of wishlist");
         } catch (Exception e) {
             test.log(Status.FAIL,"Failed to click on My wishlist.");
             LoggerHandler.info("Failed to click on My wishlist.");
@@ -229,6 +273,8 @@ public class NykaaSearchLipstick {
             helper.doClick(NykaaSearchLipstickPageLocator.addItems);
             test.log(Status.PASS,"clicked on My Wishlist");
             LoggerHandler.info("clicked on My Wishlist");
+            // Screenshot.captureFullScreenshot("Nykaa Account Screenshot");
+            // Report.attachScreenshotToReport(test,Base.driver,"Screenshot");
         } catch (Exception e) {
             test.log(Status.FAIL,"Failed to click on How do I add items to my wishlist.");
             LoggerHandler.info("Failed to click on How do I add items to my wishlist.");
@@ -244,9 +290,12 @@ public class NykaaSearchLipstick {
     public void verifyWasHelpful(){
         try {
             String wasHelpful=helper.doGetText(NykaaSearchLipstickPageLocator.wasHelpful);
-            Assert.assertTrue(wasHelpful.contains("Was this helpful ?"));
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 10, 0);
+            Assert.assertTrue(wasHelpful.contains(expected));
             test.log(Status.PASS,"Verified Was this helpful");
             LoggerHandler.info("Verified Was this helpful");
+            Screenshot.captureFullScreenshot("Nykaa Account Screenshot");
+            Report.addScreenshotToReport("was_helpful",test,Base.driver,"Screenshot of was helpful page");
         } catch (Exception e) {
             test.log(Status.FAIL,"Failed to verify was this helpful?.");
             LoggerHandler.info("Failed to verify was this helpful?.");
@@ -259,17 +308,21 @@ public class NykaaSearchLipstick {
             clickOnLiquidLipstickSuggestion();
             hoverOnFirstProduct();
             clickOnPriviewShades();
+            verifySelectAShade();
             clickOnViewDetails();
             clickOnArrow();
             selectThirdOption();
             scrollToFooter();
             clickOnContactUs();
             Thread.sleep(2000);
+            verifyBrowseTopics();
             clickOnNykaaAccount();
             Thread.sleep(2000);
             clickOnMyWishlist();
             Thread.sleep(2000);
             clickAddItems();
+            Thread.sleep(2000);
+            verifyWasHelpful();
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();

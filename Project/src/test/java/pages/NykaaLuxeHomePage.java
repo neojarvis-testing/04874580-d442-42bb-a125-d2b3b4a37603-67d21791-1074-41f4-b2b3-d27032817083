@@ -26,7 +26,9 @@ public class NykaaLuxeHomePage {
 	 * e.Return type:void
 	 */
    public void scrollToFotter(){
-    helper.doJsScrollFooter();
+    Base.driver.navigate().refresh();
+    helper.doScrollBypixel(0,10000);
+    helper.doScrollBypixel(0,10000);
    }
     /*
 	 * a.Method Name:clickOnLuxe
