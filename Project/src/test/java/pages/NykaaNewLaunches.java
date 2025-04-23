@@ -14,8 +14,8 @@ import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class NykaaNewLaunches {
-    public static WebDriverHelper helper;
-    public static ExtentTest test;
+    WebDriverHelper helper;
+    ExtentTest test;
     public NykaaNewLaunches(ExtentTest test){
         helper = new WebDriverHelper(Base.driver);
         this.test=test;

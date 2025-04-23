@@ -14,8 +14,8 @@ import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class NykaaKurtasPage {
-    public static WebDriverHelper helper;
-    public  ExtentTest test;
+    WebDriverHelper helper;
+    ExtentTest test;
     public NykaaKurtasPage(ExtentTest test){
         helper = new WebDriverHelper(Base.driver);
         this.test=test;
