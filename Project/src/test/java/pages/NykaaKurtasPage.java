@@ -23,7 +23,7 @@ public class NykaaKurtasPage {
 
     
     /*Method Name: clickSearchBar
-    Author Name: Group 07
+    Author Name: Rahul Savala
     Description: Clicks on the search bar after waiting for its visibility.
     Parameter: None
     Return Type: void
@@ -41,7 +41,7 @@ public class NykaaKurtasPage {
     }
 
     /*Method Name: inputKurtas
-    Author Name: Group 07
+    Author Name: Rahul Savala
     Description: Inputs "Kurtas" in the search bar after ensuring its visibility.
     Parameter: None
     Return Type: void
@@ -59,7 +59,7 @@ public class NykaaKurtasPage {
     }
 
     /*Method Name: hitEnter
-    Author Name: Group 07
+    Author Name: Rahul Savala
     Description: Performs the Enter action after making sure the search bar is visible.
     Parameter: None
     Return Type: void
@@ -77,7 +77,7 @@ public class NykaaKurtasPage {
     }
     
     /*Method Name: verifyKurta
-    Author Name: Group 07
+    Author Name: Rahul Savala
     Description: Verifies if the search results contain "Kurta".
     Parameter: None
     Return Type: void
@@ -96,7 +96,7 @@ public class NykaaKurtasPage {
     }
 
     /*Method Name: hoverOnSort
-    Author Name: Group 07
+    Author Name: Rahul Savala
     Description: Hovers over the sort option after waiting for its visibility.
     Parameter: None
     Return Type: void
@@ -114,7 +114,7 @@ public class NykaaKurtasPage {
     }
 
     /*Method Name: clickOnBestSeller
-    Author Name: Group 07
+    Author Name: Rahul Savala
     Description: Clicks on the Best Seller option after confirming its visibility.
     Parameter: None
     Return Type: void
@@ -134,7 +134,7 @@ public class NykaaKurtasPage {
     }
 
     /*Method Name: clickSecondProduct
-    Author Name: Group 07
+    Author Name: Rahul Savala
     Description: Clicks on the second product and switches context.
     Parameter: None
     Return Type: void
@@ -154,7 +154,7 @@ public class NykaaKurtasPage {
     }
 
     /*Method Name: clickSizeGuide
-    Author Name: Group 07
+    Author Name: Rahul Savala
     Description: Clicks on the Size Guide option after ensuring its visibility.
     Parameter: None
     Return Type: void
@@ -173,7 +173,7 @@ public class NykaaKurtasPage {
     }
 
     /*Method Name: verifySizeGuideheading
-    Author Name: Group 07
+    Author Name: Rahul Savala
     Description: Verifies if the Size Guide heading is displayed.
     Parameter: None
     Return Type: void
@@ -193,7 +193,7 @@ public class NykaaKurtasPage {
     }
 
     /*Method Name: clickCross
-    Author Name: Group 07
+    Author Name: Rahul Savala
     Description: Clicks the cross mark to close the Size Guide.
     Parameter: None
     Return Type: void
@@ -212,7 +212,7 @@ public class NykaaKurtasPage {
     }
 
     /*Method Name: clickReadAllReviews
-    Author Name: Group 07
+    Author Name: Rahul Savala
     Description: Clicks on the "Read All Reviews" option.
     Parameter: None
     Return Type: void
@@ -230,7 +230,7 @@ public class NykaaKurtasPage {
     }
 
     /*Method Name: verifyAllReviews
-    Author Name: Group 07
+    Author Name: Rahul Savala
     Description: Verifies if all reviews section is visible.
     Parameter: None
     Return Type: void
@@ -249,7 +249,7 @@ public class NykaaKurtasPage {
     }
 
     /*Method Name: clickHelpful
-    Author Name: Group 07
+    Author Name: Rahul Savala
     Description: Clicks on the "Helpful" button for a review.
     Parameter: None
     Return Type: void
@@ -269,7 +269,7 @@ public class NykaaKurtasPage {
     }
 
     /*Method Name: clickMobileInput
-    Author Name: Group 07
+    Author Name: Rahul Savala
     Description: Clicks on the mobile number input field.
     Parameter: None
     Return Type: void
@@ -287,7 +287,7 @@ public class NykaaKurtasPage {
     }
 
     /*Method Name: inputMobileNumber
-    Author Name: Group 07
+    Author Name: Rahul Savala
     Description: Inputs a mobile number in the designated field.
     Parameter: None
     Return Type: void
@@ -306,7 +306,7 @@ public class NykaaKurtasPage {
     }
 
     /*Method Name: clickSubmit
-    Author Name: Group 07
+    Author Name: Rahul Savala
     Description: Clicks the submit button after verifying visibility.
     Parameter: None
     Return Type: void
@@ -325,7 +325,7 @@ public class NykaaKurtasPage {
     }
 
     /*Method Name: NykaaKurtas_Case
-    Author Name: Group 07
+    Author Name: Rahul Savala
     Description: Executes the full test flow for searching and verifying Kurtas on Nykaa.
     Parameter: None
     Return Type: void
