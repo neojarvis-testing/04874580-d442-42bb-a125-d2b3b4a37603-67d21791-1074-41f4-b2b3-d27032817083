@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import com.aventstack.extentreports.ExtentTest;
@@ -10,6 +9,7 @@ import uistore.NykaaPillowLocators;
 import utils.Base;
 import utils.ExcelReader;
 import utils.LoggerHandler;
+import utils.Report;
 import utils.Screenshot;
 import utils.WebDriverHelper;
 
@@ -303,6 +303,7 @@ public class NykaaPillowPage {
             System.out.println(data);
             Assert.assertTrue(data.contains("Bag"));
             Screenshot.captureFullScreenshot("TestCase1");
+            Report.addScreenshotToReport("nykaa",test,Base.driver,"screenshot");
             LoggerHandler.info("Text bag verified");
             test.log(Status.PASS, "Text bag verified");
         } catch (Exception e) {

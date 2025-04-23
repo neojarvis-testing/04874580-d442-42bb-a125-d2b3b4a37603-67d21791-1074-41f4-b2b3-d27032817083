@@ -56,6 +56,7 @@ public class NykaaTonerPage {
     public void performEnter() {
         try {
             helper.doEnterAction(TonerPageLocator.searchBar);
+            test.log(Status.INFO,"Press enter in the keyboard");
             test.log(Status.PASS, "Performed enter action succesfully");
             LoggerHandler.info("Performed enter action succesfully");
         } catch (Exception e) {
@@ -77,7 +78,8 @@ public class NykaaTonerPage {
     public void verifyToner() {
         try {
             String toner = helper.doGetText(TonerPageLocator.toner);
-            Assert.assertTrue(toner.contains("Toner"));
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 0, 1);
+            Assert.assertTrue(toner.contains(expected));
             System.out.println(toner);
             test.log(Status.PASS, "Verified toner text succesfully");
             LoggerHandler.info("Verified toner text sucessfully");
@@ -121,6 +123,7 @@ public class NykaaTonerPage {
         try {
             helper.dowaitForElementToBeVisible(TonerPageLocator.newArrivals, 3);
             helper.doClick(TonerPageLocator.newArrivals);
+            test.log(Status.INFO,"Filter products based on new arrivals");
             test.log(Status.PASS, "Selected new Arrivals succesfully");
             LoggerHandler.info("Selected new Arrivals successfully");
         } catch (Exception e) {
@@ -144,6 +147,7 @@ public class NykaaTonerPage {
         try {
             helper.dowaitForElementToBeVisible(TonerPageLocator.avgRate, 3);
             helper.doScrollBypixel(0, 500);
+            test.log(Status.INFO, "Scrolled to click on Avg Customer Rating");
             helper.doClick(TonerPageLocator.avgRate);
             test.log(Status.PASS, "Clicked on Avg Customer Rating succesfully");
             LoggerHandler.info("Clicked on Avg Customer Rating sucessfully");
@@ -187,6 +191,7 @@ public class NykaaTonerPage {
         try {
             helper.dowaitForElementToBeVisible(TonerPageLocator.firstProduct, 10);
             helper.doClickandswitch(TonerPageLocator.firstProduct);
+            test.log(Status.INFO, "Switch to new tab of the product");
             test.log(Status.PASS, "Clicked on First product succesfully");
             LoggerHandler.info("Clicked on First Product sucessfully");
         } catch (Exception e) {
@@ -208,7 +213,8 @@ public class NykaaTonerPage {
     public void verifyInclusiveText() {
         try {
             String inclusiveTax = helper.doGetText(TonerPageLocator.inclusiveTax);
-            Assert.assertTrue(inclusiveTax.contains("inclusive of all taxes"));
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 1, 1);
+            Assert.assertTrue(inclusiveTax.contains(expected));
             System.out.println(inclusiveTax);
             test.log(Status.PASS, "Verified inclusive of all taxes text succesfully");
             LoggerHandler.info("Verified inclusive of all taxes text sucessfully");
@@ -252,7 +258,8 @@ public class NykaaTonerPage {
     public void verifyDescriptionText() {
         try {
             String description = helper.doGetText(TonerPageLocator.desc);
-            Assert.assertTrue(description.contains("Description"));
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 2, 1);
+            Assert.assertTrue(description.contains(expected));
             System.out.println(description);
             test.log(Status.PASS, "Verified Description text succesfully");
             LoggerHandler.info("Verified Description text sucessfully");
@@ -299,7 +306,8 @@ public class NykaaTonerPage {
             test.log(Status.PASS, "Clicked on ingredients successfully");
             LoggerHandler.info("Clicked on ingredients successfully");
             Screenshot.captureFullScreenshot("Read More Ingredients");
-            Report.addScreenshotToReport(test, Base.driver, "clicked on read more");
+            Report.addScreenshotToReport("Read More",test, Base.driver,"Read more screenshot");
+
         } catch (Exception e) {
             test.log(Status.FAIL, "Failed to ingredients to bag");
             LoggerHandler.info("Failed to ingredients to bag");

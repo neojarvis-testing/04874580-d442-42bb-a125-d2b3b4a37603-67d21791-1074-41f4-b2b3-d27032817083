@@ -28,8 +28,8 @@ public class NykaaLuxeHomePage {
 	 */
    public void scrollToFotter(){
     Base.driver.navigate().refresh();
-    helper.doScrollBypixel(0, 10000);
-    helper.doScrollBypixel(0, 10000);
+    helper.doScrollBypixel(0,10000);
+    helper.doScrollBypixel(0,10000);
    }
     /*
 	 * a.Method Name:clickOnLuxe
