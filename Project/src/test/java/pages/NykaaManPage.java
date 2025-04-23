@@ -14,8 +14,8 @@ import utils.WebDriverHelper;
 import utils.Report;
 
 public class NykaaManPage {
-    public static WebDriverHelper helper;
-    public ExtentTest test;
+    WebDriverHelper helper;
+    ExtentTest test;
 
     public NykaaManPage(ExtentTest test) {
         helper = new WebDriverHelper(Base.driver);
@@ -259,7 +259,7 @@ public class NykaaManPage {
             helper.dowaitForElementToBeVisible(NykaaManPageLocators.signIn, 10);
             String signIn = helper.doGetText(NykaaManPageLocators.signIn);
             Screenshot.captureFullScreenshot("nykaa");
-            Report.addScreenshotToReport(test, Base.driver, "nykaa");
+            Report.addScreenshotToReport("nykaa",test,Base.driver,"nykaa");
             Assert.assertTrue(signIn.contains("Sign in"));
             test.log(Status.PASS, "Verified Sign In Text");
             LoggerHandler.info("Verified Sign In Text");

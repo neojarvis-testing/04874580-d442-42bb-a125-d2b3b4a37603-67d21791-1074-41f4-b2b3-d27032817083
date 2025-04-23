@@ -7,13 +7,14 @@ import com.aventstack.extentreports.Status;
 
 import uistore.NykaaLuxeHomeLocators;
 import utils.Base;
+import utils.ExcelReader;
 import utils.LoggerHandler;
 import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class NykaaLuxeHomePage {
    public ExtentTest test;
-   public static WebDriverHelper helper;
+   public WebDriverHelper helper;
    public NykaaLuxeHomePage(ExtentTest test){
     helper=new WebDriverHelper(Base.driver);
     this.test=test;
@@ -26,7 +27,9 @@ public class NykaaLuxeHomePage {
 	 * e.Return type:void
 	 */
    public void scrollToFotter(){
-    helper.doJsScrollFooter();
+    Base.driver.navigate().refresh();
+    helper.doScrollBypixel(0,10000);
+    helper.doScrollBypixel(0,10000);
    }
     /*
 	 * a.Method Name:clickOnLuxe
@@ -57,6 +60,8 @@ public class NykaaLuxeHomePage {
     try {
         String luxe=helper.doGetText(NykaaLuxeHomeLocators.nykaaLuxe);
         Assert.assertTrue(luxe.contains("Luxe"));
+        test.log(Status.INFO,"Verified the text  Luxe");
+        Assert.assertTrue(luxe.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/Luxe.xlsx","Sheet1", 0, 0)));
         test.log(Status.PASS,"Verified the text  Luxe");
         LoggerHandler.info("Verified the text  Luxe");
     } catch (AssertionError e) {
@@ -151,7 +156,7 @@ public class NykaaLuxeHomePage {
    public void verifyUnisex(){
     try {
         String unisex=helper.doGetText(NykaaLuxeHomeLocators.unisexText);
-        Assert.assertTrue(unisex.contains("Unisex"));
+        Assert.assertTrue(unisex.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/Luxe.xlsx","Sheet1", 1, 0)));
         test.log(Status.PASS,"Verified the text Unisex");
         LoggerHandler.info("Verified the text Unisex");
     } catch (AssertionError e) {
@@ -172,7 +177,7 @@ public class NykaaLuxeHomePage {
         helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.occasion, 10);
         helper.doClick(NykaaLuxeHomeLocators.occasion);
         Thread.sleep(2000);
-        test.log(Status.PASS,"clicked on Occasion");
+        test.log(Status.INFO,"clicked on Occasion");
         LoggerHandler.info("clicked on Occasion");
     } catch (Exception e) {
         test.log(Status.FAIL,"Cannot click on Occasion");
@@ -241,7 +246,7 @@ public class NykaaLuxeHomePage {
         helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.nykaaman, 10);
         helper.doClickandswitch(NykaaLuxeHomeLocators.nykaaman);
         Base.driver.navigate().refresh();
-        test.log(Status.PASS,"clicked on NykaaMan");
+        test.log(Status.INFO,"clicked on NykaaMan");
         LoggerHandler.info("clicked on NykaaMan");
     } catch (Exception e) {
         test.log(Status.FAIL,"Cannot click on NykaaMan");
@@ -279,9 +284,9 @@ public class NykaaLuxeHomePage {
             helper.doClick(NykaaLuxeHomeLocators.shaving);
             String shaving=helper.doGetText(NykaaLuxeHomeLocators.shavingandbeard);
             System.out.println(shaving);
-            Assert.assertTrue(shaving.contains("SHAVING & BEARD CARE"));
+            Assert.assertTrue(shaving.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/Luxe.xlsx","Sheet1", 2, 0)));
             Screenshot.captureFullScreenshot("Shaving and beard");
-            test.log(Status.PASS,"Verified the text Shaving");
+            test.log(Status.INFO,"Verified the text Shaving");
             LoggerHandler.info("Verified the text Shaving");
         } catch (AssertionError e) {
             test.log(Status.FAIL,"Cannot Verified the text Shaving");

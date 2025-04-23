@@ -12,7 +12,7 @@ import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class NykaaGetAppPage {
-    public static WebDriverHelper helper;
+    public WebDriverHelper helper;
     public ExtentTest test;
 
     public NykaaGetAppPage(ExtentTest test) {

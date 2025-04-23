@@ -14,8 +14,8 @@ import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class NykaaKurtasPage {
-    public static WebDriverHelper helper;
-    public  ExtentTest test;
+    WebDriverHelper helper;
+    ExtentTest test;
     public NykaaKurtasPage(ExtentTest test){
         helper = new WebDriverHelper(Base.driver);
         this.test=test;
@@ -86,8 +86,8 @@ public class NykaaKurtasPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.verifyKurtas, 10);
             String data = helper.doGetText(NykaaKurtasLocators.verifyKurtas);
-            Assert.assertTrue(data.contains("Kurta"));
-            test.log(Status.PASS, "Kurta verified");
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx","Sheet1",4,0)));
+            test.log(Status.INFO, "Kurta verified");
             LoggerHandler.info("Kurta verified");
         } catch (Exception e) {
             test.log(Status.FAIL, "Kurta not verified");
@@ -123,7 +123,9 @@ public class NykaaKurtasPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.bestSeller, 10);
             helper.doClick(NykaaKurtasLocators.bestSeller);
-            test.log(Status.PASS, "Clicked on Bestseller");
+            String data = helper.doGetText(NykaaKurtasLocators.sortBy);
+            Assert.assertTrue(data.contains("Sort"));
+            test.log(Status.INFO, "Clicked on Bestseller");
             LoggerHandler.info("Clicked on Bestseller");
         } catch (Exception e) {
             test.log(Status.FAIL, "BestSeller is not clicked");
@@ -141,7 +143,9 @@ public class NykaaKurtasPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.secondProduct, 10);
             helper.doClickandswitch(NykaaKurtasLocators.secondProduct);
-            test.log(Status.PASS, "Clicked on Second Product");
+            String data = helper.doGetText(NykaaKurtasLocators.bestSeller);
+            Assert.assertTrue(data.contains("Bestseller"));
+            test.log(Status.INFO, "Clicked on Second Product");
             LoggerHandler.info("Clicked on Second Product");
         } catch (Exception e) {
             test.log(Status.FAIL, "Not clicked on second product");
@@ -179,7 +183,7 @@ public class NykaaKurtasPage {
             Thread.sleep(3000);
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.verifySizeGuide, 10);
             String data = helper.doGetText(NykaaKurtasLocators.verifySizeGuide);
-            Assert.assertTrue(data.contains("SIZE"));
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx","Sheet1",5,0)));
             test.log(Status.PASS, "Verification of size guide is done");
             LoggerHandler.info("Verification of size guide is done");    
         } catch (Exception e) {
@@ -235,8 +239,8 @@ public class NykaaKurtasPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.allReviews, 10);
             String data = helper.doGetText(NykaaKurtasLocators.allReviews);
-            Assert.assertTrue(data.contains("All"));
-            test.log(Status.PASS, "Verification of all reviews is done");
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx","Sheet1",6,0)));
+            test.log(Status.INFO, "Verification of all reviews is done");
             LoggerHandler.info("Verification of all reviews is done");
         } catch (Exception e) {
             test.log(Status.FAIL, "Verification of all reviews is not done");
@@ -254,6 +258,8 @@ public class NykaaKurtasPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.helpful, 10);
             helper.doClick(NykaaKurtasLocators.helpful);
+            String data = helper.doGetText(NykaaKurtasLocators.helpful);
+            Assert.assertTrue(data.contains("Helpful"));
             test.log(Status.PASS, "Clicked on helpful");
             LoggerHandler.info("Clicked on helpful");
         } catch (Exception e) {

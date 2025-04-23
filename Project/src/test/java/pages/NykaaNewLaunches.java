@@ -14,8 +14,8 @@ import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class NykaaNewLaunches {
-    public static WebDriverHelper helper;
-    public static ExtentTest test;
+    WebDriverHelper helper;
+    ExtentTest test;
     public NykaaNewLaunches(ExtentTest test){
         helper = new WebDriverHelper(Base.driver);
         this.test=test;
@@ -30,7 +30,7 @@ public class NykaaNewLaunches {
     public void scrollDownToFooter(){
         try {
             Thread.sleep(2000);
-            helper.doScrollBypixel(0,10000);
+            helper.doScrollBypixel(0,9000);
             test.log(Status.PASS,"Scrolled down");
             LoggerHandler.info("Scrolled down");
         } catch (Exception e) {
@@ -67,8 +67,8 @@ public class NykaaNewLaunches {
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.shopNewLaunches, 10);
             String data = helper.doGetText(NykaaNewLaunchesLocators.shopNewLaunches);
-            Assert.assertTrue(data.contains("Launches"));
-            test.log(Status.PASS,"New launches verified");
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx","Sheet1",7,0)));
+            test.log(Status.INFO,"New launches verified");
             LoggerHandler.info("New launches verified");
         }catch (Exception e) {
             test.log(Status.FAIL, "New launches not verified");
@@ -104,7 +104,9 @@ public class NykaaNewLaunches {
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.faceWash, 10);
             helper.doClickandswitch(NykaaNewLaunchesLocators.faceWash);
-            test.log(Status.PASS,"clicked on facewash");
+            String data= helper.doGetText(NykaaNewLaunchesLocators.natural);
+            Assert.assertTrue(data.contains("Natural"));
+            test.log(Status.INFO,"clicked on facewash");
             LoggerHandler.info("clicked on facewash");
         } catch (Exception e) {
             test.log(Status.FAIL, "Facewash not clicked");
@@ -123,7 +125,7 @@ public class NykaaNewLaunches {
             Base.driver.navigate().refresh();
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.facewashHeading, 10);
             String data = helper.doGetText(NykaaNewLaunchesLocators.facewashHeading);
-            Assert.assertTrue(data.contains("Wash"));
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx","Sheet1",8,0)));
             test.log(Status.PASS,"Face wash verified");
             LoggerHandler.info("Face wash verified");
         } catch (Exception e) {
@@ -160,6 +162,8 @@ public class NykaaNewLaunches {
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.priceRange, 10);
             helper.doClick(NykaaNewLaunchesLocators.priceRange);
+            String data= helper.doGetText(NykaaNewLaunchesLocators.price);
+            Assert.assertTrue(data.contains("Price"));
             test.log(Status.PASS,"clicked on Price range");
             LoggerHandler.info("clicked on Price range");
         } catch (Exception e) {
@@ -288,10 +292,10 @@ public class NykaaNewLaunches {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.bag, 10);
             String data = helper.doGetText(NykaaNewLaunchesLocators.bag);
             System.out.println(data);
-            Assert.assertTrue(data.contains("Bag"));
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx", "Sheet1", 9, 0)));
             Screenshot.captureFullScreenshot("TestCase2");
             LoggerHandler.info("Bag verified");
-            test.log(Status.PASS, "Bag verified");
+            test.log(Status.INFO, "Bag verified");
         } catch (Exception e) {
             test.log(Status.FAIL, "Text bag not verified");
             LoggerHandler.error("Text bag not verified");

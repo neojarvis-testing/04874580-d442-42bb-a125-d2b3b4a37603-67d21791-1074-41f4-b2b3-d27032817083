@@ -7,13 +7,14 @@ import com.aventstack.extentreports.Status;
 
 import uistore.NykaaHelpPageLocator;
 import utils.Base;
+import utils.ExcelReader;
 import utils.LoggerHandler;
 import utils.Report;
 import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class NykaaHelpPage {
-    public static WebDriverHelper helper;
+    public WebDriverHelper helper;
     public ExtentTest test;
 
     public NykaaHelpPage(ExtentTest test) {
@@ -33,11 +34,11 @@ public class NykaaHelpPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaHelpPageLocator.help, 5);
             helper.doClickandswitch(NykaaHelpPageLocator.help);
-            test.log(Status.PASS, "Clicked on Help");
-            LoggerHandler.info("Clicked on Help");
+            test.log(Status.PASS, "Clicked on Help on Navigation bar");
+            LoggerHandler.info("Clicked on Help on Navigation bar");
         } catch (Exception e) {
-            test.log(Status.FAIL, "Failed to Click on Help");
-            LoggerHandler.info("Failed to Click on Help");
+            test.log(Status.FAIL, "Failed to Click on Help on Navigation bar");
+            LoggerHandler.error("Failed to Click on Help on Navigation bar");
         }
     }
 
@@ -51,13 +52,15 @@ public class NykaaHelpPage {
      */
     public void verifyHelpPageTitle() {
         try {
-            String title = Base.driver.getTitle();
-            Assert.assertTrue(title.contains("Help Center"));
+            // String title = Base.driver.getTitle();
+            String pageTitle=helper.doGetText(NykaaHelpPageLocator.helpCentre);
+            // String url=Base.driver.getCurrentUrl();
+            Assert.assertTrue(pageTitle.contains("Help Center"));
             test.log(Status.PASS, "Verified Help Page Title");
             LoggerHandler.info("Verified Help Page Title");
         } catch (Exception e) {
             test.log(Status.FAIL, "Failed to verify  Help page title");
-            LoggerHandler.info("Failed to verify  Help page title");
+            LoggerHandler.error("Failed to verify  Help page title");
         }
     }
 
@@ -77,7 +80,7 @@ public class NykaaHelpPage {
             LoggerHandler.info("Clicked on Order Related successfully");
         } catch (Exception e) {
             test.log(Status.FAIL, "Failed to click on order related.");
-            LoggerHandler.info("Failed to click on order related.");
+            LoggerHandler.error("Failed to click on order related.");
         }
     }
 
@@ -92,12 +95,13 @@ public class NykaaHelpPage {
     public void verifyOrderRelatedText() {
         try {
             String orderrelated = helper.doGetText(NykaaHelpPageLocator.orderRelatedText);
-            Assert.assertTrue(orderrelated.contains("Order Related"));
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 3, 0);
+            Assert.assertTrue(orderrelated.contains(expected));
             test.log(Status.PASS, "Verified the text Order Related");
             LoggerHandler.info("Verified the text Order Related");
         } catch (Exception e) {
             test.log(Status.FAIL, "Failed to Verify the text Order Related");
-            LoggerHandler.info("Failed to Verify the text Order Related");
+            LoggerHandler.error("Failed to Verify the text Order Related");
         }
     }
 
@@ -117,7 +121,7 @@ public class NykaaHelpPage {
             LoggerHandler.info("Clicked on Order Status");
         } catch (Exception e) {
             test.log(Status.FAIL, "Failed to click on order status");
-            LoggerHandler.info("Failed to click on order status");
+            LoggerHandler.error("Failed to click on order status");
         }
     }
 
@@ -133,12 +137,13 @@ public class NykaaHelpPage {
     public void verifyOrderStatustext() {
         try {
             String orderStatus = helper.doGetText(NykaaHelpPageLocator.orderStatusText);
-            Assert.assertTrue(orderStatus.contains("Order Status"));
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 4, 0);
+            Assert.assertTrue(orderStatus.contains(expected));
             test.log(Status.PASS, "Verified the text Order status");
             LoggerHandler.info("Verified the text Order status");
         } catch (Exception e) {
             test.log(Status.FAIL, "Failed to Verify the text Order status");
-            LoggerHandler.info("Failed to Verify the text Order status");
+            LoggerHandler.error("Failed to Verify the text Order status");
         }
     }
 
@@ -153,11 +158,12 @@ public class NykaaHelpPage {
     public void navigateBackToOrderRelated() {
         try {
             Base.driver.navigate().back();
-            test.log(Status.PASS, "Navigated successfully");
-            LoggerHandler.info("Navigated successfully");
+            test.info("Naviagte back to Order Related page");
+            test.log(Status.PASS, "Navigated back to Order Related page successfully");
+            LoggerHandler.info("Navigated back to Order Related page successfully");
         } catch (Exception e) {
-            test.log(Status.FAIL, "Failed to navigate back");
-            LoggerHandler.info("Failed to navigate back");
+            test.log(Status.FAIL, "Failed to navigate back to Order Related page");
+            LoggerHandler.error("Failed to navigate back to Order Related page");
         }
     }
 
@@ -177,7 +183,7 @@ public class NykaaHelpPage {
             LoggerHandler.info("clicked on Returns and Refund");
         } catch (Exception e) {
             test.log(Status.FAIL, "Failed to click on Return and Refund");
-            LoggerHandler.info("Failed to click on Return and Refund");
+            LoggerHandler.error("Failed to click on Return and Refund");
         }
     }
 
@@ -192,12 +198,13 @@ public class NykaaHelpPage {
     public void verifyCanIReturn() {
         try {
             String canIReturn = helper.doGetText(NykaaHelpPageLocator.canIReturn);
-            Assert.assertTrue(canIReturn.contains("Can I return part of my order?"));
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 5, 0);
+            Assert.assertTrue(canIReturn.contains(expected));
             test.log(Status.PASS, "Verified the text Can I return a part of my order");
             LoggerHandler.info("Verified the text Can I return a part of my order");
         } catch (Exception e) {
             test.log(Status.FAIL, "Failed to Verify the text Can I return a part of my order");
-            LoggerHandler.info("Failed to Verify the text Can I return a part of my order");
+            LoggerHandler.error("Failed to Verify the text Can I return a part of my order");
         }
     }
 
@@ -217,7 +224,7 @@ public class NykaaHelpPage {
             LoggerHandler.info("Clicked on Cancellation and Refunds");
         } catch (Exception e) {
             test.log(Status.FAIL, "Failed to click on canceelation and refunds.");
-            LoggerHandler.info("Failed to click on canceelation and refunds.");
+            LoggerHandler.error("Failed to click on canceelation and refunds.");
         }
     }
 
@@ -237,7 +244,7 @@ public class NykaaHelpPage {
             LoggerHandler.info("Clicked on Cancellation policy");
         } catch (Exception e) {
             test.log(Status.FAIL, "Failed to click on canceelation policy.");
-            LoggerHandler.info("Failed to click on canceelation policy.");
+            LoggerHandler.error("Failed to click on canceelation policy.");
         }
     }
 
@@ -252,7 +259,8 @@ public class NykaaHelpPage {
     public void verifyCancelPolicy() {
         try {
             String cancellationPolicy = helper.doGetText(NykaaHelpPageLocator.cancelPolicyText);
-            Assert.assertTrue(cancellationPolicy.contains("Cancellation Policy"));
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 6, 0);
+            Assert.assertTrue(cancellationPolicy.contains(expected));
             test.log(Status.PASS, "Verified the text Cancellation Policy");
             LoggerHandler.info("Verified the text Cancellation Policy");
         } catch (Exception e) {
@@ -273,13 +281,15 @@ public class NykaaHelpPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaHelpPageLocator.cancelLink, 5);
             helper.doClickandswitch(NykaaHelpPageLocator.cancelLink);
-            test.log(Status.PASS, "Clicked on Cancellation link");
-            LoggerHandler.info("Clicked on Cancellation link");
+            test.log(Status.INFO, "Switch to new tab of cancellation link policy");
+            test.log(Status.PASS, "Clicked on cancellation link policy");
+            LoggerHandler.info("Clicked on cancellation link policy");
             Screenshot.captureFullScreenshot("Cancellation_Policy");
-            Report.addScreenshotToReport(test, Base.driver,"CancellationPolicy");
+            Report.addScreenshotToReport("cancellation_policy",test, Base.driver,"CancellationPolicy");
+
         } catch (Exception e) {
-            test.log(Status.FAIL, "Failed to click on canceelation link.");
-            LoggerHandler.info("Failed to click on canceelation link.");
+            test.log(Status.FAIL, "Failed to click on cancellation link.");
+            LoggerHandler.info("Failed to click on cancellation link.");
         }
     }
 
@@ -293,13 +303,14 @@ public class NykaaHelpPage {
      */
     public void verifyCancelPolicyLink() {
         try {
-            String link = helper.doGetText(NykaaHelpPageLocator.cancelLink);
-            Assert.assertEquals(link, "//www.nykaa.com/cancellation-policy/lp");
-            test.log(Status.PASS, "Verified the text Cancellation Policy");
-            LoggerHandler.info("Verified the text Cancellation Policy");
+            String link = Base.driver.getCurrentUrl();
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 7, 0);
+            Assert.assertEquals(link, expected);
+            test.log(Status.PASS, "Verified the text Cancellation Policy url");
+            LoggerHandler.info("Verified the text Cancellation Policy url");
         } catch (Exception e) {
-            test.log(Status.FAIL, "Failed to Verify the text Cancellation Policy");
-            LoggerHandler.info("Failed to Verify the text Cancellation Policy");
+            test.log(Status.FAIL, "Failed to Verify the text Cancellation Policy url");
+            LoggerHandler.info("Failed to Verify the text Cancellation Policy url");
         }
     }
 
@@ -314,6 +325,7 @@ public class NykaaHelpPage {
     public void testHelpPage() {
         try {
             clickOnHelp();
+            Thread.sleep(2000);
             // verifyHelpPageTitle();
             Thread.sleep(2000);
             clickOnOrderRelated();
@@ -334,11 +346,11 @@ public class NykaaHelpPage {
             clickOnCancelPolicy();
             Thread.sleep(2000);
             verifyCancelPolicy();
-            Thread.sleep(2000);
-            verifyCancelPolicyLink();
-            Thread.sleep(2000);
+            Thread.sleep(3000);
             clickOncancellationLink();
-            Thread.sleep(2000);
+            Thread.sleep(3000);
+            verifyCancelPolicyLink();
+            Thread.sleep(3000);
 
         } catch (InterruptedException e) {
             e.printStackTrace();

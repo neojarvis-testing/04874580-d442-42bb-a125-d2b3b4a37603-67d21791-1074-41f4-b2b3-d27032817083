@@ -14,4 +14,5 @@ public class NykaaHelpPageLocator {
    public static By cancelPolicy=By.xpath("//p[text()='Cancellation Policy']");
    public static By cancelPolicyText=By.cssSelector("p[class='css-pt0g0b e8pythv0']");
    public static By cancelLink=By.cssSelector("a[href='https://www.nykaa.com/cancellation-policy/lp']");
+   public static By helpCentre=By.cssSelector("p[class='css-1tr5m7p e8pythv0']");
 }
