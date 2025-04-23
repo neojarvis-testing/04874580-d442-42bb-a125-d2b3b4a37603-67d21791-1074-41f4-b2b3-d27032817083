@@ -14,8 +14,8 @@ import utils.WebDriverHelper;
 import utils.Report;
 
 public class NykaaManPage {
-    public static WebDriverHelper helper;
-    public ExtentTest test;
+    WebDriverHelper helper;
+    ExtentTest test;
 
     public NykaaManPage(ExtentTest test) {
         helper = new WebDriverHelper(Base.driver);

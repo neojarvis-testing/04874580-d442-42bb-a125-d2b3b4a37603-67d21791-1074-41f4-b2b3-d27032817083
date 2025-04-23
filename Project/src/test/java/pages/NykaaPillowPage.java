@@ -14,8 +14,8 @@ import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class NykaaPillowPage {
-    public static WebDriverHelper helper;
-    public static ExtentTest test;
+    WebDriverHelper helper;
+    ExtentTest test;
     public NykaaPillowPage(ExtentTest test){
         helper = new WebDriverHelper(Base.driver);
         this.test=test;
@@ -89,8 +89,8 @@ public class NykaaPillowPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaPillowLocators.pillowHeading, 10);
             String data = helper.doGetText(NykaaPillowLocators.pillowHeading);
-            Assert.assertTrue(data.contains("Pillow"));
-            test.log(Status.PASS, "Text pillow verified");
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx", "Sheet1", 10, 0)));
+            test.log(Status.INFO, "Text pillow verified");
             LoggerHandler.info("Text pillow verified");
         } catch (Exception e) {
             test.log(Status.FAIL, "Text pillow not verified");
@@ -223,7 +223,8 @@ public class NykaaPillowPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaPillowLocators.filtersApplied, 10);
             String data = helper.doGetText(NykaaPillowLocators.filtersApplied);
-            test.log(Status.PASS, "Filter text verified");
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx", "Sheet1", 11, 0)));
+            test.log(Status.INFO, "Filter text verified");
             LoggerHandler.info("Filter text verified");
         }catch (Exception e) {
             test.log(Status.FAIL, "Filter text not verified");
@@ -301,11 +302,11 @@ public class NykaaPillowPage {
             helper.dowaitForElementToBeVisible(NykaaPillowLocators.bag, 10);
             String data = helper.doGetText(NykaaPillowLocators.bag);
             System.out.println(data);
-            Assert.assertTrue(data.contains("Bag"));
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx", "Sheet1", 9, 0)));
             Screenshot.captureFullScreenshot("TestCase1");
             Report.addScreenshotToReport("nykaa",test,Base.driver,"screenshot");
             LoggerHandler.info("Text bag verified");
-            test.log(Status.PASS, "Text bag verified");
+            test.log(Status.INFO, "Text bag verified");
         } catch (Exception e) {
             test.log(Status.FAIL, "Text bag not verified");
             LoggerHandler.error("Text bag not verified");
