@@ -153,7 +153,8 @@ public class NykaaSearchLipstick {
     public void selectThirdOption(){
         try {
             helper.dowaitForElementToBeVisible(NykaaSearchLipstickPageLocator.dropdwon, 5);
-            helper.doSelectfromDropdown(NykaaSearchLipstickPageLocator.dropdwon,"120 Major Crush");
+            // helper.doSelectfromDropdown(NykaaSearchLipstickPageLocator.dropdwon,"120 Major Crush");
+            helper.doSelectfromDropdownByIndex(NykaaSearchLipstickPageLocator.dropdwon,2);
             test.log(Status.INFO,"Select third option from dropdown of shades");
             test.log(Status.PASS,"selected third option from dropdown of shades");
             LoggerHandler.info("selected third option from dropdown of shades");
@@ -253,7 +254,7 @@ public class NykaaSearchLipstick {
             test.log(Status.PASS,"clicked on My Wishlist");
             LoggerHandler.info("clicked on My Wishlist");
             Screenshot.captureFullScreenshot("Nykaa Account Screenshot");
-            Report.addScreenshotToReport(test,Base.driver,"Screenshot");
+            Report.addScreenshotToReport("Wishlist",test,Base.driver,"Screenshot of wishlist");
         } catch (Exception e) {
             test.log(Status.FAIL,"Failed to click on My wishlist.");
             LoggerHandler.info("Failed to click on My wishlist.");
@@ -294,7 +295,7 @@ public class NykaaSearchLipstick {
             test.log(Status.PASS,"Verified Was this helpful");
             LoggerHandler.info("Verified Was this helpful");
             Screenshot.captureFullScreenshot("Nykaa Account Screenshot");
-            Report.addScreenshotToReport(test,Base.driver,"Screenshot");
+            Report.addScreenshotToReport("was_helpful",test,Base.driver,"Screenshot of was helpful page");
         } catch (Exception e) {
             test.log(Status.FAIL,"Failed to verify was this helpful?.");
             LoggerHandler.info("Failed to verify was this helpful?.");

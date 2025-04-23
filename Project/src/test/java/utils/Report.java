@@ -48,14 +48,15 @@ public class Report {
      * 
      * Return Type: void - This method does not return any value.
      */
-    public static void addScreenshotToReport(ExtentTest test, WebDriver driver, String message) {
+    public static void addScreenshotToReport(String filename,ExtentTest test, WebDriver driver, String message) {
         try {
+            String timestamp=new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
             TakesScreenshot ts=(TakesScreenshot)Base.driver;
 	    	File source=ts.getScreenshotAs(OutputType.FILE);
-            String screenshotPath = System.getProperty("user.dir") + "/screenshots/" + ".png";
+            String screenshotPath = System.getProperty("user.dir") + "/reports/" +filename+"_"+timestamp+".png";
             File destFile = new File(screenshotPath);
             FileUtils.copyFile(source,destFile);
-            test.addScreenCaptureFromPath(screenshotPath);
+           test.info(message,MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
         } catch (Exception e) {
             e.printStackTrace();
         }

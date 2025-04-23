@@ -117,6 +117,15 @@ public class WebDriverHelper {
 			e.printStackTrace();
 		}
 	}
+	public void doSelectfromDropdownByIndex(By locator,int index) {
+		try{
+			WebElement element= driver.findElement(locator);
+			Select select= new Select(element);
+			select.selectByIndex(index);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
 		/*
 		* a.Method Name: doHoverOnElement
 		* b.Author Name:Group 07

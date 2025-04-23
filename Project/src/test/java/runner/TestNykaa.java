@@ -35,7 +35,7 @@ public class TestNykaa extends Base{
      */
     @BeforeClass
     public void report(){
-        report = Report.generateExtenteReports("Nykaa_Report");
+        report = Report.generateExtenteReports("NYKAA_Report");
     }
  
     /*Method Name: open
@@ -57,7 +57,7 @@ public class TestNykaa extends Base{
       Return Type: void
      */
 
-  //  @Test(enabled = true, priority = 1 )
+   @Test(enabled = true, priority = 1 )
     public void NykaaSearchForPillow_Test(){
       test = report.createTest("NykaaSearchForPillow_Test");
       NykaaPillowPage nykaaSearchForPillow = new NykaaPillowPage(test);
@@ -70,7 +70,7 @@ public class TestNykaa extends Base{
       Parameter: None
       Return Type: void
      */
-    // @Test(enabled = true, priority = 2)
+    @Test(enabled = true, priority = 2)
     public void NykaaKurtas_Test(){
       test = report.createTest("NykaaKurtas_Test");
       NykaaKurtasPage nykaasKurtas = new NykaaKurtasPage(test);
@@ -83,7 +83,7 @@ public class TestNykaa extends Base{
       Parameter: None
       Return Type: void
      */
-    // @Test(enabled = true, priority = 3)
+    @Test(enabled = true, priority = 3)
     public void NykaaNewLaunches_Test(){
       test = report.createTest("NykaaNewLaunches_Test");
       NykaaNewLaunches nykaaNewLaunches = new NykaaNewLaunches(test);
@@ -136,7 +136,7 @@ public class TestNykaa extends Base{
       Return Type: void
      */
 
-    // @Test(enabled = true, priority = 1)
+    @Test(enabled = true, priority = 1)
     public void nykaaaLuxe(){
       test=report.createTest("Luxe");
       NykaaLuxeHomePage nykaaLuxeHomePage=new NykaaLuxeHomePage(test);
@@ -150,7 +150,7 @@ public class TestNykaa extends Base{
      * D. Parameters: None
      * E. Return Type: void
      */
-  //  @Test(enabled = true, priority = 7)
+   @Test(enabled = true, priority = 7)
     public void NykaaGetAppTestCase()
     {
       test = report.createTest("NykaaGetApp_TestCase");
@@ -165,7 +165,7 @@ public class TestNykaa extends Base{
      * D. Parameters: None
      * E. Return Type: void
      */
-    // @Test(enabled = true, priority = 8)
+    @Test(enabled = true, priority = 8)
     public void NykaaCategoriesTestCase()
     {
       test = report.createTest("NykaaCategories_TestCase");
@@ -181,7 +181,7 @@ public class TestNykaa extends Base{
      * D. Parameters: None
      * E. Return Type: void
      */
-    // @Test(enabled = true, priority = 10)
+    @Test(enabled = true, priority = 10)
     public void NykaaManPageTestCase()
     {
       test = report.createTest("NykaaManPage_TestCase");

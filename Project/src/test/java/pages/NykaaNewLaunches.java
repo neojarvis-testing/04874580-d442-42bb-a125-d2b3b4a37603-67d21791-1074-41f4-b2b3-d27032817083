@@ -30,7 +30,7 @@ public class NykaaNewLaunches {
     public void scrollDownToFooter(){
         try {
             Thread.sleep(2000);
-            helper.doScrollBypixel(0,10000);
+            helper.doScrollBypixel(0,9000);
             test.log(Status.PASS,"Scrolled down");
             LoggerHandler.info("Scrolled down");
         } catch (Exception e) {

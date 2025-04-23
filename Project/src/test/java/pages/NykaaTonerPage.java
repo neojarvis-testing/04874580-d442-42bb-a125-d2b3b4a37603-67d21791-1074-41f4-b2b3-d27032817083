@@ -306,8 +306,7 @@ public class NykaaTonerPage {
             test.log(Status.PASS, "Clicked on ingredients successfully");
             LoggerHandler.info("Clicked on ingredients successfully");
             Screenshot.captureFullScreenshot("Read More Ingredients");
-
-            Report.addScreenshotToReport(test, Base.driver,"Screenshot_Ingredients");
+            Report.addScreenshotToReport("Read More",test, Base.driver,"Read more screenshot");
 
         } catch (Exception e) {
             test.log(Status.FAIL, "Failed to ingredients to bag");
