@@ -87,7 +87,7 @@ public class NykaaKurtasPage {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.verifyKurtas, 10);
             String data = helper.doGetText(NykaaKurtasLocators.verifyKurtas);
             Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx","Sheet1",4,0)));
-            test.log(Status.PASS, "Kurta verified");
+            test.log(Status.INFO, "Kurta verified");
             LoggerHandler.info("Kurta verified");
         } catch (Exception e) {
             test.log(Status.FAIL, "Kurta not verified");
@@ -125,7 +125,7 @@ public class NykaaKurtasPage {
             helper.doClick(NykaaKurtasLocators.bestSeller);
             String data = helper.doGetText(NykaaKurtasLocators.sortBy);
             Assert.assertTrue(data.contains("Sort"));
-            test.log(Status.PASS, "Clicked on Bestseller");
+            test.log(Status.INFO, "Clicked on Bestseller");
             LoggerHandler.info("Clicked on Bestseller");
         } catch (Exception e) {
             test.log(Status.FAIL, "BestSeller is not clicked");
@@ -145,7 +145,7 @@ public class NykaaKurtasPage {
             helper.doClickandswitch(NykaaKurtasLocators.secondProduct);
             String data = helper.doGetText(NykaaKurtasLocators.bestSeller);
             Assert.assertTrue(data.contains("Bestseller"));
-            test.log(Status.PASS, "Clicked on Second Product");
+            test.log(Status.INFO, "Clicked on Second Product");
             LoggerHandler.info("Clicked on Second Product");
         } catch (Exception e) {
             test.log(Status.FAIL, "Not clicked on second product");
@@ -240,7 +240,7 @@ public class NykaaKurtasPage {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.allReviews, 10);
             String data = helper.doGetText(NykaaKurtasLocators.allReviews);
             Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx","Sheet1",6,0)));
-            test.log(Status.PASS, "Verification of all reviews is done");
+            test.log(Status.INFO, "Verification of all reviews is done");
             LoggerHandler.info("Verification of all reviews is done");
         } catch (Exception e) {
             test.log(Status.FAIL, "Verification of all reviews is not done");

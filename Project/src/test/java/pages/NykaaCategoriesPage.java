@@ -13,7 +13,7 @@ import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class NykaaCategoriesPage {
-    public static WebDriverHelper helper;
+    public WebDriverHelper helper;
     public ExtentTest test;
 
     public NykaaCategoriesPage(ExtentTest test) {

@@ -12,7 +12,7 @@ import utils.LoggerHandler;
 import utils.WebDriverHelper;
 
 public class NykaaSearchLipstick {
-    public static WebDriverHelper helper;
+    public WebDriverHelper helper;
     public ExtentTest test;
     public NykaaSearchLipstick(ExtentTest test){
         helper=new WebDriverHelper(Base.driver);

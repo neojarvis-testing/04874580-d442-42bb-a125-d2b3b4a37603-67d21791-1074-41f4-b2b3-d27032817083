@@ -90,7 +90,7 @@ public class NykaaPillowPage {
             helper.dowaitForElementToBeVisible(NykaaPillowLocators.pillowHeading, 10);
             String data = helper.doGetText(NykaaPillowLocators.pillowHeading);
             Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx", "Sheet1", 10, 0)));
-            test.log(Status.PASS, "Text pillow verified");
+            test.log(Status.INFO, "Text pillow verified");
             LoggerHandler.info("Text pillow verified");
         } catch (Exception e) {
             test.log(Status.FAIL, "Text pillow not verified");
@@ -224,7 +224,7 @@ public class NykaaPillowPage {
             helper.dowaitForElementToBeVisible(NykaaPillowLocators.filtersApplied, 10);
             String data = helper.doGetText(NykaaPillowLocators.filtersApplied);
             Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx", "Sheet1", 11, 0)));
-            test.log(Status.PASS, "Filter text verified");
+            test.log(Status.INFO, "Filter text verified");
             LoggerHandler.info("Filter text verified");
         }catch (Exception e) {
             test.log(Status.FAIL, "Filter text not verified");
@@ -305,7 +305,7 @@ public class NykaaPillowPage {
             Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx", "Sheet1", 9, 0)));
             Screenshot.captureFullScreenshot("TestCase1");
             LoggerHandler.info("Text bag verified");
-            test.log(Status.PASS, "Text bag verified");
+            test.log(Status.INFO, "Text bag verified");
         } catch (Exception e) {
             test.log(Status.FAIL, "Text bag not verified");
             LoggerHandler.error("Text bag not verified");

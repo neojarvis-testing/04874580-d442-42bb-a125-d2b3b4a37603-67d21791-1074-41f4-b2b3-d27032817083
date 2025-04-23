@@ -68,7 +68,7 @@ public class NykaaNewLaunches {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.shopNewLaunches, 10);
             String data = helper.doGetText(NykaaNewLaunchesLocators.shopNewLaunches);
             Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx","Sheet1",7,0)));
-            test.log(Status.PASS,"New launches verified");
+            test.log(Status.INFO,"New launches verified");
             LoggerHandler.info("New launches verified");
         }catch (Exception e) {
             test.log(Status.FAIL, "New launches not verified");
@@ -106,7 +106,7 @@ public class NykaaNewLaunches {
             helper.doClickandswitch(NykaaNewLaunchesLocators.faceWash);
             String data= helper.doGetText(NykaaNewLaunchesLocators.natural);
             Assert.assertTrue(data.contains("Natural"));
-            test.log(Status.PASS,"clicked on facewash");
+            test.log(Status.INFO,"clicked on facewash");
             LoggerHandler.info("clicked on facewash");
         } catch (Exception e) {
             test.log(Status.FAIL, "Facewash not clicked");
@@ -295,7 +295,7 @@ public class NykaaNewLaunches {
             Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx", "Sheet1", 9, 0)));
             Screenshot.captureFullScreenshot("TestCase2");
             LoggerHandler.info("Bag verified");
-            test.log(Status.PASS, "Bag verified");
+            test.log(Status.INFO, "Bag verified");
         } catch (Exception e) {
             test.log(Status.FAIL, "Text bag not verified");
             LoggerHandler.error("Text bag not verified");

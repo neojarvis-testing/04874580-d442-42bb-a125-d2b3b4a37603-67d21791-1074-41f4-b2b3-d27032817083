@@ -13,7 +13,7 @@ import utils.WebDriverHelper;
 
 public class NykaaLuxeHomePage {
    public ExtentTest test;
-   public static WebDriverHelper helper;
+   public WebDriverHelper helper;
    public NykaaLuxeHomePage(ExtentTest test){
     helper=new WebDriverHelper(Base.driver);
     this.test=test;
@@ -59,7 +59,7 @@ public class NykaaLuxeHomePage {
     try {
         String luxe=helper.doGetText(NykaaLuxeHomeLocators.nykaaLuxe);
         Assert.assertTrue(luxe.contains("Luxe"));
-        test.log(Status.PASS,"Verified the text  Luxe");
+        test.log(Status.INFO,"Verified the text  Luxe");
         LoggerHandler.info("Verified the text  Luxe");
     } catch (AssertionError e) {
         test.log(Status.FAIL,"Cannot Verify the text  Luxe");
@@ -174,7 +174,7 @@ public class NykaaLuxeHomePage {
         helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.occasion, 10);
         helper.doClick(NykaaLuxeHomeLocators.occasion);
         Thread.sleep(2000);
-        test.log(Status.PASS,"clicked on Occasion");
+        test.log(Status.INFO,"clicked on Occasion");
         LoggerHandler.info("clicked on Occasion");
     } catch (Exception e) {
         test.log(Status.FAIL,"Cannot click on Occasion");
@@ -243,7 +243,7 @@ public class NykaaLuxeHomePage {
         helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.nykaaman, 10);
         helper.doClickandswitch(NykaaLuxeHomeLocators.nykaaman);
         Base.driver.navigate().refresh();
-        test.log(Status.PASS,"clicked on NykaaMan");
+        test.log(Status.INFO,"clicked on NykaaMan");
         LoggerHandler.info("clicked on NykaaMan");
     } catch (Exception e) {
         test.log(Status.FAIL,"Cannot click on NykaaMan");
@@ -283,7 +283,7 @@ public class NykaaLuxeHomePage {
             System.out.println(shaving);
             Assert.assertTrue(shaving.contains("SHAVING & BEARD CARE"));
             Screenshot.captureFullScreenshot("Shaving and beard");
-            test.log(Status.PASS,"Verified the text Shaving");
+            test.log(Status.INFO,"Verified the text Shaving");
             LoggerHandler.info("Verified the text Shaving");
         } catch (AssertionError e) {
             test.log(Status.FAIL,"Cannot Verified the text Shaving");
