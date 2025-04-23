@@ -7,6 +7,7 @@ import com.aventstack.extentreports.Status;
 
 import uistore.NykaaLuxeHomeLocators;
 import utils.Base;
+import utils.ExcelReader;
 import utils.LoggerHandler;
 import utils.Screenshot;
 import utils.WebDriverHelper;
@@ -60,6 +61,8 @@ public class NykaaLuxeHomePage {
         String luxe=helper.doGetText(NykaaLuxeHomeLocators.nykaaLuxe);
         Assert.assertTrue(luxe.contains("Luxe"));
         test.log(Status.INFO,"Verified the text  Luxe");
+        Assert.assertTrue(luxe.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/Luxe.xlsx","Sheet1", 0, 0)));
+        test.log(Status.PASS,"Verified the text  Luxe");
         LoggerHandler.info("Verified the text  Luxe");
     } catch (AssertionError e) {
         test.log(Status.FAIL,"Cannot Verify the text  Luxe");
@@ -153,7 +156,7 @@ public class NykaaLuxeHomePage {
    public void verifyUnisex(){
     try {
         String unisex=helper.doGetText(NykaaLuxeHomeLocators.unisexText);
-        Assert.assertTrue(unisex.contains("Unisex"));
+        Assert.assertTrue(unisex.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/Luxe.xlsx","Sheet1", 1, 0)));
         test.log(Status.PASS,"Verified the text Unisex");
         LoggerHandler.info("Verified the text Unisex");
     } catch (AssertionError e) {
@@ -281,7 +284,7 @@ public class NykaaLuxeHomePage {
             helper.doClick(NykaaLuxeHomeLocators.shaving);
             String shaving=helper.doGetText(NykaaLuxeHomeLocators.shavingandbeard);
             System.out.println(shaving);
-            Assert.assertTrue(shaving.contains("SHAVING & BEARD CARE"));
+            Assert.assertTrue(shaving.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/Luxe.xlsx","Sheet1", 2, 0)));
             Screenshot.captureFullScreenshot("Shaving and beard");
             test.log(Status.INFO,"Verified the text Shaving");
             LoggerHandler.info("Verified the text Shaving");
