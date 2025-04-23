@@ -10,7 +10,7 @@ public class NykaaManPageLocators {
     public static By wheyProteinText = By.cssSelector("h1.css-c0pzm0");
     public static By three = By.xpath("//a[text() = '3']");
     public static By two = By.xpath("//a[text() = '2']");
-    public static By firstProduct = By.xpath("//a[@href='/optimum-nutrition-on-gold-standard-100percent-whey-protein-powder-vanilla-ice-cream/p/12199750?productId=12199750&pps=1']");
+    public static By firstProduct = By.xpath("//a[@href='/optimum-nutrition-on-gold-standard-100-isolate-chocolate-bliss-3lbs/p/776107?productId=776107&pps=1']");
     public static By pincode = By.xpath("//input[@class = 'css-i2hz85']");
     public static By checkBtn = By.cssSelector(".css-yxoxyz");
     public static By chennaiText = By.cssSelector(".css-ew9amy"); 
