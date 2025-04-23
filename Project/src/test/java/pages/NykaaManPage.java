@@ -24,7 +24,7 @@ public class NykaaManPage {
 
     /*
      * A. Method Name: clickOnNykaaMan
-     * B. Author Name: Group 07
+     * B. Author Name: Tanu Shree Das
      * C. Description: This method performs multiple scrolls and pauses before clicking on the Nykaa Man section and switching contexts.
      * D. Parameters: None
      * E. Return Type: void
@@ -50,7 +50,7 @@ public class NykaaManPage {
 
     /*
      * A. Method Name: hoverHealthNutrition
-     * B. Author Name: Group 07
+     * B. Author Name: Tanu Shree Das
      * C. Description: This method waits for the Health & Nutrition section to be visible and then hovers over it.
      * D. Parameters: None
      * E. Return Type: void
@@ -70,7 +70,7 @@ public class NykaaManPage {
 
     /*
      * A. Method Name: clickOnWheyProtein
-     * B. Author Name: Group 07
+     * B. Author Name: Tanu Shree Das
      * C. Description: This method waits for the Whey Protein section to be visible, clicks on it, and switches to a new window.
      * D. Parameters: None
      * E. Return Type: void
@@ -89,7 +89,7 @@ public class NykaaManPage {
 
     /*
      * A. Method Name: verifyWheyProtein
-     * B. Author Name: Group 07
+     * B. Author Name: Tanu Shree Das
      * C. Description: This method waits for the Whey Protein heading to be visible, verifies its text, and logs the result.
      * D. Parameters: None
      * E. Return Type: void
@@ -98,7 +98,7 @@ public class NykaaManPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaManPageLocators.wheyProteinText, 10);
             String mainHeading = helper.doGetText(NykaaManPageLocators.wheyProteinText);
-            Assert.assertTrue(mainHeading.contains("Whey Protein"));
+            Assert.assertTrue(mainHeading.contains(ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", "Sheet1", 6, 1)));
             test.log(Status.PASS, "Verified 'Whey Protein'");
             LoggerHandler.info("Verified 'Whey Protein'");
         } catch (AssertionError e) {
@@ -109,7 +109,7 @@ public class NykaaManPage {
 
     /*
      * A. Method Name: verifyThreePagination
-     * B. Author Name: Group 07
+     * B. Author Name: Tanu Shree Das
      * C. Description: This method waits for the pagination element displaying "3" to be visible and verifies its presence.
      * D. Parameters: None
      * E. Return Type: void
@@ -118,7 +118,7 @@ public class NykaaManPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaManPageLocators.three, 10);
             String mainHeading = helper.doGetText(NykaaManPageLocators.three);
-            Assert.assertTrue(mainHeading.contains("3"));
+            Assert.assertTrue(mainHeading.contains(ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", "Sheet1", 7, 1)));
             test.log(Status.PASS, "Verified '3 pagination'");
             LoggerHandler.info("Verified '3 pagination'");
         } catch (AssertionError e) {
@@ -129,7 +129,7 @@ public class NykaaManPage {
 
     /*
      * A. Method Name: clickTwoPagination
-     * B. Author Name: Group 07
+     * B. Author Name: Tanu Shree Das
      * C. Description: This method waits for the pagination element displaying "2" to be visible and clicks on it.
      * D. Parameters: None
      * E. Return Type: void
@@ -148,7 +148,7 @@ public class NykaaManPage {
 
     /*
      * A. Method Name: clickFirstProduct
-     * B. Author Name: Group 07
+     * B. Author Name: Tanu Shree Das
      * C. Description: This method waits for the first product to be visible, clicks on it, and switches to a new window.
      * D. Parameters: None
      * E. Return Type: void
@@ -167,7 +167,7 @@ public class NykaaManPage {
 
     /*
      * A. Method Name: enterPincodeData
-     * B. Author Name: Group 07
+     * B. Author Name: Tanu Shree Das
      * C. Description: This method waits for the pincode input field to be visible, clicks on it, and enters data from an Excel sheet.
      * D. Parameters: None
      * E. Return Type: void
@@ -188,7 +188,7 @@ public class NykaaManPage {
 
     /*
      * A. Method Name: clickCheck
-     * B. Author Name: Group 07
+     * B. Author Name: Tanu Shree Das
      * C. Description: This method waits for the check button to be visible and clicks on it.
      * D. Parameters: None
      * E. Return Type: void
@@ -207,7 +207,7 @@ public class NykaaManPage {
 
     /*
      * A. Method Name: verifyChennai
-     * B. Author Name: Group 07
+     * B. Author Name: Tanu Shree Das
      * C. Description: This method waits for the Chennai text element to be visible and verifies its presence.
      * D. Parameters: None
      * E. Return Type: void
@@ -217,7 +217,7 @@ public class NykaaManPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaManPageLocators.chennaiText, 10);
             String chennai = helper.doGetText(NykaaManPageLocators.chennaiText);
-            Assert.assertTrue(chennai.contains("Chennai"));
+            Assert.assertTrue(chennai.contains(ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", "Sheet1", 8, 1)));
             test.log(Status.PASS, "Verified Chennai Text");
             LoggerHandler.info("Verified Chennai Text");
         } catch (AssertionError e) {
@@ -228,7 +228,7 @@ public class NykaaManPage {
 
     /*
      * A. Method Name: scrollToWriteReview
-     * B. Author Name: Group 07
+     * B. Author Name: Tanu Shree Das
      * C. Description: This method scrolls down to the write review section and clicks on it.
      * D. Parameters: None
      * E. Return Type: void
@@ -248,7 +248,7 @@ public class NykaaManPage {
 
     /*
      * A. Method Name: verifySignIn
-     * B. Author Name: Group 07
+     * B. Author Name: Tanu Shree Das
      * C. Description: This method waits for the sign-in text element to be visible, verifies its presence, and captures a screenshot.
      * D. Parameters: None
      * E. Return Type: void
@@ -260,7 +260,7 @@ public class NykaaManPage {
             String signIn = helper.doGetText(NykaaManPageLocators.signIn);
             Screenshot.captureFullScreenshot("nykaa");
             Report.addScreenshotToReport("nykaa",test,Base.driver,"nykaa");
-            Assert.assertTrue(signIn.contains("Sign in"));
+            Assert.assertTrue(signIn.contains(ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", "Sheet1", 9, 1)));
             test.log(Status.PASS, "Verified Sign In Text");
             LoggerHandler.info("Verified Sign In Text");
         } catch (AssertionError e) {
@@ -271,7 +271,7 @@ public class NykaaManPage {
 
     /*
      * A. Method Name: execute
-     * B. Author Name: Group 07
+     * B. Author Name: Tanu Shree Das
      * C. Description: This method executes all the defined functions sequentially.
      * D. Parameters: None
      * E. Return Type: void

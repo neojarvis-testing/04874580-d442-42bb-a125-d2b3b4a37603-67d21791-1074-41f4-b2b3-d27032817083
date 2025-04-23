@@ -23,7 +23,7 @@ public class NykaaCategoriesPage {
 
     /*
      * A. Method Name: verifyCategories
-     * B. Author Name: Group 07
+     * B. Author Name: Tanu Shree
      * C. Description: This method retrieves and verifies the text of 'Categories' from the UI.
      * D. Parameters: None
      * E. Return Type: void
@@ -32,7 +32,7 @@ public class NykaaCategoriesPage {
     public void verifyCategories() {
         try {
             String categories = helper.doGetText(NykaaCategoriesPageLocators.categories);
-            Assert.assertEquals(categories, categories);
+            Assert.assertTrue(categories.contains(ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", "Sheet1", 0, 1)));
             test.log(Status.PASS, "Verified 'Categories'");
             LoggerHandler.info("Verified 'Categories'");
         } catch (Exception e) {
@@ -43,7 +43,7 @@ public class NykaaCategoriesPage {
 
     /*
      * A. Method Name: sendDataToSearchBar
-     * B. Author Name: Group 07
+     * B. Author Name: Tanu Shree
      * C. Description: This method waits for the search bar to be visible, clicks on it, sends data from an Excel sheet, and performs an enter action.
      * D. Parameters: None
      * E. Return Type: void
@@ -55,7 +55,7 @@ public class NykaaCategoriesPage {
             helper.doSendKeys(NykaaCategoriesPageLocators.searchBar,
                     ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", "Sheet1", 1, 0));
             helper.doEnterAction(NykaaCategoriesPageLocators.searchBar);
-            test.log(Status.PASS, "Sent data to search bar");
+            test.log(Status.INFO, "Sent data to search bar");
             LoggerHandler.info("Sent data to search bar");
         } catch (Exception e) {
             test.log(Status.FAIL, e.getMessage());
@@ -64,14 +64,14 @@ public class NykaaCategoriesPage {
     }
 
     // A. Method Name: verifyKajal
-    // B. Author Name: Group 07
+    // B. Author Name: Tanu Shree
     // C. Description: This method retrieves and verifies that the text contains 'Kajal' from the UI.
     // D. Parameters: None
     // E. Return Type: void
     public void verifyKajal() {
         try {
             String kajal = helper.doGetText(NykaaCategoriesPageLocators.kajal);
-            Assert.assertTrue(kajal.contains("Kajal"));
+            Assert.assertTrue(kajal.contains(ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", "Sheet1", 1, 0)));
             test.log(Status.PASS, "Verified 'Kajal'");
             LoggerHandler.info("Verified 'Kajal'");
         } catch (Exception e) {
@@ -81,7 +81,7 @@ public class NykaaCategoriesPage {
     }
 
     // A. Method Name: clickOnPencil
-    // B. Author Name: Group 07
+    // B. Author Name: Tanu Shree
     // C. Description: This method waits for the formulation element to be visible clicks on it, and then clicks on the Pencil element.
     // D. Parameters: None
     // E. Return Type: void
@@ -90,7 +90,7 @@ public class NykaaCategoriesPage {
             helper.dowaitForElementToBeVisible(NykaaCategoriesPageLocators.formulation, 5);
             helper.doClick(NykaaCategoriesPageLocators.formulation);
             helper.doClick(NykaaCategoriesPageLocators.pencil);
-            test.log(Status.PASS, "Clicked on Pencil");
+            test.log(Status.INFO, "Clicked on Pencil");
             LoggerHandler.info("Clicked on Pencil");
         } catch (Exception e) {
             test.log(Status.FAIL, e.getMessage());
@@ -99,7 +99,7 @@ public class NykaaCategoriesPage {
     }
 
     // A. Method Name: hoverFragrance
-    // B. Author Name: Group 07
+    // B. Author Name: Tanu Shree
     // C. Description: This method scrolls up by a certain pixel value, waits for a brief moment, and hovers over the Fragrance element.
     // D. Parameters: None
     // E. Return Type: void
@@ -117,7 +117,7 @@ public class NykaaCategoriesPage {
     }
 
     // A. Method Name: clickNewLaunches
-    // B. Author Name: Group 07
+    // B. Author Name: Tanu Shree
     // C. Description: This method waits for the New Launches element to be visible, clicks on it, and switches the tab.
     // D. Parameters: None
     // E. Return Type: void
@@ -134,7 +134,7 @@ public class NykaaCategoriesPage {
     }
 
     // A. Method Name: clickFirstProduct
-    // B. Author Name: Group 07
+    // B. Author Name: Tanu Shree
     // C. Description: This method clicks on the first product and switches the tab.
     // D. Parameters: None
     // E. Return Type: void
@@ -150,7 +150,7 @@ public class NykaaCategoriesPage {
     }
 
     // A. Method Name: clickAddToBag
-    // B. Author Name: Group 07
+    // B. Author Name: Tanu Shree
     // C. Description: This method waits for the first product element to be visible and then clicks on the "Add to Bag" button.
     // D. Parameters: None
     // E. Return Type: void
@@ -167,7 +167,7 @@ public class NykaaCategoriesPage {
     }
 
     // A. Method Name: clickHowtoUse
-    // B. Author Name: Group 07
+    // B. Author Name: Tanu Shree
     // C. Description: This method scrolls down, waits for a few seconds, and then clicks on the "How to Use" section.
     // D. Parameters: None
     // E. Return Type: void
@@ -185,14 +185,14 @@ public class NykaaCategoriesPage {
     }
 
     // A. Method Name: verifyText
-    // B. Author Name: Group 07
+    // B. Author Name: Tanu Shree
     // C. Description: This method retrieves and verifies that the "Customers also Viewed" text is present.
     // D. Parameters: None
     // E. Return Type: void
     public void verifyText() {
         try {
             String text = helper.doGetText(NykaaCategoriesPageLocators.customerViewed);
-            Assert.assertTrue(text.contains("Customers also Viewed"));
+            Assert.assertTrue(text.contains(ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", "Sheet1", 1, 1)));
             test.log(Status.PASS, "Verified 'Customers also Viewed'");
             LoggerHandler.info("Verified 'Customers also Viewed'");
             Screenshot.captureFullScreenshot("HowToUse");
@@ -203,7 +203,7 @@ public class NykaaCategoriesPage {
     }
 
     // A. Method Name: execute
-    // B. Author Name: Group 07
+    // B. Author Name: Tanu Shree
     // C. Description: This method calls all the defined functions sequentially to execute a full flow of actions.
     // D. Parameters: None
     // E. Return Type: void
