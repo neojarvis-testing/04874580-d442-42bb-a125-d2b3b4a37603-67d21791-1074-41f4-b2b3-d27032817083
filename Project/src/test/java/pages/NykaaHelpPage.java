@@ -24,7 +24,7 @@ public class NykaaHelpPage {
 
     /**
      * a. Method Name: clickOnHelp
-     * b. Author: Group 07
+     * b. Author: Likitha
      * c. Description: This method waits for the "Help" button to be visible, clicks on it, and switches to the corresponding help page. It logs the action accordingly
      *          and handles failures gracefully.
      * d. Parameters: None
@@ -44,7 +44,7 @@ public class NykaaHelpPage {
 
     /**
      * a. Method Name: verifyHelpPageTitle
-     * b. Author: Group 07
+     * b. Author: Likitha
      * c. Description: This method retrieves the current page title and verifies that it contains "Help Center"
      *                  using an assertion. If successful, it logs the result; otherwise, it logs the failure message.
      * d. Parameters: None
@@ -66,7 +66,7 @@ public class NykaaHelpPage {
 
     /**
      * a. Method Name: clickOnOrderRelated
-     * b. Author: Group 07
+     * b. Author: Likitha
      * c. Description: This method waits for the "Order Related" section to be visible,
      *                  clicks on it, and logs the action appropriately. If an exception occurs, it logs the failure message.
      * d. Parameters: None
@@ -86,7 +86,7 @@ public class NykaaHelpPage {
 
     /**
      * a. Method Name: verifyOrderRelatedText
-     * b. Author: Group 07
+     * b. Author: Likitha
      * c. Description: This method verifies whether the "Order Related" text is present on the Nykaa help page.
      *                  It fetches the text, checks if it contains the expected phrase, and logs the result.
      * d. Parameters: None
@@ -107,7 +107,7 @@ public class NykaaHelpPage {
 
     /**
      * a. Method Name: clickOnOrderStatus
-     * b. Author: Group 07
+     * b. Author: Likitha
      * c. Description: This method waits for the "Order Status" element to be visible and then clicks on it.
      *                  It logs the success or failure of the operation.
      * d. Parameters: None
@@ -127,7 +127,7 @@ public class NykaaHelpPage {
 
     /**
      * a. Method Name: verifyOrderStatustext
-     * b. Author: Group 07
+     * b. Author: Likitha
      * c. Description: This method verifies whether the "Order Status" text is present on the Nykaa help page.
      *                  It fetches the text, checks if it contains the expected phrase, and logs the result.
      * d. Parameters: None
@@ -149,7 +149,7 @@ public class NykaaHelpPage {
 
     /**
      * a. Method Name: navigateBackToOrderRelated
-     * b. Author: Group 07
+     * b. Author: Likitha
      * c. Description: This method navigates back to the previous page using the browser's built-in navigation.
      *                  It logs the success or failure of the operation.
      * d. Parameters: None
@@ -169,7 +169,7 @@ public class NykaaHelpPage {
 
     /**
      * a. Method Name: clickOnRefund
-     * b. Author: Group 07
+     * b. Author: Likitha
      * c. Description: This method waits for the "Returns and Refunds" element to be visible and then clicks on it.
      *                  It logs the success or failure of the operation.
      * d. Parameters: None
@@ -189,7 +189,7 @@ public class NykaaHelpPage {
 
     /**
      * a. Method Name: verifyCanIReturn
-     * b. Author: Group 07
+     * b. Author: Likitha
      * c. Description: This method verifies whether the "Can I return part of my order?" text is present on the Nykaa help page.
      *                  It fetches the text, checks if it contains the expected phrase, and logs the result.
      * d. Parameters: None
@@ -210,7 +210,7 @@ public class NykaaHelpPage {
 
     /**
      * a. Method Name: clickOnCancellationAndRefunds
-     * b. Author: Group 07
+     * b. Author: Likitha
      * c. Description: This method waits for the "Cancellation and Refunds" element to be visible and then clicks on it.
      *                  It logs the success or failure of the operation.
      * d. Parameters: None
@@ -230,7 +230,7 @@ public class NykaaHelpPage {
 
     /**
      * a. Method Name: clickOnCancelPolicy
-     * b. Author: Group 07
+     * b. Author: Likitha
      * c. Description: This method waits for the "Cancellation Policy" element to be visible and then clicks on it.
      *                  It logs the success or failure of the operation.
      * d. Parameters: None
@@ -250,7 +250,7 @@ public class NykaaHelpPage {
 
     /**
      * a. Method Name: verifyCancelPolicy
-     * b. Author: Group 07
+     * b. Author: Likitha
      * c. Description: This method verifies whether the "Cancellation Policy" text is present on the Nykaa help page.
      *                  It fetches the text, checks if it contains the expected phrase, and logs the result.
      * d. Parameters: None
@@ -271,7 +271,7 @@ public class NykaaHelpPage {
 
     /**
      * a. Method Name: clickOnCancellationLink
-     * b. Author: Group 07
+     * b. Author: Likitha
      * c. Description: This method waits for the "Cancellation" link to be visible and then clicks on it.
      *              It switches to the new window if applicable and takes a screenshot for reporting.
      * d. Parameters: None
@@ -295,7 +295,7 @@ public class NykaaHelpPage {
 
     /**
      * a. Method Name: verifyCancelPolicyLink
-     * b. Author: Group 07
+     * b. Author: Likitha
      * c. Description: This method verifies whether the "Cancellation Policy" link is correctly displayed.
      *                  It fetches the text from the element, compares it with the expected link, and logs the result.
      * d. Parameters: None
@@ -316,7 +316,7 @@ public class NykaaHelpPage {
 
     /**
      * a. Method Name: testHelpPage
-     * b. Author: Group 07
+     * b. Author: Likitha
      * c. Description: This method executes a sequence of actions to verify multiple functionalities on the Nykaa help page.
      *                  It clicks on various elements, verifies texts, navigates back when needed, and tests the cancellation policy link.
      * d. Parameters: None

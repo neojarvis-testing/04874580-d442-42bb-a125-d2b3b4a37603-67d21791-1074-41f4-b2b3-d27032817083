@@ -59,8 +59,6 @@ public class NykaaLuxeHomePage {
    public void verifyLuxe(){
     try {
         String luxe=helper.doGetText(NykaaLuxeHomeLocators.nykaaLuxe);
-        Assert.assertTrue(luxe.contains("Luxe"));
-        test.log(Status.INFO,"Verified the text  Luxe");
         Assert.assertTrue(luxe.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/Luxe.xlsx","Sheet1", 0, 0)));
         test.log(Status.PASS,"Verified the text  Luxe");
         LoggerHandler.info("Verified the text  Luxe");

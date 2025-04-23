@@ -22,7 +22,7 @@ public class NykaaSearchLipstick {
     }
     /*
      * a.Method Name:sendLipstickInsearchBar
-     * b.Author Name:Group 07
+     * b.Author Name:Likitha
      * c.Description:This method sends the text "liquid lipstick" to the search bar on the Nykaa website
      * d.Parameters:None
      * e.Return Type:void
@@ -39,7 +39,7 @@ public class NykaaSearchLipstick {
     }
     /*
      * a.Method Name:clickOnLiquidLipstickSuggestion
-     * b.Author Name:Group 07
+     * b.Author Name:Likitha
      * c.Description:This method sends the text "liquid lipstick" to the search bar on the Nykaa website and performs an Enter action
      * d.Parameters:None
      * e.Return Type:void
@@ -59,7 +59,7 @@ public class NykaaSearchLipstick {
     }
     /*
      * a.Method Name:hoverOnFirstProduct
-     * b.Author Name:Group 07
+     * b.Author Name:Likitha
      * c.Description:This method enters the text "liquid lipstick" to the search bar and hover on the first product
      * d.Parameters:None
      * e.Return Type:void
@@ -78,7 +78,7 @@ public class NykaaSearchLipstick {
     }
     /*
      * a.Method Name:clickOnPriviewShades
-     * b.Author Name:Group 07
+     * b.Author Name:Likitha
      * c.Description:This method clicks on the preview shades element on the Nykaa website.
      * d.Parameters:None
      * e.Return Type:void
@@ -108,7 +108,7 @@ public class NykaaSearchLipstick {
     }
     /*
      * a.Method Name:clickOnViewDetails
-     * b.Author Name:Group 07
+     * b.Author Name:Likitha
      * c.Description:This method clicks on the View details element on the Nykaa website.
      * d.Parameters:None
      * e.Return Type:void
@@ -127,7 +127,7 @@ public class NykaaSearchLipstick {
     }
     /*
      * a.Method Name:clickOnArrow
-     * b.Author Name:Group 07
+     * b.Author Name:Likitha
      * c.Description:This method clicks on the Arrow element on the Nykaa website.
      * d.Parameters:None
      * e.Return Type:void
@@ -145,7 +145,7 @@ public class NykaaSearchLipstick {
     }
     /*
      * a.Method Name:selectThirdOption
-     * b.Author Name:Group 07
+     * b.Author Name:Likitha
      * c.Description:This method selects the third option from the dropdown in the  Nykaa website.
      * d.Parameters:None
      * e.Return Type:void
@@ -165,7 +165,7 @@ public class NykaaSearchLipstick {
     }
     /*
      * a.Method Name:scrollToFooter
-     * b.Author Name:Group 07
+     * b.Author Name:Likitha
      * c.Description:The method scrolls the page to the footer section by pixels.
      * d.Parameters:None
      * e.Return Type:void
@@ -183,7 +183,7 @@ public class NykaaSearchLipstick {
     }
     /*
      * a.Method Name:clickOnContactUs
-     * b.Author Name:Group 07
+     * b.Author Name:Likitha
      * c.Description:This method clicks on the Contact us element on the Nykaa website.
      * d.Parameters:None
      * e.Return Type:void
@@ -202,7 +202,7 @@ public class NykaaSearchLipstick {
     }
     /*
      * a.Method Name:verifyBrowseTopics
-     * b.Author Name:Group 07
+     * b.Author Name:Likitha
      * c.Description:This method verifies if the text "Browse Topics" is present on the Nykaa website.
      * d.Parameters:None
      * e.Return Type:void
@@ -222,7 +222,7 @@ public class NykaaSearchLipstick {
     }
     /*
      * a.Method Name:clickOnNykaaAccount
-     * b.Author Name:Group 07
+     * b.Author Name:Likitha
      * c.Description:This method clicks on the Nykaa Account element on the Nykaa website.
      * d.Parameters:None
      * e.Return Type:void
@@ -242,7 +242,7 @@ public class NykaaSearchLipstick {
     }
     /*
      * a.Method Name:clickOnMyWishlist
-     * b.Author Name:Group 07
+     * b.Author Name:Likitha
      * c.Description:This method clicks on the MyWishlist element on the Nykaa website.
      * d.Parameters:None
      * e.Return Type:void
@@ -262,7 +262,7 @@ public class NykaaSearchLipstick {
     }
     /*
      * a.Method Name:clickAddItems
-     * b.Author Name:Group 07
+     * b.Author Name:Likitha
      * c.Description:This method clicks on the AddItems element on the Nykaa website.
      * d.Parameters:None
      * e.Return Type:void
@@ -282,7 +282,7 @@ public class NykaaSearchLipstick {
     }
     /*
      * a.Method Name:verifyWasHelpful
-     * b.Author Name:Group 07
+     * b.Author Name:Likitha
      * c.Description:This method verifies if the text "Was this helpful?" is present on the Nykaa website.
      * d.Parameters:None
      * e.Return Type:void
