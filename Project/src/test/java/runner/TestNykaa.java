@@ -1,5 +1,7 @@
 package runner;
  
+import java.io.IOException;
+
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -21,6 +23,7 @@ import pages.NykaaSearchLipstick;
 import pages.NykaaTonerPage;
 import utils.Base;
 import utils.Report;
+import utils.SendEmailWithAttachment;
  
 public class TestNykaa extends Base{
     public static ExtentReports report;
@@ -208,7 +211,12 @@ public class TestNykaa extends Base{
       Return Type: void
      */
     @AfterClass
-    public void flushReports(){
+    public void flushReports() {
         report.flush();
+        try {
+          SendEmailWithAttachment.sendEmailWithAttachment("likithareddy177@gmail.com","likithareddy177@gmail.com","flovcicpfgjfyzgx","Automation testing on Nykaa Website","please find attachment");
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
     }
 }

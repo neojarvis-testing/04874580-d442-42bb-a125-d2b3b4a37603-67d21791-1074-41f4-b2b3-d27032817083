@@ -257,7 +257,7 @@ public class NykaaTonerPage {
      */
     public void verifyDescriptionText() {
         try {
-            String description = helper.doGetText(TonerPageLocator.desc);
+            String description = helper.doGetText(TonerPageLocator.description);
             String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 2, 1);
             Assert.assertTrue(description.contains(expected));
             System.out.println(description);
