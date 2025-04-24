@@ -22,7 +22,7 @@ public class NykaaTonerPage {
 
     /*
      * a. Method Name: sendTonerInSearchBar
-     * b. Author:Group 07
+     * b. Author:Likitha
      * c. Description:
      * - Retrieves the toner name from an Excel sheet and inputs it into the search
      * bar.
@@ -45,7 +45,7 @@ public class NykaaTonerPage {
 
     /*
      * a. Method Name: performEnter
-     * b. Author:Group 07
+     * b. Author:Likitha
      * c. Description:
      * -Executes the enter action on the search bar element using the helper method.
      * -Logs success or failure using test reporting and logger.
@@ -67,7 +67,7 @@ public class NykaaTonerPage {
 
     /*
      * a. Method Name: verifyToner
-     * b. Author:Group 07
+     * b. Author:Likitha
      * c. Description:
      * -Retrieves the text from the toner element and asserts if it contains
      * "Toner".
@@ -91,7 +91,7 @@ public class NykaaTonerPage {
 
     /*
      * a. Method Name: clickOnSortBy
-     * b. Author:Group 07
+     * b. Author:Likitha
      * c. Description:
      * -Waits for the Sort By element to be visible and then performs a click
      * action.
@@ -112,7 +112,7 @@ public class NykaaTonerPage {
 
     /*
      * a. Method Name: selectNewArrivals
-     * b. Author:Group 07
+     * b. Author:Likitha
      * c. Description:
      * -Waits for the "New Arrivals" element to be visible and then performs a click
      * action.
@@ -134,7 +134,7 @@ public class NykaaTonerPage {
 
     /*
      * a. Method Name: clickOnAvgCustomer
-     * b. Author:Group 07
+     * b. Author:Likitha
      * c. Description:
      * -Waits until the "Average Customer Rating" filter is visible, scrolls the
      * page to ensure it’s within view,
@@ -159,7 +159,7 @@ public class NykaaTonerPage {
 
     /*
      * a. Method Name: selectRating
-     * b. Author:Group 07
+     * b. Author:Likitha
      * c. Description:
      * -Waits for visibility, then clicks the rating filter.
      * Logs success or failure for tracking.
@@ -180,7 +180,7 @@ public class NykaaTonerPage {
 
     /*
      * a. Method Name: clickOnFirstProduct
-     * b. Author:Group 07
+     * b. Author:Likitha
      * c. Description:
      * -Ensures visibility before clicking and switching context.
      * Logs success or failure for tracking.
@@ -202,7 +202,7 @@ public class NykaaTonerPage {
 
     /*
      * a. Method Name: verifyInclusiveText
-     * b. b. Author:Group 07
+     * b. b. Author:Likitha
      * c. Description:
      * -Retrieves the text from the inclusive tax element and asserts its
      * correctness.
@@ -226,7 +226,7 @@ public class NykaaTonerPage {
 
     /*
      * a. Method Name: clickOnAddToBag
-     * b. b. Author:Group 07
+     * b. b. Author:Likitha
      * c. Description:
      * -Waits for the "Add to Bag" button to be visible before performing the click
      * action.
@@ -248,7 +248,7 @@ public class NykaaTonerPage {
 
     /*
      * a. Method Name: verifyDescriptionText
-     * b. Author:Group 07
+     * b. Author:Likitha
      * c. Description:
      * -Verifies if the retrieved text from a specific web element contains
      * the word "Description" and logs the result.
@@ -257,7 +257,7 @@ public class NykaaTonerPage {
      */
     public void verifyDescriptionText() {
         try {
-            String description = helper.doGetText(TonerPageLocator.desc);
+            String description = helper.doGetText(TonerPageLocator.description);
             String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 2, 1);
             Assert.assertTrue(description.contains(expected));
             System.out.println(description);
@@ -271,7 +271,7 @@ public class NykaaTonerPage {
 
     /*
      * a. Method Name: clickOnIngredients
-     * b. Author:Group 07
+     * b. Author:Likitha
      * c. Description:
      * -Waits for the "Ingredients" element to be visible, clicks on it,
      * and logs the outcome (success or failure).
@@ -292,7 +292,7 @@ public class NykaaTonerPage {
 
     /*
      * a. Method Name: clickOnReadMore
-     * b. Author:Group 07
+     * b. Author:Likitha
      * c. Description:
      * -Waits for the "Ingredients" element to be visible, clicks on it,
      * and logs the outcome (success or failure).
@@ -316,7 +316,7 @@ public class NykaaTonerPage {
 
     /*
      * a. Method Name: testTonerPage
-     * b. Author:Group 07
+     * b. Author:Likitha
      * c. Description:
      * -This method automates the flow of searching for a toner product, filtering
      * results,

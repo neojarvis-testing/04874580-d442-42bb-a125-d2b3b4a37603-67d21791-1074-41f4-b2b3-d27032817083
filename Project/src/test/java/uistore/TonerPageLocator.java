@@ -12,7 +12,7 @@ public class TonerPageLocator {
     public static By firstProduct=By.xpath("//div[text()='Biodance Collagen Gel Toner Pad']");
     public static By inclusiveTax=By.cssSelector(".css-1c4feqy");
     public static By addToBag=By.cssSelector(".css-vp18r8 .css-13zjqg6");
-    public static By desc=By.xpath("//h3[text()='Description']");
+    public static By description=By.xpath("//h3[text()='Description']");
     public static By ingredients=By.xpath("//h3[text()='Ingredients']");
     public static By readMore=By.xpath("//span[contains(text(),'Read')]");
 }
