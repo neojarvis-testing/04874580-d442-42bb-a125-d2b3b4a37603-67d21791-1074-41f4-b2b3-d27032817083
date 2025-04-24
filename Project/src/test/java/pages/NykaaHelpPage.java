@@ -17,6 +17,8 @@ public class NykaaHelpPage {
      WebDriverHelper helper;
      ExtentTest test;
      static final String sheetOfHelp = "Likitha";
+     static final String userDirectory="user.dir";
+     static final String testdataFolder="/testdata/TonerExcel.xlsx";
     public NykaaHelpPage(ExtentTest test) {
         helper = new WebDriverHelper(Base.driver);
         this.test = test;
@@ -93,7 +95,7 @@ public class NykaaHelpPage {
     public void verifyOrderRelatedText() {
         try {
             String orderrelated = helper.doGetText(NykaaHelpPageLocator.orderRelatedText);
-            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", sheetOfHelp, 3, 0);
+            String expected=ExcelReader.readdata(System.getProperty(userDirectory) + testdataFolder, sheetOfHelp, 3, 0);
             Assert.assertTrue(orderrelated.contains(expected));
             test.log(Status.PASS, "Verified the text Order Related");
             LoggerHandler.info("Verified the text Order Related");
@@ -135,7 +137,7 @@ public class NykaaHelpPage {
     public void verifyOrderStatustext() {
         try {
             String orderStatus = helper.doGetText(NykaaHelpPageLocator.orderStatusText);
-            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", sheetOfHelp, 4, 0);
+            String expected=ExcelReader.readdata(System.getProperty(userDirectory) + testdataFolder, sheetOfHelp, 4, 0);
             Assert.assertTrue(orderStatus.contains(expected));
             test.log(Status.PASS, "Verified the text Order status");
             LoggerHandler.info("Verified the text Order status");
@@ -196,7 +198,7 @@ public class NykaaHelpPage {
     public void verifyCanIReturn() {
         try {
             String canIReturn = helper.doGetText(NykaaHelpPageLocator.canIReturn);
-            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", sheetOfHelp, 5, 0);
+            String expected=ExcelReader.readdata(System.getProperty(userDirectory) + testdataFolder, sheetOfHelp, 5, 0);
             Assert.assertTrue(canIReturn.contains(expected));
             test.log(Status.PASS, "Verified the text Can I return a part of my order");
             LoggerHandler.info("Verified the text Can I return a part of my order");
@@ -257,7 +259,7 @@ public class NykaaHelpPage {
     public void verifyCancelPolicy() {
         try {
             String cancellationPolicy = helper.doGetText(NykaaHelpPageLocator.cancelPolicyText);
-            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", sheetOfHelp, 6, 0);
+            String expected=ExcelReader.readdata(System.getProperty(userDirectory) + testdataFolder, sheetOfHelp, 6, 0);
             Assert.assertTrue(cancellationPolicy.contains(expected));
             test.log(Status.PASS, "Verified the text Cancellation Policy");
             LoggerHandler.info("Verified the text Cancellation Policy");
@@ -302,7 +304,7 @@ public class NykaaHelpPage {
     public void verifyCancelPolicyLink() {
         try {
             String link = Base.driver.getCurrentUrl();
-            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", sheetOfHelp, 7, 0);
+            String expected=ExcelReader.readdata(System.getProperty(userDirectory) + testdataFolder, sheetOfHelp, 7, 0);
             Assert.assertEquals(link, expected);
             test.log(Status.PASS, "Verified the text Cancellation Policy url");
             LoggerHandler.info("Verified the text Cancellation Policy url");

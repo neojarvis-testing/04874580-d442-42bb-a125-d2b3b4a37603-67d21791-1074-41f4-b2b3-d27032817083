@@ -15,6 +15,8 @@ public class NykaaTonerPage {
      WebDriverHelper helper;
      ExtentTest test;
      static final String sheetOfToner = "Likitha";
+     static final String userDirectory="user.dir";
+     static final String testdataFolder="/testdata/TonerExcel.xlsx";
     public NykaaTonerPage(ExtentTest test) {
         helper = new WebDriverHelper(Base.driver);
         this.test = test;
@@ -34,7 +36,7 @@ public class NykaaTonerPage {
     public void sendTonerInSearchBar() {
         try {
             helper.doSendKeys(TonerPageLocator.searchBar, ExcelReader
-                    .readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", sheetOfToner, 0, 0));
+                    .readdata(System.getProperty(userDirectory) + testdataFolder, sheetOfToner, 0, 0));
             test.log(Status.PASS, "Toner Entered in serach Bar.");
             LoggerHandler.info("Toner Entered in search Bar");
         } catch (Exception e) {
@@ -78,7 +80,7 @@ public class NykaaTonerPage {
     public void verifyToner() {
         try {
             String toner = helper.doGetText(TonerPageLocator.toner);
-            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", sheetOfToner, 0, 1);
+            String expected=ExcelReader.readdata(System.getProperty(userDirectory) + testdataFolder, sheetOfToner, 0, 1);
             Assert.assertTrue(toner.contains(expected));
             test.log(Status.PASS, "Verified toner text succesfully");
             LoggerHandler.info("Verified toner text sucessfully");
@@ -212,7 +214,7 @@ public class NykaaTonerPage {
     public void verifyInclusiveText() {
         try {
             String inclusiveTax = helper.doGetText(TonerPageLocator.inclusiveTax);
-            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", sheetOfToner, 1, 1);
+            String expected=ExcelReader.readdata(System.getProperty(userDirectory) + testdataFolder, sheetOfToner, 1, 1);
             Assert.assertTrue(inclusiveTax.contains(expected));
             test.log(Status.PASS, "Verified inclusive of all taxes text succesfully");
             LoggerHandler.info("Verified inclusive of all taxes text sucessfully");
@@ -256,7 +258,7 @@ public class NykaaTonerPage {
     public void verifyDescriptionText() {
         try {
             String description = helper.doGetText(TonerPageLocator.description);
-            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", sheetOfToner, 2, 1);
+            String expected=ExcelReader.readdata(System.getProperty(userDirectory) + testdataFolder, sheetOfToner, 2, 1);
             Assert.assertTrue(description.contains(expected));
             test.log(Status.PASS, "Verified Description text succesfully");
             LoggerHandler.info("Verified Description text sucessfully");

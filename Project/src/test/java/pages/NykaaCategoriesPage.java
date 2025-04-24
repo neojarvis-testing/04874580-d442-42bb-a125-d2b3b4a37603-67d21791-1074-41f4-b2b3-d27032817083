@@ -16,6 +16,8 @@ public class NykaaCategoriesPage {
     WebDriverHelper helper;
     ExtentTest test;
     static final String sheetOfCategories = "Sheet1";
+    static final String testdataFolder="/testdata/GetAppData.xlsx";
+    static final String userDirectory="user.dir";
     public NykaaCategoriesPage(ExtentTest test) {
         helper = new WebDriverHelper(Base.driver);
         this.test = test;
@@ -32,7 +34,7 @@ public class NykaaCategoriesPage {
     public void verifyCategories() {
         try {
             String categories = helper.doGetText(NykaaCategoriesPageLocators.categories);
-            Assert.assertTrue(categories.contains(ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", sheetOfCategories, 0, 1)));
+            Assert.assertTrue(categories.contains(ExcelReader.readdata(System.getProperty(userDirectory) + testdataFolder, sheetOfCategories, 0, 1)));
             test.log(Status.PASS, "Verified 'Categories'");
             LoggerHandler.info("Verified 'Categories'");
         } catch (Exception e) {
@@ -53,7 +55,7 @@ public class NykaaCategoriesPage {
             helper.dowaitForElementToBeVisible(NykaaCategoriesPageLocators.searchBar, 5);
             helper.doClick(NykaaCategoriesPageLocators.searchBar);
             helper.doSendKeys(NykaaCategoriesPageLocators.searchBar,
-                    ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", sheetOfCategories, 1, 0));
+                    ExcelReader.readdata(System.getProperty(userDirectory) + testdataFolder, sheetOfCategories, 1, 0));
             helper.doEnterAction(NykaaCategoriesPageLocators.searchBar);
             test.log(Status.INFO, "Sent data to search bar");
             LoggerHandler.info("Sent data to search bar");
@@ -71,7 +73,7 @@ public class NykaaCategoriesPage {
     public void verifyKajal() {
         try {
             String kajal = helper.doGetText(NykaaCategoriesPageLocators.kajal);
-            Assert.assertTrue(kajal.contains(ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", sheetOfCategories, 1, 0)));
+            Assert.assertTrue(kajal.contains(ExcelReader.readdata(System.getProperty(userDirectory) + testdataFolder, sheetOfCategories, 1, 0)));
             test.log(Status.PASS, "Verified 'Kajal'");
             LoggerHandler.info("Verified 'Kajal'");
         } catch (Exception e) {
@@ -192,7 +194,7 @@ public class NykaaCategoriesPage {
     public void verifyText() {
         try {
             String text = helper.doGetText(NykaaCategoriesPageLocators.customerViewed);
-            Assert.assertTrue(text.contains(ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", sheetOfCategories, 1, 1)));
+            Assert.assertTrue(text.contains(ExcelReader.readdata(System.getProperty(userDirectory) + testdataFolder, sheetOfCategories, 1, 1)));
             test.log(Status.PASS, "Verified 'Customers also Viewed'");
             LoggerHandler.info("Verified 'Customers also Viewed'");
             Screenshot.captureFullScreenshot("HowToUse");

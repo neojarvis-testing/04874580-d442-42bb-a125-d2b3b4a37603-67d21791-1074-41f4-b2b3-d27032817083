@@ -16,7 +16,9 @@ import utils.WebDriverHelper;
 public class NykaaPillowPage {
     WebDriverHelper helper;
     ExtentTest test;
-    static final String sheetOfPillowPage = "Sheet1"; 
+    static final String sheetOfPillowPage = "Sheet1";
+    static final String userDirectory="user.dir";
+    static final String testdataFolder="/testdata/SearchData.xlsx"; 
     public NykaaPillowPage(ExtentTest test){
         helper = new WebDriverHelper(Base.driver);
         this.test=test;
@@ -51,7 +53,7 @@ public class NykaaPillowPage {
     public void inputPillow(){
         try {
             helper.dowaitForElementToBeVisible(NykaaPillowLocators.searchBar, 10);
-            helper.doSendKeys(NykaaPillowLocators.searchBar,ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx", sheetOfPillowPage, 0, 0));
+            helper.doSendKeys(NykaaPillowLocators.searchBar,ExcelReader.readdata(System.getProperty(userDirectory)+testdataFolder, sheetOfPillowPage, 0, 0));
             test.log(Status.PASS, "pillow entered");
             LoggerHandler.info("pillow entered");
         } catch (Exception e) {
@@ -90,7 +92,7 @@ public class NykaaPillowPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaPillowLocators.pillowHeading, 10);
             String data = helper.doGetText(NykaaPillowLocators.pillowHeading);
-            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx", sheetOfPillowPage, 10, 0)));
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty(userDirectory)+testdataFolder, sheetOfPillowPage, 10, 0)));
             test.log(Status.INFO, "Text pillow verified");
             LoggerHandler.info("Text pillow verified");
         } catch (Exception e) {
@@ -224,7 +226,7 @@ public class NykaaPillowPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaPillowLocators.filtersApplied, 10);
             String data = helper.doGetText(NykaaPillowLocators.filtersApplied);
-            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx", sheetOfPillowPage, 11, 0)));
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty(userDirectory)+testdataFolder, sheetOfPillowPage, 11, 0)));
             test.log(Status.INFO, "Filter text verified");
             LoggerHandler.info("Filter text verified");
         }catch (Exception e) {
@@ -302,7 +304,7 @@ public class NykaaPillowPage {
             helper.doSwitchToIframe(NykaaPillowLocators.iframe);
             helper.dowaitForElementToBeVisible(NykaaPillowLocators.bag, 10);
             String data = helper.doGetText(NykaaPillowLocators.bag);
-            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx", sheetOfPillowPage, 9, 0)));
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty(userDirectory)+testdataFolder, sheetOfPillowPage, 9, 0)));
             Screenshot.captureFullScreenshot("Verify_Bag");
             Report.addScreenshotToReport("nykaa",test,Base.driver,"screenshot");
             LoggerHandler.info("Text bag verified");

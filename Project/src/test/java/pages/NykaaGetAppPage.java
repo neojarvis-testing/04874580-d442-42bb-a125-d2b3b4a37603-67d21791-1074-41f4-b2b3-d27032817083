@@ -15,6 +15,8 @@ public class NykaaGetAppPage {
      WebDriverHelper helper;
      ExtentTest test;
      static final String sheetOfGetApp = "Sheet1";
+     static final String userDirectory="user.dir";
+     static final String testdataFolder="/testdata/GetAppData.xlsx";
     public NykaaGetAppPage(ExtentTest test) {
         helper = new WebDriverHelper(Base.driver);
         this.test = test;
@@ -51,7 +53,7 @@ public class NykaaGetAppPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaGetAppPageLocators.mainHeading, 10);
             String mainHeading = helper.doGetText(NykaaGetAppPageLocators.mainHeading);
-            Assert.assertTrue(mainHeading.contains(ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", sheetOfGetApp, 2, 1)));
+            Assert.assertTrue(mainHeading.contains(ExcelReader.readdata(System.getProperty(userDirectory) + userDirectory, sheetOfGetApp, 2, 1)));
             test.log(Status.PASS, "Verified 'Beauty to go'");
             LoggerHandler.info("Verified 'Beauty to go'");
         } catch (AssertionError e) {
@@ -73,7 +75,7 @@ public class NykaaGetAppPage {
             helper.dowaitForElementToBeVisible(NykaaGetAppPageLocators.mobileInputField, 5);
             helper.doClick(NykaaGetAppPageLocators.mobileInputField);
             helper.doSendKeys(NykaaGetAppPageLocators.mobileInputField,
-                    ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", sheetOfGetApp, 0, 0));
+                    ExcelReader.readdata(System.getProperty(userDirectory) + userDirectory, sheetOfGetApp, 0, 0));
             helper.doEnterAction(NykaaGetAppPageLocators.mobileInputField);
             test.log(Status.PASS, "Entered mobile number.");
             LoggerHandler.info("Entered mobile number.");
@@ -115,7 +117,7 @@ public class NykaaGetAppPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaGetAppPageLocators.termsConditionsHeading, 5);
             String tCHeading = helper.doGetText(NykaaGetAppPageLocators.termsConditionsHeading);
-            Assert.assertEquals(tCHeading, ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", sheetOfGetApp, 3, 1));
+            Assert.assertEquals(tCHeading, ExcelReader.readdata(System.getProperty(userDirectory) + userDirectory, sheetOfGetApp, 3, 1));
             test.log(Status.PASS, "Verified 'Terms & Conditions'");
             LoggerHandler.info("Verified 'Terms & Conditions'");
         } catch (AssertionError e) {
@@ -154,7 +156,7 @@ public class NykaaGetAppPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaGetAppPageLocators.deliveryProcessQues, 5);
             String deliveryQues = helper.doGetText(NykaaGetAppPageLocators.deliveryProcessQues);
-            Assert.assertTrue(deliveryQues.contains(ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", sheetOfGetApp, 4, 1)));
+            Assert.assertTrue(deliveryQues.contains(ExcelReader.readdata(System.getProperty(userDirectory) + userDirectory, sheetOfGetApp, 4, 1)));
             test.log(Status.PASS, "Verified 'How does the delivery process work?'");
             LoggerHandler.info("Verified 'How does the delivery process work?'");
         } catch (AssertionError e) {
@@ -194,7 +196,7 @@ public class NykaaGetAppPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaGetAppPageLocators.privacyPolicyHeading, 5);
             String deliveryQues = helper.doGetText(NykaaGetAppPageLocators.privacyPolicyHeading);
-            Assert.assertTrue(deliveryQues.contains(ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", sheetOfGetApp, 5, 1)));
+            Assert.assertTrue(deliveryQues.contains(ExcelReader.readdata(System.getProperty(userDirectory) + userDirectory, sheetOfGetApp, 5, 1)));
             test.log(Status.PASS, "Verified 'Privacy Policy'");
             LoggerHandler.info("Verified 'Privacy Policy'");
         } catch (AssertionError e) {

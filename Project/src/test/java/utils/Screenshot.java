@@ -11,6 +11,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import com.google.common.io.Files;
 public class Screenshot extends Base {
     static final String dateFormat="yyyy.MM.dd.HH.mm.ss";
+    static final String screenShotFolder="/screenshots";
+    static final String userDirectory="user.dir";
  
     /*Method Name: captureFullScreenshot
       Author Name:  Group 07
@@ -24,7 +26,7 @@ public class Screenshot extends Base {
         String name = filename + timestamp + ".png";
         TakesScreenshot ts = (TakesScreenshot) driver;
         File file = ts.getScreenshotAs(OutputType.FILE);
-        File screenshotsDir = new File(System.getProperty("user.dir") + "/screenshots");
+        File screenshotsDir = new File(System.getProperty(userDirectory) + screenShotFolder);
         if (!screenshotsDir.exists()) {
             screenshotsDir.mkdirs();
         }
@@ -52,7 +54,7 @@ public class Screenshot extends Base {
         js.executeScript("arguments[0].style.border='3px solid red'", element);
         TakesScreenshot ts = (TakesScreenshot) driver;
         File file = ts.getScreenshotAs(OutputType.FILE);
-        File screenshotsDir = new File(System.getProperty("user.dir") + "/screenshots");
+        File screenshotsDir = new File(System.getProperty(userDirectory) + screenShotFolder);
         if (!screenshotsDir.exists()) {
             screenshotsDir.mkdirs();
         }
@@ -79,7 +81,7 @@ public class Screenshot extends Base {
         String timestamp = new SimpleDateFormat(dateFormat).format(new Date());
         String name = filename + timestamp + ".png";
         File file = element.getScreenshotAs(OutputType.FILE);
-        File screenshotsDir = new File(System.getProperty("user.dir") + "/screenshots");
+        File screenshotsDir = new File(System.getProperty(userDirectory) + screenShotFolder);
         if (!screenshotsDir.exists()) {
             screenshotsDir.mkdirs();
         }

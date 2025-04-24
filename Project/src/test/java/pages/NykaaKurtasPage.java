@@ -17,6 +17,8 @@ public class NykaaKurtasPage {
     WebDriverHelper helper;
     ExtentTest test;
     static final String sheetOfKurtaPage = "Sheet1";
+    static final String userDirectory="user.dir";
+    static final String testdataFolder="/testdata/SearchData.xlsx";
     public NykaaKurtasPage(ExtentTest test){
         helper = new WebDriverHelper(Base.driver);
         this.test=test;
@@ -50,7 +52,7 @@ public class NykaaKurtasPage {
     public void inputKurtas(){
         try {
             helper.dowaitForElementToBeVisible(NykaaPillowLocators.searchBar, 10);
-            helper.doSendKeys(NykaaPillowLocators.searchBar,ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx", sheetOfKurtaPage, 2, 0));
+            helper.doSendKeys(NykaaPillowLocators.searchBar,ExcelReader.readdata(System.getProperty(userDirectory)+testdataFolder, sheetOfKurtaPage, 2, 0));
             test.log(Status.PASS, "Value Entered");
             LoggerHandler.info("Value Entered");
         } catch (Exception e) {
@@ -87,7 +89,7 @@ public class NykaaKurtasPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.verifyKurtas, 10);
             String data = helper.doGetText(NykaaKurtasLocators.verifyKurtas);
-            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx",sheetOfKurtaPage,4,0)));
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty(userDirectory)+testdataFolder,sheetOfKurtaPage,4,0)));
             test.log(Status.INFO, "Kurta verified");
             LoggerHandler.info("Kurta verified");
         } catch (Exception e) {
@@ -125,7 +127,7 @@ public class NykaaKurtasPage {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.bestSeller, 10);
             helper.doClick(NykaaKurtasLocators.bestSeller);
             String data = helper.doGetText(NykaaKurtasLocators.sortBy);
-            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx",sheetOfKurtaPage,14,0)));
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty(userDirectory)+testdataFolder,sheetOfKurtaPage,14,0)));
             test.log(Status.INFO, "Clicked on Bestseller");
             LoggerHandler.info("Clicked on Bestseller");
         } catch (Exception e) {
@@ -184,7 +186,7 @@ public class NykaaKurtasPage {
             Thread.sleep(3000);
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.verifySizeGuide, 10);
             String data = helper.doGetText(NykaaKurtasLocators.verifySizeGuide);
-            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx",sheetOfKurtaPage,5,0)));
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty(userDirectory)+testdataFolder,sheetOfKurtaPage,5,0)));
             test.log(Status.PASS, "Verification of size guide is done");
             LoggerHandler.info("Verification of size guide is done");    
         } catch (InterruptedException e) {
@@ -241,7 +243,7 @@ public class NykaaKurtasPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.allReviews, 10);
             String data = helper.doGetText(NykaaKurtasLocators.allReviews);
-            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx",sheetOfKurtaPage,6,0)));
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty(userDirectory)+testdataFolder,sheetOfKurtaPage,6,0)));
             test.log(Status.INFO, "Verification of all reviews is done");
             LoggerHandler.info("Verification of all reviews is done");
         } catch (Exception e) {
@@ -261,7 +263,7 @@ public class NykaaKurtasPage {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.helpful, 10);
             helper.doClick(NykaaKurtasLocators.helpful);
             String data = helper.doGetText(NykaaKurtasLocators.helpful);
-            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx",sheetOfKurtaPage,15,0)));
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty(userDirectory)+testdataFolder,sheetOfKurtaPage,15,0)));
             test.log(Status.PASS, "Clicked on helpful");
             LoggerHandler.info("Clicked on helpful");
         } catch (Exception e) {
@@ -298,7 +300,7 @@ public class NykaaKurtasPage {
         try {
 
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.numberInput, 10);
-            helper.doSendKeys(NykaaKurtasLocators.numberInput,ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx", sheetOfKurtaPage, 3, 0));
+            helper.doSendKeys(NykaaKurtasLocators.numberInput,ExcelReader.readdata(System.getProperty(userDirectory)+testdataFolder, sheetOfKurtaPage, 3, 0));
             LoggerHandler.info("Mobile number entered");
             test.log(Status.PASS, "Mobile number entered");
         } catch (Exception e) {
