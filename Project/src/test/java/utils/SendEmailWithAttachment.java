@@ -1,6 +1,8 @@
 package utils;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 import jakarta.activation.DataHandler;
@@ -20,22 +22,38 @@ public class SendEmailWithAttachment {
 	final static String projectPath = System.getProperty("user.dir");
 	final static String relativePath = "reports/NYKAA_Report.html";
 	final static String fullPath = projectPath + File.separator + relativePath;
+	public static FileInputStream configfile;
+	public static Properties prop;
 
 	/*
 	 * a. Method Name:sendEmailWithAttachment
 	 * b. Author:Likitha
-	 * c. Description:This method sends email with file attachment to the specified email address	
-	 * 					And also verifies whether email sent and the required file path is found
+	 * c. Description:This method sends email with file attachment to the specified
+	 * email address
+	 * And also verifies whether email sent and the required file path is found
 	 * d. Parameters:
-	 * 		-toEmail : The receiver's email
-	 * 		-fromEmail: The sender's email
-	 * 		-password: appPassword
-	 * 		-subject: subject to send email
-	 * 		-body: The body of email
+	 * -toEmail : The receiver's email
+	 * -fromEmail: The sender's email
+	 * -password: appPassword
+	 * -subject: subject to send email
+	 * -body: The body of email
 	 * e. return type: void
 	 */
-	public static void sendEmailWithAttachment(String toEmail, String fromEmail, String password, String subject,
+	public static void sendEmailWithAttachment(String toEmail, String fromEmail, String subject,
 			String body) throws IOException {
+		String propertiesPath = System.getProperty("user.dir") + "/config/config.properties";
+		try {
+			configfile = new FileInputStream(propertiesPath);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		prop = new Properties();
+		try {
+			prop.load(configfile);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		String password = prop.getProperty("password");
 		File file = new File(fullPath);
 		if (!file.exists()) {
 			System.out.println("not found" + file.getAbsolutePath());
