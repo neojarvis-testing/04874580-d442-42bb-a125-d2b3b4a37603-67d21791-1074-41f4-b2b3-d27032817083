@@ -12,11 +12,11 @@ import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class NykaaGetAppPage {
-     WebDriverHelper helper;
-     ExtentTest test;
-     static final String sheetOfGetApp = "Sheet1";
-     static final String userDirectory="user.dir";
-     static final String testdataFolder="/testdata/GetAppData.xlsx";
+    WebDriverHelper helper;
+    ExtentTest test;
+    static final String sheetOfGetApp = "Sheet1";
+    static final String userDirectory="user.dir";
+    static final String testdataFolder="/testdata/GetAppData.xlsx";
     public NykaaGetAppPage(ExtentTest test) {
         helper = new WebDriverHelper(Base.driver);
         this.test = test;

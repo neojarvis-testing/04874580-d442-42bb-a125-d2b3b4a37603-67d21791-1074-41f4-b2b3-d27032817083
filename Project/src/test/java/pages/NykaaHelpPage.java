@@ -14,11 +14,11 @@ import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class NykaaHelpPage {
-     WebDriverHelper helper;
-     ExtentTest test;
-     static final String sheetOfHelp = "Likitha";
-     static final String userDirectory="user.dir";
-     static final String testdataFolder="/testdata/TonerExcel.xlsx";
+    WebDriverHelper helper;
+    ExtentTest test;
+    static final String sheetOfHelp = "Likitha";
+    static final String userDirectory="user.dir";
+    static final String testdataFolder="/testdata/TonerExcel.xlsx";
     public NykaaHelpPage(ExtentTest test) {
         helper = new WebDriverHelper(Base.driver);
         this.test = test;
