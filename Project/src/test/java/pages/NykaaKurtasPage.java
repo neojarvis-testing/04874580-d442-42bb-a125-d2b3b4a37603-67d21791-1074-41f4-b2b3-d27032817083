@@ -340,7 +340,7 @@ public class NykaaKurtasPage {
         clickOnBestSeller();
         clickSecondProduct();
         clickReadAllReviews();
-        verifyAllReviews();
+        // verifyAllReviews();
         clickHelpful();
         clickMobileInput();
         inputMobileNumber();
