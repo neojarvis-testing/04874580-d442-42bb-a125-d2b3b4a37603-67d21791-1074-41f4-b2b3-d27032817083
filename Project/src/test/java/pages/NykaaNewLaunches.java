@@ -16,6 +16,7 @@ import utils.WebDriverHelper;
 public class NykaaNewLaunches {
     WebDriverHelper helper;
     ExtentTest test;
+    static final String sheetOfNewLaunches = "Sheet1";
     public NykaaNewLaunches(ExtentTest test){
         helper = new WebDriverHelper(Base.driver);
         this.test=test;
@@ -67,7 +68,7 @@ public class NykaaNewLaunches {
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.shopNewLaunches, 10);
             String data = helper.doGetText(NykaaNewLaunchesLocators.shopNewLaunches);
-            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx","Sheet1",7,0)));
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx",sheetOfNewLaunches,7,0)));
             test.log(Status.INFO,"New launches verified");
             LoggerHandler.info("New launches verified");
         }catch (Exception e) {
@@ -105,7 +106,7 @@ public class NykaaNewLaunches {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.faceWash, 10);
             helper.doClickandswitch(NykaaNewLaunchesLocators.faceWash);
             String data= helper.doGetText(NykaaNewLaunchesLocators.natural);
-            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx","Sheet1",12,0)));
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx",sheetOfNewLaunches,12,0)));
             test.log(Status.INFO,"clicked on facewash");
             LoggerHandler.info("clicked on facewash");
         } catch (Exception e) {
@@ -125,7 +126,7 @@ public class NykaaNewLaunches {
             Base.driver.navigate().refresh();
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.facewashHeading, 10);
             String data = helper.doGetText(NykaaNewLaunchesLocators.facewashHeading);
-            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx","Sheet1",8,0)));
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx",sheetOfNewLaunches,8,0)));
             test.log(Status.PASS,"Face wash verified");
             LoggerHandler.info("Face wash verified");
         } catch (Exception e) {
@@ -163,7 +164,7 @@ public class NykaaNewLaunches {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.priceRange, 10);
             helper.doClick(NykaaNewLaunchesLocators.priceRange);
             String data= helper.doGetText(NykaaNewLaunchesLocators.price);
-            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx","Sheet1",13,0)));
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx",sheetOfNewLaunches,13,0)));
             test.log(Status.PASS,"clicked on Price range");
             LoggerHandler.info("clicked on Price range");
         } catch (Exception e) {
@@ -217,7 +218,7 @@ public class NykaaNewLaunches {
     public void inputPinCode(){
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.delivery, 10);
-            helper.doSendKeys(NykaaNewLaunchesLocators.delivery,ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx", "Sheet1", 1, 0));
+            helper.doSendKeys(NykaaNewLaunchesLocators.delivery,ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx", sheetOfNewLaunches, 1, 0));
             test.log(Status.PASS,"Pincode entered");
             LoggerHandler.info("Pincode entered");
         } catch (Exception e) {
@@ -292,7 +293,7 @@ public class NykaaNewLaunches {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.bag, 10);
             String data = helper.doGetText(NykaaNewLaunchesLocators.bag);
             System.out.println(data);
-            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx", "Sheet1", 9, 0)));
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx", sheetOfNewLaunches, 9, 0)));
             Screenshot.captureFullScreenshot("NykaaNewLaunches_Screenshot");
             LoggerHandler.info("Bag verified");
             test.log(Status.INFO, "Bag verified");
