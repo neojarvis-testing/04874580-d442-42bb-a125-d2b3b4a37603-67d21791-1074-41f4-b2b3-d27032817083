@@ -64,7 +64,7 @@ public class NykaaCategoriesPage {
     }
 
     // A. Method Name: verifyKajal
-    // B. Author Name: Tanu Shree
+    // B. Author Name: Tanu Shree Das
     // C. Description: This method retrieves and verifies that the text contains 'Kajal' from the UI.
     // D. Parameters: None
     // E. Return Type: void
@@ -81,7 +81,7 @@ public class NykaaCategoriesPage {
     }
 
     // A. Method Name: clickOnPencil
-    // B. Author Name: Tanu Shree
+    // B. Author Name: Tanu Shree Das
     // C. Description: This method waits for the formulation element to be visible clicks on it, and then clicks on the Pencil element.
     // D. Parameters: None
     // E. Return Type: void
@@ -99,7 +99,7 @@ public class NykaaCategoriesPage {
     }
 
     // A. Method Name: hoverFragrance
-    // B. Author Name: Tanu Shree
+    // B. Author Name: Tanu Shree Das
     // C. Description: This method scrolls up by a certain pixel value, waits for a brief moment, and hovers over the Fragrance element.
     // D. Parameters: None
     // E. Return Type: void
@@ -117,7 +117,7 @@ public class NykaaCategoriesPage {
     }
 
     // A. Method Name: clickNewLaunches
-    // B. Author Name: Tanu Shree
+    // B. Author Name: Tanu Shree Das
     // C. Description: This method waits for the New Launches element to be visible, clicks on it, and switches the tab.
     // D. Parameters: None
     // E. Return Type: void
@@ -134,7 +134,7 @@ public class NykaaCategoriesPage {
     }
 
     // A. Method Name: clickFirstProduct
-    // B. Author Name: Tanu Shree
+    // B. Author Name: Tanu Shree Das
     // C. Description: This method clicks on the first product and switches the tab.
     // D. Parameters: None
     // E. Return Type: void
@@ -150,7 +150,7 @@ public class NykaaCategoriesPage {
     }
 
     // A. Method Name: clickAddToBag
-    // B. Author Name: Tanu Shree
+    // B. Author Name: Tanu Shree Das
     // C. Description: This method waits for the first product element to be visible and then clicks on the "Add to Bag" button.
     // D. Parameters: None
     // E. Return Type: void
@@ -167,7 +167,7 @@ public class NykaaCategoriesPage {
     }
 
     // A. Method Name: clickHowtoUse
-    // B. Author Name: Tanu Shree
+    // B. Author Name: Tanu Shree Das
     // C. Description: This method scrolls down, waits for a few seconds, and then clicks on the "How to Use" section.
     // D. Parameters: None
     // E. Return Type: void
@@ -185,7 +185,7 @@ public class NykaaCategoriesPage {
     }
 
     // A. Method Name: verifyText
-    // B. Author Name: Tanu Shree
+    // B. Author Name: Tanu Shree Das
     // C. Description: This method retrieves and verifies that the "Customers also Viewed" text is present.
     // D. Parameters: None
     // E. Return Type: void
@@ -203,7 +203,7 @@ public class NykaaCategoriesPage {
     }
 
     // A. Method Name: execute
-    // B. Author Name: Tanu Shree
+    // B. Author Name: Tanu Shree Das
     // C. Description: This method calls all the defined functions sequentially to execute a full flow of actions.
     // D. Parameters: None
     // E. Return Type: void
