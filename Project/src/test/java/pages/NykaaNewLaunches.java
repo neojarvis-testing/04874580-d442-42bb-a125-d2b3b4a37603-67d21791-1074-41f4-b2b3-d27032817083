@@ -309,7 +309,7 @@ public class NykaaNewLaunches {
      * d.Parameters:None
      * e.Return Type:void
      */
-    public void NykaaNewLaunches_Case(){
+    public void testNykaaNewLaunchespage(){
         scrollDownToFooter();
         clickNewlaunches();
         verifyShopNewLaunches();

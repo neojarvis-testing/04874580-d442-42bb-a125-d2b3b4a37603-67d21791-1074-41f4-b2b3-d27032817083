@@ -16,7 +16,7 @@ import utils.Report;
 public class NykaaManPage {
     WebDriverHelper helper;
     ExtentTest test;
-
+    static final String sheetOfMan = "Sheet1";
     public NykaaManPage(ExtentTest test) {
         helper = new WebDriverHelper(Base.driver);
         this.test = test;
@@ -98,7 +98,7 @@ public class NykaaManPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaManPageLocators.wheyProteinText, 10);
             String mainHeading = helper.doGetText(NykaaManPageLocators.wheyProteinText);
-            Assert.assertTrue(mainHeading.contains(ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", "Sheet1", 6, 1)));
+            Assert.assertTrue(mainHeading.contains(ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", sheetOfMan, 6, 1)));
             test.log(Status.PASS, "Verified 'Whey Protein'");
             LoggerHandler.info("Verified 'Whey Protein'");
         } catch (AssertionError e) {
@@ -118,7 +118,7 @@ public class NykaaManPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaManPageLocators.three, 10);
             String mainHeading = helper.doGetText(NykaaManPageLocators.three);
-            Assert.assertTrue(mainHeading.contains(ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", "Sheet1", 7, 1)));
+            Assert.assertTrue(mainHeading.contains(ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", sheetOfMan, 7, 1)));
             test.log(Status.PASS, "Verified '3 pagination'");
             LoggerHandler.info("Verified '3 pagination'");
         } catch (AssertionError e) {
@@ -177,7 +177,7 @@ public class NykaaManPage {
             helper.dowaitForElementToBeVisible(NykaaManPageLocators.pincode, 5);
             helper.doClick(NykaaManPageLocators.pincode);
             helper.doSendKeys(NykaaManPageLocators.pincode,
-                    ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", "Sheet1", 2, 0));
+                    ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", sheetOfMan, 2, 0));
             test.log(Status.PASS, "Entered pincode.");
             LoggerHandler.info("Entered pincode.");
         } catch (AssertionError e) {
@@ -217,7 +217,7 @@ public class NykaaManPage {
         try {
             helper.dowaitForElementToBeVisible(NykaaManPageLocators.chennaiText, 10);
             String chennai = helper.doGetText(NykaaManPageLocators.chennaiText);
-            Assert.assertTrue(chennai.contains(ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", "Sheet1", 8, 1)));
+            Assert.assertTrue(chennai.contains(ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", sheetOfMan, 8, 1)));
             test.log(Status.PASS, "Verified Chennai Text");
             LoggerHandler.info("Verified Chennai Text");
         } catch (AssertionError e) {
@@ -259,8 +259,8 @@ public class NykaaManPage {
             helper.dowaitForElementToBeVisible(NykaaManPageLocators.signIn, 10);
             String signIn = helper.doGetText(NykaaManPageLocators.signIn);
             Screenshot.captureFullScreenshot("nykaa");
-            Report.addScreenshotToReport("nykaa",test,Base.driver,"nykaa");
-            Assert.assertTrue(signIn.contains(ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", "Sheet1", 9, 1)));
+            Report.addScreenshotToReport("nykaa",test,Base.driver,"nykaa sign in");
+            Assert.assertTrue(signIn.contains(ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/GetAppData.xlsx", sheetOfMan, 9, 1)));
             test.log(Status.PASS, "Verified Sign In Text");
             LoggerHandler.info("Verified Sign In Text");
         } catch (AssertionError e) {

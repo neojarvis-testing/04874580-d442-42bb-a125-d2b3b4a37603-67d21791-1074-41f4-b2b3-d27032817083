@@ -13,8 +13,9 @@ import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class NykaaLuxeHomePage {
-   public ExtentTest test;
-   public WebDriverHelper helper;
+   ExtentTest test;
+   WebDriverHelper helper;
+   static final String sheetOfLuxe = "Sheet1";
    public NykaaLuxeHomePage(ExtentTest test){
     helper=new WebDriverHelper(Base.driver);
     this.test=test;
@@ -59,7 +60,7 @@ public class NykaaLuxeHomePage {
    public void verifyLuxe(){
     try {
         String luxe=helper.doGetText(NykaaLuxeHomeLocators.nykaaLuxe);
-        Assert.assertTrue(luxe.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/Luxe.xlsx","Sheet1", 0, 0)));
+        Assert.assertTrue(luxe.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/Luxe.xlsx",sheetOfLuxe, 0, 0)));
         test.log(Status.PASS,"Verified the text  Luxe");
         LoggerHandler.info("Verified the text  Luxe");
     } catch (AssertionError e) {
@@ -154,7 +155,7 @@ public class NykaaLuxeHomePage {
    public void verifyUnisex(){
     try {
         String unisex=helper.doGetText(NykaaLuxeHomeLocators.unisexText);
-        Assert.assertTrue(unisex.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/Luxe.xlsx","Sheet1", 1, 0)));
+        Assert.assertTrue(unisex.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/Luxe.xlsx",sheetOfLuxe, 1, 0)));
         test.log(Status.PASS,"Verified the text Unisex");
         LoggerHandler.info("Verified the text Unisex");
     } catch (AssertionError e) {
@@ -217,8 +218,8 @@ public class NykaaLuxeHomePage {
         test.log(Status.PASS,"clicked on First Product");
         LoggerHandler.info("clicked on First Product");
     } catch (Exception e) {
-        test.log(Status.FAIL,"Cannot click on Daywear");
-        LoggerHandler.error("Cannot click on Daywear");
+        test.log(Status.FAIL,"Cannot click on First Product");
+        LoggerHandler.error("Cannot click on First Product");
        
     }
    }
@@ -281,8 +282,7 @@ public class NykaaLuxeHomePage {
         try {
             helper.doClick(NykaaLuxeHomeLocators.shaving);
             String shaving=helper.doGetText(NykaaLuxeHomeLocators.shavingandbeard);
-            System.out.println(shaving);
-            Assert.assertTrue(shaving.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/Luxe.xlsx","Sheet1", 2, 0)));
+            Assert.assertTrue(shaving.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/Luxe.xlsx",sheetOfLuxe, 2, 0)));
             Screenshot.captureFullScreenshot("Shaving and beard");
             test.log(Status.INFO,"Verified the text Shaving");
             LoggerHandler.info("Verified the text Shaving");

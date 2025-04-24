@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import com.google.common.io.Files;
 public class Screenshot extends Base {
+    static final String dateFormat="yyyy.MM.dd.HH.mm.ss";
  
     /*Method Name: captureFullScreenshot
       Author Name:  Group 07
@@ -19,7 +20,7 @@ public class Screenshot extends Base {
      */
  
     public static void captureFullScreenshot(String filename) {
-        String timestamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+        String timestamp = new SimpleDateFormat(dateFormat).format(new Date());
         String name = filename + timestamp + ".png";
         TakesScreenshot ts = (TakesScreenshot) driver;
         File file = ts.getScreenshotAs(OutputType.FILE);
@@ -44,7 +45,7 @@ public class Screenshot extends Base {
  
     public static void captureHighlightedElementScreenshot(By xpath, String filename) {
         WebElement element = driver.findElement(xpath);
-        String timestamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+        String timestamp = new SimpleDateFormat(dateFormat).format(new Date());
         String name = filename + timestamp + ".png";
         // To Highlight the element
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -75,7 +76,7 @@ public class Screenshot extends Base {
  
     public static void captureElementOnlyScreenshot(By xpath, String filename) {
         WebElement element = driver.findElement(xpath);
-        String timestamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+        String timestamp = new SimpleDateFormat(dateFormat).format(new Date());
         String name = filename + timestamp + ".png";
         File file = element.getScreenshotAs(OutputType.FILE);
         File screenshotsDir = new File(System.getProperty("user.dir") + "/screenshots");

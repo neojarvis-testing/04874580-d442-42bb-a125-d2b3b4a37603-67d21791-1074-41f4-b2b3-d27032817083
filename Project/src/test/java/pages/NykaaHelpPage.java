@@ -14,9 +14,9 @@ import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class NykaaHelpPage {
-    public WebDriverHelper helper;
-    public ExtentTest test;
-
+     WebDriverHelper helper;
+     ExtentTest test;
+     static final String sheetOfHelp = "Likitha";
     public NykaaHelpPage(ExtentTest test) {
         helper = new WebDriverHelper(Base.driver);
         this.test = test;
@@ -52,9 +52,7 @@ public class NykaaHelpPage {
      */
     public void verifyHelpPageTitle() {
         try {
-            // String title = Base.driver.getTitle();
             String pageTitle=helper.doGetText(NykaaHelpPageLocator.helpCentre);
-            // String url=Base.driver.getCurrentUrl();
             Assert.assertTrue(pageTitle.contains("Help Center"));
             test.log(Status.PASS, "Verified Help Page Title");
             LoggerHandler.info("Verified Help Page Title");
@@ -95,7 +93,7 @@ public class NykaaHelpPage {
     public void verifyOrderRelatedText() {
         try {
             String orderrelated = helper.doGetText(NykaaHelpPageLocator.orderRelatedText);
-            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 3, 0);
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", sheetOfHelp, 3, 0);
             Assert.assertTrue(orderrelated.contains(expected));
             test.log(Status.PASS, "Verified the text Order Related");
             LoggerHandler.info("Verified the text Order Related");
@@ -137,7 +135,7 @@ public class NykaaHelpPage {
     public void verifyOrderStatustext() {
         try {
             String orderStatus = helper.doGetText(NykaaHelpPageLocator.orderStatusText);
-            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 4, 0);
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", sheetOfHelp, 4, 0);
             Assert.assertTrue(orderStatus.contains(expected));
             test.log(Status.PASS, "Verified the text Order status");
             LoggerHandler.info("Verified the text Order status");
@@ -198,7 +196,7 @@ public class NykaaHelpPage {
     public void verifyCanIReturn() {
         try {
             String canIReturn = helper.doGetText(NykaaHelpPageLocator.canIReturn);
-            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 5, 0);
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", sheetOfHelp, 5, 0);
             Assert.assertTrue(canIReturn.contains(expected));
             test.log(Status.PASS, "Verified the text Can I return a part of my order");
             LoggerHandler.info("Verified the text Can I return a part of my order");
@@ -259,7 +257,7 @@ public class NykaaHelpPage {
     public void verifyCancelPolicy() {
         try {
             String cancellationPolicy = helper.doGetText(NykaaHelpPageLocator.cancelPolicyText);
-            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 6, 0);
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", sheetOfHelp, 6, 0);
             Assert.assertTrue(cancellationPolicy.contains(expected));
             test.log(Status.PASS, "Verified the text Cancellation Policy");
             LoggerHandler.info("Verified the text Cancellation Policy");
@@ -304,7 +302,7 @@ public class NykaaHelpPage {
     public void verifyCancelPolicyLink() {
         try {
             String link = Base.driver.getCurrentUrl();
-            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 7, 0);
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", sheetOfHelp, 7, 0);
             Assert.assertEquals(link, expected);
             test.log(Status.PASS, "Verified the text Cancellation Policy url");
             LoggerHandler.info("Verified the text Cancellation Policy url");
@@ -326,7 +324,6 @@ public class NykaaHelpPage {
         try {
             clickOnHelp();
             Thread.sleep(2000);
-            // verifyHelpPageTitle();
             Thread.sleep(2000);
             clickOnOrderRelated();
             Thread.sleep(2000);

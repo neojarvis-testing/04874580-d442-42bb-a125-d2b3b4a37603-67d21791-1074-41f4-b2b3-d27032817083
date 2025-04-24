@@ -166,7 +166,7 @@ public class NykaaKurtasPage {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.sizeGuide, 10);
             helper.doClick(NykaaKurtasLocators.sizeGuide);
             test.log(Status.PASS, "Clicked on Size guide");
-            LoggerHandler.info("Clicked on SearchBar");
+            LoggerHandler.info("Clicked on Size guide");
         } catch (InterruptedException e) {
             test.log(Status.FAIL, "Not clicked on size guide");
             LoggerHandler.error("Not clicked on size guide");
@@ -220,6 +220,7 @@ public class NykaaKurtasPage {
     */
     public void clickReadAllReviews(){
         try {
+            helper.doScrollBypixel(0, 600);
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.readAllReviews, 10);
             helper.doClick(NykaaKurtasLocators.readAllReviews);
             test.log(Status.PASS, "Clicked on Read all reviews");
@@ -331,7 +332,7 @@ public class NykaaKurtasPage {
     Parameter: None
     Return Type: void
     */
-    public void NykaaKurtas_Case(){
+    public void testNykaaKurtasPage(){
         clickSearchBar();
         inputKurtas();
         hitEnter();
@@ -340,7 +341,6 @@ public class NykaaKurtasPage {
         clickOnBestSeller();
         clickSecondProduct();
         clickReadAllReviews();
-        // verifyAllReviews();
         clickHelpful();
         clickMobileInput();
         inputMobileNumber();

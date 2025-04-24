@@ -14,8 +14,9 @@ import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class NykaaSearchLipstick {
-    public WebDriverHelper helper;
-    public ExtentTest test;
+     WebDriverHelper helper;
+     ExtentTest test;
+     static final String sheetOfLipstick = "Likitha";
     public NykaaSearchLipstick(ExtentTest test){
         helper=new WebDriverHelper(Base.driver);
         this.test=test;
@@ -29,7 +30,7 @@ public class NykaaSearchLipstick {
      */
     public void sendLipstickInsearchBar(){
         try {
-            helper.doSendKeys(NykaaSearchLipstickPageLocator.searchBar,ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/TonerExcel.xlsx", "Likitha", 1, 0));
+            helper.doSendKeys(NykaaSearchLipstickPageLocator.searchBar,ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/TonerExcel.xlsx", sheetOfLipstick, 1, 0));
              test.log(Status.PASS,"Entered liquid lipstick in search bar");
             LoggerHandler.info("Entered liquid lipstick in search bar");
         } catch (Exception e) {
@@ -46,8 +47,6 @@ public class NykaaSearchLipstick {
      */
     public void clickOnLiquidLipstickSuggestion(){
         try {
-            // helper.dowaitForElementToBeVisible(NykaaSearchLipstickPageLocator.lipstickSuggestion, 5);
-            // helper.doClick(NykaaSearchLipstickPageLocator.lipstickSuggestion);
             helper.doEnterAction(NykaaSearchLipstickPageLocator.searchBar);
             test.log(Status.PASS,"Performed enter action succesfully");
             LoggerHandler.info("Performed enter action succesfully");
@@ -97,7 +96,7 @@ public class NykaaSearchLipstick {
     public void verifySelectAShade(){
         try {
             String selectShade=helper.doGetText(NykaaSearchLipstickPageLocator.selectShade);
-            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 8, 0);
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", sheetOfLipstick, 8, 0);
             Assert.assertTrue(selectShade.contains(expected));
             test.log(Status.PASS,"Verified Select A Shade");
             LoggerHandler.info("Verified Select A Shade");
@@ -210,7 +209,7 @@ public class NykaaSearchLipstick {
     public void verifyBrowseTopics(){
         try {
             String browseTopics=helper.doGetText(NykaaSearchLipstickPageLocator.browseTopics);
-            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 9, 0);
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", sheetOfLipstick, 9, 0);
             Assert.assertTrue(browseTopics.contains(expected));
             test.log(Status.PASS, "Verified Browse Topics text successfully");
             LoggerHandler.info("Verified Browse Topics successfully");
@@ -271,10 +270,8 @@ public class NykaaSearchLipstick {
         try {
             helper.dowaitForElementToBeVisible(NykaaSearchLipstickPageLocator.addItems, 5);
             helper.doClick(NykaaSearchLipstickPageLocator.addItems);
-            test.log(Status.PASS,"clicked on My Wishlist");
-            LoggerHandler.info("clicked on My Wishlist");
-            // Screenshot.captureFullScreenshot("Nykaa Account Screenshot");
-            // Report.attachScreenshotToReport(test,Base.driver,"Screenshot");
+            test.log(Status.PASS,"clicked on AddItems");
+            LoggerHandler.info("clicked on AddItems");
         } catch (Exception e) {
             test.log(Status.FAIL,"Failed to click on How do I add items to my wishlist.");
             LoggerHandler.info("Failed to click on How do I add items to my wishlist.");
@@ -290,7 +287,7 @@ public class NykaaSearchLipstick {
     public void verifyWasHelpful(){
         try {
             String wasHelpful=helper.doGetText(NykaaSearchLipstickPageLocator.wasHelpful);
-            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 10, 0);
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", sheetOfLipstick, 10, 0);
             Assert.assertTrue(wasHelpful.contains(expected));
             test.log(Status.PASS,"Verified Was this helpful");
             LoggerHandler.info("Verified Was this helpful");

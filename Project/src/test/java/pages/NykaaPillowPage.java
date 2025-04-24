@@ -16,7 +16,7 @@ import utils.WebDriverHelper;
 public class NykaaPillowPage {
     WebDriverHelper helper;
     ExtentTest test;
-    static final String sheetOfPillowPage = "Sheet1";
+    static final String sheetOfPillowPage = "Sheet1"; 
     public NykaaPillowPage(ExtentTest test){
         helper = new WebDriverHelper(Base.driver);
         this.test=test;
@@ -302,7 +302,6 @@ public class NykaaPillowPage {
             helper.doSwitchToIframe(NykaaPillowLocators.iframe);
             helper.dowaitForElementToBeVisible(NykaaPillowLocators.bag, 10);
             String data = helper.doGetText(NykaaPillowLocators.bag);
-            System.out.println(data);
             Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx", sheetOfPillowPage, 9, 0)));
             Screenshot.captureFullScreenshot("Verify_Bag");
             Report.addScreenshotToReport("nykaa",test,Base.driver,"screenshot");
@@ -321,7 +320,7 @@ public class NykaaPillowPage {
     * D. Parameter: None
     * E. Return type: void
     */
-    public void NykaaSearchForPillow_Case(){
+    public void testnykaaPillowpage(){
         clickSearchBar();
         inputPillow();
         hitEnter();

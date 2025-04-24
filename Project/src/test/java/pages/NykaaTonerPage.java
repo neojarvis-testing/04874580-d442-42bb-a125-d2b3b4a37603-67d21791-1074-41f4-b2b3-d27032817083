@@ -12,9 +12,9 @@ import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class NykaaTonerPage {
-    public WebDriverHelper helper;
-    public ExtentTest test;
-
+     WebDriverHelper helper;
+     ExtentTest test;
+     static final String sheetOfToner = "Likitha";
     public NykaaTonerPage(ExtentTest test) {
         helper = new WebDriverHelper(Base.driver);
         this.test = test;
@@ -34,7 +34,7 @@ public class NykaaTonerPage {
     public void sendTonerInSearchBar() {
         try {
             helper.doSendKeys(TonerPageLocator.searchBar, ExcelReader
-                    .readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 0, 0));
+                    .readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", sheetOfToner, 0, 0));
             test.log(Status.PASS, "Toner Entered in serach Bar.");
             LoggerHandler.info("Toner Entered in search Bar");
         } catch (Exception e) {
@@ -78,9 +78,8 @@ public class NykaaTonerPage {
     public void verifyToner() {
         try {
             String toner = helper.doGetText(TonerPageLocator.toner);
-            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 0, 1);
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", sheetOfToner, 0, 1);
             Assert.assertTrue(toner.contains(expected));
-            System.out.println(toner);
             test.log(Status.PASS, "Verified toner text succesfully");
             LoggerHandler.info("Verified toner text sucessfully");
         } catch (Exception e) {
@@ -213,9 +212,8 @@ public class NykaaTonerPage {
     public void verifyInclusiveText() {
         try {
             String inclusiveTax = helper.doGetText(TonerPageLocator.inclusiveTax);
-            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 1, 1);
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", sheetOfToner, 1, 1);
             Assert.assertTrue(inclusiveTax.contains(expected));
-            System.out.println(inclusiveTax);
             test.log(Status.PASS, "Verified inclusive of all taxes text succesfully");
             LoggerHandler.info("Verified inclusive of all taxes text sucessfully");
         } catch (Exception e) {
@@ -258,9 +256,8 @@ public class NykaaTonerPage {
     public void verifyDescriptionText() {
         try {
             String description = helper.doGetText(TonerPageLocator.description);
-            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", "Likitha", 2, 1);
+            String expected=ExcelReader.readdata(System.getProperty("user.dir") + "/testdata/TonerExcel.xlsx", sheetOfToner, 2, 1);
             Assert.assertTrue(description.contains(expected));
-            System.out.println(description);
             test.log(Status.PASS, "Verified Description text succesfully");
             LoggerHandler.info("Verified Description text sucessfully");
         } catch (Exception e) {
@@ -285,8 +282,8 @@ public class NykaaTonerPage {
             test.log(Status.PASS, "Clicked on ingredients successfully");
             LoggerHandler.info("Clicked on ingredients successfully");
         } catch (Exception e) {
-            test.log(Status.FAIL, "Failed to ingredients to bag");
-            LoggerHandler.info("Failed to ingredients to bag");
+            test.log(Status.FAIL, "Cannot be Clicked on ingredients successfully");
+            LoggerHandler.info("Cannot be Clicked on ingredients successfully");
         }
     }
 
@@ -303,14 +300,14 @@ public class NykaaTonerPage {
         try {
             helper.dowaitForElementToBeVisible(TonerPageLocator.readMore, 10);
             helper.doClick(TonerPageLocator.readMore);
-            test.log(Status.PASS, "Clicked on ingredients successfully");
-            LoggerHandler.info("Clicked on ingredients successfully");
+            test.log(Status.PASS, "Clicked on ReadMore");
+            LoggerHandler.info("Clicked on ReadMore");
             Screenshot.captureFullScreenshot("Read More Ingredients");
             Report.addScreenshotToReport("Read More",test, Base.driver,"Read more screenshot");
 
         } catch (Exception e) {
-            test.log(Status.FAIL, "Failed to ingredients to bag");
-            LoggerHandler.info("Failed to ingredients to bag");
+            test.log(Status.FAIL, "Cannot be Clicked on ReadMore");
+            LoggerHandler.info("Cannot be Clicked on ReadMore");
         }
     }
 
@@ -328,13 +325,11 @@ public class NykaaTonerPage {
     public void testTonerPage() {
         sendTonerInSearchBar();
         performEnter();
-        // verifyToner();
         clickOnSortBy();
         selectNewArrivals();
         clickOnAvgCustomer();
         selectRating();
         clickOnFirstProduct();
-        // verifyInclusiveText();
         clickOnAddToBag();
         verifyDescriptionText();
         clickOnIngredients();

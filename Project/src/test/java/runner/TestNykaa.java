@@ -26,8 +26,8 @@ import utils.Report;
 import utils.SendEmailWithAttachment;
  
 public class TestNykaa extends Base{
-    public static ExtentReports report;
-    public static ExtentTest test;
+     ExtentReports reports;
+     ExtentTest test;
  
  
     /*Method Name: report
@@ -38,7 +38,7 @@ public class TestNykaa extends Base{
      */
     @BeforeClass
     public void report(){
-        report = Report.generateExtenteReports("NYKAA_Report");
+        reports= Report.generateExtenteReports("NYKAA Report");
     }
  
     /*Method Name: open
@@ -62,9 +62,9 @@ public class TestNykaa extends Base{
 
    @Test(enabled = true, priority = 1 )
     public void NykaaSearchForPillow_Test(){
-      test = report.createTest("NykaaSearchForPillow_Test");
+      test = reports.createTest("NykaaSearchForPillow Test");
       NykaaPillowPage nykaaSearchForPillow = new NykaaPillowPage(test);
-      nykaaSearchForPillow.NykaaSearchForPillow_Case();
+      nykaaSearchForPillow.testnykaaPillowpage();
     }
  
     /*Method Name: NykaaKurtas_Test
@@ -75,9 +75,9 @@ public class TestNykaa extends Base{
      */
     @Test(enabled = true, priority = 2)
     public void NykaaKurtas_Test(){
-      test = report.createTest("NykaaKurtas_Test");
+      test = reports.createTest("NykaaKurtas Test");
       NykaaKurtasPage nykaasKurtas = new NykaaKurtasPage(test);
-      nykaasKurtas.NykaaKurtas_Case();
+      nykaasKurtas.testNykaaKurtasPage();
     }
  
     /*Method Name: NykaaNewLaunches_Test
@@ -88,9 +88,9 @@ public class TestNykaa extends Base{
      */
     @Test(enabled = true, priority = 3)
     public void NykaaNewLaunches_Test(){
-      test = report.createTest("NykaaNewLaunches_Test");
+      test = reports.createTest("NykaaNewLaunches Test");
       NykaaNewLaunches nykaaNewLaunches = new NykaaNewLaunches(test);
-      nykaaNewLaunches.NykaaNewLaunches_Case();
+      nykaaNewLaunches.testNykaaNewLaunchespage();
     }
  
      /*Method Name: nykaaTonerTest
@@ -101,7 +101,7 @@ public class TestNykaa extends Base{
      */
      @Test(enabled = true, priority = 4)
     public void nykaaTonerTest(){
-      test=report.createTest("NykaaToner_Test");
+      test=reports.createTest("NykaaToner Test");
       NykaaTonerPage nykaaTonerPage=new NykaaTonerPage(test);
       nykaaTonerPage.testTonerPage();
     }
@@ -114,7 +114,7 @@ public class TestNykaa extends Base{
      */
     @Test(enabled = true, priority = 5)
     public void nykaaHelpTest(){
-      test=report.createTest("NykaaHelpPage");
+      test=reports.createTest("NykaaHelpPage");
       NykaaHelpPage helpPage=new NykaaHelpPage(test);
       helpPage.testHelpPage();
     }
@@ -127,7 +127,7 @@ public class TestNykaa extends Base{
      */
     @Test(enabled = true, priority = 6)
     public void nykaaLipsticksTest(){
-      test=report.createTest("NykaaLipsticks");
+      test=reports.createTest("NykaaLipsticks");
       NykaaSearchLipstick searchLipstick=new NykaaSearchLipstick(test);
       searchLipstick.testNykaaLipsticks();
     }
@@ -141,7 +141,7 @@ public class TestNykaa extends Base{
 
     @Test(enabled = true, priority = 1)
     public void nykaaaLuxe(){
-      test=report.createTest("Luxe");
+      test=reports.createTest("Luxe");
       NykaaLuxeHomePage nykaaLuxeHomePage=new NykaaLuxeHomePage(test);
       nykaaLuxeHomePage.nykaaLuxeCase();
     }
@@ -156,7 +156,7 @@ public class TestNykaa extends Base{
    @Test(enabled = true, priority = 7)
     public void NykaaGetAppTestCase()
     {
-      test = report.createTest("NykaaGetApp_TestCase");
+      test = reports.createTest("NykaaGetApp TestCase");
       NykaaGetAppPage getApp = new NykaaGetAppPage(test);
       getApp.execute();
     }
@@ -171,7 +171,7 @@ public class TestNykaa extends Base{
     @Test(enabled = true, priority = 8)
     public void NykaaCategoriesTestCase()
     {
-      test = report.createTest("NykaaCategories_TestCase");
+      test = reports.createTest("NykaaCategories TestCase");
       NykaaCategoriesPage categories = new NykaaCategoriesPage(test);
       categories.execute();
     }
@@ -187,7 +187,7 @@ public class TestNykaa extends Base{
     @Test(enabled = true, priority = 10)
     public void NykaaManPageTestCase()
     {
-      test = report.createTest("NykaaManPage_TestCase");
+      test = reports.createTest("NykaaManPage TestCase");
       NykaaManPage manPage = new NykaaManPage(test);
       manPage.execute();
     }
@@ -211,8 +211,8 @@ public class TestNykaa extends Base{
       Return Type: void
      */
     @AfterClass
-    public void flushReports() {
-        report.flush();
+    public void flushreports() {
+        reports.flush();
         try {
           SendEmailWithAttachment.sendEmailWithAttachment("likithareddy177@gmail.com","likithareddy177@gmail.com","Automation testing on Nykaa Website","please find attachment");
         } catch (IOException e) {
