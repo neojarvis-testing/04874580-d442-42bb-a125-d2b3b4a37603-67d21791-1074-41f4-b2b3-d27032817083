@@ -34,7 +34,7 @@ public class NykaaNewLaunches {
             helper.doScrollBypixel(0,9000);
             test.log(Status.PASS,"Scrolled down");
             LoggerHandler.info("Scrolled down");
-        } catch (Exception e) {
+        } catch (InterruptedException e) {
             test.log(Status.FAIL, "Unable to scroll");
             LoggerHandler.error("Unable to scroll");
         } 

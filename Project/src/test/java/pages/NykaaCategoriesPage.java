@@ -110,7 +110,7 @@ public class NykaaCategoriesPage {
             helper.doHoverOnElement(NykaaCategoriesPageLocators.fragrance);
             test.log(Status.PASS, "Hovered on Fragrance");
             LoggerHandler.info("Hovered on Fragrance");
-        } catch (Exception e) {
+        } catch (InterruptedException e) {
             test.log(Status.FAIL, e.getMessage());
             LoggerHandler.error(e.getMessage());
         }
@@ -178,7 +178,7 @@ public class NykaaCategoriesPage {
             helper.doClick(NykaaCategoriesPageLocators.howToUse);
             test.log(Status.PASS, "Clicked on how to use");
             LoggerHandler.info("Clicked on how to use");
-        } catch (Exception e) {
+        } catch (InterruptedException e) {
             test.log(Status.FAIL, e.getMessage());
             LoggerHandler.error(e.getMessage());
         }

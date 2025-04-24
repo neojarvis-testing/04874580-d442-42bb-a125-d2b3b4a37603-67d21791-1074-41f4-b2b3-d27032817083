@@ -325,7 +325,7 @@ public class NykaaSearchLipstick {
             verifyWasHelpful();
             Thread.sleep(2000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            LoggerHandler.error(e.getMessage());
         }
         
     }

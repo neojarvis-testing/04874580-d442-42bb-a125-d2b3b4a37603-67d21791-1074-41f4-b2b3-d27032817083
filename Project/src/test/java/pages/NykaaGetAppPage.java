@@ -227,8 +227,7 @@ public class NykaaGetAppPage {
                 test.log(Status.INFO, "Clicked and switched tab to Offer Zone");
                 LoggerHandler.info("Clicked and switched tab to Offer Zone");
             } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
+                LoggerHandler.error(e.getMessage());
             }
         } catch (Exception e) {
             test.log(Status.FAIL, e.getMessage());

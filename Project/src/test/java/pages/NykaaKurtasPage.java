@@ -167,7 +167,7 @@ public class NykaaKurtasPage {
             helper.doClick(NykaaKurtasLocators.sizeGuide);
             test.log(Status.PASS, "Clicked on Size guide");
             LoggerHandler.info("Clicked on SearchBar");
-        } catch (Exception e) {
+        } catch (InterruptedException e) {
             test.log(Status.FAIL, "Not clicked on size guide");
             LoggerHandler.error("Not clicked on size guide");
         }
@@ -187,7 +187,7 @@ public class NykaaKurtasPage {
             Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx",sheetOfKurtaPage,5,0)));
             test.log(Status.PASS, "Verification of size guide is done");
             LoggerHandler.info("Verification of size guide is done");    
-        } catch (Exception e) {
+        } catch (InterruptedException e) {
             test.log(Status.FAIL, "Verification of size guide is not done");
             LoggerHandler.error("Verification of size guide is not done");
         }
@@ -206,7 +206,7 @@ public class NykaaKurtasPage {
             helper.doClick(NykaaKurtasLocators.crossMark);
             test.log(Status.PASS, "Clicked on Cross bar");
             LoggerHandler.info("Clicked on Cross bar");
-        } catch (Exception e) {
+        } catch (InterruptedException e) {
             test.log(Status.FAIL, "Not clicked on cross bar");
             LoggerHandler.error("Not clicked on cross bar");
         }

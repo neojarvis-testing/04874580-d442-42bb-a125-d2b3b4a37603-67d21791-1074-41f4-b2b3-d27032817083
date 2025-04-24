@@ -42,7 +42,7 @@ public class NykaaManPage {
             helper.doClickandswitch(NykaaManPageLocators.nykaaMan);
             test.log(Status.PASS, "scroll down to footer");
             LoggerHandler.info("scroll down to footer");
-        } catch (Exception e) {
+        } catch (InterruptedException e) {
             test.log(Status.FAIL, e.getMessage());
             LoggerHandler.error(e.getMessage());
         }

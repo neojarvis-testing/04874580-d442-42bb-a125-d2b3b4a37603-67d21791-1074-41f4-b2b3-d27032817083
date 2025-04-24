@@ -31,7 +31,7 @@ public class Screenshot extends Base {
         try {
             Files.copy(file, target);
         } catch (IOException e) {
-            e.printStackTrace();
+            LoggerHandler.error(e.getMessage());
         }
     }
  
@@ -59,7 +59,7 @@ public class Screenshot extends Base {
         try {
             Files.copy(file, target);
         } catch (IOException e) {
-            e.printStackTrace();
+            LoggerHandler.error(e.getMessage());
         } finally {
             // To Remove the highlight
             js.executeScript("arguments[0].style.border=''", element);
@@ -86,7 +86,7 @@ public class Screenshot extends Base {
         try {
             Files.copy(file, target);
         } catch (IOException e) {
-            e.printStackTrace();
+            LoggerHandler.error(e.getMessage());
         }
     }
 }

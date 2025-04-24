@@ -40,10 +40,10 @@ public class ExcelReader {
              return value;
         } catch (FileNotFoundException e) {
  
-            e.printStackTrace();
+            LoggerHandler.error(e.getMessage());;
         } catch (IOException e) {
  
-            e.printStackTrace();
+            LoggerHandler.error(e.getMessage());
         }
         return null;
     }

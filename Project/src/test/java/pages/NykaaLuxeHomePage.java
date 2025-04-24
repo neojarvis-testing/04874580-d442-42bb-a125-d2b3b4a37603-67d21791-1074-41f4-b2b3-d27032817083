@@ -100,7 +100,7 @@ public class NykaaLuxeHomePage {
         test.log(Status.PASS,"Clicked on Customer Top Rated");
         LoggerHandler.info("Clicked on Customer Top Rated"); 
         Thread.sleep(2000);
-    } catch (Exception e) {
+    } catch (InterruptedException e) {
         test.log(Status.FAIL,"Cannot Click on Customer Top Rated");
         LoggerHandler.error("Cannot Clickon Customer Top Rated"); 
     }
@@ -119,7 +119,7 @@ public class NykaaLuxeHomePage {
         test.log(Status.PASS,"Clicked on Gender");
         LoggerHandler.info("Clicked on Gender"); 
         Thread.sleep(2000);
-    } catch (Exception e) {
+    } catch (InterruptedException e) {
         test.log(Status.FAIL,"Cannot click on Gender");
         LoggerHandler.error("Cannot click on Gender");
         
@@ -139,7 +139,7 @@ public class NykaaLuxeHomePage {
         test.log(Status.PASS,"Clicked on Unisex");
         LoggerHandler.info("Clicked on Unisex");
         Thread.sleep(2000);
-    } catch (Exception e) {
+    } catch (InterruptedException e) {
         test.log(Status.FAIL,"Cannot click on Unisex");
         LoggerHandler.error("Cannot click on Unisex");
     }
@@ -177,7 +177,7 @@ public class NykaaLuxeHomePage {
         Thread.sleep(2000);
         test.log(Status.INFO,"clicked on Occasion");
         LoggerHandler.info("clicked on Occasion");
-    } catch (Exception e) {
+    } catch (InterruptedException e) {
         test.log(Status.FAIL,"Cannot click on Occasion");
         LoggerHandler.error("Cannot click on Occasion");
     }
@@ -197,7 +197,7 @@ public class NykaaLuxeHomePage {
         Thread.sleep(2000);
         test.log(Status.PASS,"clicked on Day wear");
         LoggerHandler.info("clicked on Day wear");
-    } catch (Exception e) {
+    } catch (InterruptedException e) {
         test.log(Status.FAIL,"Cannot click on Daywear");
         LoggerHandler.error("Cannot click on Daywear");
     }
@@ -265,7 +265,7 @@ public class NykaaLuxeHomePage {
         helper.doClick(NykaaLuxeHomeLocators.gromming);
         test.log(Status.PASS,"clicked on Gromming Advice");
         LoggerHandler.info("clicked on Gromming Advice");
-    } catch (Exception e) {
+    } catch (InterruptedException e) {
         test.log(Status.FAIL,"Cannot click on Gromming advice");
         LoggerHandler.error("Cannot click on Gromming advice");
     }

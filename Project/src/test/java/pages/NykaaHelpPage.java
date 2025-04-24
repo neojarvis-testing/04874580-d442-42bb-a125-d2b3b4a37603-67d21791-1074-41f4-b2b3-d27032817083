@@ -353,7 +353,7 @@ public class NykaaHelpPage {
             Thread.sleep(3000);
 
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            LoggerHandler.error(e.getMessage());
         }
 
     }
