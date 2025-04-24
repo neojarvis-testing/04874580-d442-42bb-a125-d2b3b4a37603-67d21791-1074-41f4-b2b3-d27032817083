@@ -325,33 +325,20 @@ public class NykaaHelpPage {
     public void testHelpPage() {
         try {
             clickOnHelp();
-            Thread.sleep(2000);
-            Thread.sleep(2000);
             clickOnOrderRelated();
-            Thread.sleep(2000);
             verifyOrderRelatedText();
             clickOnOrderStatus();
-            Thread.sleep(2000);
             verifyOrderStatustext();
             navigateBackToOrderRelated();
-            Thread.sleep(2000);
             clickOnRefund();
-            Thread.sleep(2000);
             verifyCanIReturn();
             navigateBackToOrderRelated();
-            Thread.sleep(2000);
             clickOnCanceellationAndRefunds();
-            Thread.sleep(2000);
             clickOnCancelPolicy();
-            Thread.sleep(2000);
             verifyCancelPolicy();
-            Thread.sleep(3000);
             clickOncancellationLink();
-            Thread.sleep(3000);
             verifyCancelPolicyLink();
-            Thread.sleep(3000);
-
-        } catch (InterruptedException e) {
+        } catch (Exception e) {
             LoggerHandler.error(e.getMessage());
         }
 

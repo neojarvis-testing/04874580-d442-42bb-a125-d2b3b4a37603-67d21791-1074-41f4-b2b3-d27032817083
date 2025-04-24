@@ -75,7 +75,7 @@ public class NykaaGetAppPage {
             helper.dowaitForElementToBeVisible(NykaaGetAppPageLocators.mobileInputField, 5);
             helper.doClick(NykaaGetAppPageLocators.mobileInputField);
             helper.doSendKeys(NykaaGetAppPageLocators.mobileInputField,
-                    ExcelReader.readdata(System.getProperty(userDirectory) + userDirectory, sheetOfGetApp, 0, 0));
+            ExcelReader.readdata(System.getProperty(userDirectory) + userDirectory, sheetOfGetApp, 0, 0));
             helper.doEnterAction(NykaaGetAppPageLocators.mobileInputField);
             test.log(Status.PASS, "Entered mobile number.");
             LoggerHandler.info("Entered mobile number.");
@@ -217,17 +217,17 @@ public class NykaaGetAppPage {
         try {
             try {
                 helper.doScrollBypixel(0, 4000);
-                Thread.sleep(5000);
+               // Thread.sleep(5000);
                 helper.doScrollBypixel(0, 4000);
-                Thread.sleep(5000);
+               // Thread.sleep(5000);
                 helper.doScrollBypixel(0, 4000);
-                Thread.sleep(5000);
+                //// Thread.sleep(5000);
                 helper.doScrollBypixel(0, 4000);
-                Thread.sleep(5000);
+               // Thread.sleep(5000);
                 helper.doClickandswitch(NykaaGetAppPageLocators.offerZone);
                 test.log(Status.INFO, "Clicked and switched tab to Offer Zone");
                 LoggerHandler.info("Clicked and switched tab to Offer Zone");
-            } catch (InterruptedException e) {
+            } catch (Exception e) {
                 LoggerHandler.error(e.getMessage());
             }
         } catch (Exception e) {
@@ -247,8 +247,7 @@ public class NykaaGetAppPage {
     public void verifyURL() {
         try {
             String currentURL = Base.driver.getCurrentUrl();
-            Assert.assertEquals(currentURL,
-                    "https://www.nykaa.com/sp/offers-native/offers?utm_source=Desktop_web_footer");
+            Assert.assertEquals(currentURL,"https://www.nykaa.com/sp/offers-native/offers?utm_source=Desktop_web_footer");
             test.log(Status.PASS, "Verified 'current URL'");
             LoggerHandler.info("Verified 'current URL'");
             Screenshot.captureFullScreenshot("offerZone");

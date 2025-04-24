@@ -107,12 +107,12 @@ public class NykaaCategoriesPage {
     // E. Return Type: void
     public void hoverFragrance() {
         try {
-            Thread.sleep(3000);
+            // Thread.sleep(3000);
             helper.doScrollBypixel(0, -3000);
             helper.doHoverOnElement(NykaaCategoriesPageLocators.fragrance);
             test.log(Status.PASS, "Hovered on Fragrance");
             LoggerHandler.info("Hovered on Fragrance");
-        } catch (InterruptedException e) {
+        } catch (Exception e) {
             test.log(Status.FAIL, e.getMessage());
             LoggerHandler.error(e.getMessage());
         }
@@ -176,11 +176,11 @@ public class NykaaCategoriesPage {
     public void clickHowtoUse() {
         try {
             helper.doScrollBypixel(0, 4000);
-            Thread.sleep(3000);
+            // Thread.sleep(3000);
             helper.doClick(NykaaCategoriesPageLocators.howToUse);
             test.log(Status.PASS, "Clicked on how to use");
             LoggerHandler.info("Clicked on how to use");
-        } catch (InterruptedException e) {
+        } catch (Exception e) {
             test.log(Status.FAIL, e.getMessage());
             LoggerHandler.error(e.getMessage());
         }

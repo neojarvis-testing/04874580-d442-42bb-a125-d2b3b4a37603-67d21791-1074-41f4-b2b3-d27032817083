@@ -234,8 +234,6 @@ public class NykaaSearchLipstick {
             helper.doClick(NykaaSearchLipstickPageLocator.nykaaAcc);
             test.log(Status.PASS,"clicked on nykaa account");
             LoggerHandler.info("clicked on nykaa account");
-            // Screenshot.captureFullScreenshot("Nykaa Account Screenshot");
-            // Report.attachScreenshotToReport(test,Base.driver,"Screenshot");
         }catch(Exception e){
             test.log(Status.FAIL,"Failed to click on nykaa account.");
             LoggerHandler.info("Failed to click on nykaa account.");
@@ -313,17 +311,12 @@ public class NykaaSearchLipstick {
             selectThirdOption();
             scrollToFooter();
             clickOnContactUs();
-            Thread.sleep(2000);
             verifyBrowseTopics();
             clickOnNykaaAccount();
-            Thread.sleep(2000);
             clickOnMyWishlist();
-            Thread.sleep(2000);
             clickAddItems();
-            Thread.sleep(2000);
             verifyWasHelpful();
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
+        } catch (Exception e) {
             LoggerHandler.error(e.getMessage());
         }
         

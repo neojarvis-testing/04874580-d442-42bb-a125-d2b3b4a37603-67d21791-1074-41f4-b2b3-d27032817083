@@ -31,11 +31,10 @@ public class NykaaNewLaunches {
      */
     public void scrollDownToFooter(){
         try {
-            Thread.sleep(2000);
             helper.doScrollBypixel(0,9000);
             test.log(Status.PASS,"Scrolled down");
             LoggerHandler.info("Scrolled down");
-        } catch (InterruptedException e) {
+        } catch (Exception e) {
             test.log(Status.FAIL, "Unable to scroll");
             LoggerHandler.error("Unable to scroll");
         } 

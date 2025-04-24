@@ -102,8 +102,8 @@ public class NykaaLuxeHomePage {
         helper.doClick(NykaaLuxeHomeLocators.customerRated);
         test.log(Status.PASS,"Clicked on Customer Top Rated");
         LoggerHandler.info("Clicked on Customer Top Rated"); 
-        Thread.sleep(2000);
-    } catch (InterruptedException e) {
+        
+    } catch (Exception e) {
         test.log(Status.FAIL,"Cannot Click on Customer Top Rated");
         LoggerHandler.error("Cannot Clickon Customer Top Rated"); 
     }
@@ -121,8 +121,8 @@ public class NykaaLuxeHomePage {
         helper.doClick(NykaaLuxeHomeLocators.gender);
         test.log(Status.PASS,"Clicked on Gender");
         LoggerHandler.info("Clicked on Gender"); 
-        Thread.sleep(2000);
-    } catch (InterruptedException e) {
+        
+    } catch (Exception e) {
         test.log(Status.FAIL,"Cannot click on Gender");
         LoggerHandler.error("Cannot click on Gender");
         
@@ -141,8 +141,7 @@ public class NykaaLuxeHomePage {
         helper.doClick(NykaaLuxeHomeLocators.unisex);
         test.log(Status.PASS,"Clicked on Unisex");
         LoggerHandler.info("Clicked on Unisex");
-        Thread.sleep(2000);
-    } catch (InterruptedException e) {
+    } catch (Exception e) {
         test.log(Status.FAIL,"Cannot click on Unisex");
         LoggerHandler.error("Cannot click on Unisex");
     }
@@ -177,10 +176,9 @@ public class NykaaLuxeHomePage {
         helper.doScrollBypixel(0, 300);
         helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.occasion, 10);
         helper.doClick(NykaaLuxeHomeLocators.occasion);
-        Thread.sleep(2000);
         test.log(Status.INFO,"clicked on Occasion");
         LoggerHandler.info("clicked on Occasion");
-    } catch (InterruptedException e) {
+    } catch (Exception e) {
         test.log(Status.FAIL,"Cannot click on Occasion");
         LoggerHandler.error("Cannot click on Occasion");
     }
@@ -197,10 +195,9 @@ public class NykaaLuxeHomePage {
         
         helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.daypuWear, 10);
         helper.doClick(NykaaLuxeHomeLocators.daypuWear);
-        Thread.sleep(2000);
         test.log(Status.PASS,"clicked on Day wear");
         LoggerHandler.info("clicked on Day wear");
-    } catch (InterruptedException e) {
+    } catch (Exception e) {
         test.log(Status.FAIL,"Cannot click on Daywear");
         LoggerHandler.error("Cannot click on Daywear");
     }
@@ -263,12 +260,12 @@ public class NykaaLuxeHomePage {
 	 */
    public void clickOnGroomingAdvice(){
     try {
-        Thread.sleep(1000);
+        //Thread.sleep(1000);
         helper.dowaitForElementToBeVisible(NykaaLuxeHomeLocators.gromming, 5);
         helper.doClick(NykaaLuxeHomeLocators.gromming);
         test.log(Status.PASS,"clicked on Gromming Advice");
         LoggerHandler.info("clicked on Gromming Advice");
-    } catch (InterruptedException e) {
+    } catch (Exception e) {
         test.log(Status.FAIL,"Cannot click on Gromming advice");
         LoggerHandler.error("Cannot click on Gromming advice");
     }

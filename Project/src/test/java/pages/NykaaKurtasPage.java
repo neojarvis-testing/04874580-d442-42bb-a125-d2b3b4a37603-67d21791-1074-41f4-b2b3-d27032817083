@@ -145,10 +145,10 @@ public class NykaaKurtasPage {
     public void clickSecondProduct(){
         try {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.secondProduct, 10);
-            helper.doJsCLick(NykaaKurtasLocators.secondProduct);
+            helper.doMouseClick(NykaaKurtasLocators.secondProduct);
             helper.switchWindow();
             String data = helper.doGetText(NykaaKurtasLocators.bestSeller);
-            Assert.assertTrue(data.contains("Bestseller"));
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+testdataFolder, sheetOfKurtaPage, 0, 16)));
             test.log(Status.INFO, "Clicked on Second Product");
             LoggerHandler.info("Clicked on Second Product");
         } catch (Exception e) {
@@ -165,12 +165,11 @@ public class NykaaKurtasPage {
     */
     public void clickSizeGuide(){
         try {
-            Thread.sleep(3000);
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.sizeGuide, 10);
             helper.doClick(NykaaKurtasLocators.sizeGuide);
             test.log(Status.PASS, "Clicked on Size guide");
             LoggerHandler.info("Clicked on Size guide");
-        } catch (InterruptedException e) {
+        } catch (Exception e) {
             test.log(Status.FAIL, "Not clicked on size guide");
             LoggerHandler.error("Not clicked on size guide");
         }
@@ -184,13 +183,12 @@ public class NykaaKurtasPage {
     */
     public void verifySizeGuideheading(){
         try {
-            Thread.sleep(3000);
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.verifySizeGuide, 10);
             String data = helper.doGetText(NykaaKurtasLocators.verifySizeGuide);
             Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty(userDirectory)+testdataFolder,sheetOfKurtaPage,5,0)));
             test.log(Status.PASS, "Verification of size guide is done");
             LoggerHandler.info("Verification of size guide is done");    
-        } catch (InterruptedException e) {
+        } catch (Exception e) {
             test.log(Status.FAIL, "Verification of size guide is not done");
             LoggerHandler.error("Verification of size guide is not done");
         }
@@ -204,12 +202,11 @@ public class NykaaKurtasPage {
     */
     public void clickCross(){
         try {
-            Thread.sleep(2000);
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.crossMark, 10);
             helper.doClick(NykaaKurtasLocators.crossMark);
             test.log(Status.PASS, "Clicked on Cross bar");
             LoggerHandler.info("Clicked on Cross bar");
-        } catch (InterruptedException e) {
+        } catch (Exception e) {
             test.log(Status.FAIL, "Not clicked on cross bar");
             LoggerHandler.error("Not clicked on cross bar");
         }
@@ -226,7 +223,7 @@ public class NykaaKurtasPage {
             helper.doScrollBypixel(0, 500);
             helper.doScrollBypixel(0, 500);
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.readAllReviews, 10);
-            helper.doClick(NykaaKurtasLocators.readAllReviews);
+            helper.doJsCLick(NykaaKurtasLocators.readAllReviews);
             test.log(Status.PASS, "Clicked on Read all reviews");
             LoggerHandler.info("Clicked on Read all reviews");
         } catch (Exception e) {
@@ -300,7 +297,6 @@ public class NykaaKurtasPage {
     */
     public void inputMobileNumber(){
         try {
-
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.numberInput, 10);
             helper.doSendKeys(NykaaKurtasLocators.numberInput,ExcelReader.readdata(System.getProperty(userDirectory)+testdataFolder, sheetOfKurtaPage, 3, 0));
             LoggerHandler.info("Mobile number entered");

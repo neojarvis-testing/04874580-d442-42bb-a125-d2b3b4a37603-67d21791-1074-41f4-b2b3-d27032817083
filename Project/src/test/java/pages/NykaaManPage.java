@@ -36,15 +36,12 @@ public class NykaaManPage {
         try {
             helper.doHoverOnElement(NykaaManPageLocators.healthandWellness);
             helper.doScrollBypixel(0, 4000);
-            Thread.sleep(3000);
             helper.doScrollBypixel(0, 4000);
-            Thread.sleep(3000);
             helper.doScrollBypixel(0, 4000);
-            Thread.sleep(3000);
             helper.doClickandswitch(NykaaManPageLocators.nykaaMan);
             test.log(Status.PASS, "scroll down to footer");
             LoggerHandler.info("scroll down to footer");
-        } catch (InterruptedException e) {
+        } catch (Exception e) {
             test.log(Status.FAIL, e.getMessage());
             LoggerHandler.error(e.getMessage());
         }
@@ -179,7 +176,7 @@ public class NykaaManPage {
             helper.dowaitForElementToBeVisible(NykaaManPageLocators.pincode, 5);
             helper.doClick(NykaaManPageLocators.pincode);
             helper.doSendKeys(NykaaManPageLocators.pincode,
-                    ExcelReader.readdata(System.getProperty(userDirectory) + testdataFolder, sheetOfMan, 2, 0));
+            ExcelReader.readdata(System.getProperty(userDirectory) + testdataFolder, sheetOfMan, 2, 0));
             test.log(Status.PASS, "Entered pincode.");
             LoggerHandler.info("Entered pincode.");
         } catch (AssertionError e) {
@@ -238,11 +235,10 @@ public class NykaaManPage {
     public void scrollToWriteReview() {
         try {
             helper.doScrollBypixel(0, 2000);
-            Thread.sleep(3000);
             helper.doClick(NykaaManPageLocators.writeReview);
             test.log(Status.PASS, "Clicked on write review");
             LoggerHandler.info("Clicked on write review");
-        } catch (AssertionError | InterruptedException e) {
+        } catch (AssertionError | Exception e) {
             test.log(Status.FAIL, e.getMessage());
             LoggerHandler.error(e.getMessage());
         }
