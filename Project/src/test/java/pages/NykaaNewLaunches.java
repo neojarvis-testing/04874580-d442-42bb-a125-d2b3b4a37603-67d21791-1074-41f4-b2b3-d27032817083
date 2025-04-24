@@ -16,13 +16,14 @@ import utils.WebDriverHelper;
 public class NykaaNewLaunches {
     WebDriverHelper helper;
     ExtentTest test;
+    static final String sheetOfNewLaunches = "Sheet1";
     public NykaaNewLaunches(ExtentTest test){
         helper = new WebDriverHelper(Base.driver);
         this.test=test;
     }
     /*
      * a.Method Name:scrollDownToFooter
-     * b.Author Name:Group 07
+     * b.Author Name:Rahul Savala
      * c.Description:This method scrolls down to the footer of the page using JavaScript.
      * d.Parameters:None
      * e.Return Type:void
@@ -40,7 +41,7 @@ public class NykaaNewLaunches {
     }
     /*
      * a.Method Name:clickNewlaunches
-     * b.Author Name:Group 07
+     * b.Author Name:Rahul Savala
      * c.Description:This method clicks on the Newlaunches element on the Nykaa website..
      * d.Parameters:None
      * e.Return Type:void
@@ -58,7 +59,7 @@ public class NykaaNewLaunches {
     }
     /*
      * a.Method Name:verifyShopNewLaunches
-     * b.Author Name:Group 07
+     * b.Author Name:Rahul Savala
      * c.Description:This method verifies if the text "Launches" is present on the Nykaa website.
      * d.Parameters:None
      * e.Return Type:void
@@ -67,7 +68,7 @@ public class NykaaNewLaunches {
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.shopNewLaunches, 10);
             String data = helper.doGetText(NykaaNewLaunchesLocators.shopNewLaunches);
-            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx","Sheet1",7,0)));
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx",sheetOfNewLaunches,7,0)));
             test.log(Status.INFO,"New launches verified");
             LoggerHandler.info("New launches verified");
         }catch (Exception e) {
@@ -77,7 +78,7 @@ public class NykaaNewLaunches {
     }
     /*
      * a.Method Name:hoverOnNatural
-     * b.Author Name:Group 07
+     * b.Author Name:Rahul Savala
      * c.Description:This method waits for the "natural" element to be visible and then hovers over it.
      * d.Parameters:None
      * e.Return Type:void
@@ -95,7 +96,7 @@ public class NykaaNewLaunches {
     }
     /*
      * a.Method Name:clickFaceWah
-     * b.Author Name:Group 07
+     * b.Author Name:Rahul Savala
      * c.Description:This method clicks on the FaceWash element on the Nykaa website..
      * d.Parameters:None
      * e.Return Type:void
@@ -105,7 +106,7 @@ public class NykaaNewLaunches {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.faceWash, 10);
             helper.doClickandswitch(NykaaNewLaunchesLocators.faceWash);
             String data= helper.doGetText(NykaaNewLaunchesLocators.natural);
-            Assert.assertTrue(data.contains("Natural"));
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx",sheetOfNewLaunches,12,0)));
             test.log(Status.INFO,"clicked on facewash");
             LoggerHandler.info("clicked on facewash");
         } catch (Exception e) {
@@ -115,7 +116,7 @@ public class NykaaNewLaunches {
     }
     /*
      * a.Method Name:verifyFaceWash
-     * b.Author Name:Group 07
+     * b.Author Name:Rahul Savala
      * c.Description:This method verifies if the text "Wash" is present on the Nykaa website.
      * d.Parameters:None
      * e.Return Type:void
@@ -125,7 +126,7 @@ public class NykaaNewLaunches {
             Base.driver.navigate().refresh();
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.facewashHeading, 10);
             String data = helper.doGetText(NykaaNewLaunchesLocators.facewashHeading);
-            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx","Sheet1",8,0)));
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx",sheetOfNewLaunches,8,0)));
             test.log(Status.PASS,"Face wash verified");
             LoggerHandler.info("Face wash verified");
         } catch (Exception e) {
@@ -135,7 +136,7 @@ public class NykaaNewLaunches {
     }
     /*
      * a.Method Name:clickPrices
-     * b.Author Name:Group 07
+     * b.Author Name:Rahul Savala
      * c.Description:This method clicks on the price element on the Nykaa website..
      * d.Parameters:None
      * e.Return Type:void
@@ -153,7 +154,7 @@ public class NykaaNewLaunches {
     }
     /*
      * a.Method Name:clickPriceRange
-     * b.Author Name:Group 07
+     * b.Author Name:Rahul Savala
      * c.Description:This method clicks on the priceRange element on the Nykaa website..
      * d.Parameters:None
      * e.Return Type:void
@@ -163,7 +164,7 @@ public class NykaaNewLaunches {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.priceRange, 10);
             helper.doClick(NykaaNewLaunchesLocators.priceRange);
             String data= helper.doGetText(NykaaNewLaunchesLocators.price);
-            Assert.assertTrue(data.contains("Price"));
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx",sheetOfNewLaunches,13,0)));
             test.log(Status.PASS,"clicked on Price range");
             LoggerHandler.info("clicked on Price range");
         } catch (Exception e) {
@@ -173,7 +174,7 @@ public class NykaaNewLaunches {
     }
     /*
      * a.Method Name:clickFirstProductLink
-     * b.Author Name:Group 07
+     * b.Author Name:Rahul Savala
      * c.Description:This method clicks on the FirstProductLink element on the Nykaa website..
      * d.Parameters:None
      * e.Return Type:void
@@ -191,7 +192,7 @@ public class NykaaNewLaunches {
     }
     /*
      * a.Method Name:clickPinCode
-     * b.Author Name:Group 07
+     * b.Author Name:Rahul Savala
      * c.Description:This method clicks on the Pincode element on the Nykaa website..
      * d.Parameters:None
      * e.Return Type:void
@@ -209,7 +210,7 @@ public class NykaaNewLaunches {
     }
     /*
      * a.Method Name:inputPinCode
-     * b.Author Name:Group 07
+     * b.Author Name:Rahul Savala
      * c.Description:This method clicks on the inputPincode element on the Nykaa website..
      * d.Parameters:None
      * e.Return Type:void
@@ -217,7 +218,7 @@ public class NykaaNewLaunches {
     public void inputPinCode(){
         try {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.delivery, 10);
-            helper.doSendKeys(NykaaNewLaunchesLocators.delivery,ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx", "Sheet1", 1, 0));
+            helper.doSendKeys(NykaaNewLaunchesLocators.delivery,ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx", sheetOfNewLaunches, 1, 0));
             test.log(Status.PASS,"Pincode entered");
             LoggerHandler.info("Pincode entered");
         } catch (Exception e) {
@@ -227,7 +228,7 @@ public class NykaaNewLaunches {
     }
     /*
      * a.Method Name:clickCheck
-     * b.Author Name:Group 07
+     * b.Author Name:Rahul Savala
      * c.Description:This method clicks on the check element on the Nykaa website..
      * d.Parameters:None
      * e.Return Type:void
@@ -245,7 +246,7 @@ public class NykaaNewLaunches {
     }
     /*
      * a.Method Name:clickAddtoBag
-     * b.Author Name:Group 07
+     * b.Author Name:Rahul Savala
      * c.Description:This method clicks on the Add to bag element on the Nykaa website..
      * d.Parameters:None
      * e.Return Type:void
@@ -263,7 +264,7 @@ public class NykaaNewLaunches {
     }
      /*
      * a.Method Name:clickCart
-     * b.Author Name:Group 07
+     * b.Author Name:Rahul Savala
      * c.Description:This method clicks on the cart element on the Nykaa website..
      * d.Parameters:None
      * e.Return Type:void
@@ -281,7 +282,7 @@ public class NykaaNewLaunches {
     }
     /*
      * a.Method Name:verifyBag
-     * b.Author Name:Group 07
+     * b.Author Name:Rahul Savala
      * c.Description:This method verifies if the text "Bag" is present on the Nykaa website.
      * d.Parameters:None
      * e.Return Type:void
@@ -292,8 +293,8 @@ public class NykaaNewLaunches {
             helper.dowaitForElementToBeVisible(NykaaNewLaunchesLocators.bag, 10);
             String data = helper.doGetText(NykaaNewLaunchesLocators.bag);
             System.out.println(data);
-            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx", "Sheet1", 9, 0)));
-            Screenshot.captureFullScreenshot("TestCase2");
+            Assert.assertTrue(data.contains(ExcelReader.readdata(System.getProperty("user.dir")+"/testdata/SearchData.xlsx", sheetOfNewLaunches, 9, 0)));
+            Screenshot.captureFullScreenshot("NykaaNewLaunches_Screenshot");
             LoggerHandler.info("Bag verified");
             test.log(Status.INFO, "Bag verified");
         } catch (Exception e) {
@@ -303,7 +304,7 @@ public class NykaaNewLaunches {
     }
     /*
      * a.Method Name:NykaaNewLaunches_Case
-     * b.Author Name:Group 07
+     * b.Author Name:Rahul Savala
      * c.Description:This method excutes all  the test cases.
      * d.Parameters:None
      * e.Return Type:void
