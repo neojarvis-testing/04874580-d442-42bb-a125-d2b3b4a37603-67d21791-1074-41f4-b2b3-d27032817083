@@ -42,6 +42,7 @@ public class Report {
      * Description: Captures a screenshot and adds it to the provided test report.
      * 
      * Parameters:
+     * String file name-To pass the filename
      * ExtentTest test - ExtentTest instance where the screenshot will be attached.
      * WebDriver driver - WebDriver instance used for capturing the screenshot.
      * String message - Message describing the screenshot or context.
