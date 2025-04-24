@@ -145,7 +145,8 @@ public class NykaaKurtasPage {
     public void clickSecondProduct(){
         try {
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.secondProduct, 10);
-            helper.doClickandswitch(NykaaKurtasLocators.secondProduct);
+            helper.doJsCLick(NykaaKurtasLocators.secondProduct);
+            helper.switchWindow();
             String data = helper.doGetText(NykaaKurtasLocators.bestSeller);
             Assert.assertTrue(data.contains("Bestseller"));
             test.log(Status.INFO, "Clicked on Second Product");
@@ -222,7 +223,8 @@ public class NykaaKurtasPage {
     */
     public void clickReadAllReviews(){
         try {
-            helper.doScrollBypixel(0, 600);
+            helper.doScrollBypixel(0, 500);
+            helper.doScrollBypixel(0, 500);
             helper.dowaitForElementToBeVisible(NykaaKurtasLocators.readAllReviews, 10);
             helper.doClick(NykaaKurtasLocators.readAllReviews);
             test.log(Status.PASS, "Clicked on Read all reviews");

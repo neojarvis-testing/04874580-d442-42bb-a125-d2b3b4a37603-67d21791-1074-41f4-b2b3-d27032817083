@@ -101,6 +101,21 @@ public class WebDriverHelper {
 			LoggerHandler.error(e.getMessage());
 		}
 	}
+
+	public void switchWindow(){
+		try {
+			String main = driver.getWindowHandle();
+			Set<String> element = driver.getWindowHandles();
+			for (String child : element) {
+				if(!child.equals(main)){
+					driver.switchTo().window(child);
+					break;
+				}
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
 		/*
 		* a.Method Name:doSelectfromDropdown
 		* b.Author Name:Group 07

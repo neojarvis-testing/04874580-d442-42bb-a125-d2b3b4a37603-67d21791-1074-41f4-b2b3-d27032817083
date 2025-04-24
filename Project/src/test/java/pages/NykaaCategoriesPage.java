@@ -55,7 +55,7 @@ public class NykaaCategoriesPage {
             helper.dowaitForElementToBeVisible(NykaaCategoriesPageLocators.searchBar, 5);
             helper.doClick(NykaaCategoriesPageLocators.searchBar);
             helper.doSendKeys(NykaaCategoriesPageLocators.searchBar,
-                    ExcelReader.readdata(System.getProperty(userDirectory) + testdataFolder, sheetOfCategories, 1, 0));
+            ExcelReader.readdata(System.getProperty(userDirectory) + testdataFolder, sheetOfCategories, 1, 0));
             helper.doEnterAction(NykaaCategoriesPageLocators.searchBar);
             test.log(Status.INFO, "Sent data to search bar");
             LoggerHandler.info("Sent data to search bar");
